@@ -1,18 +1,39 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@premieroctet/next-admin/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: "280px",
+      md: "768px",
+      md1: "1000px",
+      md2: "1200px",
+      lg: "1440px",
+      lg1: "1500px",
+      lg2: "1630px",
+      xl: "1920px",
+    },
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
+      cormorant_infant: ["cormorant_infant"],
+    },
+    borderWidth: {
+      DEFAULT: "1px",
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#370054",
+      },
+      animation: {
+        bounceTwice: "bounce 1s infinite",
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+export default config;
