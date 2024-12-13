@@ -8,9 +8,13 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [language, setLanguage] = useState("EN");
   const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "EN" ? "BN" : "EN"));
+  };
 
   return (
     <div className="py-6 md:py-3 px-10 w-screen flex items-center justify-between relative bg-white shadow-md">
@@ -33,27 +37,52 @@ const Header = () => {
         />
       </div>
 
-      <nav className="hidden md:flex flex-row md:gap-6 lg:gap-10 text-black">
-        {[
-          { href: "/", label: "Home" },
-          { href: "/about", label: "About" },
-          { href: "/services", label: "Services" },
-          { href: "/clients", label: "Clients" },
-          { href: "/blogs", label: "Blogs" },
-          { href: "/career", label: "Career" },
-          { href: "/contact", label: "Contact" },
-        ].map((navItem) => (
-          <Link
-            key={navItem.href}
-            href={navItem.href}
-            className={`hover:text-primary hover:font-semibold hover:underline ${
-              pathname === navItem.href ? "text-primary font-bold" : ""
-            }`}
+      <div className="hidden md:flex flex-row gap-16">
+        <nav className="flex flex-row md:gap-6 lg:gap-10 text-black">
+          {[
+            { href: "/", label: "Home" },
+            { href: "/about", label: "About" },
+            { href: "/services", label: "Services" },
+            { href: "/clients", label: "Clients" },
+            { href: "/blogs", label: "Blogs" },
+            { href: "/career", label: "Career" },
+            { href: "/contact", label: "Contact" },
+          ].map((navItem) => (
+            <Link
+              key={navItem.href}
+              href={navItem.href}
+              className={`hover:text-primary hover:font-semibold hover:underline ${
+                pathname === navItem.href ? "text-primary font-bold" : ""
+              }`}
+            >
+              {navItem.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex flex-row gap-0 shadow-xl">
+          <button
+            className={`${
+              language == "EN"
+                ? "text-white bg-primary"
+                : "text-primary bg-neutral-100"
+            } px-2`}
+            onClick={toggleLanguage}
           >
-            {navItem.label}
-          </Link>
-        ))}
-      </nav>
+            EN
+          </button>
+          <button
+            className={`${
+              language == "BN"
+                ? "text-white bg-primary"
+                : "text-primary bg-neutral-100"
+            } px-2`}
+            onClick={toggleLanguage}
+          >
+            BN
+          </button>
+        </div>
+      </div>
 
       <button
         className="md:hidden text-primary absolute left-6"
@@ -64,7 +93,7 @@ const Header = () => {
       </button>
 
       <div
-        className={`fixed top-0 left-0 h-full bg-neutral-200 z-50 transform transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 left-0 h-full bg-neutral-200 z-50 transform transition-all duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } w-[70%]`}
       >
@@ -86,28 +115,50 @@ const Header = () => {
           />
         </div>
 
-        <nav className="flex flex-col items-center justify-center space-y-6 py-16">
-          {[
-            { href: "/", label: "Home" },
-            { href: "/about", label: "About" },
-            { href: "/services", label: "Services" },
-            { href: "/clients", label: "Clients" },
-            { href: "/blogs", label: "Blogs" },
-            { href: "/career", label: "Career" },
-            { href: "/contact", label: "Contact" },
-          ].map((navItem) => (
-            <Link
-              key={navItem.href}
-              href={navItem.href}
-              onClick={() => setIsMenuOpen(false)}
-              className={`hover:text-primary hover:font-semibold ${
-                pathname === navItem.href ? "text-primary font-bold" : ""
-              }`}
+        <div className="md:hidden w-full h-full flex flex-col justify-between">
+          <nav className="flex flex-col items-center justify-center space-y-6 py-16">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/services", label: "Services" },
+              { href: "/clients", label: "Clients" },
+              { href: "/blogs", label: "Blogs" },
+              { href: "/career", label: "Career" },
+              { href: "/contact", label: "Contact" },
+            ].map((navItem) => (
+              <Link
+                key={navItem.href}
+                href={navItem.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`hover:text-primary hover:font-semibold ${
+                  pathname === navItem.href ? "text-primary font-bold" : ""
+                }`}
+              >
+                {navItem.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="w-full flex flex-row justify-center gap-4 mb-10">
+            <button
+              className={`${
+                language == "EN" ? "text-white bg-primary" : "text-primary"
+              } px-2`}
+              onClick={toggleLanguage}
             >
-              {navItem.label}
-            </Link>
-          ))}
-        </nav>
+              English
+            </button>
+            <span>|</span>
+            <button
+              className={`${
+                language == "BN" ? "text-white bg-primary" : "text-primary"
+              } px-2`}
+              onClick={toggleLanguage}
+            >
+              বাংলা
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
