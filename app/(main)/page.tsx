@@ -60,8 +60,7 @@ const HomePage = () => {
 
   return (
     <div className="w-full flex flex-col gap-6">
-      {/* banner */}
-      <div className="relative w-full h-[70vh] overflow-hidden">
+      <div className="relative w-full h-[250px] md:h-[70vh] overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -80,11 +79,11 @@ const HomePage = () => {
           >
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
-              <h1 className="text-4xl font-bold mb-4">{slide.title}</h1>
-              <p className="text-lg mb-6">{slide.description}</p>
+              <h1 className="text-[20px] md:text-4xl font-bold mb-4">{slide.title}</h1>
+              <p className="text-[16px] md:text-lg mb-6">{slide.description}</p>
               <a
                 href={slide.button.link}
-                className="px-6 py-3 bg-primary hover:bg-white hover:text-primary transition rounded-md text-white font-semibold"
+                className="px-4 py-2 md:px-6 md:py-3 bg-primary hover:bg-white hover:text-primary transition rounded-md text-white font-semibold"
               >
                 {slide.button.text}
               </a>
@@ -94,13 +93,13 @@ const HomePage = () => {
 
         <button
           onClick={handlePrev}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 transition z-20 text-gray-300"
+          className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 transition z-20 text-gray-300"
         >
           <FaCircleArrowLeft size={25} />
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 transition z-20 text-gray-300"
+          className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 transition z-20 text-gray-300"
         >
           <FaCircleArrowRight size={25} />
         </button>
@@ -117,17 +116,17 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="w-full px-10 grid grid-cols-2 my-6">
+      <div className="w-full px-6 md:px-10 md:grid grid-cols-2 my-6">
         <div className="w-full flex flex-row justify-center">
           <Image src="/images/about.jpg" alt="" width={500} height={500} />
         </div>
-        <div className="w-full h-full bg-primary rounded-xl py-6">
-          <div className="w-full bg-white py-2 px-6">
+        <div className="mt-4 md:mt-0 w-full h-full bg-primary rounded-xl py-6">
+          <div className="w-full bg-white py-1 md:py-2 px-4 md:px-6">
             <span className="text-primary font-[600] text-[18px]">
               Who we are
             </span>
           </div>
-          <p className="px-6 text-white py-6 text-justify">
+          <p className="px-4 md:px-6 text-white py-6 text-justify">
             Carriastic is trying to solve the Unemployment problem initially in
             Bangladesh and later on globally. We are basically a job placement
             platform for graduates and understudies, especially, focusing on
@@ -143,7 +142,7 @@ const HomePage = () => {
             with it will increase the productivity of concerns and reduce the
             unemployment problem in Bangladesh.{" "}
           </p>
-            <button className="mx-6 px-4 py-2 rounded-lg bg-white" onClick={()=> router.push("/about")}>More About Us</button>
+            <button className="md:mx-6 md:px-4 py-2 md:py-2 md:rounded-lg bg-white w-full md:w-fit" onClick={()=> router.push("/about")}>More About Us</button>
         </div>
       </div>
 
@@ -328,7 +327,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <section className="text-white py-16 px-8 mb-12">
+      <section className="bg-neutral-200 md:bg-white text-white py-16 px-8 mb-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 text-center text-primary gap-8">
           {[
             { stat: 45, label: "Team Members", suffix: "+", icon: <FiUsers /> },

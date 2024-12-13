@@ -8,7 +8,7 @@ function AboutPage() {
   const router = useRouter();
   return (
     <div className="w-full h-full mb-10 flex flex-col items-center">
-      <div className="relative w-full h-[600px]">
+      <div className="relative w-full h-[220px] md:h-[600px]">
         <Image
           src="/banners/about_us.jpg"
           alt="About Us"
@@ -20,8 +20,8 @@ function AboutPage() {
         </div>
       </div>
 
-      <div className="w-full px-10 mt-6 flex flex-col items-center gap-6">
-        <div className="w-full grid grid-cols-2 gap-10 mt-6">
+      <div className="w-full px-6 md:px-10 mt-6 flex flex-col items-center gap-6">
+        <div className="w-full md:grid grid-cols-2 gap-10 mt-6">
           <div className="w-full flex flex-row justify-center h-full">
             <Image
               src="/gifs/about.gif"
@@ -53,11 +53,19 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-2 gap-10 mt-6">
+        <div className="w-full md:grid grid-cols-2 gap-10 mt-6">
           <div className="w-full flex flex-col gap-6">
-            <span className="text-[28px] text-primary font-[500] w-full">
+            <span className="text-[28px] text-primary text-center md:text-start font-[500] w-full">
               Our Mission
             </span>
+            <div className="md:hidden w-full flex flex-row justify-center h-full">
+              <Image
+                src="/gifs/mission.gif"
+                alt="Mission"
+                width={350}
+                height={250}
+              />
+            </div>
             <p className="w-full text-black text-justify text-[18px]">
               Our mission is to ensure qualified candidates for our stakeholders
               and make the candidates eligible to start their very first career
@@ -66,7 +74,7 @@ function AboutPage() {
               applicants.{" "}
             </p>
           </div>
-          <div className="w-full flex flex-row justify-center h-full">
+          <div className="hidden w-full md:flex flex-row justify-center h-full">
             <Image
               src="/gifs/mission.gif"
               alt="Mission"
@@ -76,7 +84,10 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-2 gap-10 mt-6">
+        <div className="w-full md:grid grid-cols-2 gap-10 mt-6">
+          <span className="md:hidden text-[28px] w-full flex flex-row justify-center text-primary font-[500]">
+            Our Vision
+          </span>
           <div className="w-full flex flex-row justify-center h-full">
             <Image
               src="/gifs/vision.gif"
@@ -86,7 +97,7 @@ function AboutPage() {
             />
           </div>
           <div className="w-full flex flex-col gap-6">
-            <span className="text-[28px] text-primary font-[500] w-full">
+            <span className="hidden md:flex text-[28px] text-center md:text-start text-primary font-[500] w-full">
               Our Vision
             </span>
             <p className="w-full text-black text-justify text-[18px]">
@@ -102,7 +113,7 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="w-full mt-6 flex flex-col gap-6">
+        <div className="w-full mt-6 flex flex-col gap-6 text-justify">
           <span className="text-[28px] text-primary font-[500] w-full text-center">
             Why choose us?
           </span>
