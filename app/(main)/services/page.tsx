@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "../components/button/Button";
+import Button from "../../components/button/Button";
 import Image from "next/image";
-import ReviewCard from "../components/cards/ClientReviewCard";
+import ReviewCard from "../../components/cards/ClientReviewCard";
 
 const reviews = [
   {

@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import TextInput from "../components/inputs/TextInput";
-import EmailInput from "../components/inputs/EmailInput";
-import TextArea from "../components/inputs/TextArea";
-import Button from "../components/button/Button";
+import TextInput from "../../components/inputs/TextInput";
+import EmailInput from "../../components/inputs/EmailInput";
+import TextArea from "../../components/inputs/TextArea";
+import Button from "../../components/button/Button";
 
 const ContactPage = () => {
   return (

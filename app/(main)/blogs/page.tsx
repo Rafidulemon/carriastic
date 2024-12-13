@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import BlogCard from "../components/cards/BlogCard";
+import BlogCard from "../../components/cards/BlogCard";
 import Image from "next/image";
 
 const blogs = [

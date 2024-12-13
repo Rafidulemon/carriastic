@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import ClientCard from "../components/cards/ClientCard";
-import ReviewCard from "../components/cards/ClientReviewCard";
+import ClientCard from "../../components/cards/ClientCard";
+import ReviewCard from "../../components/cards/ClientReviewCard";
 import Image from "next/image";
 
 const clients = [

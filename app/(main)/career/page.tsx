@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Button from "../components/button/Button";
+import Button from "../../components/button/Button";
 import { MdPeople, MdLocationOn } from "react-icons/md";
 import { FaGraduationCap, FaUtensils, FaTrophy } from "react-icons/fa";
 import { ImOffice } from "react-icons/im";

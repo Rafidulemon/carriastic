@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Button from "../components/button/Button";
+import Button from "../../components/button/Button";
 import { useRouter } from "next/navigation";
 
 function AboutPage() {

@@ -1,10 +1,10 @@
 "use client"
-import "./globals.css";
-import Header from "./components/navigations/Header";
-import Footer from "./components/navigations/Footer";
+import ".././globals.css";
+import Header from "../components/navigations/Header";
+import Footer from "../components/navigations/Footer";
 import { FaRocketchat } from "react-icons/fa";
 import { useState } from "react";
-import ChatbotModal from "./components/modals/ChatBotModal";
+import ChatbotModal from "../components/modals/ChatBotModal";
 
 export default function RootLayout({
   children,
