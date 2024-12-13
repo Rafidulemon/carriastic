@@ -79,7 +79,7 @@ const blogs = [
 const BlogsPage = () => {
   return (
     <div className="w-full">
-        <div className="relative w-full h-[600px]">
+        <div className="relative w-full h-[220px] md:h-[600px]">
         <Image
           src="/banners/blog.jpg"
           alt="Our Services"

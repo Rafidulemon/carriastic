@@ -74,7 +74,7 @@ const reviews = [
 const ClientsPage = () => {
   return (
     <div className="w-full mb-10">
-      <div className="relative w-full h-[600px] mb-10">
+      <div className="relative w-full h-[220px] md:h-[600px] mb-10">
         <Image
           src="/banners/client.jpg"
           alt="Our Services"
@@ -95,7 +95,7 @@ const ClientsPage = () => {
       <div className="mt-16 px-10">
         <h2 className="text-2xl font-bold text-center mb-8">What Our Clients Say</h2>
         <div className="relative w-full overflow-hidden">
-          <div className="flex gap-6 animate-marquee">
+          <div className="flex gap-6">
             {reviews.map((review, index) => (
               <ReviewCard key={index} {...review} />
             ))}
