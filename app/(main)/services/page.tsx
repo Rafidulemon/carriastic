@@ -153,7 +153,7 @@ const ServicesPage = () => {
           User Testimonials
         </span>
         <div className="relative w-full overflow-hidden">
-          <div className="flex gap-6 animate-marquee">
+          <div className="flex flex-row animate-marquee-logo gap-6">
             {reviews.map((review, index) => (
               <ReviewCard key={index} {...review} />
             ))}

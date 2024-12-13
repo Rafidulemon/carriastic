@@ -95,7 +95,7 @@ const ClientsPage = () => {
       <div className="mt-16 px-10">
         <h2 className="text-2xl font-bold text-center mb-8">What Our Clients Say</h2>
         <div className="relative w-full overflow-hidden">
-          <div className="flex gap-6">
+          <div className="flex flex-row animate-marquee-logo gap-6">
             {reviews.map((review, index) => (
               <ReviewCard key={index} {...review} />
             ))}

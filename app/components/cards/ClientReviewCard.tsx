@@ -26,7 +26,7 @@ type ReviewCardProps = {
 
 const ReviewCard = ({ name, date, review, rating, avatar }: ReviewCardProps) => {
   return (
-    <div className="w-100 my-8 p-4 shadow-xl rounded-lg shadow-sm bg-white flex flex-col items-center gap-4">
+    <div className="min-w-[250px] my-8 p-4 shadow-xl rounded-lg shadow-sm bg-white flex flex-col items-center gap-4">
       <div className="w-20 h-20 rounded-full overflow-hidden">
         <Image
           src={avatar}
