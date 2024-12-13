@@ -13,8 +13,8 @@ const ChatbotModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-10 right-10 h-fit bg-opacity-50 flex z-50 overflow-y-auto max-h-[80%]">
-      <div className="bg-purple-900 w-full max-w-md rounded-lg p-6 relative shadow-lg">
+    <div className="fixed bottom-0 right-0 md:bottom-10 md:right-10 h-fit bg-opacity-50 flex z-50 overflow-y-auto max-h-[90%] md:max-h-[80%]">
+      <div className="bg-purple-900 w-full max-w-md rounded-lg p-6 relative shadow-lg h-full">
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-white hover:text-gray-200"

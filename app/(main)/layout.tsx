@@ -27,12 +27,12 @@ export default function RootLayout({
         <Header />
         <div className="min-h-[calc(80vh-10px)]">{children}</div>
         <Footer />
-        <div className="fixed bottom-10 right-10">
+        <div className="fixed bottom-2 right-2 md:bottom-10 md:right-10">
           <button
           onClick={toggleModal}
-            className="p-4 rounded-full shadow-xl shadow-lg bg-white focus:outline-none text-primary"
+            className="p-4 rounded-full shadow-xl shadow-lg bg-neutral-100 md:bg-white focus:outline-none text-primary text-[25px] md:text-[40px]"
           >
-            <FaRocketchat size={40} />
+            <FaRocketchat />
           </button>
         </div>
         <ChatbotModal isOpen={isModalOpen} onClose={toggleModal} />
