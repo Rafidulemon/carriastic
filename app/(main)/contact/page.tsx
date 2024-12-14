@@ -16,7 +16,7 @@ const ContactPage = () => {
           height={462}
         />
       </div>
-      <div className="md:hidden w-full justify-center items-center h-full">
+      <div className="md:hidden w-full flex flex-row justify-center items-center h-full">
         <Image
           src="/gifs/contact_gif.gif"
           alt="contact"

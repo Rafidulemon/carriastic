@@ -8,13 +8,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("EN");
   const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "EN" ? "BN" : "EN"));
-  };
 
   return (
     <div className="py-6 md:py-3 px-10 w-screen flex items-center justify-between relative bg-white shadow-md">
@@ -59,29 +55,6 @@ const Header = () => {
             </Link>
           ))}
         </nav>
-
-        <div className="flex flex-row gap-0 shadow-xl">
-          <button
-            className={`${
-              language == "EN"
-                ? "text-white bg-primary"
-                : "text-primary bg-neutral-100"
-            } px-2`}
-            onClick={toggleLanguage}
-          >
-            EN
-          </button>
-          <button
-            className={`${
-              language == "BN"
-                ? "text-white bg-primary"
-                : "text-primary bg-neutral-100"
-            } px-2`}
-            onClick={toggleLanguage}
-          >
-            BN
-          </button>
-        </div>
       </div>
 
       <button
@@ -138,26 +111,6 @@ const Header = () => {
               </Link>
             ))}
           </nav>
-
-          <div className="w-full flex flex-row justify-center gap-4 mb-10">
-            <button
-              className={`${
-                language == "EN" ? "text-white bg-primary" : "text-primary"
-              } px-2`}
-              onClick={toggleLanguage}
-            >
-              English
-            </button>
-            <span>|</span>
-            <button
-              className={`${
-                language == "BN" ? "text-white bg-primary" : "text-primary"
-              } px-2`}
-              onClick={toggleLanguage}
-            >
-              বাংলা
-            </button>
-          </div>
         </div>
       </div>
     </div>
