@@ -1,83 +1,55 @@
 "use client";
+import React from "react";
+import Image from "next/image";
+import TextInput from "@/app/components/inputs/TextInput";
+import PasswordInput from "@/app/components/inputs/PasswordInput";
+import { useRouter } from "next/navigation";
 
-const SignInPage = () => {
+const Login = () => {
+  const router = useRouter();
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-900 to-purple-700">
-      <div className="flex bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl w-full">
-        {/* Left Section: Sign-In Form */}
-        <div className="w-1/2 p-10">
-          <h2 className="text-3xl font-bold text-primary mb-6">SIGN IN</h2>
-          <form className="space-y-6">
-            {/* Email Input */}
-            <div>
-              <label className="text-sm text-gray-600 block mb-2">Email address</label>
-              <input
-                type="email"
-                className="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your email"
-              />
-            </div>
+    <div className="relative z-10 bg-white p-8 md:p-12 rounded-lg shadow-lg w-[80%] lg:w-[400px] xl:w-[500px] text-center">
+      <div className="flex justify-center mb-6">
+        <Image
+          src="/images/logo_main.png"
+          alt="logo"
+          width={150}
+          height={55}
+          className="cursor-pointer"
+        />
+      </div>
 
-            {/* Password Input */}
-            <div>
-              <label className="text-sm text-gray-600 block mb-2">Password</label>
-              <input
-                type="password"
-                className="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your password"
-              />
-            </div>
+      <h2 className="text-3xl font-bold text-gray-700 mb-6">Login</h2>
+      <p className="text-sm text-gray-500 mb-8">
+        Welcome back!
+        <br />
+        <a href="/auth/forget-password" className="text-pink-500 hover:underline">
+          Did you forget your password?
+        </a>
+      </p>
 
-            {/* Remember Me and Forgot Password */}
-            <div className="flex items-center justify-between">
-              <label className="flex items-center text-sm">
-                <input type="checkbox" className="mr-2" />
-                Remember me
-              </label>
-              <a href="#" className="text-sm text-blue-500 hover:underline">
-                Forgot password?
-              </a>
-            </div>
+      <div className="space-y-4">
+        <TextInput label="Email" placeholder="Email" className="w-full" />
+        <PasswordInput
+          label="Password"
+          name="password"
+          placeholder="Password"
+          className="w-full"
+        />
+      </div>
 
-            {/* Sign In Button */}
-            <button
-              type="submit"
-              className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow-md hover:opacity-90"
-            >
-              SIGN IN
-            </button>
-          </form>
+      <button className="w-full mt-6 px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full hover:opacity-90 transition">
+        Log In
+      </button>
 
-          {/* Social Sign-In */}
-          <div className="flex justify-center items-center mt-6">
-            <span className="text-sm text-gray-500 mr-2">Sign in with:</span>
-            <div className="flex space-x-2">
-              <a href="#" className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
-                F
-              </a>
-              <a href="#" className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white">
-                G
-              </a>
-              <a href="#" className="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center text-white">
-                L
-              </a>
-            </div>
-          </div>
+      <div className="w-full flex flex-row justify-center items-center gap-2 mt-10">
+        <div className="text-[16px] text-gray-500">
+          Don&apos;t have an account?
         </div>
-
-        {/* Right Section: Info */}
-        <div className="w-1/2 bg-gradient-to-r from-purple-900 to-purple-700 text-white flex flex-col items-center justify-center p-10">
-          <h2 className="text-4xl font-bold mb-4">Glad to see you!</h2>
-          <p className="text-center text-sm text-gray-200 mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
-          </p>
-          <button className="px-6 py-2 bg-white text-purple-700 font-bold rounded-lg hover:opacity-90">
-            SIGN UP
-          </button>
-        </div>
+        <div className="text-primary text-[16px] font-[500] underline cursor-pointer" onClick={()=> router.push("/auth/signup")}>Register</div>
       </div>
     </div>
   );
 };
 
-export default SignInPage;
+export default Login;

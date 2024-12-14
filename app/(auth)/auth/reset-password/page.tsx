@@ -1,53 +1,44 @@
 "use client";
+import Image from "next/image";
+import TextInput from "@/app/components/inputs/TextInput";
+import { useRouter } from "next/navigation";
+import PasswordInput from "@/app/components/inputs/PasswordInput";
 
 const ResetPasswordPage = () => {
+  const router = useRouter();
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-900 to-purple-700">
-      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-10">
-        <h2 className="text-3xl font-bold text-primary text-center mb-6">Reset Password</h2>
-        <p className="text-sm text-gray-600 text-center mb-8">
-          Create a new password for your account.
-        </p>
-
-        <form className="space-y-6">
-          {/* New Password Input */}
-          <div>
-            <label className="text-sm text-gray-600 block mb-2">New Password</label>
-            <input
-              type="password"
-              className="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your new password"
-            />
-          </div>
-
-          {/* Confirm Password Input */}
-          <div>
-            <label className="text-sm text-gray-600 block mb-2">Confirm Password</label>
-            <input
-              type="password"
-              className="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Confirm your password"
-            />
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow-md hover:opacity-90"
-          >
-            Reset Password
-          </button>
-        </form>
-
-        <div className="mt-6 text-center">
-          <a
-            href="/login"
-            className="text-sm text-primary hover:underline"
-          >
-            Back to Sign In
-          </a>
-        </div>
+    <div className="max-h-[calc(80vh-10px)] overflow-y-auto relative z-10 bg-white p-8 md:p-12 rounded-lg shadow-lg w-[80%] lg:w-[400px] xl:w-[500px] text-center my-6">
+      <div className="flex justify-center mb-6">
+        <Image
+          src="/images/logo_main.png"
+          alt="logo"
+          width={150}
+          height={55}
+          className="cursor-pointer"
+        />
       </div>
+
+      <h2 className="text-2xl font-bold text-gray-700 mb-6">Reset Password</h2>
+      <div className="space-y-4 mt-10">
+        <TextInput label="Email" placeholder="Email" className="w-full" />
+        <PasswordInput
+          label="New Password"
+          placeholder="New Password"
+          className="w-full"
+        />
+        <PasswordInput
+          label="Confirm Password"
+          placeholder="Confirm Password"
+          className="w-full"
+        />
+      </div>
+
+      <button
+        className="w-full mt-6 px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full hover:opacity-90 transition"
+        onClick={() => router.push("/auth/login")}
+      >
+        Reset Password
+      </button>
     </div>
   );
 };
