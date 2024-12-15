@@ -14,10 +14,11 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import CountUp from "react-countup";
 import { FiHeart, FiPackage, FiSmile, FiUsers } from "react-icons/fi";
+import ReviewCard from "../components/cards/ClientReviewCard";
 
 const slides = [
   {
-    image: "/banners/about_us.jpg",
+    image: "/banners/welcome.jpg",
     title: "Welcome to Carriastic",
     description: "Discover innovative solutions for your business growth.",
     button: { text: "Learn More", link: "/about" },
@@ -29,11 +30,50 @@ const slides = [
     button: { text: "Get Started", link: "/services" },
   },
   {
-    image: "/banners/client.jpg",
+    image: "/banners/home_partner.jpg",
     title: "Your Trusted Partner",
     description: "Building meaningful relationships through trust.",
     button: { text: "Contact Us", link: "/contact" },
   },
+];
+
+const reviews = [
+  {
+    name: "Alice Waters",
+    date: "2 weeks ago",
+    review: "Carriastic helped me find my dream job effortlessly!",
+    rating: 5,
+    avatar: "/avatars/alice.jpeg",
+  },
+  {
+    name: "John Doe",
+    date: "1 month ago",
+    review: "The service transformed my career path remarkably.",
+    rating: 5,
+    avatar: "/avatars/john.jpeg",
+  },
+  {
+    name: "Linda Brown",
+    date: "3 days ago",
+    review: "Unmatched support and guidance, highly recommend!",
+    rating: 5,
+    avatar: "/avatars/linda.jpeg",
+  },
+  {
+    name: "Michael Scott",
+    date: "2 months ago",
+    review: "Fantastic service that exceeded all my expectations.",
+    rating: 4.5,
+    avatar: "/avatars/michael.jpg",
+  },
+  {
+    name: "Jessica Taylor",
+    date: "1 week ago",
+    review: "Highly skilled and professional team, very satisfied!",
+    rating: 5,
+    avatar: "/avatars/jessica.jpg",
+  },
+  
 ];
 
 const HomePage = () => {
@@ -60,6 +100,8 @@ const HomePage = () => {
 
   return (
     <div className="w-full flex flex-col gap-6">
+
+      {/* Banner */}
       <div className="relative w-full h-[250px] md:h-[70vh] overflow-hidden">
         {slides.map((slide, index) => (
           <div
@@ -79,7 +121,9 @@ const HomePage = () => {
           >
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
-              <h1 className="text-[20px] md:text-4xl font-bold mb-4">{slide.title}</h1>
+              <h1 className="text-[20px] md:text-4xl font-bold mb-4">
+                {slide.title}
+              </h1>
               <p className="text-[16px] md:text-lg mb-6">{slide.description}</p>
               <a
                 href={slide.button.link}
@@ -116,6 +160,7 @@ const HomePage = () => {
         </div>
       </div>
 
+      {/* About Us */}
       <div className="w-full px-6 md:px-10 md:grid grid-cols-2 my-6">
         <div className="w-full flex flex-row justify-center">
           <Image src="/images/about.jpg" alt="" width={500} height={500} />
@@ -142,10 +187,16 @@ const HomePage = () => {
             with it will increase the productivity of concerns and reduce the
             unemployment problem in Bangladesh.{" "}
           </p>
-            <button className="md:mx-6 md:px-4 py-2 md:py-2 md:rounded-lg bg-white w-full md:w-fit" onClick={()=> router.push("/about")}>More About Us</button>
+          <button
+            className="md:mx-6 md:px-4 py-2 md:py-2 md:rounded-lg bg-white w-full md:w-fit"
+            onClick={() => router.push("/about")}
+          >
+            More About Us
+          </button>
         </div>
       </div>
 
+      {/* Why Us */}
       <div className="w-full flex flex-col gap-6 my-6 items-center">
         <span className="text-primary font-[700] text-[24px]">Why Us</span>
         <div>
@@ -224,7 +275,40 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <section className="bg-neutral-200 md:bg-white text-white py-16 px-8 mb-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 text-center text-primary gap-8">
+          {[
+            { stat: 45, label: "Team Members", suffix: "+", icon: <FiUsers /> },
+            {
+              stat: 25,
+              label: "Total Products",
+              suffix: "+",
+              icon: <FiPackage />,
+            },
+            {
+              stat: 800000,
+              label: "Happy Users",
+              suffix: "+",
+              icon: <FiSmile />,
+            },
+            { stat: 24000, label: "Happy Moments", icon: <FiHeart /> },
+          ].map((item, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <div className="text-4xl text-primary mb-4">{item.icon}</div>
+              <h3 className="text-3xl font-bold text-primary">
+                <CountUp
+                  end={item.stat}
+                  suffix={item.suffix || ""}
+                  duration={10}
+                />
+              </h3>
+              <p className="text-lg">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* Partnership */}
       <div className="w-full flex flex-col gap-6 my-6 items-center">
         <span className="text-primary font-[700] text-[24px]">Partnership</span>
         <h2 className="text-[20px] font-[500] text-center text-black mb-6">
@@ -327,38 +411,44 @@ const HomePage = () => {
         </div>
       </div>
 
-      <section className="bg-neutral-200 md:bg-white text-white py-16 px-8 mb-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 text-center text-primary gap-8">
-          {[
-            { stat: 45, label: "Team Members", suffix: "+", icon: <FiUsers /> },
-            {
-              stat: 25,
-              label: "Total Products",
-              suffix: "+",
-              icon: <FiPackage />,
-            },
-            {
-              stat: 800000,
-              label: "Happy Users",
-              suffix: "+",
-              icon: <FiSmile />,
-            },
-            { stat: 24000, label: "Happy Moments", icon: <FiHeart /> },
-          ].map((item, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div className="text-4xl text-primary mb-4">{item.icon}</div>
-              <h3 className="text-3xl font-bold text-primary">
-                <CountUp
-                  end={item.stat}
-                  suffix={item.suffix || ""}
-                  duration={10}
-                />
-              </h3>
-              <p className="text-lg">{item.label}</p>
-            </div>
-          ))}
+      <div className="w-full px-10 flex flex-col items-center my-6 gap-6">
+      <span className="text-primary font-[700] text-[24px]">What Our Clients say</span>
+        <div className="relative w-full overflow-hidden">
+          <div className="flex flex-col md:flex-row gap-6">
+            {reviews.map((review, index) => (
+              <ReviewCard key={index} {...review} />
+            ))}
+          </div>
         </div>
-      </section>
+        <div
+          onClick={() => router.push("/clients")}
+          className="text-primary hover:font-[600] hover:underline text-[18px] cursor-pointer"
+        >
+          See All
+        </div>
+      </div>
+
+      {/* CEO Quote */}
+      <div className="w-full flex flex-col items-center my-12">
+        <span className="text-primary font-[700] text-[24px]">
+          CEO&apos;s Quote
+        </span>
+        <div className="flex flex-col md:max-w-[40%] mx-auto px-6 justify-center items-center py-6">
+          <p className="text-lg md:text-xl text-gray-800 italic mb-2 text-justify">
+            &quot;At Carriastic, our vision is not just to fill jobs but to
+            create lasting impacts in the career paths of every individual we
+            work with. Together, we build a better future for our society.&quot;
+          </p>
+
+          <Image src="/images/rafid2.png" alt="" width={150} height={150}/>
+          <div className="flex flex-col justify-center items-center gap-1">
+            <h3 className="text-xl font-bold text-primary">
+              Md. Rafidul Islam
+            </h3>
+            <p className="text-md text-gray-600">CEO, Carriastic</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

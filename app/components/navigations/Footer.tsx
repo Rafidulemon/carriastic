@@ -64,7 +64,7 @@ const Footer = () => {
                   { href: "/", label: "Home" },
                   { href: "/about", label: "About" },
                   { href: "/services", label: "Services" },
-                  { href: "/clients", label: "Clients" },
+                  { href: "/team", label: "Team" },
                 ].map((navItem) => (
                   <Link
                     key={navItem.href}
@@ -123,7 +123,7 @@ const Footer = () => {
                   { href: "/", label: "Home" },
                   { href: "/about", label: "About" },
                   { href: "/services", label: "Services" },
-                  { href: "/clients", label: "Clients" },
+                  { href: "/team", label: "Team" },
                 ].map((navItem) => (
                   <Link
                     key={navItem.href}
