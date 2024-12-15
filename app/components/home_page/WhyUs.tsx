@@ -86,34 +86,34 @@ const WhyUs = () => {
           </div>
         </div>
       </div>
-      <section className="w-full bg-white text-white py-6 px-8 mb-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center text-primary gap-8">
+      <section className="md:w-[70%] bg-white text-white py-6 px-8 mb-12">
+        <div className="mx-auto grid grid-cols-2 md:grid-cols-4 text-center text-primary gap-8">
           {[
-            { stat: 45, label: "Team Members", suffix: "+", icon: <FiUsers /> },
+            { stat: 45, label: "Team Members", suffix: "+", icon: <FiUsers color="#1abc9c"/> },
             {
               stat: 25,
               label: "Total Products",
               suffix: "+",
-              icon: <FiPackage />,
+              icon: <FiPackage color="#1f618d"/>,
             },
             {
               stat: 800000,
               label: "Happy Users",
               suffix: "+",
-              icon: <FiSmile />,
+              icon: <FiSmile color="#f39c12"/>,
             },
-            { stat: 24000, label: "Happy Moments", icon: <FiHeart /> },
+            { stat: 24000, label: "Happy Moments", icon: <FiHeart color="#cb4335"/> },
           ].map((item, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="text-4xl text-primary mb-4">{item.icon}</div>
-              <h3 className="text-3xl font-bold text-primary">
+              <div className="text-4xl mb-2">{item.icon}</div>
+              <h3 className="text-xl md:text-3xl font-bold text-primary">
                 <CountUp
                   end={item.stat}
                   suffix={item.suffix || ""}
                   duration={10}
                 />
               </h3>
-              <p className="text-lg">{item.label}</p>
+              <p className="text-lg text-gray-500">{item.label}</p>
             </div>
           ))}
         </div>

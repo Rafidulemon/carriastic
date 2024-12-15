@@ -1,7 +1,8 @@
+"use client"
 import React from "react";
-import Button from "../../components/button/Button";
 import Image from "next/image";
 import ReviewCard from "../../components/cards/ClientReviewCard";
+import Services from "@/app/components/home_page/Services";
 
 const reviews = [
   {
@@ -57,95 +58,9 @@ const ServicesPage = () => {
         </div>
       </div>
 
-      <div className="w-[90%] md:grid grid-cols-3 md:gap-10 justify-center items-center">
-        <div className="w-full flex flex-col gap-1 items-center md:items-start mb-4 md:mb-0">
-          <span className="text-[18px] text-black font-[600]">
-            Skill Training
-          </span>
-          <span className="text-neutral-500 pr-4">
-            Enhance your skills with our expert-led training programs.
-          </span>
-          <Button theme="secondary" className="md:mt-4">
-            <span className="px-4">Learn More</span>
-          </Button>
-        </div>
-
-        <div className="w-full flex flex-col gap-1 items-center md:items-start my-4 md:my-0">
-          <span className="text-[18px] text-black font-[600]">
-            Job Placement
-          </span>
-          <span className="text-neutral-500 pr-4">
-            Get assistance to land your dream job with our placement services.
-          </span>
-          <Button theme="secondary" className="md:mt-4">
-            <span className="px-8">Explore</span>
-          </Button>
-        </div>
-
-        <div className="w-full flex flex-col gap-1 items-center md:items-start my-4 md:my-0">
-          <span className="text-[18px] text-black font-[600]">
-            Career Consulting
-          </span>
-          <span className="text-neutral-500 pr-4">
-            Receive personalized career advice from our experienced consultants.
-          </span>
-          <Button theme="secondary" className="md:mt-4">
-            <span className="px-4">Schedule</span>
-          </Button>
-        </div>
-
-        <div className="w-full flex flex-col gap-1 items-center md:items-start my-4 md:my-0">
-          <span className="text-[18px] text-black font-[600]">
-            Software Development
-          </span>
-          <span className="text-neutral-500 pr-4">
-            Build modern, scalable, and efficient software solutions with our
-            expert team.
-          </span>
-          <Button theme="secondary" className="md:mt-4">
-            <span className="px-4">Discover</span>
-          </Button>
-        </div>
-
-        <div className="w-full flex flex-col gap-1 items-center md:items-start my-4 md:my-0">
-          <span className="text-[18px] text-black font-[600]">
-            Digital Marketing
-          </span>
-          <span className="text-neutral-500 pr-4">
-            Boost your online presence and grow your business with our digital
-            marketing services.
-          </span>
-          <Button theme="secondary" className="md:mt-4">
-            <span className="px-4">Get Started</span>
-          </Button>
-        </div>
-
-        <div className="w-full flex flex-col gap-1 items-center md:items-start my-4 md:my-0">
-          <span className="text-[18px] text-black font-[600]">
-            Graphics Designing
-          </span>
-          <span className="text-neutral-500 pr-4">
-            Create visually stunning graphics that captivate and engage your
-            audience.
-          </span>
-          <Button theme="secondary" className="md:mt-4">
-            <span className="px-4">View More</span>
-          </Button>
-        </div>
-
-        <div />
-        <div className="w-full flex flex-col gap-1 items-center md:items-start mt-4 md:mt-0">
-          <span className="text-[18px] text-black font-[600]">
-            UI/UX Design
-          </span>
-          <span className="text-neutral-500 pr-4">
-            Design seamless and user-friendly interfaces for your digital
-            products.
-          </span>
-          <Button theme="secondary" className="md:mt-4">
-            <span className="px-4">See Details</span>
-          </Button>
-        </div>
+      <div className="w-full text-center bg-neutral-100 pt-6">
+        <span className="text-primary font-[700] text-[24px]">Our Services</span>
+        <Services isServicePage/>
       </div>
 
       <div className="w-full px-10 flex flex-col items-center my-6 gap-6">
