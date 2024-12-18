@@ -25,7 +25,7 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden antialiased bg-white">
         <Header />
-        <div className="md:mt-[60px] min-h-[calc(80vh-10px)]">{children}</div>
+        <div className="mt-[48px] md:mt-[60px] min-h-[calc(80vh-10px)]">{children}</div>
         <Footer />
         <div className="fixed bottom-2 right-2 md:bottom-10 md:right-10">
           <button
