@@ -113,39 +113,92 @@ const Services = () => {
   const router = useRouter();
 
   return (
-    <div className="w-[80%] lg:w-[70%] xl:w-[60%] grid md:grid-cols-2 lg:grid-cols-3 items-center bg-white lg:p-10 justify-center gap-6 lg:gap-10">
-      <div className="lg:col-span-2 h-[600px] flex flex-col justify-between text-primary text-3xl font-bold shadow-xl">
-        {selectedService ? (
-          <div className="flex flex-col gap-4 h-full justify-between pb-4">
-            <div className={`w-full ${selectedService.background} shadow-lg`}>
-              <h2 className="text-[20px] font-[600] text-white lg:my-1">
-                {selectedService.name}
-              </h2>
+    <div className="w-[80%] lg:w-[70%] xl:w-[60%] grid md:grid-cols-2 lg:grid-cols-3 items-center bg-white lg:p-10 gap-6 lg:gap-10">
+      <div className="md:hidden grid grid-cols-2 gap-4 w-full">
+        {services.map((service) => (
+          <div
+            key={service.id}
+            onClick={() => setSelectedService(service)}
+            className={`group flex items-center justify-center p-4 rounded-lg cursor-pointer shadow-md hover:scale-105 transition-transform ${
+              selectedService?.id === service.id
+                ? service.background
+                : "bg-white"
+            }`}
+          >
+            <div
+              className={`flex flex-col items-center ${
+                selectedService?.id === service.id
+                  ? "text-white"
+                  : `${service.color}`
+              }`}
+            >
+              <div className="text-3xl mb-2">{service.icon}</div>
+              <p className="font-semibold text-center text-sm">
+                {service.name}
+              </p>
             </div>
-            <Image
-              src={selectedService.image}
-              alt={selectedService.name}
-              width={300}
-              height={200}
-              className="w-full h-[200px] object-cover lg:mb-4 px-4 lg:px-6"
-            />
-            <p className="text-justify text-gray-600 text-[16px] px-4 lg:px-6">
-              {selectedService.description}
-            </p>
-            <div className="w-full flex justify-center">
+          </div>
+        ))}
+      </div>
+
+      <div className="lg:col-span-2 md:h-[600px] flex flex-col justify-between text-primary text-3xl font-bold md:shadow-xl">
+        {selectedService ? (
+          <div className="w-full h-full">
+            <div className="hidden md:flex flex-col gap-4 h-full justify-between pb-4">
+              <div className="w-full">
+                <div
+                  className={`w-full ${selectedService.background} shadow-lg`}
+                >
+                  <h2 className="text-[20px] font-[600] text-white lg:my-1">
+                    {selectedService.name}
+                  </h2>
+                </div>
+                <Image
+                  src={selectedService.image}
+                  alt={selectedService.name}
+                  width={300}
+                  height={200}
+                  className="w-full h-[200px] object-cover lg:my-4"
+                />
+                <p className="text-justify text-gray-600 text-[16px] px-4 lg:px-6">
+                  {selectedService.description}
+                </p>
+              </div>
+              <div className="w-full flex justify-center">
+                <button
+                  onClick={() => router.push("/contact")}
+                  className={`text-[16px] ${selectedService.background} text-white py-1 rounded-xl hover:scale-x-125 group`}
+                >
+                  <span className="group-hover:text-[18px] px-8">
+                    More Details
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div
+              className={`md:hidden w-full p-4 rounded-lg shadow-lg ${selectedService.background} text-white`}
+            >
+              <h2 className="text-xl font-bold mb-2">{selectedService.name}</h2>
+              <Image
+                src={selectedService.image}
+                alt={selectedService.name}
+                width={500}
+                height={300}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <p className="text-sm leading-relaxed text-justify">
+                {selectedService.description}
+              </p>
               <button
                 onClick={() => router.push("/contact")}
-                className={`text-[16px] ${selectedService.background} text-white py-1 rounded-xl hover:scale-x-125 group`}
+                className="mt-4 bg-white px-4 text-black rounded-lg text-[16px]"
               >
-                <span className="group-hover:text-[18px] px-8">
-                  More Details
-                </span>
+                More Details
               </button>
             </div>
           </div>
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center gap-4 lg:gap-6">
-            <span>Our Services</span>
             <Image
               src="/services/service.gif"
               width={350}
@@ -156,7 +209,7 @@ const Services = () => {
         )}
       </div>
 
-      <div className="w-full flex flex-col gap-4">
+      <div className="hidden w-full md:flex flex-col gap-4">
         {services.map((service) => (
           <div
             key={service.id}
