@@ -52,7 +52,7 @@ const Services: React.FC<ServiceProps> = ({ isServicePage = false }) => {
       name: "Job Placement",
       details:
         "Get assistance to land your dream job with our placement services.",
-      image: "/images/job-placement.jpg",
+      image: "/services/job-placement.jpg",
       description:
         "Our Job Placement service connects you with top companies and employers who are actively seeking talented professionals. With our extensive network, we ensure that your resume stands out, and we guide you through the interview process to help you land your ideal job.",
       icon: <FaBriefcase />,
@@ -64,7 +64,7 @@ const Services: React.FC<ServiceProps> = ({ isServicePage = false }) => {
       name: "Career Consulting",
       details:
         "Receive personalized career advice from our experienced consultants.",
-      image: "/images/career-consulting.jpg",
+      image: "/services/career.jpg",
       description:
         "Our Career Consulting service is perfect for professionals looking to switch careers or take their career to the next level. We offer one-on-one sessions to assess your strengths, interests, and goals, and then craft a tailored plan to help you succeed in your chosen field.",
       icon: <FaUserTie />,
@@ -76,7 +76,7 @@ const Services: React.FC<ServiceProps> = ({ isServicePage = false }) => {
       name: "Software Development",
       details:
         "Build modern, scalable, and efficient software solutions with our expert team.",
-      image: "/images/software-development.jpg",
+      image: "/services/se-development.jpg",
       description:
         "Our Software Development service provides you with cutting-edge solutions that are both innovative and user-friendly. Whether you need a mobile app, web application, or enterprise-level software, our team works closely with you to ensure that the final product exceeds your expectations.",
       icon: <FaLaptopCode />,
@@ -88,7 +88,7 @@ const Services: React.FC<ServiceProps> = ({ isServicePage = false }) => {
       name: "Digital Marketing",
       details:
         "Boost your online presence and grow your business with our digital marketing services.",
-      image: "/images/digital-marketing.jpg",
+      image: "/services/digital-marketing.jpg",
       description:
         "Our Digital Marketing service helps you reach your target audience and increase your brand visibility. We specialize in search engine optimization (SEO), paid search ads, social media marketing, and email marketing, ensuring that your business gains the exposure it deserves.",
       icon: <FaBullhorn />,
@@ -100,7 +100,7 @@ const Services: React.FC<ServiceProps> = ({ isServicePage = false }) => {
       name: "Graphics Designing",
       details:
         "Create visually stunning graphics that captivate and engage your audience.",
-      image: "/images/graphics-designing.jpg",
+      image: "/services/graphics.jpg",
       description:
         "Our Graphics Designing service helps you communicate your message through captivating visual content. Whether you're looking for a new logo, website design, or promotional materials, our team delivers creative and professional design solutions that represent your brand effectively.",
       icon: <FaPaintBrush />,
@@ -112,7 +112,7 @@ const Services: React.FC<ServiceProps> = ({ isServicePage = false }) => {
       name: "UI/UX Design",
       details:
         "Design seamless and user-friendly interfaces for your digital products.",
-      image: "/images/ui-ux-design.jpg",
+      image: "/services/ui-ux.png",
       description:
         "Our UI/UX Design service ensures that your digital products not only look great but also provide an intuitive and enjoyable user experience. Our design team works closely with you to understand your users and develop interfaces that meet their needs while aligning with your business goals.",
       icon: <FaPenNib />,

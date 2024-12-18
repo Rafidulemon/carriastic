@@ -13,7 +13,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="py-6 md:py-3 px-10 w-screen flex items-center justify-between relative bg-white shadow-md">
+    <div className="md:fixed md:top-0 md:z-50 py-6 md:py-3 px-10 w-screen flex items-center justify-between bg-white shadow-md">
       <div className="hidden md:block">
         <Image
           src="/images/logo_main.png"
