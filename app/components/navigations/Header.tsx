@@ -5,16 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <div className="fixed top-0 z-50 py-6 md:py-3 px-10 w-screen flex items-center justify-between bg-white shadow-md">
-      <div className="hidden md:block">
+      <div className="hidden md:block" onClick={()=> router.push("/")}>
         <Image
           src="/images/logo_main.png"
           alt="logo"
@@ -23,7 +25,7 @@ const Header = () => {
           className="cursor-pointer"
         />
       </div>
-      <div className="md:hidden absolute left-1/2 transform -translate-x-1/2">
+      <div className="md:hidden absolute left-1/2 transform -translate-x-1/2" onClick={()=> router.push("/")}>
         <Image
           src="/images/logo_main.png"
           alt="logo"
