@@ -7,9 +7,48 @@ import Trainees from "../components/home_page/Trainees";
 import Reviews from "../components/home_page/Reviews";
 import Partnership from "../components/home_page/Partnership";
 import Services from "../components/home_page/Services";
+import { useEffect, useState } from "react";
+
+const quotes = [
+  {
+    id: 1,
+    name: "Md. Rafidul Islam",
+    title: "CEO, Carriastic",
+    quote:
+      "At Carriastic, our vision is not just to fill jobs but to create lasting impacts in the career paths of every individual we work with. Together, we build a better future for our society.",
+    image: "/images/rafid2.png",
+  },
+  {
+    id: 2,
+    name: "Syed Hasan Ahmed Anik",
+    title: "COO, Carriastic",
+    quote:
+      "Our mission is to empower job seekers with the right skills and opportunities, creating a workforce that drives innovation and excellence in the job market.",
+    image: "/team/hasan.png",
+  },
+  {
+    id: 3,
+    name: "Ahsan Habib Ethic",
+    title: "CMO, Carriastic",
+    quote:
+      "We focus on building strong relationships with businesses and candidates, ensuring both parties achieve success and sustainable growth.",
+    image: "/team/ethic.png",
+  },
+];
 
 const HomePage = () => {
   const router = useRouter();
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentQuote = quotes[currentQuoteIndex];
 
   return (
     <div className="w-full flex flex-col">
@@ -90,25 +129,25 @@ const HomePage = () => {
       </div>
 
       <div className="w-full flex flex-col items-center bg-neutral-100 pt-6">
-        <span className="text-primary font-[700] text-[24px]">
-          CEO&apos;s Quote
-        </span>
-        <div className="flex flex-col md:max-w-[40%] mx-auto px-6 justify-center items-center py-6">
-          <p className="text-lg md:text-xl text-gray-800 italic mb-2 text-justify">
-            &quot;At Carriastic, our vision is not just to fill jobs but to
-            create lasting impacts in the career paths of every individual we
-            work with. Together, we build a better future for our society.&quot;
-          </p>
+      <span className="text-primary font-[700] text-[24px]">Founder&apos;s Quote</span>
+      <div className="flex flex-col md:max-w-[40%] mx-auto px-6 justify-center items-center py-6 transition-all duration-500 ease-in-out">
+        <p className="text-lg md:text-xl text-gray-800 italic mb-2 text-justify">
+          &quot;{currentQuote.quote}&quot;
+        </p>
 
-          <Image src="/images/rafid2.png" alt="" width={150} height={150} />
-          <div className="flex flex-col justify-center items-center gap-1">
-            <h3 className="text-xl font-bold text-primary">
-              Md. Rafidul Islam
-            </h3>
-            <p className="text-md text-gray-600">CEO, Carriastic</p>
-          </div>
+        <Image
+          src={currentQuote.image}
+          alt={currentQuote.name}
+          width={150}
+          height={150}
+          className="rounded-full mb-2"
+        />
+        <div className="flex flex-col justify-center items-center gap-1">
+          <h3 className="text-xl font-bold text-primary">{currentQuote.name}</h3>
+          <p className="text-md text-gray-600">{currentQuote.title}</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

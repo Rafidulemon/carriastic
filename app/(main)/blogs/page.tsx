@@ -87,7 +87,7 @@ const BlogsPage = () => {
           className="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <h1 className="text-white text-[48px] font-bold">Blogs</h1>
+          <h1 className="text-white text-[24px] md:text-[48px] font-bold">Blogs</h1>
         </div>
       </div>
       <h1 className="text-2xl font-bold text-center my-8">Our Latest Blogs</h1>

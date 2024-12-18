@@ -54,7 +54,7 @@ const ServicesPage = () => {
           className="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <h1 className="text-white text-[48px] font-bold">Our Services</h1>
+          <h1 className="text-white text-[24px] md:text-[48px] font-bold">Our Services</h1>
         </div>
       </div>
 

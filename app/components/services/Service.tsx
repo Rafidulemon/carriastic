@@ -141,7 +141,7 @@ const Services = () => {
         ))}
       </div>
 
-      <div className="lg:col-span-2 md:h-[600px] flex flex-col justify-between text-primary text-3xl font-bold md:shadow-xl">
+      <div className="lg:col-span-2 md:h-[600px] flex flex-col justify-between text-primary text-3xl font-bold rounded-2xl md:shadow-xl">
         {selectedService ? (
           <div className="w-full h-full">
             <div className="hidden md:flex flex-col gap-4 h-full justify-between pb-4">
@@ -166,7 +166,7 @@ const Services = () => {
               </div>
               <div className="w-full flex justify-center">
                 <button
-                  onClick={() => router.push("/contact")}
+                  onClick={() => router.push(`/services/${selectedService.id}`)}
                   className={`text-[16px] ${selectedService.background} text-white py-1 rounded-xl hover:scale-x-125 group`}
                 >
                   <span className="group-hover:text-[18px] px-8">

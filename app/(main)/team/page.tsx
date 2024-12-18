@@ -45,7 +45,7 @@ const OurTeamPage = () => {
           className="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <h1 className="text-white text-[48px] font-bold">Our Team</h1>
+          <h1 className="text-white text-[24px] md:text-[48px] font-bold">Our Team</h1>
         </div>
       </div>
       <span className="text-primary font-[700] text-[24px]">Meet Our Team</span>
