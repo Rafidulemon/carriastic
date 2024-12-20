@@ -96,7 +96,9 @@ const HomePage = () => {
 
       {/* Services */}
       <div className="w-full text-center bg-neutral-100 pt-6">
-        <span className="text-primary font-[700] text-[24px]">Our Services</span>
+        <span className="text-primary font-[700] text-[24px]">
+          Our Services
+        </span>
         <Services />
       </div>
 
@@ -129,25 +131,29 @@ const HomePage = () => {
       </div>
 
       <div className="w-full flex flex-col items-center bg-neutral-100 pt-6">
-      <span className="text-primary font-[700] text-[24px]">Founder&apos;s Quote</span>
-      <div className="flex flex-col md:max-w-[40%] mx-auto px-6 justify-center items-center py-6 transition-all duration-500 ease-in-out">
-        <p className="text-lg md:text-xl text-gray-800 italic mb-2 text-justify">
-          &quot;{currentQuote.quote}&quot;
-        </p>
+        <span className="text-primary font-[700] text-[24px]">
+          Founder&apos;s Quote
+        </span>
+        <div className="flex flex-col md:max-w-[40%] mx-auto px-6 justify-center items-center py-6 transition-all duration-500 ease-in-out">
+          <p className="text-lg md:text-xl text-gray-800 italic mb-2 text-justify">
+            &quot;{currentQuote.quote}&quot;
+          </p>
 
-        <Image
-          src={currentQuote.image}
-          alt={currentQuote.name}
-          width={150}
-          height={150}
-          className="rounded-full mb-2"
-        />
-        <div className="flex flex-col justify-center items-center gap-1">
-          <h3 className="text-xl font-bold text-primary">{currentQuote.name}</h3>
-          <p className="text-md text-gray-600">{currentQuote.title}</p>
+          <Image
+            src={currentQuote.image}
+            alt={currentQuote.name}
+            width={150}
+            height={150}
+            className="rounded-full mb-2"
+          />
+          <div className="flex flex-col justify-center items-center gap-1">
+            <h3 className="text-xl font-bold text-primary">
+              {currentQuote.name}
+            </h3>
+            <p className="text-md text-gray-600">{currentQuote.title}</p>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
