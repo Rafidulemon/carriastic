@@ -164,7 +164,7 @@ const Services = () => {
                 Apply Now
               </Button>
             </div>
-            <div className="flex flex-row flex-wrap gap-4 md:gap-6 justify-center mt-4 md:mt-6">
+            <div className="flex flex-row flex-wrap gap-4 md:gap-6 justify-center mt-4 md:my-6">
               {services.slice(3).map((service, index) => (
                 <div
                   key={index}
