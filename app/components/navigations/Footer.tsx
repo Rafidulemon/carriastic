@@ -181,13 +181,13 @@ const Footer = () => {
             <div className="w-full flex flex-col items-center justify-center ">
               <span className="font-[700] text-[24px]">Get In Touch</span>
               <div className="flex gap-6 mt-6">
-                <a href="#" className="text-[#1877F2]">
+                <a href="https://www.facebook.com/profile.php?id=100088397602087" className="text-[#1877F2] hover:text-white">
                   <FaFacebookF size={30} />
                 </a>
                 <a href="#" className="text-[#1DA1F2] hover:text-white">
                   <FaTwitter size={30} />
                 </a>
-                <a href="#" className="text-[#0077B5] hover:text-white">
+                <a href="https://www.linkedin.com/company/90535817" className="text-[#0077B5] hover:text-white">
                   <FaLinkedinIn size={30} />
                 </a>
                 <a href="#" className="text-[#FF0000] hover:text-white">

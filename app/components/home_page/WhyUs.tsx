@@ -17,7 +17,7 @@ const WhyUs = () => {
           <h2 className="text-[20px] font-[500] text-center text-black mb-6">
             Grow Yourself with us
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
             <div className="text-center">
               <FaUsers className="mx-auto text-4xl text-purple-900 mb-4" />
               <h3 className="text-[18px] font-[500] mb-2">
@@ -55,7 +55,7 @@ const WhyUs = () => {
           <h2 className="text-[20px] font-[500] text-center text-black mt-12 mb-6">
             Get your qualified candidate from us
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
             <div className="text-center">
               <FaChartLine className="mx-auto text-4xl text-purple-900 mb-4" />
               <h3 className="text-[18px] font-[500] mb-2">Ensure quality</h3>

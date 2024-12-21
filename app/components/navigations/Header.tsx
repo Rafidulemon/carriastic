@@ -18,7 +18,7 @@ const Header = () => {
     <div className="fixed top-0 z-50 py-6 md:py-3 px-10 w-screen flex items-center justify-between bg-white shadow-md">
       <div className="hidden md:block" onClick={()=> router.push("/")}>
         <Image
-          src="/images/logo_main.png"
+          src="/images/logo_main_slogan.png"
           alt="logo"
           width={100}
           height={37}
@@ -27,7 +27,7 @@ const Header = () => {
       </div>
       <div className="md:hidden absolute left-1/2 transform -translate-x-1/2" onClick={()=> router.push("/")}>
         <Image
-          src="/images/logo_main.png"
+          src="/images/logo_main_slogan.png"
           alt="logo"
           width={80}
           height={30}

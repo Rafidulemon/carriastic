@@ -13,10 +13,7 @@ import ServiceCard from "../cards/ServiceCard";
 import Button from "../button/Button";
 import Image from "next/image";
 import { IoIosCloseCircle } from "react-icons/io";
-
-type ServiceProps = {
-  isServicePage?: boolean;
-};
+import ServiceBanner from "./ServiceBanner";
 
 type Service = {
   id: string;
@@ -29,7 +26,7 @@ type Service = {
   background: string;
 };
 
-const Services: React.FC<ServiceProps> = ({ isServicePage = false }) => {
+const Services = () => {
   const router = useRouter();
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
@@ -132,79 +129,109 @@ const Services: React.FC<ServiceProps> = ({ isServicePage = false }) => {
   };
 
   return (
-    <div className="w-full px-10 flex flex-col items-center my-6 gap-6">
-      <div className="relative w-full overflow-hidden pb-6">
-        <div className="flex flex-col md:flex-row flex-wrap gap-6 justify-center">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              onClick={() => handleServiceClick(service)}
-              className={`cursor-pointer`}
-            >
-              <ServiceCard {...service} />
+    <div className="relative">
+      <div className="hidden md:flex absolute inset-0 z-0">
+        <ServiceBanner />
+      </div>
+
+      <div className="relative z-10">
+        <div className="w-full flex flex-row gap-2 justify-center text-[24px] md:text-[30px] pt-6">
+          <span className="text-primary font-[700]">Our</span>
+          <div className="w-fit bg-primary px-4 -skew-x-[20deg]">
+            <span className="w-full h-full flex items-center justify-center text-white font-[700] skew-x-[20deg]">
+              Services
+            </span>
+          </div>
+        </div>
+        <div className="w-full px-6 md:px-10 flex flex-col items-center my-6 gap-6">
+          <div className="relative w-full overflow-hidden">
+            <div className="flex flex-row flex-wrap gap-4 md:gap-6 justify-center">
+              {services.slice(0, 3).map((service, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleServiceClick(service)}
+                  className="cursor-pointer"
+                >
+                  <ServiceCard {...service} />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-      <div className="w-full flex flex-col gap-1 justify-center items-center">
-        <span className="text-[18px] font-[600] text-primary">
-          Schedule a meeting
-        </span>
-        <Button onClick={() => router.push("/contact")} className="px-8">
-          Book Now
-        </Button>
-      </div>
-      {!isServicePage && (
-        <div
-          onClick={() => router.push("/services")}
-          className="text-primary hover:font-[600] hover:underline text-[18px] cursor-pointer"
-        >
-          See All
-        </div>
-      )}
-
-      {/* Modal */}
-      {isModalOpen && selectedService && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-    <div className="relative bg-white w-[90%] max-w-3xl p-6 rounded-lg shadow-lg overflow-auto">
-      {/* Close Icon */}
-      <IoIosCloseCircle
-        className="absolute top-4 right-4 text-primary cursor-pointer z-50"
-        size={30}
-        onClick={closeModal}
-      />
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="w-full md:w-1/2">
-          <Image
-            src={selectedService.image}
-            alt={selectedService.name}
-            width={500}
-            height={500}
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="w-full md:w-1/2">
-          <h2 className="text-[24px] font-bold text-primary mb-4">
-            {selectedService.name}
-          </h2>
-          <p className="text-justify text-gray-600 text-[16px] mb-4">
-            {selectedService.description}
-          </p>
-
-          <div className="mt-6">
-            <Button
-              onClick={() => router.push("/contact")}
-              className="w-full md:w-[80%]"
-            >
+            <div className="my-6 pb-2 w-full flex flex-col gap-1 justify-center items-center">
+              <span className="text-[18px] font-[600] text-primary">
+                Become our trainee
+              </span>
+              <Button onClick={() => router.push("/career")} className="px-8">
+                Apply Now
+              </Button>
+            </div>
+            <div className="flex flex-row flex-wrap gap-4 md:gap-6 justify-center mt-4 md:mt-6">
+              {services.slice(3).map((service, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleServiceClick(service)}
+                  className="cursor-pointer"
+                >
+                  <ServiceCard {...service} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-full flex flex-col gap-1 justify-center items-center">
+            <span className="text-[18px] font-[600] text-primary">
+              Schedule a meeting
+            </span>
+            <Button onClick={() => router.push("/contact")} className="px-8">
               Book Now
             </Button>
           </div>
+          <div
+            onClick={() => router.push("/services")}
+            className="text-primary hover:font-[600] hover:underline text-[18px] cursor-pointer"
+          >
+            See All
+          </div>
+
+          {isModalOpen && selectedService && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+              <div className="relative bg-white w-[90%] max-w-3xl p-6 rounded-lg shadow-lg overflow-auto">
+                <IoIosCloseCircle
+                  className="absolute top-1 right-0 md:top-4 md:right-4 text-primary cursor-pointer z-50"
+                  size={30}
+                  onClick={closeModal}
+                />
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="w-full md:w-1/2">
+                    <Image
+                      src={selectedService.image}
+                      alt={selectedService.name}
+                      width={500}
+                      height={500}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="w-full md:w-1/2">
+                    <h2 className="text-[24px] font-bold text-primary mb-4">
+                      {selectedService.name}
+                    </h2>
+                    <p className="text-justify text-gray-600 text-[16px] mb-4">
+                      {selectedService.description}
+                    </p>
+
+                    <div className="mt-6">
+                      <Button
+                        onClick={() => router.push("/contact")}
+                        className="w-full md:w-[80%]"
+                      >
+                        Book Now
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-    </div>
-  </div>
-)}
-
     </div>
   );
 };

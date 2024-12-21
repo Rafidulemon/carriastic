@@ -1,112 +1,45 @@
 "use client";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
 import Banner from "../components/home_page/Banner";
 import WhyUs from "../components/home_page/WhyUs";
 import Trainees from "../components/home_page/Trainees";
 import Reviews from "../components/home_page/Reviews";
 import Partnership from "../components/home_page/Partnership";
 import Services from "../components/home_page/Services";
-import { useEffect, useState } from "react";
-
-const quotes = [
-  {
-    id: 1,
-    name: "Md. Rafidul Islam",
-    title: "CEO, Carriastic",
-    quote:
-      "At Carriastic, our vision is not just to fill jobs but to create lasting impacts in the career paths of every individual we work with. Together, we build a better future for our society.",
-    image: "/images/rafid2.png",
-  },
-  {
-    id: 2,
-    name: "Syed Hasan Ahmed Anik",
-    title: "COO, Carriastic",
-    quote:
-      "Our mission is to empower job seekers with the right skills and opportunities, creating a workforce that drives innovation and excellence in the job market.",
-    image: "/team/hasan.png",
-  },
-  {
-    id: 3,
-    name: "Ahsan Habib Ethic",
-    title: "CMO, Carriastic",
-    quote:
-      "We focus on building strong relationships with businesses and candidates, ensuring both parties achieve success and sustainable growth.",
-    image: "/team/ethic.png",
-  },
-];
+import About from "../components/home_page/About";
 
 const HomePage = () => {
-  const router = useRouter();
-  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentQuote = quotes[currentQuoteIndex];
-
   return (
     <div className="w-full flex flex-col">
       <Banner />
-      {/* About us */}
-      <div className="w-full px-6 md:px-10 md:grid grid-cols-2 my-10">
-        <div className="w-full flex flex-row justify-center">
-          <Image src="/images/about.jpg" alt="" width={500} height={500} />
-        </div>
-        <div className="mt-4 md:mt-0 w-full h-full bg-primary rounded-xl py-6">
-          <div className="w-full bg-white py-1 md:py-2 px-4 md:px-6">
-            <span className="text-primary font-[600] text-[18px]">
-              Who we are
-            </span>
-          </div>
-          <p className="px-4 md:px-6 text-white py-6 text-justify">
-            Carriastic is trying to solve the Unemployment problem initially in
-            Bangladesh and later on globally. We are basically a job placement
-            platform for graduates and understudies, especially, focusing on
-            their careers for ensuring job placement in the competitive job
-            market. Carriastic is the bridge between job seekers and employee
-            seekers. Job seekers will get their desired job and Concerns will
-            receive qualified candidates without having any challenge. Our main
-            motto is creating quality full Human resources for the companies. We
-            are ensuring the quality of our candidates’ through various training
-            and skill development programs. Throughout the months, we run these
-            training programs with our trainers. As a result, we enhance the
-            quality and skills of the Human resources for getting jobs along
-            with it will increase the productivity of concerns and reduce the
-            unemployment problem in Bangladesh.{" "}
-          </p>
-          <button
-            className="md:mx-6 md:px-4 py-2 md:py-2 md:rounded-lg bg-white w-full md:w-fit"
-            onClick={() => router.push("/about")}
-          >
-            More About Us
-          </button>
-        </div>
-      </div>
+      <About />
       {/* Why US */}
       <div className="w-full text-center mt-6">
-        <span className="text-primary font-[700] text-[24px]">Why Us</span>
+        <div className="w-full flex flex-row gap-2 justify-center text-[24px] md:text-[30px]">
+          <div className="w-fit bg-primary px-4 -skew-x-[20deg]">
+            <span className="w-full h-full flex items-center justify-center text-white font-[700] skew-x-[20deg]">
+              Why
+            </span>
+          </div>
+          <span className="text-primary font-[700]">Us</span>
+        </div>
         <WhyUs />
       </div>
-
       {/* Services */}
-      <div className="w-full text-center bg-neutral-100 pt-6">
-        <span className="text-primary font-[700] text-[24px]">
-          Our Services
-        </span>
+      <div className="w-full text-center bg-neutral-100 mt-6">
         <Services />
       </div>
 
       {/* Trainees */}
       <div className="w-full text-center mt-10">
-        <span className="text-primary font-[700] text-[24px]">
-          Our Successful Trainees
-        </span>
+        <div className="w-full flex flex-row gap-2 justify-center text-[24px] md:text-[30px]">
+          <span className="text-primary font-[700]">Our</span>
+          <span className="text-primary font-[700]">Successful</span>
+          <div className="w-fit bg-primary px-4 -skew-x-[20deg]">
+            <span className="w-full h-full flex items-center justify-center text-white font-[700] skew-x-[20deg]">
+              Tarinees
+            </span>
+          </div>
+        </div>
         <h2 className="text-[20px] font-[500] text-center text-black my-6">
           Hear from our Successful Trainees
         </h2>
@@ -115,7 +48,15 @@ const HomePage = () => {
 
       {/* Partnership */}
       <div className="w-full text-center mt-10 bg-neutral-100 pt-6">
-        <span className="text-primary font-[700] text-[24px]">Partnership</span>
+        <div className="w-full flex flex-row gap-2 justify-center text-[24px] md:text-[30px]">
+          <span className="text-primary font-[700]">Meet</span>
+          <span className="text-primary font-[700]">Our</span>
+          <div className="w-fit bg-primary px-4 -skew-x-[20deg]">
+            <span className="w-full h-full flex items-center justify-center text-white font-[700] skew-x-[20deg]">
+              Partners
+            </span>
+          </div>
+        </div>
         <h2 className="text-[20px] font-[500] text-center text-black my-6">
           Our Valuable CLients
         </h2>
@@ -124,35 +65,17 @@ const HomePage = () => {
 
       {/* Client */}
       <div className="w-full text-center mt-10">
-        <span className="text-primary font-[700] text-[24px]">
-          What Our Clients say
-        </span>
-        <Reviews />
-      </div>
-
-      <div className="w-full flex flex-col items-center bg-neutral-100 pt-6">
-        <span className="text-primary font-[700] text-[24px]">
-          Founder&apos;s Quote
-        </span>
-        <div className="flex flex-col md:max-w-[40%] mx-auto px-6 justify-center items-center py-6 transition-all duration-500 ease-in-out">
-          <p className="text-lg md:text-xl text-gray-800 italic mb-2 text-justify">
-            &quot;{currentQuote.quote}&quot;
-          </p>
-
-          <Image
-            src={currentQuote.image}
-            alt={currentQuote.name}
-            width={150}
-            height={150}
-            className="rounded-full mb-2"
-          />
-          <div className="flex flex-col justify-center items-center gap-1">
-            <h3 className="text-xl font-bold text-primary">
-              {currentQuote.name}
-            </h3>
-            <p className="text-md text-gray-600">{currentQuote.title}</p>
+        <div className="w-full flex flex-row gap-2 justify-center text-[24px] md:text-[30px]">
+          <span className="text-primary font-[700]">What</span>
+          <span className="text-primary font-[700]">Our</span>
+          <div className="w-fit bg-primary px-4 -skew-x-[20deg]">
+            <span className="w-full h-full flex items-center justify-center text-white font-[700] skew-x-[20deg]">
+              Clients
+            </span>
           </div>
+          <span className="text-primary font-[700]">Say</span>
         </div>
+        <Reviews />
       </div>
     </div>
   );
