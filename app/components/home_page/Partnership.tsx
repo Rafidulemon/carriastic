@@ -7,8 +7,8 @@ const Partnership = () => {
   const router = useRouter();
   return (
     <div className="w-full flex flex-col gap-6 my-6 items-center">
-      <div className="relative w-full overflow-hidden">
-        <div className="flex gap-8 animate-marquee-logo whitespace-nowrap">
+      <div className="relative md:w-[60%] overflow-hidden">
+        <div className="flex gap-0 animate-marquee-logo whitespace-nowrap">
           <Image
             src="/clients/client1-logo.jpg"
             alt="Client 1"

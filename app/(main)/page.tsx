@@ -6,6 +6,7 @@ import Reviews from "../components/home_page/Reviews";
 import Partnership from "../components/home_page/Partnership";
 import Services from "../components/home_page/Services";
 import About from "../components/home_page/About";
+import Technology from "../components/home_page/Technology";
 
 const HomePage = () => {
   return (
@@ -29,6 +30,7 @@ const HomePage = () => {
         <Services />
       </div>
 
+      <Technology/>
       {/* Trainees */}
       <div className="w-full text-center mt-10">
         <div className="w-full flex flex-row gap-2 justify-center text-[24px] md:text-[30px]">

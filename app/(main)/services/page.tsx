@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import ReviewCard from "../../components/cards/ClientReviewCard";
 import Services from "@/app/components/services/Service";
+import Technology from "@/app/components/home_page/Technology";
 
 const reviews = [
   {
@@ -61,6 +62,8 @@ const ServicesPage = () => {
       <div className="w-full text-center flex justify-center">
         <Services/>
       </div>
+
+      <Technology/>
 
       <div className="w-full px-10 flex flex-col items-center my-6 gap-6">
         <span className="text-[24px] font-[600] text-primary">

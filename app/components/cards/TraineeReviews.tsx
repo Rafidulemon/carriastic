@@ -16,7 +16,7 @@ const TraineeReviews: React.FC<TraineeReviewsProps> = ({ trainees }) => {
         {trainees.map((trainee, index) => (
           <div
             key={index}
-            className="cursor-pointer w-full p-4 bg-white rounded-lg shadow-lg transition hover:shadow-2xl"
+            className="cursor-pointer w-full p-4 bg-white rounded-lg shadow-lg transition hover:shadow-2xl hover:scale-105"
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="w-20 h-20 rounded-full overflow-hidden">
