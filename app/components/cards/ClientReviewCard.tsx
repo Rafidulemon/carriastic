@@ -8,7 +8,7 @@ const StarRating = ({ rating }: { rating: number }) => {
     .map((_, index) => (
       <span
         key={index}
-        className={index < rating ? "text-yellow-500" : "text-gray-300"}
+        className={index < rating ? "text-yellow-500 select-none" : "text-gray-300 select-none"}
       >
         ★
       </span>
@@ -26,7 +26,7 @@ type ReviewCardProps = {
 
 const ReviewCard = ({ name, date, review, rating, avatar }: ReviewCardProps) => {
   return (
-    <div className="min-w-[250px] my-8 p-4 shadow-xl rounded-lg shadow-sm bg-white flex flex-col items-center gap-4 cursor-pointer hover:scale-105">
+    <div className="max-w-[90%] md:max-w-[700px] my-8 p-4 shadow-xl rounded-lg shadow-sm bg-white flex flex-col items-center gap-1 md:gap-4 cursor-pointer hover:scale-105">
       <div className="w-20 h-20 rounded-full overflow-hidden">
         <Image
           src={avatar}
@@ -36,10 +36,10 @@ const ReviewCard = ({ name, date, review, rating, avatar }: ReviewCardProps) => 
           className="object-cover w-full h-full"
         />
       </div>
-      <h3 className="text-lg font-semibold">{name}</h3>
-      <p className="text-sm text-gray-500">{date}</p>
+      <h3 className="text-lg font-semibold select-none">{name}</h3>
+      <p className="text-sm text-gray-500 select-none">{date}</p>
       <StarRating rating={Math.round(rating)} />
-      <p className="text-center text-gray-700">{review}</p>
+      <p className="text-center text-gray-700 select-none">{review}</p>
     </div>
   );
 };

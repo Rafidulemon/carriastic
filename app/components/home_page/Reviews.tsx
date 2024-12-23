@@ -1,5 +1,6 @@
 import React from "react";
 import ReviewCard from "../cards/ClientReviewCard";
+import { useSwipeable } from "react-swipeable";
 import { useRouter } from "next/navigation";
 
 const Reviews = () => {
@@ -41,12 +42,30 @@ const Reviews = () => {
       avatar: "/avatars/jessica.jpg",
     },
   ];
+
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => setCurrentIndex((prev) => Math.min(prev + 1, reviews.length - 1)),
+    onSwipedRight: () => setCurrentIndex((prev) => Math.max(prev - 1, 0)),
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
+
   return (
-    <div className="w-full px-10 flex flex-col items-center my-6 gap-6">
-      <div className="relative w-full overflow-hidden">
-        <div className="flex flex-col md:flex-row gap-6">
+    <div className="w-full px-4 flex flex-col items-center my-6 gap-6">
+      <div className="relative w-full overflow-hidden" {...swipeHandlers}>
+        <div
+          className="flex transition-transform duration-300 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
           {reviews.map((review, index) => (
-            <ReviewCard key={index} {...review} />
+            <div
+              key={index}
+              className="min-w-full md:min-w-[33.333%] px-2 flex-shrink-0"
+            >
+              <ReviewCard {...review} />
+            </div>
           ))}
         </div>
       </div>

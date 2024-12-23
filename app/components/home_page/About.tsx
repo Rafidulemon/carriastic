@@ -53,7 +53,7 @@ const About = () => {
       </div>
       <div className="md:w-[80%] px-6 md:px-10 md:grid grid-cols-2 my-10">
         <div className="bg-gray-800 md:bg-gray-100 rounded-xl md:shadow-none shadow-lg p-6 flex flex-col items-center justify-center max-w-lg mx-auto">
-          <p className="text-lg md:text-xl italic text-center mb-4 text-white md:text-gray-700">
+          <p className="text-lg md:text-xl italic text-center mb-4 text-white md:text-gray-600" style={{ textShadow: "1px 1px 10px 10px rgba(0, 0, 0, 0.5)" }}>
             &quot;{currentQuote.quote}&quot;
           </p>
           <Image
