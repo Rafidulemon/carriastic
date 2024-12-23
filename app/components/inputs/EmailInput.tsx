@@ -35,19 +35,19 @@ function EmailInput(props: Props) {
           {label}
         </label>
         {isRequired && (
-          <span className="text-[16px] font-bold text-tertiary">*</span>
+          <span className="text-[16px] font-bold text-red-500">*</span>
         )}
       </div>
       <input
         id={id}
         type="email"
-        className="w-full h-[40px] bg-white rounded-[5px] drop-shadow-lg text-text_primary px-4 focus:outline-none mb-2"
+        className="w-full h-[44px] bg-white rounded-[5px] drop-shadow-lg text-text_primary px-4 focus:outline-none mb-2"
         defaultValue={defaultValue}
         value={value}
         placeholder={placeholder}
         {...register?.(name)}
       />
-      {error && <div className="text-[14px] text-tertiary">{error.message}</div>}
+      {error && <div className="text-[14px] text-red-500">{error.message}</div>}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6";
+import CvDropModal from "../modals/CvDropModal";
 
 const slides = [
   {
@@ -8,6 +9,12 @@ const slides = [
     title: "Welcome to Carriastic",
     description: "Discover innovative solutions for your business growth.",
     button: { text: "Learn More", link: "/about" },
+  },
+  {
+    image: "/banners/career.jpg",
+    title: "Career",
+    description: "Build your career with us.",
+    button: { text: "Drop CV", link: "#" },
   },
   {
     image: "/banners/service.jpg",
@@ -26,6 +33,7 @@ const slides = [
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState("next");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,6 +50,14 @@ const Banner = () => {
   const handlePrev = () => {
     setDirection("prev");
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -68,6 +84,7 @@ const Banner = () => {
             <p className="text-[16px] md:text-lg mb-6">{slide.description}</p>
             <a
               href={slide.button.link}
+              onClick={slide.button.text === "Drop CV" ? (e) => { e.preventDefault(); openModal(); } : undefined} // Open modal if 'Drop CV'
               className="px-4 py-2 md:px-6 md:py-3 bg-primary hover:bg-white hover:text-primary transition rounded-md text-white font-semibold"
             >
               {slide.button.text}
@@ -99,6 +116,8 @@ const Banner = () => {
           ></button>
         ))}
       </div>
+
+      <CvDropModal isOpen={isModalOpen} onClose={closeModal} className="w-full md:w-[70%] lg:w-[50%] xl:w-[40%]"/>
     </div>
   );
 };

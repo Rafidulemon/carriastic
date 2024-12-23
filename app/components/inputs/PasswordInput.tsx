@@ -46,7 +46,7 @@ function PasswordInput(props: Props) {
       <div className={`relative h-[56px] w-full border-black`}>
       <input
         id={id}
-        className={`w-full h-[40px] bg-white rounded-[5px] drop-shadow-lg text-text_primary px-4 focus:outline-none mb-2`}
+        className={`w-full h-[44px] bg-white rounded-[5px] drop-shadow-lg text-text_primary px-4 focus:outline-none mb-2`}
         type={viewPassword ? "text" : "password"}
         defaultValue={defaultValue}
         value={value}
