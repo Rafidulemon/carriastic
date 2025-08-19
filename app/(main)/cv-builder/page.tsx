@@ -5,6 +5,54 @@ import Button from "../../components/button/Button";
 import { FaTrophy } from "react-icons/fa";
 import { FiUsers, FiPackage, FiSmile, FiHeart } from "react-icons/fi";
 import PersonalInformation from "@/app/components/cv_build/PersonalInformation";
+import EducationalInformation from "@/app/components/cv_build/EducationalInformation";
+import ProfessionalInformation from "@/app/components/cv_build/ProfessionalInformation";
+import CandidateType from "@/app/components/cv_build/CandidateType";
+
+type PersonalData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  portfolio?: string;
+  github?: string;
+  linkedin?: string;
+  facebook?: string;
+  otherProfile?: string;
+  address?: string;
+  summary: string;
+};
+
+type EducationData = {
+  education: {
+    school: string;
+    degree: string;
+    field: string;
+    startDate: string;
+    endDate: string;
+    description?: string;
+  }[];
+};
+
+type ProfessionalData = {
+  experiences: {
+    company: string;
+    jobTitle: string;
+    startDate: string;
+    endDate?: string;
+    responsibilities?: string;
+  }[];
+  currentCompany?: string;
+  skills?: string;
+};
+
+
+// Merge all into CVData
+type CVData = {
+  personal?: PersonalData;
+  education?: EducationData;
+  professional?: ProfessionalData;
+};
 
 type CardProps = {
   icon: React.ReactNode;
@@ -22,6 +70,34 @@ const Card = ({ icon, title, description }: CardProps) => (
 
 const CVBuilderPage = () => {
   const [startBuilding, setStartBuilding] = useState(false);
+  const [step, setStep] = useState(0);
+  const [candidateType, setCandidateType] = useState<
+    "fresher" | "experienced" | null
+  >(null);
+  const [cvData, setCvData] = useState<CVData>({});
+
+  const handleNext = (
+    data: PersonalData | EducationData | ProfessionalData
+  ) => {
+    if (step === 1) setCvData((prev) => ({ ...prev, personal: data as PersonalData }));
+    else if (step === 2) setCvData((prev) => ({ ...prev, education: data as EducationData }));
+    else if (step === 3 && candidateType === "experienced")
+      setCvData((prev) => ({ ...prev, professional: data as ProfessionalData }));
+
+    console.log("👉 Merged Data:", {
+      ...cvData,
+      ...(step === 1
+        ? { personal: data }
+        : step === 2
+        ? { education: data }
+        : step === 3 && candidateType === "experienced"
+        ? { professional: data }
+        : {}),
+    });
+
+    setStep((prev) => prev + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="w-full p-8">
@@ -80,7 +156,12 @@ const CVBuilderPage = () => {
                 />
               </div>
               <div className="mt-6">
-                <Button onClick={() => setStartBuilding(true)}>
+                <Button
+                  onClick={() => {
+                    setStartBuilding(true);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
                   <span className="px-6">Start Building</span>
                 </Button>
               </div>
@@ -89,7 +170,31 @@ const CVBuilderPage = () => {
         </>
       ) : (
         <div className="max-w-3xl mx-auto">
-          <PersonalInformation />
+          {step === 0 && (
+            <CandidateType
+              onSelect={(type) => {
+                setCandidateType(type);
+                setStep(1);
+              }}
+            />
+          )}
+          {step === 1 && (
+            <PersonalInformation onNext={(data) => handleNext(data)} />
+          )}
+          {step === 2 && (
+            <EducationalInformation onNext={(data) => handleNext(data)} />
+          )}
+          {step === 3 && candidateType === "experienced" && (
+            <ProfessionalInformation onNext={(data) => handleNext(data)} />
+          )}
+          {step === 4 && candidateType === "experienced" && (
+            <div className="p-4 bg-green-100 rounded-lg">
+              <h2 className="text-xl font-bold mb-2">✅ All Data Collected!</h2>
+              <pre className="text-sm bg-white p-2 rounded">
+                {JSON.stringify(cvData, null, 2)}
+              </pre>
+            </div>
+          )}
         </div>
       )}
     </div>

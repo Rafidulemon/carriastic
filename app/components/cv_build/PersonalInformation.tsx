@@ -19,8 +19,12 @@ const personalInfoSchema = z.object({
 });
 
 type PersonalInfoFormData = z.infer<typeof personalInfoSchema>;
+type PersonalInformationProps = {
+  onNext: (data: PersonalInfoFormData) => void;
+};
 
-const PersonalInformation = () => {
+
+const PersonalInformation = ({ onNext }: PersonalInformationProps) => {
   const {
     register,
     handleSubmit,
@@ -31,7 +35,8 @@ const PersonalInformation = () => {
 
   const onSubmit = (data: PersonalInfoFormData) => {
     console.log("✅ Personal Info Submitted:", data);
-
+    onNext(data)
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
