@@ -45,6 +45,7 @@ const Header = () => {
             { href: "/blogs", label: "Blogs" },
             { href: "/career", label: "Career" },
             { href: "/contact", label: "Contact" },
+            { href: "/cv-builder", label: "CV Builder" },            
           ].map((navItem) => (
             <Link
               key={navItem.href}
@@ -100,6 +101,7 @@ const Header = () => {
               { href: "/blogs", label: "Blogs" },
               { href: "/career", label: "Career" },
               { href: "/contact", label: "Contact" },
+              { href: "/cv-builder", label: "CV Builder" }, 
             ].map((navItem) => (
               <Link
                 key={navItem.href}

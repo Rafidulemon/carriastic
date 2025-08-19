@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const SignUpPage = () => {
   const router = useRouter();
   return (
-    <div className="max-h-[calc(80vh-10px)] overflow-y-auto relative z-10 bg-white p-8 md:p-12 rounded-lg shadow-lg w-[80%] lg:w-[400px] xl:w-[500px] text-center my-6">
+    <div className="max-h-[calc(80vh-10px)] overflow-y-auto scrollbar-hidden relative z-10 bg-white p-8 md:p-12 rounded-lg shadow-lg w-[80%] lg:w-[400px] xl:w-[500px] text-center my-6">
       <div className="flex justify-center mb-6">
         <Image
           src="/images/logo_main.png"

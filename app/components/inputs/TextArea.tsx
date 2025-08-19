@@ -37,7 +37,7 @@ function TextArea(props: Props) {
     <div className={`flex flex-col ${className}`}>
       <div className="flex flex-row gap-[5px] mb-2">
         <label className="text-[16px] text-text_bold font-bold">{label}</label>
-        {isRequired && <span className="text-[16px] font-bold text-tertiary">*</span>}
+        {isRequired && <span className="text-[16px] font-bold text-red-500">*</span>}
       </div>
       <textarea
         id={id}
@@ -49,7 +49,7 @@ function TextArea(props: Props) {
         onChange={onChange}
         {...register?.(name)}
       />
-      {error && <div className="text-[14px] text-tertiary">{error.message}</div>}
+      {error && <div className="text-[14px] text-red-500">{error.message}</div>}
     </div>
   );
 }
