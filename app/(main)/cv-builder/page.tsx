@@ -219,7 +219,7 @@ const CVBuilderPage = () => {
             <ProfessionalInformation onNext={(data) => handleNext(data)} />
           )}
           {step === 4 && (
-            <div className="p-4 bg-green-100 rounded-lg">
+            <div className="p-4 bg-purple-100 rounded-lg">
               <h2 className="text-xl font-bold mb-2">🎉 Your CV Preview</h2>
 
               {/* ✅ CV Preview wrapped in ref */}

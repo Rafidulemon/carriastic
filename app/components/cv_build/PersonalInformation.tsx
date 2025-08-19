@@ -8,17 +8,40 @@ import Button from "../button/Button";
 import TextArea from "../inputs/TextArea";
 import { useState } from "react";
 
-const personalInfoSchema = z.object({
-  firstName: z.string().min(2, "First name is required"),
-  lastName: z.string().min(2, "Last name is required"),
-  email: z.string().email("Invalid email address"),
-  summary: z.string().min(1, "Summary is required"),
-  phone: z
-    .string()
-    .min(6, "Phone number must be at least 6 digits")
-    .max(15, "Phone number is too long"),
-  profileImage: z.any().optional(), // optional file input
-});
+const personalInfoSchema = z
+  .object({
+    firstName: z.string().min(2, "First name is required"),
+    lastName: z.string().min(2, "Last name is required"),
+    email: z.string().email("Invalid email address"),
+    summary: z.string().min(1, "Summary is required"),
+    phone: z
+      .string()
+      .min(6, "Phone number must be at least 6 digits")
+      .max(15, "Phone number is too long"),
+    profileImage: z.any().optional(),
+    portfolio: z.string().url("Invalid URL").or(z.literal("")).optional(),
+    github: z.string().url("Invalid URL").or(z.literal("")).optional(),
+    linkedin: z.string().url("Invalid URL").or(z.literal("")).optional(),
+    facebook: z.string().url("Invalid URL").or(z.literal("")).optional(),
+    otherProfile: z.string().url("Invalid URL").or(z.literal("")).optional(),
+
+    address: z.string().optional(),
+    title: z.string().optional(),
+  })
+  .refine(
+    (data) => {
+      return (
+        data.portfolio ||
+        data.github ||
+        data.linkedin ||
+        data.facebook ||
+        data.otherProfile
+      );
+    },
+    {
+      message: "At least one social profile link is required",
+    }
+  );
 
 type PersonalInfoFormData = z.infer<typeof personalInfoSchema>;
 
@@ -145,6 +168,12 @@ const PersonalInformation = ({ onNext }: PersonalInformationProps) => {
         label="Address"
         name="address"
         placeholder="Enter your address"
+        register={register}
+      />
+      <TextInput
+        label="Title"
+        name="title"
+        placeholder="Enter your professional title"
         register={register}
       />
       <TextArea

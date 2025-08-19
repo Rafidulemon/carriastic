@@ -14,6 +14,9 @@ type CVPreviewProps = {
       portfolio?: string;
       github?: string;
       linkedin?: string;
+      title?: string;
+      facebook?: string;
+      otherProfile?: string;
     };
     education?: {
       education: {
@@ -41,13 +44,13 @@ type CVPreviewProps = {
 
 const CVPreview: React.FC<CVPreviewProps> = ({ cvData }) => {
   const { personal, education, professional } = cvData;
+  console.log("CV Data:", cvData);
 
   return (
     <div className="bg-white shadow-xl rounded-lg p-8 max-w-3xl mx-auto space-y-8 border border-gray-200">
       {/* HEADER */}
       {personal && (
         <header className="flex items-center space-x-6 border-b pb-6">
-          {/* Profile Image */}
           {personal.profileImage && (
             <img
               src={URL.createObjectURL(personal.profileImage)}
@@ -60,10 +63,13 @@ const CVPreview: React.FC<CVPreviewProps> = ({ cvData }) => {
             <h1 className="text-3xl font-bold text-gray-900">
               {personal.firstName} {personal.lastName}
             </h1>
+            {personal.title && (
+              <h4 className="text-lg text-gray-700">{personal.title}</h4>
+            )}
             <p className="text-gray-600">{personal.summary}</p>
 
             <div className="mt-2 text-sm text-gray-500 space-y-1">
-              <p>📍 {personal.address}</p>
+              {personal.address && <p>📍 {personal.address}</p>}
               <p>📧 {personal.email}</p>
               <p>📞 {personal.phone}</p>
               {personal.portfolio && <p>🌐 {personal.portfolio}</p>}
