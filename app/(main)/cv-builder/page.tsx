@@ -1,13 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Button from "../../components/button/Button";
-import { FaTrophy } from "react-icons/fa";
+import { FaDownload, FaEnvelope, FaLink, FaLinkedin, FaTrophy, FaTwitter } from "react-icons/fa";
 import { FiUsers, FiPackage, FiSmile, FiHeart } from "react-icons/fi";
 import PersonalInformation from "@/app/components/cv_build/PersonalInformation";
 import EducationalInformation from "@/app/components/cv_build/EducationalInformation";
 import ProfessionalInformation from "@/app/components/cv_build/ProfessionalInformation";
 import CandidateType from "@/app/components/cv_build/CandidateType";
+import CVPreview from "@/app/components/cv_build/CVPreview";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 type PersonalData = {
   firstName: string;
@@ -21,6 +24,7 @@ type PersonalData = {
   otherProfile?: string;
   address?: string;
   summary: string;
+  profileImage?: File;
 };
 
 type EducationData = {
@@ -71,14 +75,11 @@ const Card = ({ icon, title, description }: CardProps) => (
 const CVBuilderPage = () => {
   const [startBuilding, setStartBuilding] = useState(false);
   const [step, setStep] = useState(0);
-  const [candidateType, setCandidateType] = useState<
-    "fresher" | "experienced" | null
-  >(null);
+  const [candidateType, setCandidateType] = useState<"fresher" | "experienced" | null>(null);
   const [cvData, setCvData] = useState<CVData>({});
+  const cvRef = useRef<HTMLDivElement>(null);
 
-  const handleNext = (
-    data: PersonalData | EducationData | ProfessionalData
-  ) => {
+  const handleNext = (data: PersonalData | EducationData | ProfessionalData) => {
     if (step === 1) setCvData((prev) => ({ ...prev, personal: data as PersonalData }));
     else if (step === 2) setCvData((prev) => ({ ...prev, education: data as EducationData }));
     else if (step === 3 && candidateType === "experienced")
@@ -90,13 +91,43 @@ const CVBuilderPage = () => {
         ? { personal: data }
         : step === 2
         ? { education: data }
-        : step === 3 && candidateType === "experienced"
+        : step === 3
         ? { professional: data }
         : {}),
     });
 
     setStep((prev) => prev + 1);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // ✅ Download CV as PDF
+  const handleDownloadPDF = async () => {
+    if (!cvRef.current) return;
+
+    const canvas = await html2canvas(cvRef.current, { scale: 2 });
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("My_CV.pdf");
+  };
+
+  // ✅ Share CV
+  const handleShare = (platform: string) => {
+    const url = window.location.href;
+    const title = "Check out my CV!";
+
+    if (platform === "linkedin")
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, "_blank");
+    else if (platform === "twitter")
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${title}`, "_blank");
+    else if (platform === "email")
+      window.location.href = `mailto:?subject=${title}&body=${url}`;
+    else if (platform === "copy")
+      navigator.clipboard.writeText(url).then(() => alert("✅ Link copied to clipboard"));
   };
 
   return (
@@ -184,15 +215,39 @@ const CVBuilderPage = () => {
           {step === 2 && (
             <EducationalInformation onNext={(data) => handleNext(data)} />
           )}
-          {step === 3 && candidateType === "experienced" && (
+          {step === 3 && (
             <ProfessionalInformation onNext={(data) => handleNext(data)} />
           )}
-          {step === 4 && candidateType === "experienced" && (
+          {step === 4 && (
             <div className="p-4 bg-green-100 rounded-lg">
-              <h2 className="text-xl font-bold mb-2">✅ All Data Collected!</h2>
-              <pre className="text-sm bg-white p-2 rounded">
-                {JSON.stringify(cvData, null, 2)}
-              </pre>
+              <h2 className="text-xl font-bold mb-2">🎉 Your CV Preview</h2>
+
+              {/* ✅ CV Preview wrapped in ref */}
+              <div ref={cvRef}>
+                <CVPreview cvData={cvData} />
+              </div>
+
+              {/* ✅ Buttons */}
+              <div className="mt-6 flex flex-col sm:flex-row gap-4">
+                <Button onClick={handleDownloadPDF} className="flex flew-row items-center gap-2">
+                  <FaDownload /> Download PDF
+                </Button>
+
+                <div className="flex gap-3">
+                  <button onClick={() => handleShare("linkedin")} className="text-blue-600">
+                    <FaLinkedin size={24} />
+                  </button>
+                  <button onClick={() => handleShare("twitter")} className="text-sky-500">
+                    <FaTwitter size={24} />
+                  </button>
+                  <button onClick={() => handleShare("email")} className="text-red-500">
+                    <FaEnvelope size={24} />
+                  </button>
+                  <button onClick={() => handleShare("copy")} className="text-gray-600">
+                    <FaLink size={24} />
+                  </button>
+                </div>
+              </div>
             </div>
           )}
         </div>
