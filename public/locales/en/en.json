@@ -66,6 +66,256 @@
       }
     ]
   },
+  "servicesPage": {
+    "hero": {
+      "label": "Services",
+      "headline": "AI-first services that move from strategy to scalable delivery.",
+      "description": "Partner with Carriastic for long-term technology leadership, intelligent automation, and product-grade platforms designed to grow with your business.",
+      "primaryCta": "See products",
+      "secondaryCta": "Contact our team",
+      "stats": [
+        {
+          "value": "3",
+          "label": "Strategic tiers"
+        },
+        {
+          "value": "8",
+          "label": "Service focus areas"
+        },
+        {
+          "value": "AI-first",
+          "label": "Delivery mindset"
+        }
+      ]
+    },
+    "highlights": {
+      "label": "Why it works",
+      "headline": "Service blocks built for modern delivery",
+      "description": "We combine strategic partnership with execution discipline and AI-accelerated workflows to reduce risk and increase speed.",
+      "badges": ["Strategy led", "AI integrated", "Product grade"],
+      "cards": [
+        {
+          "tag": "Alignment",
+          "title": "Business-led roadmaps",
+          "description": "We translate goals into delivery plans, KPIs, and measurable milestones."
+        },
+        {
+          "tag": "Velocity",
+          "title": "AI-accelerated execution",
+          "description": "Automation, copilots, and tested pipelines keep quality high and timelines predictable."
+        },
+        {
+          "tag": "Reliability",
+          "title": "Built-in governance",
+          "description": "Security, compliance, and performance are embedded from day one."
+        }
+      ]
+    },
+    "serviceOverview": {
+      "label": "Service Structure for Carriastic",
+      "headline": "Strategy-first services organized by tier",
+      "description": "We lead with long-term partnership, AI-driven solutions, and scalable platforms, then reinforce delivery with operational and specialized services."
+    },
+    "focusAreasLabel": "focus areas",
+    "tiers": [
+      {
+        "id": "tier-1",
+        "label": "Tier 1",
+        "title": "Core Strategic Services",
+        "subtitle": "Front & Center",
+        "description": "These define who we are and how we lead engagements.",
+        "items": [
+          {
+            "id": "long-term-partnership",
+            "title": "Long-Term Technology Partnership",
+            "badge": "Primary Differentiator",
+            "description": "We operate as an extension of your technology team, not a one-time vendor.",
+            "points": [
+              "Continuous system evolution",
+              "AI optimization & scaling",
+              "Technical leadership & architecture",
+              "Performance, security & reliability",
+              "Strategic technology guidance"
+            ]
+          },
+          {
+            "id": "ai-business-solutions",
+            "title": "AI-Powered Business Solutions",
+            "badge": "Flagship Offering",
+            "points": [
+              "Generative AI applications",
+              "RAG systems with enterprise data",
+              "Agentic AI & autonomous workflows",
+              "AI copilots & assistants"
+            ],
+            "highlight": {
+              "label": "Outcome",
+              "text": "Smarter operations, better decisions, faster execution."
+            }
+          },
+          {
+            "id": "custom-software-platforms",
+            "title": "Custom Software & Platform Development",
+            "points": [
+              "Internal management systems",
+              "Enterprise platforms",
+              "Customer-facing applications",
+              "Scalable, API-driven architectures"
+            ],
+            "highlight": {
+              "label": "Key message",
+              "text": "Built to scale, adapt, and evolve with your business."
+            }
+          },
+          {
+            "id": "ai-enablement-integration",
+            "title": "AI Enablement & System Integration",
+            "points": [
+              "AI strategy & architecture",
+              "AI integration into existing systems",
+              "Data pipelines & infrastructure",
+              "Governance, security & compliance"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tier-2",
+        "label": "Tier 2",
+        "title": "Operational & Optimization Services",
+        "subtitle": "Support the Core",
+        "description": "These strengthen delivery and keep momentum compounding.",
+        "items": [
+          {
+            "id": "business-process-automation",
+            "title": "Business Process Automation & Optimization",
+            "points": [
+              "Workflow analysis",
+              "Intelligent automation",
+              "AI-driven approvals & routing",
+              "Reporting & monitoring systems"
+            ]
+          },
+          {
+            "id": "internal-ai-adoption",
+            "title": "Internal AI Adoption & AI-First Transformation",
+            "points": [
+              "Internal AI tools & copilots",
+              "AI-assisted development workflows",
+              "AI in QA, documentation & ops",
+              "Change enablement & training support"
+            ]
+          },
+          {
+            "id": "ready-to-deploy-products",
+            "title": "Ready-to-Deploy Products",
+            "badge": "Products",
+            "points": [
+              "Pre-built AI tools",
+              "Configurable platforms",
+              "Industry-specific solutions"
+            ],
+            "highlight": {
+              "label": "Positioning",
+              "text": "Optional and secondary to our core service delivery."
+            }
+          }
+        ]
+      },
+      {
+        "id": "tier-3",
+        "label": "Tier 3",
+        "title": "Specialized Delivery Services",
+        "subtitle": "Grouped, Not Isolated",
+        "description": "One integrated category for product craft and growth.",
+        "items": [
+          {
+            "id": "product-design-growth",
+            "title": "Product Design, Quality & Growth Services",
+            "points": [],
+            "sections": [
+              {
+                "title": "UI/UX Design",
+                "points": [
+                  "User research & flows",
+                  "Interface design for web & mobile",
+                  "Design systems",
+                  "UX optimization for AI products"
+                ]
+              },
+              {
+                "title": "Quality Assurance & Testing",
+                "points": [
+                  "Manual & automated testing",
+                  "AI-assisted QA",
+                  "Performance & security testing",
+                  "Reliability & regression testing"
+                ]
+              },
+              {
+                "title": "Digital Growth & Product Marketing",
+                "points": [
+                  "Product positioning & messaging",
+                  "Landing pages for AI products",
+                  "Conversion optimization",
+                  "Analytics & performance tracking"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "label": "Next step",
+      "headline": "Ready to build your AI-first roadmap?",
+      "description": "Let's align on priorities, define outcomes, and design a delivery plan that scales.",
+      "primaryCta": "Contact us",
+      "secondaryCta": "See products"
+    },
+    "testimonials": {
+      "label": "Client feedback",
+      "headline": "Teams trust Carriastic to deliver",
+      "description": "Real outcomes from partners who value speed, clarity, and execution."
+    },
+    "reviews": [
+      {
+        "name": "Alice Waters",
+        "date": "3 weeks ago",
+        "review": "Their AI roadmap workshop clarified our priorities in a week.",
+        "rating": 5,
+        "avatar": "/avatars/alice.jpeg"
+      },
+      {
+        "name": "John Doe",
+        "date": "1 month ago",
+        "review": "From discovery to delivery, they shipped a scalable platform fast.",
+        "rating": 5,
+        "avatar": "/avatars/john.jpeg"
+      },
+      {
+        "name": "Linda Brown",
+        "date": "2 weeks ago",
+        "review": "Automation cut our ops time by 40 percent without quality drops.",
+        "rating": 5,
+        "avatar": "/avatars/linda.jpeg"
+      },
+      {
+        "name": "Michael Scott",
+        "date": "6 weeks ago",
+        "review": "Strong architecture guidance and AI integration with clear updates.",
+        "rating": 4.5,
+        "avatar": "/avatars/michael.jpg"
+      },
+      {
+        "name": "Jessica Taylor",
+        "date": "5 days ago",
+        "review": "Design and engineering felt seamless, and launch hit schedule.",
+        "rating": 5,
+        "avatar": "/avatars/jessica.jpg"
+      }
+    ]
+  },
   "capabilities": {
     "label": "AI products",
     "headline": "Advanced AI systems designed for impact",
@@ -147,6 +397,144 @@
       }
     ]
   },
+  "about": {
+    "hero": {
+      "label": "Who we are",
+      "headline": "About Carriastic",
+      "descriptionOne": "Carriastic is a modern software and technology company focused on building scalable, intelligent, and business-ready digital systems for organizations operating in an increasingly AI-driven world.",
+      "descriptionTwo": "We design, develop, and evolve custom software platforms, AI-powered solutions, and enterprise systems that help businesses streamline operations, improve decision-making, and achieve sustainable growth. Our work goes beyond delivering software. We partner closely with organizations to ensure technology becomes a long-term strategic advantage, not just a tool.",
+      "descriptionThree": "At Carriastic, Artificial Intelligence is not an add-on. It is foundational to how we think, build, and operate.",
+      "primaryCta": "Start a conversation",
+      "secondaryCta": "Explore services",
+      "animationAlt": "About Carriastic animation"
+    },
+    "highlights": [
+      {
+        "title": "AI-first delivery",
+        "description": "A development culture where AI is embedded across product, engineering, QA, and operations."
+      },
+      {
+        "title": "Business-ready systems",
+        "description": "Platforms designed for measurable impact, reliability, and long-term adoption."
+      },
+      {
+        "title": "Long-term partnership",
+        "description": "We stay engaged beyond launch to optimize, scale, and evolve your systems."
+      }
+    ],
+    "missionVision": {
+      "label": "Purpose",
+      "headline": "Mission and vision",
+      "description": "We exist to make AI and modern software practical, reliable, and aligned with real business needs, never experimental or disconnected from outcomes.",
+      "items": [
+        {
+          "title": "Our Mission",
+          "description": "To empower businesses with intelligent, scalable technology that drives real operational impact and long-term growth. We help organizations adopt AI and modern software in a way that is practical, reliable, and aligned with real business needs, not experimental, over-engineered, or disconnected from outcomes."
+        },
+        {
+          "title": "Our Vision",
+          "description": "To become a trusted AI-first technology partner for businesses worldwide, shaping how organizations build, operate, and evolve in the age of intelligent systems. We envision AI deeply embedded into everyday operations, enhancing human decision-making and enabling confident scale."
+        }
+      ]
+    },
+    "aiCulture": {
+      "label": "AI-first philosophy",
+      "headline": "We practice what we deliver",
+      "description": "Our internal adoption of AI improves speed, accuracy, and enterprise-level quality across the full delivery lifecycle.",
+      "items": [
+        "Product design and ideation",
+        "Software engineering",
+        "Quality assurance and testing",
+        "Documentation and knowledge management",
+        "Operational workflows"
+      ],
+      "highlightLabel": "Beyond internal use",
+      "highlightDescription": "We design and deploy advanced AI systems that enable automation, clarity, and better decision-making in production environments.",
+      "systems": [
+        {
+          "title": "Generative AI applications",
+          "description": "Automation and intelligent interactions that reduce manual effort while improving customer experience."
+        },
+        {
+          "title": "Retrieval-Augmented Generation systems",
+          "description": "Grounded AI that blends large language models with proprietary or enterprise data."
+        },
+        {
+          "title": "Agentic AI solutions",
+          "description": "Autonomous task execution, workflow orchestration, and decision support for complex operations."
+        }
+      ]
+    },
+    "workProcess": {
+      "label": "How we work",
+      "headline": "Structured, collaborative delivery",
+      "description": "Great technology starts with a deep understanding of the business behind it. We stay close to your teams through continuous engagement and strategic consultation.",
+      "steps": [
+        {
+          "title": "Understand the business",
+          "description": "We immerse in your processes, challenges, and long-term goals to align technology with outcomes."
+        },
+        {
+          "title": "Design the right architecture",
+          "description": "We craft scalable architectures and AI-enabled solutions built for real business needs."
+        },
+        {
+          "title": "Build and deploy reliably",
+          "description": "We deliver secure, production-ready systems with rigorous QA and rollout planning."
+        },
+        {
+          "title": "Optimize and evolve",
+          "description": "We continuously tune performance and evolve platforms as your business grows."
+        }
+      ],
+      "closing": "We do not deliver one-time solutions and walk away. Carriastic works as a long-term technology partner, ensuring systems remain relevant, efficient, and adaptable as business and technology landscapes change."
+    },
+    "differentiators": {
+      "label": "Differentiators",
+      "headline": "What makes us different",
+      "description": "We focus on long-term outcomes, not one-time delivery.",
+      "items": [
+        {
+          "title": "AI is core, not cosmetic",
+          "description": "AI is embedded into our thinking, workflows, and systems, never added as a marketing layer."
+        },
+        {
+          "title": "Business-driven, not tech-driven",
+          "description": "Every solution is designed around measurable business value, not unnecessary complexity."
+        },
+        {
+          "title": "Built for scale and longevity",
+          "description": "We architect systems that are reliable today and adaptable tomorrow."
+        },
+        {
+          "title": "Partnership over projects",
+          "description": "We operate as an extension of client teams with ongoing guidance and evolution."
+        }
+      ]
+    },
+    "clients": {
+      "label": "Clients",
+      "headline": "Who we work with",
+      "description": "Our clients value clarity, reliability, and long-term collaboration over short-term delivery.",
+      "items": [
+        "Growing startups building scalable platforms",
+        "Mid-sized companies adopting AI and automation",
+        "Enterprises modernizing systems and workflows"
+      ]
+    },
+    "commitment": {
+      "label": "Commitment",
+      "headline": "The standards we uphold",
+      "descriptionOne": "We prioritize sustained impact over quick wins, ensuring systems remain relevant, efficient, and adaptable as business and technology landscapes change.",
+      "descriptionTwo": "Our goal is simple: to help our clients build technology that continues to create value as their business grows.",
+      "items": [
+        "Reliability and performance",
+        "Security and scalability",
+        "Transparency and collaboration",
+        "Sustained impact over quick wins"
+      ]
+    }
+  },
   "cta": {
     "label": "Ready to build",
     "headline": "Partner with Carriastic for AI-powered growth",
@@ -206,6 +594,143 @@
       "devops": "DevOps"
     }
   },
+  "contactPage": {
+    "hero": {
+      "label": "Contact",
+      "headline": "Start a project conversation with Carriastic.",
+      "description": "Share goals, timelines, and constraints. We respond with a clear next step and a tailored plan.",
+      "primaryCta": "Send a message",
+      "secondaryCta": "See services",
+      "imageAlt": "Contact Carriastic animation"
+    },
+    "badges": ["Response in 24h", "AI-first delivery", "Global collaboration"],
+    "contactEmail": "info@carriastic.com",
+    "contactPhone": "+8801884517187",
+    "contactAddress": "House 19/1, GP Cha, Mohakhali, Dhaka-1212, Bangladesh",
+    "hoursLabel": "Working hours",
+    "hoursValue": "Sunday-Thursday, 10:00 AM - 7:00 PM (GMT+6)",
+    "addressLabel": "Office location",
+    "cards": [
+      {
+        "id": "email",
+        "title": "Email us",
+        "description": "Share your requirements and we will route them to the right team.",
+        "detail": "info@carriastic.com"
+      },
+      {
+        "id": "phone",
+        "title": "Call the team",
+        "description": "Talk to us about scope, budgets, and timelines.",
+        "detail": "+8801884517187"
+      },
+      {
+        "id": "office",
+        "title": "Visit our office",
+        "description": "Dhaka, Bangladesh (GMT+6)",
+        "detail": "House 19/1, GP Cha, Mohakhali, Dhaka-1212"
+      }
+    ],
+    "form": {
+      "kicker": "Project inquiry",
+      "headline": "Tell us what you are building",
+      "description": "We help with AI platforms, automation, and product delivery.",
+      "responseTime": "Response within 24h",
+      "formAriaLabel": "Contact form",
+      "emailLabel": "Your Email",
+      "emailPlaceholder": "you@company.com",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "What can we help with?",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Describe your goals, timelines, and success metrics.",
+      "preferEmail": "Prefer email? Send details to {email}.",
+      "submit": "Send Message"
+    }
+  },
+  "teamPage": {
+    "hero": {
+      "label": "Team",
+      "headline": "Meet the people building Carriastic.",
+      "description": "A multidisciplinary team of product, engineering, and AI experts focused on long-term partnerships and measurable outcomes.",
+      "imageAlt": "Carriastic team banner",
+      "stats": [
+        {
+          "value": "5+",
+          "label": "Leaders"
+        },
+        {
+          "value": "AI-first",
+          "label": "Delivery culture"
+        },
+        {
+          "value": "Global",
+          "label": "Collaboration"
+        }
+      ]
+    },
+    "intro": {
+      "label": "Our leadership",
+      "headline": "Focused on execution and outcomes.",
+      "description": "We align strategy, design, engineering, and growth to ship reliable AI-first platforms."
+    },
+    "values": [
+      {
+        "title": "Ownership",
+        "description": "We take responsibility from planning to launch and beyond."
+      },
+      {
+        "title": "Speed with quality",
+        "description": "Fast delivery with enterprise-grade reliability and clarity."
+      },
+      {
+        "title": "Long-term partnership",
+        "description": "We stay close to optimize, scale, and evolve your systems."
+      }
+    ],
+    "membersSection": {
+      "label": "Team members",
+      "headline": "A hands-on leadership team",
+      "description": "Product, design, and engineering leaders who stay close to delivery."
+    },
+    "members": [
+      {
+        "name": "Md. Rafidul Islam",
+        "role": "CEO",
+        "bio": "Leads vision, strategy, and long-term partnerships.",
+        "image": "/team/rafid.png"
+      },
+      {
+        "name": "Syed Hasan Ahmed",
+        "role": "COO",
+        "bio": "Builds operational excellence and delivery consistency.",
+        "image": "/team/hasan.png"
+      },
+      {
+        "name": "Ahsan Habib Ethic",
+        "role": "CMO",
+        "bio": "Shapes market positioning and growth strategy.",
+        "image": "/team/ethic.png"
+      },
+      {
+        "name": "SK Imran Sabuj",
+        "role": "CTO",
+        "bio": "Leads architecture, engineering, and AI systems.",
+        "image": "/team/sabuj.png"
+      },
+      {
+        "name": "Shahriar Emon",
+        "role": "WordPress Developer",
+        "bio": "Delivers fast, reliable web experiences with care.",
+        "image": "/team/emon.png"
+      }
+    ],
+    "cta": {
+      "label": "Work with us",
+      "headline": "Let's build your next platform.",
+      "description": "Tell us what you are planning and we will shape a delivery plan.",
+      "primaryCta": "Contact us",
+      "secondaryCta": "Explore services"
+    }
+  },
   "footer": {
     "mapTitle": "Carriastic Location",
     "contactInfo": {
@@ -262,6 +787,7 @@
     "about": "About",
     "services": "Services",
     "ai": "AI",
+    "products": "Our Products",
     "team": "Team",
     "howItWorks": "How it Works",
     "blog": "Blog",

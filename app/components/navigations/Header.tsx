@@ -30,6 +30,7 @@ const Header = () => {
     { href: "/about", label: t.nav.about },
     { href: "/services", label: t.nav.services },
     { href: "/ai", label: t.nav.ai },
+    { href: "/products", label: t.nav.products },
     { href: "/team", label: t.nav.team },
     { href: "/how-it-works", label: t.nav.howItWorks },
     { href: "/blogs", label: t.nav.blog },
@@ -39,7 +40,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 z-[100] w-full bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]">
-        <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
+        <div className="relative mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
           <div className="flex items-center gap-3">
             <button
               className="text-primary lg:hidden"
@@ -49,7 +50,7 @@ const Header = () => {
             >
               {isMenuOpen ? <FaTimes size={22} /> : <FaBars size={20} />}
             </button>
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="hidden items-center lg:flex">
               <Image
                 src="/images/logo_main_slogan.png"
                 alt="Carriastic logo"
@@ -60,15 +61,28 @@ const Header = () => {
               />
             </Link>
           </div>
+          <Link
+            href="/"
+            className="absolute left-1/2 flex -translate-x-1/2 items-center lg:hidden"
+          >
+            <Image
+              src="/images/logo_main_slogan.png"
+              alt="Carriastic logo"
+              width={110}
+              height={36}
+              className="h-auto w-[110px]"
+              priority
+            />
+          </Link>
 
-          <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 lg:flex lg:gap-10">
+          <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 lg:flex lg:gap-6">
             {navItems.map((navItem) => (
               <Link
                 key={navItem.href}
                 href={navItem.href}
-                className={`transition-colors ${
+                className={`relative inline-flex items-center transition-colors ${
                   pathname === navItem.href
-                    ? "text-primary"
+                    ? "text-primary after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary after:via-[#6d36dc] after:to-[#4b50e6]"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -129,9 +143,9 @@ const Header = () => {
                 key={navItem.href}
                 href={navItem.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`transition-colors ${
+                className={`relative inline-flex items-center transition-colors ${
                   pathname === navItem.href
-                    ? "text-primary"
+                    ? "text-primary after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary after:via-[#6d36dc] after:to-[#4b50e6]"
                     : "text-slate-700 hover:text-slate-900"
                 }`}
               >
