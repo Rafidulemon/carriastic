@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,6 +16,16 @@ const Header = () => {
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const { style } = document.body;
+    const previousOverflow = style.overflow;
+    style.overflow = "hidden";
+    return () => {
+      style.overflow = previousOverflow;
+    };
+  }, [isMenuOpen]);
+
   const navItems = [
     { href: "/about", label: t.nav.about },
     { href: "/services", label: t.nav.services },
@@ -27,58 +37,60 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]">
-      <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
-        <div className="flex items-center gap-3">
-          <button
-            className="md:hidden text-primary"
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? <FaTimes size={22} /> : <FaBars size={20} />}
-          </button>
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo_main_slogan.png"
-              alt="Carriastic logo"
-              width={120}
-              height={40}
-              className="h-auto w-[110px] md:w-[130px]"
-              priority
-            />
-          </Link>
-        </div>
-
-        <nav className="hidden flex-1 items-center justify-center gap-8 text-[15px] font-medium text-slate-600 md:flex lg:gap-10">
-          {navItems.map((navItem) => (
-            <Link
-              key={navItem.href}
-              href={navItem.href}
-              className={`transition-colors ${
-                pathname === navItem.href
-                  ? "text-primary"
-                  : "text-slate-600 hover:text-slate-900"
-              }`}
+    <>
+      <header className="fixed top-0 z-[100] w-full bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]">
+        <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
+          <div className="flex items-center gap-3">
+            <button
+              className="text-primary lg:hidden"
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
+              aria-expanded={isMenuOpen}
             >
-              {navItem.label}
+              {isMenuOpen ? <FaTimes size={22} /> : <FaBars size={20} />}
+            </button>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo_main_slogan.png"
+                alt="Carriastic logo"
+                width={120}
+                height={40}
+                className="h-auto w-[110px] md:w-[130px]"
+                priority
+              />
             </Link>
-          ))}
-        </nav>
+          </div>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <LanguageToggle />
-          <Link
-            href="/contact"
-            className="cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)]"
-          >
-            {t.nav.contact}
-          </Link>
+          <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 lg:flex lg:gap-10">
+            {navItems.map((navItem) => (
+              <Link
+                key={navItem.href}
+                href={navItem.href}
+                className={`transition-colors ${
+                  pathname === navItem.href
+                    ? "text-primary"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                {navItem.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-3 lg:flex">
+            <LanguageToggle />
+            <Link
+              href="/contact"
+              className="cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)]"
+            >
+              {t.nav.contact}
+            </Link>
+          </div>
         </div>
-      </div>
+      </header>
 
       <div
-        className={`md:hidden fixed inset-0 z-40 transition ${
+        className={`fixed inset-0 z-[110] transition lg:hidden ${
           isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -88,7 +100,7 @@ const Header = () => {
           aria-hidden="true"
         />
         <div
-          className={`absolute z-50 left-0 top-0 h-full w-[75%] max-w-[320px] bg-white shadow-2xl transition-transform duration-300 ${
+          className={`absolute left-0 top-0 flex h-full w-[80%] max-w-[360px] flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300 sm:w-[70%] ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -143,7 +155,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 };
 
