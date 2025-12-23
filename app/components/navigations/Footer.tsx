@@ -27,11 +27,11 @@ const Footer = () => {
     contactEmail
   );
   return (
-    <div className="w-screen flex flex-col gap-0">
+    <div className="w-full flex flex-col gap-0">
       {pathname !== "/contact" && (
         <div className="w-full flex flex-col items-center justify-center relative">
           <div className="w-full h-full grid grid-cols-1 gap-6 bg-white md:grid-cols-2">
-            <div className="w-full flex flex-col items-center justify-start gap-6 p-6">
+            <div className="w-full flex flex-col items-center justify-start gap-6 p-4 sm:p-6">
               <div className="w-full md:w-[70%] h-[300px] md:h-[400px] rounded-lg overflow-hidden">
                 <iframe
                   title={footer.mapTitle}
@@ -44,7 +44,7 @@ const Footer = () => {
               </div>
 
               <div className="w-full md:w-[70%] flex flex-col gap-4">
-                <div className="w-full flex items-start gap-2 justify-start">
+                <div className="w-full flex flex-col items-start gap-2 sm:flex-row sm:items-start sm:gap-3">
                   <div className="flex gap-1">
                     <span className="font-bold text-primary">📍</span>
                     <span className="font-bold text-primary">
@@ -52,19 +52,19 @@ const Footer = () => {
                     </span>
                   </div>
 
-                  <p className="text-gray-600">{contactAddress}</p>
+                  <p className="text-gray-600 break-words">{contactAddress}</p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                   <span className="font-bold text-primary">
                     📧 {footer.contactInfo.emailLabel}:
                   </span>
-                  <p className="text-gray-600">{contactEmail}</p>
+                  <p className="text-gray-600 break-words">{contactEmail}</p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                   <span className="font-bold text-primary">
                     📞 {footer.contactInfo.phoneLabel}:
                   </span>
-                  <p className="text-gray-600">{contactPhone}</p>
+                  <p className="text-gray-600 break-words">{contactPhone}</p>
                 </div>
               </div>
             </div>
@@ -174,7 +174,7 @@ const Footer = () => {
                   </div>
                   <Link
                     href="/contact"
-                    className="cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)]"
+                    className="w-full cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-center text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)] sm:w-auto"
                   >
                     {footer.newsletter.cta}
                   </Link>
@@ -182,7 +182,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4">
               <div className="flex flex-col gap-4 text-slate-300">
                 <span className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
                   {footer.sections.office}

@@ -31,7 +31,7 @@ const Header = () => {
       <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
         <div className="flex items-center gap-3">
           <button
-            className="md:hidden text-primary"
+            className="text-primary lg:hidden"
             onClick={toggleMenu}
             aria-label="Toggle Menu"
             aria-expanded={isMenuOpen}
@@ -50,7 +50,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <nav className="hidden flex-1 items-center justify-center gap-8 text-[15px] font-medium text-slate-600 md:flex lg:gap-10">
+        <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 lg:flex lg:gap-10">
           {navItems.map((navItem) => (
             <Link
               key={navItem.href}
@@ -66,7 +66,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <LanguageToggle />
           <Link
             href="/contact"
@@ -78,7 +78,7 @@ const Header = () => {
       </div>
 
       <div
-        className={`md:hidden fixed inset-0 z-40 transition ${
+        className={`fixed inset-0 z-50 transition lg:hidden ${
           isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -88,7 +88,7 @@ const Header = () => {
           aria-hidden="true"
         />
         <div
-          className={`absolute z-50 left-0 top-0 h-full w-[75%] max-w-[320px] bg-white shadow-2xl transition-transform duration-300 ${
+          className={`absolute left-0 top-0 flex h-full w-[80%] max-w-[360px] flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300 sm:w-[70%] ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
