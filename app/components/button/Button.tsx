@@ -129,7 +129,7 @@ function Button(props: Props) {
     <button
       type={type}
       onClick={handleClick}
-      className={`${baseClassName} ${isWidthFull ? "w-full" : "w-fit"}`}
+      className={`cursor-pointer ${baseClassName} ${isWidthFull ? "w-full" : "w-fit"}`}
       onFocus={() => {}}
     >
       {content}

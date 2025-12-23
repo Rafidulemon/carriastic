@@ -32,8 +32,33 @@ const config: Config = {
         primary: "#370054",
         primaryLight: "#7a2fb5",
       },
+      keyframes: {
+        "home-fade-up": {
+          "0%": { opacity: "0", transform: "translateY(18px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "home-services-scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "home-logo-scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "home-quote-cycle": {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "8%": { opacity: "1", transform: "translateY(0)" },
+          "25%": { opacity: "1", transform: "translateY(0)" },
+          "33%": { opacity: "0", transform: "translateY(-8px)" },
+          "100%": { opacity: "0", transform: "translateY(-8px)" },
+        },
+      },
       animation: {
         bounceTwice: "bounce 1s infinite",
+        "home-fade-up": "home-fade-up 0.9s ease both",
+        "home-services-scroll": "home-services-scroll 100s linear infinite",
+        "home-logo-scroll": "home-logo-scroll 32s linear infinite",
+        "home-quote-cycle": "home-quote-cycle 10s ease infinite",
       },
     },
   },

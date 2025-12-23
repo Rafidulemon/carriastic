@@ -1,0 +1,271 @@
+{
+  "hero": {
+    "label": "AI-first technology company",
+    "headline": "Build intelligent digital platforms that scale with your business.",
+    "descriptionOne": "Carriastic delivers scalable, business-ready software products and customized platforms for organizations operating in a rapidly evolving AI landscape.",
+    "descriptionTwo": "We embed AI across the entire delivery lifecycle to move faster, improve accuracy, and maintain enterprise-grade quality.",
+    "primaryCta": "Schedule a strategy call",
+    "secondaryCta": "Explore solutions",
+    "highlights": [
+      {
+        "title": "AI-first delivery",
+        "description": "AI is integrated across design, engineering, and QA."
+      },
+      {
+        "title": "Enterprise quality",
+        "description": "Reliable platforms built for governance and scale."
+      },
+      {
+        "title": "Lifecycle ownership",
+        "description": "From strategy to optimization, we stay accountable."
+      }
+    ],
+    "gifAlts": [
+      "AI-first delivery workflow",
+      "Enterprise-ready platforms",
+      "Lifecycle ownership visuals"
+    ]
+  },
+  "offerings": {
+    "label": "What we deliver",
+    "headline": "Services we offer",
+    "description": "Strategy-first services delivered through long-term partnership, AI-driven solutions, and scalable platform execution.",
+    "cta": "Explore all services",
+    "services": [
+      {
+        "title": "Long-Term Technology Partnership",
+        "description": "Continuous evolution, AI scaling, and leadership across performance, security, and reliability."
+      },
+      {
+        "title": "AI-Powered Business Solutions",
+        "description": "Generative AI, RAG with enterprise data, agentic workflows, and AI copilots."
+      },
+      {
+        "title": "Custom Software & Platform Development",
+        "description": "Internal systems, enterprise platforms, customer apps, and API-driven architectures."
+      },
+      {
+        "title": "AI Enablement & System Integration",
+        "description": "AI strategy, integration into existing systems, data pipelines, and compliance."
+      },
+      {
+        "title": "Business Process Automation & Optimization",
+        "description": "Workflow analysis, intelligent automation, AI routing, and monitoring systems."
+      },
+      {
+        "title": "Internal AI Adoption & AI-First Transformation",
+        "description": "Internal AI tools, AI-assisted development, QA workflows, and enablement."
+      },
+      {
+        "title": "Ready-to-Deploy Products",
+        "description": "Pre-built AI tools, configurable platforms, and industry-specific solutions."
+      },
+      {
+        "title": "Product Design, Quality & Growth Services",
+        "description": "UI/UX design, QA & testing, plus Digital Growth & Product Marketing."
+      }
+    ]
+  },
+  "capabilities": {
+    "label": "AI products",
+    "headline": "Advanced AI systems designed for impact",
+    "description": "We build three core AI products that combine automation, contextual knowledge, and governance to support critical decisions.",
+    "products": [
+      {
+        "title": "Generative AI applications",
+        "description": "A productized suite of assistants for content creation, automation, and experience design."
+      },
+      {
+        "title": "RAG and knowledge systems",
+        "description": "A secure knowledge product that grounds models in your enterprise data."
+      },
+      {
+        "title": "Agentic AI workflows",
+        "description": "An orchestration product for autonomous tasks with human-in-the-loop control."
+      }
+    ],
+    "animationAlt": "Advanced AI systems animation",
+    "highlightTitle": "AI-first delivery engine",
+    "highlightDescription": "Intelligence embedded across product, engineering, and operations.",
+    "cta": "View Our AI Products"
+  },
+  "designApproach": {
+    "label": "How we work",
+    "headline": "Our design and development approach",
+    "cards": [
+      {
+        "title": "UX Driven Engineering",
+        "description": "Design leads delivery, ensuring UX research and UI systems translate directly into build decisions."
+      },
+      {
+        "title": "Developing Shared Understanding",
+        "description": "We align stakeholders early with clear scope, workflows, and success metrics for confident execution."
+      },
+      {
+        "title": "Proven Experience and Expertise",
+        "description": "Seasoned product, design, and engineering leaders guide each phase with predictable quality."
+      },
+      {
+        "title": "Security & Intellectual Property (IP)",
+        "description": "Secure-by-default architecture, NDA/IP protection, and compliance practices are embedded from day one."
+      },
+      {
+        "title": "Code Reviews",
+        "description": "Peer reviews, standards, and automated checks keep code consistent, safe, and maintainable."
+      },
+      {
+        "title": "Quality Assurance & Testing",
+        "description": "Manual and automated testing cover regression, performance, and launch readiness."
+      }
+    ]
+  },
+  "trustedPartnerships": {
+    "label": "Trusted partnerships",
+    "headline": "Trusted by forward-looking teams",
+    "logoAlt": "Client logo",
+    "listAria": "Client logos"
+  },
+  "leadership": {
+    "label": "Leadership voices",
+    "headline": "Quotes from our leadership",
+    "description": "Our leadership team stays close to delivery, ensuring every client engagement remains focused on measurable business outcomes.",
+    "quotes": [
+      {
+        "name": "Md. Rafidul Islam",
+        "title": "Chief Executive Officer",
+        "quote": "We are engineering the next operating layer for enterprises: AI-native platforms that sense, learn, and optimize in real time, so every decision is faster, smarter, and measurable."
+      },
+      {
+        "name": "Syed Hasan Ahmed Anik",
+        "title": "Chief Operating Officer",
+        "quote": "Our delivery model treats AI as infrastructure, not a feature - we orchestrate data, workflows, and agents into a resilient pipeline that scales from pilot to enterprise-grade automation."
+      },
+      {
+        "name": "Ahsan Habib Ethic",
+        "title": "Chief Marketing Officer",
+        "quote": "We help brands move from digital presence to digital intelligence, where customer interactions are predictive, personalized, and continuously evolving through generative and agentic systems."
+      }
+    ]
+  },
+  "cta": {
+    "label": "Ready to build",
+    "headline": "Partner with Carriastic for AI-powered growth",
+    "description": "We design intelligent platforms that evolve with your business and deliver measurable value over the long term.",
+    "primaryCta": "Contact us",
+    "secondaryCta": "Learn about our team"
+  },
+  "developmentProcess": {
+    "label": "Our Development Approach",
+    "headline": "How development through Carriastic works",
+    "description": "A structured, AI-ready delivery flow that keeps teams aligned and ships in predictable iterations.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Discovery & outcome alignment",
+        "description": "We define the business goals, user journeys, and success metrics that guide every decision."
+      },
+      {
+        "step": "02",
+        "title": "AI-first team setup",
+        "description": "A cross-functional squad is assembled with product, design, and AI engineering leads."
+      },
+      {
+        "step": "03",
+        "title": "Architecture & data readiness",
+        "description": "We design secure, scalable systems and prepare the data foundation for AI workflows."
+      },
+      {
+        "step": "04",
+        "title": "Sprint planning & demos",
+        "description": "Weekly planning and demos keep priorities clear, feedback tight, and delivery predictable."
+      },
+      {
+        "step": "05",
+        "title": "Code review & QA gates",
+        "description": "Peer reviews, automated checks, and QA gates keep quality high before release."
+      },
+      {
+        "step": "06",
+        "title": "Iterative delivery & optimization",
+        "description": "We ship in milestones, monitor results, and continuously improve performance and UX."
+      }
+    ]
+  },
+  "techStack": {
+    "label": "Technology stack",
+    "headline": "Modern tools, reliable infrastructure",
+    "categoriesAriaLabel": "Technology stack categories",
+    "panelLabel": "technologies",
+    "logoAlt": "logo",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Databases",
+      "cms": "CMS",
+      "cloudTesting": "Cloud & Testing",
+      "devops": "DevOps"
+    }
+  },
+  "footer": {
+    "mapTitle": "Carriastic Location",
+    "contactInfo": {
+      "addressLabel": "Address",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "address": "House 19/1, GP Cha, Mohakhali, Dhaka-1212, Bangladesh"
+    },
+    "contactForm": {
+      "kicker": "Get in touch",
+      "headline": "Shape the next move with us",
+      "description": "Share your goals, timeline, and constraints. We respond within one business day with a tailored plan.",
+      "responseTime": "Response within 24h",
+      "formAriaLabel": "Get in touch form",
+      "emailLabel": "Your Email",
+      "emailPlaceholder": "Enter your email here",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "What can we help with?",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Describe your project, timeline, and success metrics.",
+      "preferEmail": "Prefer email? Send details to {email}.",
+      "submit": "Send Message"
+    },
+    "newsletter": {
+      "description": "Stay in the loop with new services and insights.",
+      "inputAriaLabel": "Email address",
+      "placeholder": "you@company.com",
+      "cta": "Contact"
+    },
+    "sections": {
+      "office": "Office",
+      "explore": "Explore",
+      "company": "Company",
+      "connect": "Connect"
+    },
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "team": "Team",
+      "blogs": "Blogs",
+      "career": "Career",
+      "contact": "Contact"
+    },
+    "connect": {
+      "description": "Follow the signal. We share leadership insights and partnerships weekly."
+    },
+    "bottom": {
+      "copyright": "© Copyright - Carriastic - 2026. All Rights Reserved.",
+      "tagline": "Dhaka, Bangladesh | Built for forward momentum"
+    }
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "ai": "AI",
+    "team": "Team",
+    "howItWorks": "How it Works",
+    "blog": "Blog",
+    "career": "Career",
+    "contact": "Contact us"
+  }
+}
