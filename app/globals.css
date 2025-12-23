@@ -50,9 +50,49 @@
   );
 }
 
+@keyframes home-logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.home-logo-marquee {
+  animation: home-logo-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+.home-logo-marquee:hover {
+  animation-play-state: paused;
+}
+
+.home-logo-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-services-marquee {
     animation: none;
+  }
+
+  .home-logo-marquee {
+    animation: none;
+    transform: translateX(0);
   }
 }
 
