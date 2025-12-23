@@ -8,6 +8,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import LanguageToggle from "../language/LanguageToggle";
 import { useLanguage } from "../../i18n/LanguageProvider";
 
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
