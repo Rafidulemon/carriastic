@@ -12,12 +12,6 @@ function AboutPage() {
   const about = t.about;
   const designApproach = t.designApproach;
 
-  const highlightAccents = [
-    "from-[#22d3ee]/40 via-[#38bdf8]/20 to-transparent",
-    "from-[#34d399]/40 via-[#22c55e]/15 to-transparent",
-    "from-[#f59e0b]/40 via-[#fb7185]/15 to-transparent",
-  ];
-
   const missionVisionAccents = [
     "from-[#22d3ee]/40 to-[#0ea5e9]/10",
     "from-[#34d399]/40 to-[#f59e0b]/10",

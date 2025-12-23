@@ -40,7 +40,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 z-[100] w-full bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]">
-        <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
+        <div className="relative mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
           <div className="flex items-center gap-3">
             <button
               className="text-primary lg:hidden"
@@ -50,7 +50,7 @@ const Header = () => {
             >
               {isMenuOpen ? <FaTimes size={22} /> : <FaBars size={20} />}
             </button>
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="hidden items-center lg:flex">
               <Image
                 src="/images/logo_main_slogan.png"
                 alt="Carriastic logo"
@@ -61,6 +61,19 @@ const Header = () => {
               />
             </Link>
           </div>
+          <Link
+            href="/"
+            className="absolute left-1/2 flex -translate-x-1/2 items-center lg:hidden"
+          >
+            <Image
+              src="/images/logo_main_slogan.png"
+              alt="Carriastic logo"
+              width={110}
+              height={36}
+              className="h-auto w-[110px]"
+              priority
+            />
+          </Link>
 
           <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 lg:flex lg:gap-6">
             {navItems.map((navItem) => (
