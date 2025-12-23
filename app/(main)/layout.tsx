@@ -5,6 +5,19 @@ import Footer from "../components/navigations/Footer";
 import { FaRocketchat } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import ChatbotModal from "../components/modals/ChatBotModal";
+import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-jakarta",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+});
 
 export default function MainLayout({
   children,
@@ -28,9 +41,11 @@ export default function MainLayout({
           <title>Carriastic</title>
           <link rel="icon" href="/images/app_icon.png" type="image/png" />
         </head>
-        <body className="overflow-x-hidden antialiased bg-white">
+        <body
+          className={`overflow-x-hidden antialiased main-layout-bg font-jakarta ${jakarta.variable} ${spaceGrotesk.variable}`}
+        >
           <Header />
-          <div className="mt-[48px] md:mt-[60px] min-h-[calc(80vh-10px)]">
+          <div className="mt-16 md:mt-20 min-h-[calc(80vh-10px)]">
             {children}
           </div>
           <Footer />

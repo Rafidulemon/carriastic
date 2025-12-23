@@ -39,6 +39,7 @@ const Header = () => {
             { href: "/", label: "Home" },
             { href: "/about", label: "About" },
             { href: "/services", label: "Services" },
+            { href: "/ai", label: "AI" },
             { href: "/clients", label: "Clients" },
             { href: "/blogs", label: "Blogs" },
             { href: "/career", label: "Career" },
@@ -91,13 +92,14 @@ const Header = () => {
         <div className="md:hidden w-full h-full flex flex-col justify-between">
           <nav className="flex flex-col items-center justify-center space-y-6 py-16">
             {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/services", label: "Services" },
-              { href: "/clients", label: "Clients" },
-              { href: "/blogs", label: "Blogs" },
-              { href: "/career", label: "Career" },
-              { href: "/contact", label: "Contact" },
+            { href: "/", label: "Home" },
+            { href: "/about", label: "About" },
+            { href: "/services", label: "Services" },
+            { href: "/ai", label: "AI" },
+            { href: "/clients", label: "Clients" },
+            { href: "/blogs", label: "Blogs" },
+            { href: "/career", label: "Career" },
+            { href: "/contact", label: "Contact" },
             ].map((navItem) => (
               <Link
                 key={navItem.href}

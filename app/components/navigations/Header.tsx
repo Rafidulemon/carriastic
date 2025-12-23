@@ -5,119 +5,136 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  const navItems = [
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/ai", label: "AI" },
+    { href: "/team", label: "Team" },
+    { href: "/how-it-works", label: "How it Works" },
+    { href: "/blogs", label: "Blog" },
+    { href: "/career", label: "Career" },
+  ];
 
   return (
-    <div className="fixed top-0 z-50 py-6 md:py-3 px-10 w-screen flex items-center justify-between bg-white shadow-md">
-      <div className="hidden md:block" onClick={()=> router.push("/")}>
-        <Image
-          src="/images/logo_main_slogan.png"
-          alt="logo"
-          width={100}
-          height={37}
-          className="cursor-pointer"
-        />
-      </div>
-      <div className="md:hidden absolute left-1/2 transform -translate-x-1/2" onClick={()=> router.push("/")}>
-        <Image
-          src="/images/logo_main_slogan.png"
-          alt="logo"
-          width={80}
-          height={30}
-          className="cursor-pointer"
-        />
-      </div>
+    <header className="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]">
+      <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
+        <div className="flex items-center gap-3">
+          <button
+            className="md:hidden text-primary"
+            onClick={toggleMenu}
+            aria-label="Toggle Menu"
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? <FaTimes size={22} /> : <FaBars size={20} />}
+          </button>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo_main_slogan.png"
+              alt="Carriastic logo"
+              width={120}
+              height={40}
+              className="h-auto w-[110px] md:w-[130px]"
+              priority
+            />
+          </Link>
+        </div>
 
-      <div className="hidden md:flex flex-row gap-16">
-        <nav className="flex flex-row md:gap-6 lg:gap-10 text-black">
-          {[
-            { href: "/", label: "Home" },
-            { href: "/about", label: "About" },
-            { href: "/services", label: "Services" },
-            { href: "/team", label: "Team" },
-            { href: "/blogs", label: "Blogs" },
-            { href: "/career", label: "Career" },
-            { href: "/contact", label: "Contact" },
-            { href: "/cv-builder", label: "CV Builder" },            
-          ].map((navItem) => (
+        <nav className="hidden flex-1 items-center justify-center gap-8 text-[15px] font-medium text-slate-600 md:flex lg:gap-10">
+          {navItems.map((navItem) => (
             <Link
               key={navItem.href}
               href={navItem.href}
-              className={`hover:text-primary hover:font-semibold hover:underline ${
-                pathname === navItem.href ? "text-primary font-bold" : ""
+              className={`transition-colors ${
+                pathname === navItem.href
+                  ? "text-primary"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               {navItem.label}
             </Link>
           ))}
         </nav>
+
+        <div className="hidden items-center md:flex">
+          <Link
+            href="/contact"
+            className="cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)]"
+          >
+            Contact us
+          </Link>
+        </div>
       </div>
 
-      <button
-        className="md:hidden text-primary absolute left-6"
-        onClick={toggleMenu}
-        aria-label="Toggle Menu"
-      >
-        {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={20} />}
-      </button>
-
       <div
-        className={`md:hidden fixed top-0 left-0 h-full bg-neutral-200 z-50 transform transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } w-[70%]`}
+        className={`md:hidden fixed inset-0 z-40 transition ${
+          isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        }`}
       >
-        <button
-          className="absolute top-4 right-4 text-primary"
+        <div
+          className="absolute inset-0 bg-slate-900/20"
           onClick={toggleMenu}
-          aria-label="Close Menu"
+          aria-hidden="true"
+        />
+        <div
+          className={`absolute z-50 left-0 top-0 h-full w-[75%] max-w-[320px] bg-white shadow-2xl transition-transform duration-300 ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
         >
-          <FaBars size={20} />
-        </button>
+          <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
+            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+              <Image
+                src="/images/logo_main.png"
+                alt="Carriastic logo"
+                width={90}
+                height={34}
+                className="h-auto w-[90px]"
+              />
+            </Link>
+            <button
+              className="text-primary"
+              onClick={toggleMenu}
+              aria-label="Close Menu"
+            >
+              <FaTimes size={20} />
+            </button>
+          </div>
 
-        <div className="md:hidden absolute left-1/2 transform -translate-x-1/2 top-4">
-          <Image
-            src="/images/logo_main.png"
-            alt="logo"
-            width={80}
-            height={30}
-            className="cursor-pointer"
-          />
-        </div>
-
-        <div className="md:hidden w-full h-full flex flex-col justify-between">
-          <nav className="flex flex-col items-center justify-center space-y-6 py-16">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/services", label: "Services" },
-              { href: "/team", label: "Team" },
-              { href: "/blogs", label: "Blogs" },
-              { href: "/career", label: "Career" },
-              { href: "/contact", label: "Contact" },
-              { href: "/cv-builder", label: "CV Builder" }, 
-            ].map((navItem) => (
+          <nav className="flex flex-col gap-6 px-6 py-6 text-[15px] font-medium text-slate-700">
+            {navItems.map((navItem) => (
               <Link
                 key={navItem.href}
                 href={navItem.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`hover:text-primary hover:font-semibold ${
-                  pathname === navItem.href ? "text-primary font-bold" : ""
+                className={`transition-colors ${
+                  pathname === navItem.href
+                    ? "text-primary"
+                    : "text-slate-700 hover:text-slate-900"
                 }`}
               >
                 {navItem.label}
               </Link>
             ))}
           </nav>
+
+          <div className="px-6 pb-8">
+            <Link
+              href="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex w-full items-center justify-center rounded-[10px] bg-gradient-to-r from-[#5b2ae6] via-[#6d36dc] to-[#4b50e6] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)]"
+            >
+              Contact us
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -1,14 +1,22 @@
-"use client"
+"use client";
 import * as React from "react";
 import { type ReactNode, useEffect, useState } from "react";
+import Link from "next/link";
 
 type Props = {
   children?: ReactNode;
   className?: string;
-  theme?: "primary" | "secondary" | "cancel" | "cancel-secondary" | "white";
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  theme?:
+    | "primary"
+    | "secondary"
+    | "cancel"
+    | "cancel-secondary"
+    | "white"
+    | "gradient";
+  onClick?: React.MouseEventHandler<HTMLElement>;
   isWidthFull?: boolean;
   type?: "button" | "submit" | "reset";
+  href?: string;
 };
 
 function Button(props: Props) {
@@ -19,13 +27,15 @@ function Button(props: Props) {
     onClick,
     isWidthFull = false,
     type = "button",
+    href,
   } = props;
 
+  const baseClassName = className ?? "";
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const lastClickTimestamp = React.useRef<number>(0);
 
   const debouncedOnClick = React.useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
+    (e: React.MouseEvent<HTMLElement>) => {
       const now = Date.now();
       if (now - lastClickTimestamp.current > 200) {
         if (onClick) {
@@ -46,19 +56,11 @@ function Button(props: Props) {
     }
   }, [isClicked]);
 
-  return (
-    <button
-      type={type}
-      onClick={(e) => {
-        setIsClicked(true);
-        debouncedOnClick(e);
-      }}
-      className={`${className} ${isWidthFull ? "w-full" : "w-fit"}`}
-      onFocus={() => {}}
-    >
+  const content = (
+    <>
       {theme === "primary" && (
         <div
-          className={`${className} p-2 rounded-lg hover:border hover:border-primary hover:bg-white hover:text-primary bg-primary text-white`}
+          className={`${baseClassName} p-2 rounded-lg hover:border hover:border-primary hover:bg-white hover:text-primary bg-primary text-white`}
         >
           <span className="flex flex-col justify-center">{children}</span>
         </div>
@@ -66,7 +68,7 @@ function Button(props: Props) {
 
       {theme === "secondary" && (
         <div
-          className={`${className} p-2 rounded-lg border border-primary bg-white text-primary hover:bg-primary hover:text-white`}
+          className={`${baseClassName} p-2 rounded-lg border border-primary bg-white text-primary hover:bg-primary hover:text-white`}
         >
           <span className="flex flex-col justify-center">{children}</span>
         </div>
@@ -74,7 +76,7 @@ function Button(props: Props) {
 
       {theme === "cancel" && (
         <div
-          className={`${className} p-2 rounded-lg hover:border hover:border-[#D20D0D] hover:bg-white hover:text-[#D20D0D] bg-[#D20D0D] text-white`}
+          className={`${baseClassName} p-2 rounded-lg hover:border hover:border-[#D20D0D] hover:bg-white hover:text-[#D20D0D] bg-[#D20D0D] text-white`}
         >
           <span className="flex flex-col justify-center">{children}</span>
         </div>
@@ -82,7 +84,7 @@ function Button(props: Props) {
 
       {theme === "cancel-secondary" && (
         <div
-          className={`${className} p-2 rounded-lg border border-[#D20D0D] bg-white text-[#D20D0D] hover:bg-[#D20D0D] hover:text-white`}
+          className={`${baseClassName} p-2 rounded-lg border border-[#D20D0D] bg-white text-[#D20D0D] hover:bg-[#D20D0D] hover:text-white`}
         >
           <span className="flex flex-col justify-center">{children}</span>
         </div>
@@ -90,11 +92,47 @@ function Button(props: Props) {
 
       {theme === "white" && (
         <div
-          className={`${className} p-2 rounded-lg bg-white text-black hover:scale-105`}
+          className={`${baseClassName} p-2 rounded-lg bg-white text-black hover:scale-105`}
         >
           <span className="flex flex-col justify-center">{children}</span>
         </div>
       )}
+
+      {theme === "gradient" && (
+        <div
+          className={`${baseClassName} inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primaryLight to-primary px-6 py-3 text-[15px] font-semibold text-white shadow-[0_16px_32px_rgba(55,0,84,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(55,0,84,0.34)] md:px-7 md:text-[16px]`}
+        >
+          <span className="flex flex-col justify-center">{children}</span>
+        </div>
+      )}
+    </>
+  );
+
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    setIsClicked(true);
+    debouncedOnClick(e);
+  };
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        onClick={handleClick}
+        className={`${baseClassName} ${isWidthFull ? "w-full" : "w-fit"}`}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      type={type}
+      onClick={handleClick}
+      className={`${baseClassName} ${isWidthFull ? "w-full" : "w-fit"}`}
+      onFocus={() => {}}
+    >
+      {content}
     </button>
   );
 }

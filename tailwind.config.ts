@@ -21,6 +21,8 @@ const config: Config = {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       cormorant_infant: ["cormorant_infant"],
+      jakarta: ["var(--font-jakarta)", "sans-serif"],
+      spaceGrotesk: ["var(--font-space-grotesk)", "sans-serif"],
     },
     borderWidth: {
       DEFAULT: "1px",
@@ -28,6 +30,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#370054",
+        primaryLight: "#7a2fb5",
       },
       animation: {
         bounceTwice: "bounce 1s infinite",

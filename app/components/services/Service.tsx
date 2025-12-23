@@ -1,243 +1,313 @@
 import {
-  FaBriefcase,
-  FaUserTie,
-  FaLaptopCode,
-  FaBullhorn,
-  FaPaintBrush,
-  FaPenNib,
-} from "react-icons/fa";
-import { SiHyperskill } from "react-icons/si";
-import { useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+  FiActivity,
+  FiBox,
+  FiCompass,
+  FiCpu,
+  FiLayers,
+  FiLink,
+  FiPenTool,
+  FiSettings,
+  FiUserCheck,
+} from "react-icons/fi";
 
 type Service = {
-  id: string;
-  name: string;
-  details: string;
-  image: string;
-  description: string;
+  title: string;
+  badge?: string;
+  description?: string;
   icon: React.ReactNode;
-  color: string;
-  background: string;
+  points: string[];
+  highlight?: {
+    label: string;
+    text: string;
+  };
+  sections?: {
+    title: string;
+    points: string[];
+  }[];
 };
 
-const services: Service[] = [
+type Tier = {
+  id: string;
+  label: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  items: Service[];
+};
+
+const tiers: Tier[] = [
   {
-    id: "1",
-    name: "Skill Training",
-    details: "Enhance your skills with our expert-led training programs.",
-    image: "/services/skill-training.jpg",
-    description:
-      "Our Skill Training program is designed for professionals who are looking to upskill or reskill. We provide hands-on experience and real-world case studies to ensure you are prepared to excel in your career. Whether you're a fresher or an experienced professional, our training programs will help you become a highly competent and job-ready individual.",
-    icon: <SiHyperskill />,
-    color: "text-purple-900",
-    background: "bg-gradient-to-tr from-purple-400 to-purple-900",
+    id: "tier-1",
+    label: "Tier 1",
+    title: "Core Strategic Services",
+    subtitle: "Front & Center",
+    description: "These define who we are and how we lead engagements.",
+    items: [
+      {
+        title: "Long-Term Technology Partnership",
+        badge: "Primary Differentiator",
+        description:
+          "We operate as an extension of your technology team, not a one-time vendor.",
+        icon: <FiCompass />,
+        points: [
+          "Continuous system evolution",
+          "AI optimization & scaling",
+          "Technical leadership & architecture",
+          "Performance, security & reliability",
+          "Strategic technology guidance",
+        ],
+      },
+      {
+        title: "AI-Powered Business Solutions",
+        badge: "Flagship Offering",
+        icon: <FiCpu />,
+        points: [
+          "Generative AI applications",
+          "RAG systems with enterprise data",
+          "Agentic AI & autonomous workflows",
+          "AI copilots & assistants",
+        ],
+        highlight: {
+          label: "Outcome",
+          text: "Smarter operations, better decisions, faster execution.",
+        },
+      },
+      {
+        title: "Custom Software & Platform Development",
+        icon: <FiLayers />,
+        points: [
+          "Internal management systems",
+          "Enterprise platforms",
+          "Customer-facing applications",
+          "Scalable, API-driven architectures",
+        ],
+        highlight: {
+          label: "Key message",
+          text: "Built to scale, adapt, and evolve with your business.",
+        },
+      },
+      {
+        title: "AI Enablement & System Integration",
+        icon: <FiLink />,
+        points: [
+          "AI strategy & architecture",
+          "AI integration into existing systems",
+          "Data pipelines & infrastructure",
+          "Governance, security & compliance",
+        ],
+      },
+    ],
   },
   {
-    id: "2",
-    name: "Job Placement",
-    details:
-      "Get assistance to land your dream job with our placement services.",
-    image: "/services/job-placement.jpg",
-    description:
-      "Our Job Placement service connects you with top companies and employers who are actively seeking talented professionals. With our extensive network, we ensure that your resume stands out, and we guide you through the interview process to help you land your ideal job.",
-    icon: <FaBriefcase />,
-    color: "text-green-800",
-    background: "bg-gradient-to-tr from-green-400 to-green-800",
+    id: "tier-2",
+    label: "Tier 2",
+    title: "Operational & Optimization Services",
+    subtitle: "Support the Core",
+    description: "These strengthen delivery and keep momentum compounding.",
+    items: [
+      {
+        title: "Business Process Automation & Optimization",
+        icon: <FiSettings />,
+        points: [
+          "Workflow analysis",
+          "Intelligent automation",
+          "AI-driven approvals & routing",
+          "Reporting & monitoring systems",
+        ],
+      },
+      {
+        title: "Internal AI Adoption & AI-First Transformation",
+        icon: <FiUserCheck />,
+        points: [
+          "Internal AI tools & copilots",
+          "AI-assisted development workflows",
+          "AI in QA, documentation & ops",
+          "Change enablement & training support",
+        ],
+      },
+      {
+        title: "Ready-to-Deploy Products",
+        badge: "Products",
+        icon: <FiBox />,
+        points: [
+          "Pre-built AI tools",
+          "Configurable platforms",
+          "Industry-specific solutions",
+        ],
+        highlight: {
+          label: "Positioning",
+          text: "Optional and secondary to our core service delivery.",
+        },
+      },
+    ],
   },
   {
-    id: "3",
-    name: "Career Consulting",
-    details:
-      "Receive personalized career advice from our experienced consultants.",
-    image: "/services/career.jpg",
-    description:
-      "Our Career Consulting service is perfect for professionals looking to switch careers or take their career to the next level. We offer one-on-one sessions to assess your strengths, interests, and goals, and then craft a tailored plan to help you succeed in your chosen field.",
-    icon: <FaUserTie />,
-    color: "text-blue-800",
-    background: "bg-gradient-to-tr from-blue-400 to-blue-800",
-  },
-  {
-    id: "4",
-    name: "Software Development",
-    details:
-      "Build modern, scalable, and efficient software solutions with our expert team.",
-    image: "/services/se-development.jpg",
-    description:
-      "Our Software Development service provides you with cutting-edge solutions that are both innovative and user-friendly. Whether you need a mobile app, web application, or enterprise-level software, our team works closely with you to ensure that the final product exceeds your expectations.",
-    icon: <FaLaptopCode />,
-    color: "text-red-800",
-    background: "bg-gradient-to-tr from-red-400 to-red-800",
-  },
-  {
-    id: "5",
-    name: "Digital Marketing",
-    details:
-      "Boost your online presence and grow your business with our digital marketing services.",
-    image: "/services/digital-marketing.jpg",
-    description:
-      "Our Digital Marketing service helps you reach your target audience and increase your brand visibility. We specialize in search engine optimization (SEO), paid search ads, social media marketing, and email marketing, ensuring that your business gains the exposure it deserves.",
-    icon: <FaBullhorn />,
-    color: "text-orange-800",
-    background: "bg-gradient-to-tr from-orange-400 to-orange-800",
-  },
-  {
-    id: "6",
-    name: "Graphics Designing",
-    details:
-      "Create visually stunning graphics that captivate and engage your audience.",
-    image: "/services/graphics.jpg",
-    description:
-      "Our Graphics Designing service helps you communicate your message through captivating visual content. Whether you're looking for a new logo, website design, or promotional materials, our team delivers creative and professional design solutions that represent your brand effectively.",
-    icon: <FaPaintBrush />,
-    color: "text-pink-800",
-    background: "bg-gradient-to-tr from-pink-400 to-pink-800",
-  },
-  {
-    id: "7",
-    name: "UI/UX Design",
-    details:
-      "Design seamless and user-friendly interfaces for your digital products.",
-    image: "/services/ui-ux.png",
-    description:
-      "Our UI/UX Design service ensures that your digital products not only look great but also provide an intuitive and enjoyable user experience. Our design team works closely with you to understand your users and develop interfaces that meet their needs while aligning with your business goals.",
-    icon: <FaPenNib />,
-    color: "text-teal-800",
-    background: "bg-gradient-to-tr from-teal-400 to-teal-800",
+    id: "tier-3",
+    label: "Tier 3",
+    title: "Specialized Delivery Services",
+    subtitle: "Grouped, Not Isolated",
+    description: "One integrated category for product craft and growth.",
+    items: [
+      {
+        title: "Product Design, Quality & Growth Services",
+        icon: <FiPenTool />,
+        points: [],
+        sections: [
+          {
+            title: "UI/UX Design",
+            points: [
+              "User research & flows",
+              "Interface design for web & mobile",
+              "Design systems",
+              "UX optimization for AI products",
+            ],
+          },
+          {
+            title: "Quality Assurance & Testing",
+            points: [
+              "Manual & automated testing",
+              "AI-assisted QA",
+              "Performance & security testing",
+              "Reliability & regression testing",
+            ],
+          },
+          {
+            title: "Digital Growth & Product Marketing",
+            points: [
+              "Product positioning & messaging",
+              "Landing pages for AI products",
+              "Conversion optimization",
+              "Analytics & performance tracking",
+            ],
+          },
+        ],
+      },
+    ],
   },
 ];
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState<Service | null>(null);
-  const router = useRouter();
-
   return (
-    <div className="w-[80%] lg:w-[70%] xl:w-[60%] grid md:grid-cols-2 lg:grid-cols-3 items-center bg-white lg:p-10 gap-6 lg:gap-10">
-      <div className="md:hidden grid grid-cols-2 gap-4 w-full">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            onClick={() => setSelectedService(service)}
-            className={`group flex items-center justify-center p-4 rounded-lg cursor-pointer shadow-md hover:scale-105 transition-transform ${
-              selectedService?.id === service.id
-                ? service.background
-                : "bg-white"
-            }`}
-          >
-            <div
-              className={`flex flex-col items-center ${
-                selectedService?.id === service.id
-                  ? "text-white"
-                  : `${service.color}`
-              }`}
-            >
-              <div className="text-3xl mb-2">{service.icon}</div>
-              <p className="font-semibold text-center text-sm">
-                {service.name}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+    <section className="w-full bg-[#f7f6fb] py-16 md:py-20">
+      <div className="mx-auto w-full max-w-[1200px] px-6 md:px-10">
+        <div className="mx-auto max-w-[760px] text-center">
+          <span className="text-[12px] uppercase tracking-[0.3em] text-primary">
+            Service Structure for Carriastic
+          </span>
+          <h2 className="mt-4 text-[28px] font-semibold text-slate-900 md:text-[40px] font-spaceGrotesk">
+            Strategy-first services organized by tier
+          </h2>
+          <p className="mt-4 text-[16px] text-slate-600 md:text-[18px]">
+            We lead with long-term partnership, AI-driven solutions, and scalable
+            platforms, then reinforce delivery with operational and specialized
+            services.
+          </p>
+        </div>
 
-      <div className="lg:col-span-2 md:h-[600px] flex flex-col justify-between text-primary text-3xl font-bold rounded-2xl md:shadow-xl">
-        {selectedService ? (
-          <div className="w-full h-full">
-            <div className="hidden md:flex flex-col gap-4 h-full justify-between pb-4">
-              <div className="w-full">
-                <div
-                  className={`w-full ${selectedService.background} shadow-lg`}
-                >
-                  <h2 className="text-[20px] font-[600] text-white lg:my-1">
-                    {selectedService.name}
-                  </h2>
-                </div>
-                <Image
-                  src={selectedService.image}
-                  alt={selectedService.name}
-                  width={300}
-                  height={200}
-                  className="w-full h-[200px] object-cover lg:my-4"
-                />
-                <p className="text-justify text-gray-600 text-[16px] px-4 lg:px-6">
-                  {selectedService.description}
-                </p>
-              </div>
-              <div className="w-full flex justify-center">
-                <button
-                  onClick={() => router.push(`/services/${selectedService.id}`)}
-                  className={`text-[16px] ${selectedService.background} text-white py-1 rounded-xl hover:scale-x-125 group`}
-                >
-                  <span className="group-hover:text-[18px] px-8">
-                    More Details
+        <div className="mt-12 flex flex-col gap-10">
+          {tiers.map((tier) => (
+            <div
+              key={tier.id}
+              className="rounded-[28px] border border-white/70 bg-white/80 p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-10"
+            >
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <span className="text-[12px] uppercase tracking-[0.26em] text-primary">
+                    {tier.label}
                   </span>
-                </button>
+                  <h3 className="mt-2 text-[22px] font-semibold text-slate-900 md:text-[28px] font-spaceGrotesk">
+                    {tier.title}
+                  </h3>
+                  <p className="mt-2 text-[14px] text-slate-500">
+                    {tier.subtitle} - {tier.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 text-[12px] uppercase tracking-[0.2em] text-slate-500">
+                  <FiActivity className="text-primary" />
+                  {tier.items.length} focus areas
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
+                {tier.items.map((service) => (
+                  <div
+                    key={service.title}
+                    className={`flex h-full flex-col gap-4 rounded-2xl border p-6 shadow-[0_18px_40px_rgba(15,23,42,0.08)] ${
+                      service.badge
+                        ? "border-primary/40 bg-white"
+                        : "border-slate-200 bg-white"
+                    }`}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-white text-primary shadow-[0_10px_24px_rgba(55,0,84,0.12)]">
+                        <span className="text-xl">{service.icon}</span>
+                      </div>
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h4 className="text-[18px] font-semibold text-slate-900 font-spaceGrotesk">
+                            {service.title}
+                          </h4>
+                          {service.badge && (
+                            <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-primary">
+                              {service.badge}
+                            </span>
+                          )}
+                        </div>
+                        {service.description && (
+                          <p className="mt-2 text-[14px] text-slate-600">
+                            {service.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    {service.points.length > 0 && (
+                      <ul className="flex flex-col gap-2 text-[14px] text-slate-600">
+                        {service.points.map((point) => (
+                          <li key={point} className="flex items-start gap-2">
+                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {service.sections && (
+                      <div className="flex flex-col gap-4">
+                        {service.sections.map((section) => (
+                          <div key={section.title}>
+                            <p className="text-[13px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                              {section.title}
+                            </p>
+                            <ul className="mt-2 flex flex-col gap-2 text-[14px] text-slate-600">
+                              {section.points.map((point) => (
+                                <li key={point} className="flex items-start gap-2">
+                                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                                  <span>{point}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {service.highlight && (
+                      <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-[13px] text-primary">
+                        <span className="font-semibold uppercase tracking-[0.16em]">
+                          {service.highlight.label}:
+                        </span>{" "}
+                        {service.highlight.text}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
-            <div
-              className={`md:hidden w-full p-4 rounded-lg shadow-lg ${selectedService.background} text-white`}
-            >
-              <h2 className="text-xl font-bold mb-2">{selectedService.name}</h2>
-              <Image
-                src={selectedService.image}
-                alt={selectedService.name}
-                width={500}
-                height={300}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <p className="text-sm leading-relaxed text-justify">
-                {selectedService.description}
-              </p>
-              <button
-                onClick={() => router.push("/contact")}
-                className="mt-4 bg-white px-4 text-black rounded-lg text-[16px]"
-              >
-                More Details
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-4 lg:gap-6">
-            <Image
-              src="/services/service.gif"
-              width={350}
-              height={224}
-              alt=""
-            />
-          </div>
-        )}
+          ))}
+        </div>
       </div>
-
-      <div className="hidden w-full md:flex flex-col gap-4">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className={`group h-[50px] px-6 flex items-center gap-2 cursor-pointer
-        ${selectedService?.id === service.id ? service.background : ""}
-        hover:${
-          service.background
-        } text-primary hover:text-white hover:-skew-x-[30deg]`}
-            onClick={() => setSelectedService(service)}
-          >
-            <div
-              className={`group-hover:skew-x-[30deg] ${
-                selectedService?.id === service.id ? "text-white" : ""
-              }`}
-            >
-              {service.icon}
-            </div>
-            <div
-              className={`font-semibold text-lg group-hover:skew-x-[30deg] ${
-                selectedService?.id === service.id ? "text-white" : ""
-              }`}
-            >
-              {service.name}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    </section>
   );
 };
 
