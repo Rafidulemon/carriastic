@@ -30,6 +30,7 @@ const Header = () => {
     { href: "/about", label: t.nav.about },
     { href: "/services", label: t.nav.services },
     { href: "/ai", label: t.nav.ai },
+    { href: "/products", label: t.nav.products },
     { href: "/team", label: t.nav.team },
     { href: "/how-it-works", label: t.nav.howItWorks },
     { href: "/blogs", label: t.nav.blog },
@@ -61,14 +62,14 @@ const Header = () => {
             </Link>
           </div>
 
-          <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 lg:flex lg:gap-10">
+          <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 lg:flex lg:gap-6">
             {navItems.map((navItem) => (
               <Link
                 key={navItem.href}
                 href={navItem.href}
-                className={`transition-colors ${
+                className={`relative inline-flex items-center transition-colors ${
                   pathname === navItem.href
-                    ? "text-primary"
+                    ? "text-primary after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary after:via-[#6d36dc] after:to-[#4b50e6]"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -129,9 +130,9 @@ const Header = () => {
                 key={navItem.href}
                 href={navItem.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`transition-colors ${
+                className={`relative inline-flex items-center transition-colors ${
                   pathname === navItem.href
-                    ? "text-primary"
+                    ? "text-primary after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary after:via-[#6d36dc] after:to-[#4b50e6]"
                     : "text-slate-700 hover:text-slate-900"
                 }`}
               >

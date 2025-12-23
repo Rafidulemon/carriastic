@@ -147,6 +147,144 @@
       }
     ]
   },
+  "about": {
+    "hero": {
+      "label": "Who we are",
+      "headline": "About Carriastic",
+      "descriptionOne": "Carriastic is a modern software and technology company focused on building scalable, intelligent, and business-ready digital systems for organizations operating in an increasingly AI-driven world.",
+      "descriptionTwo": "We design, develop, and evolve custom software platforms, AI-powered solutions, and enterprise systems that help businesses streamline operations, improve decision-making, and achieve sustainable growth. Our work goes beyond delivering software. We partner closely with organizations to ensure technology becomes a long-term strategic advantage, not just a tool.",
+      "descriptionThree": "At Carriastic, Artificial Intelligence is not an add-on. It is foundational to how we think, build, and operate.",
+      "primaryCta": "Start a conversation",
+      "secondaryCta": "Explore services",
+      "animationAlt": "About Carriastic animation"
+    },
+    "highlights": [
+      {
+        "title": "AI-first delivery",
+        "description": "A development culture where AI is embedded across product, engineering, QA, and operations."
+      },
+      {
+        "title": "Business-ready systems",
+        "description": "Platforms designed for measurable impact, reliability, and long-term adoption."
+      },
+      {
+        "title": "Long-term partnership",
+        "description": "We stay engaged beyond launch to optimize, scale, and evolve your systems."
+      }
+    ],
+    "missionVision": {
+      "label": "Purpose",
+      "headline": "Mission and vision",
+      "description": "We exist to make AI and modern software practical, reliable, and aligned with real business needs, never experimental or disconnected from outcomes.",
+      "items": [
+        {
+          "title": "Our Mission",
+          "description": "To empower businesses with intelligent, scalable technology that drives real operational impact and long-term growth. We help organizations adopt AI and modern software in a way that is practical, reliable, and aligned with real business needs, not experimental, over-engineered, or disconnected from outcomes."
+        },
+        {
+          "title": "Our Vision",
+          "description": "To become a trusted AI-first technology partner for businesses worldwide, shaping how organizations build, operate, and evolve in the age of intelligent systems. We envision AI deeply embedded into everyday operations, enhancing human decision-making and enabling confident scale."
+        }
+      ]
+    },
+    "aiCulture": {
+      "label": "AI-first philosophy",
+      "headline": "We practice what we deliver",
+      "description": "Our internal adoption of AI improves speed, accuracy, and enterprise-level quality across the full delivery lifecycle.",
+      "items": [
+        "Product design and ideation",
+        "Software engineering",
+        "Quality assurance and testing",
+        "Documentation and knowledge management",
+        "Operational workflows"
+      ],
+      "highlightLabel": "Beyond internal use",
+      "highlightDescription": "We design and deploy advanced AI systems that enable automation, clarity, and better decision-making in production environments.",
+      "systems": [
+        {
+          "title": "Generative AI applications",
+          "description": "Automation and intelligent interactions that reduce manual effort while improving customer experience."
+        },
+        {
+          "title": "Retrieval-Augmented Generation systems",
+          "description": "Grounded AI that blends large language models with proprietary or enterprise data."
+        },
+        {
+          "title": "Agentic AI solutions",
+          "description": "Autonomous task execution, workflow orchestration, and decision support for complex operations."
+        }
+      ]
+    },
+    "workProcess": {
+      "label": "How we work",
+      "headline": "Structured, collaborative delivery",
+      "description": "Great technology starts with a deep understanding of the business behind it. We stay close to your teams through continuous engagement and strategic consultation.",
+      "steps": [
+        {
+          "title": "Understand the business",
+          "description": "We immerse in your processes, challenges, and long-term goals to align technology with outcomes."
+        },
+        {
+          "title": "Design the right architecture",
+          "description": "We craft scalable architectures and AI-enabled solutions built for real business needs."
+        },
+        {
+          "title": "Build and deploy reliably",
+          "description": "We deliver secure, production-ready systems with rigorous QA and rollout planning."
+        },
+        {
+          "title": "Optimize and evolve",
+          "description": "We continuously tune performance and evolve platforms as your business grows."
+        }
+      ],
+      "closing": "We do not deliver one-time solutions and walk away. Carriastic works as a long-term technology partner, ensuring systems remain relevant, efficient, and adaptable as business and technology landscapes change."
+    },
+    "differentiators": {
+      "label": "Differentiators",
+      "headline": "What makes us different",
+      "description": "We focus on long-term outcomes, not one-time delivery.",
+      "items": [
+        {
+          "title": "AI is core, not cosmetic",
+          "description": "AI is embedded into our thinking, workflows, and systems, never added as a marketing layer."
+        },
+        {
+          "title": "Business-driven, not tech-driven",
+          "description": "Every solution is designed around measurable business value, not unnecessary complexity."
+        },
+        {
+          "title": "Built for scale and longevity",
+          "description": "We architect systems that are reliable today and adaptable tomorrow."
+        },
+        {
+          "title": "Partnership over projects",
+          "description": "We operate as an extension of client teams with ongoing guidance and evolution."
+        }
+      ]
+    },
+    "clients": {
+      "label": "Clients",
+      "headline": "Who we work with",
+      "description": "Our clients value clarity, reliability, and long-term collaboration over short-term delivery.",
+      "items": [
+        "Growing startups building scalable platforms",
+        "Mid-sized companies adopting AI and automation",
+        "Enterprises modernizing systems and workflows"
+      ]
+    },
+    "commitment": {
+      "label": "Commitment",
+      "headline": "The standards we uphold",
+      "descriptionOne": "We prioritize sustained impact over quick wins, ensuring systems remain relevant, efficient, and adaptable as business and technology landscapes change.",
+      "descriptionTwo": "Our goal is simple: to help our clients build technology that continues to create value as their business grows.",
+      "items": [
+        "Reliability and performance",
+        "Security and scalability",
+        "Transparency and collaboration",
+        "Sustained impact over quick wins"
+      ]
+    }
+  },
   "cta": {
     "label": "Ready to build",
     "headline": "Partner with Carriastic for AI-powered growth",
@@ -262,6 +400,7 @@
     "about": "About",
     "services": "Services",
     "ai": "AI",
+    "products": "Our Products",
     "team": "Team",
     "howItWorks": "How it Works",
     "blog": "Blog",
