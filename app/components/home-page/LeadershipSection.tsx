@@ -1,46 +1,31 @@
-import Image from "next/image";
+"use client";
 
-const leadershipQuotes = [
-  {
-    name: "Md. Rafidul Islam",
-    title: "Chief Executive Officer",
-    quote:
-      "We are engineering the next operating layer for enterprises: AI-native platforms that sense, learn, and optimize in real time, so every decision is faster, smarter, and measurable.",
-    image: "/team/rafid.png",
-  },
-  {
-    name: "Syed Hasan Ahmed Anik",
-    title: "Chief Operating Officer",
-    quote:
-      "Our delivery model treats AI as infrastructure, not a feature - we orchestrate data, workflows, and agents into a resilient pipeline that scales from pilot to enterprise-grade automation.",
-    image: "/team/hasan.png",
-  },
-  {
-    name: "Ahsan Habib Ethic",
-    title: "Chief Marketing Officer",
-    quote:
-      "We help brands move from digital presence to digital intelligence, where customer interactions are predictive, personalized, and continuously evolving through generative and agentic systems.",
-    image: "/team/ethic.png",
-  },
-];
+import Image from "next/image";
+import { useLanguage } from "../../i18n/LanguageProvider";
+
+const leaderImages = ["/team/rafid.png", "/team/hasan.png", "/team/ethic.png"];
 
 const quoteIntervalSeconds = 10;
 
 const LeadershipSection = () => {
+  const { t } = useLanguage();
+  const leadershipQuotes = t.leadership.quotes.map((leader, index) => ({
+    ...leader,
+    image: leaderImages[index] ?? leaderImages[0],
+  }));
   const quoteCycleSeconds = leadershipQuotes.length * quoteIntervalSeconds;
 
   return (
     <section className="relative mx-auto w-full max-w-[1200px] px-6 pb-12 md:px-10">
       <div className="flex flex-col items-center gap-4 text-center">
         <span className="mx-auto inline-flex w-fit uppercase tracking-[0.2em] text-[12px] text-[#0ea5e9]">
-          Leadership voices
+          {t.leadership.label}
         </span>
         <h2 className="relative inline-block bg-[linear-gradient(120deg,#7a2fb5_0%,#370054_60%,#5b21b6_100%)] bg-clip-text text-[28px] font-semibold text-transparent drop-shadow-[0_10px_22px_#3700542e] after:absolute after:left-1/2 after:bottom-[-10px] after:h-[4px] after:w-[52%] after:-translate-x-1/2 after:rounded-full after:bg-[linear-gradient(90deg,#0ea5e9,#22c55e)] after:opacity-75 after:content-[''] md:text-[36px] font-spaceGrotesk">
-          Quotes from our leadership
+          {t.leadership.headline}
         </h2>
         <p className="mx-auto max-w-[720px] text-[16px] text-[#334155] md:text-[18px]">
-          Our leadership team stays close to delivery, ensuring every client
-          engagement remains focused on measurable business outcomes.
+          {t.leadership.description}
         </p>
       </div>
       <div className="mt-8 grid min-h-[280px] place-items-center">

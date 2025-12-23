@@ -13,9 +13,19 @@ import EmailInput from "../inputs/EmailInput";
 import TextInput from "../inputs/TextInput";
 import TextArea from "../inputs/TextArea";
 import Button from "../button/Button";
+import { useLanguage } from "../../i18n/LanguageProvider";
 
 const Footer = () => {
   const pathname = usePathname();
+  const { t } = useLanguage();
+  const footer = t.footer;
+  const contactEmail = "info@carriastic.com";
+  const contactPhone = "+8801884517187";
+  const contactAddress = footer.contactInfo.address;
+  const preferEmailText = footer.contactForm.preferEmail.replace(
+    "{email}",
+    contactEmail
+  );
   return (
     <div className="w-screen flex flex-col gap-0">
       {pathname !== "/contact" && (
@@ -24,7 +34,7 @@ const Footer = () => {
             <div className="w-full flex flex-col items-center justify-start gap-6 p-6">
               <div className="w-full md:w-[70%] h-[300px] md:h-[400px] rounded-lg overflow-hidden">
                 <iframe
-                  title="Carriastic Location"
+                  title={footer.mapTitle}
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.8278657298845!2d90.40204921543524!3d23.79564059295706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70bdff8f8f5%3A0xe3d29b979b1e9dcf!2sYour%20Company%20Location!5e0!3m2!1sen!2sbd!4v1234567890123!5m2!1sen!2sbd"
                   width="100%"
                   height="100%"
@@ -37,20 +47,24 @@ const Footer = () => {
                 <div className="w-full flex items-start gap-2 justify-start">
                   <div className="flex gap-1">
                     <span className="font-bold text-primary">📍</span>
-                    <span className="font-bold text-primary">Address:</span>
+                    <span className="font-bold text-primary">
+                      {footer.contactInfo.addressLabel}:
+                    </span>
                   </div>
 
-                  <p className="text-gray-600">
-                    House 19/1, GP Cha, Mohakhali, Dhaka-1212, Bangladesh
-                  </p>
+                  <p className="text-gray-600">{contactAddress}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-primary">📧 Email:</span>
-                  <p className="text-gray-600">info@carriastic.com</p>
+                  <span className="font-bold text-primary">
+                    📧 {footer.contactInfo.emailLabel}:
+                  </span>
+                  <p className="text-gray-600">{contactEmail}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-primary">📞 Phone:</span>
-                  <p className="text-gray-600">+8801884517187</p>
+                  <span className="font-bold text-primary">
+                    📞 {footer.contactInfo.phoneLabel}:
+                  </span>
+                  <p className="text-gray-600">{contactPhone}</p>
                 </div>
               </div>
             </div>
@@ -63,50 +77,49 @@ const Footer = () => {
 
                 <div className="relative flex flex-col gap-3">
                   <span className="text-xs uppercase tracking-[0.4em] text-primary/80">
-                    Get in touch
+                    {footer.contactForm.kicker}
                   </span>
                   <div className="flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
                     <div>
                       <h3 className="text-2xl font-semibold text-slate-900 md:text-3xl">
-                        Shape the next move with us
+                        {footer.contactForm.headline}
                       </h3>
                       <p className="mt-2 text-sm text-slate-600">
-                        Share your goals, timeline, and constraints. We respond
-                        within one business day with a tailored plan.
+                        {footer.contactForm.description}
                       </p>
                     </div>
                     <div className="flex items-center gap-2 whitespace-nowrap rounded-full border border-primary/20 bg-white/70 px-3 py-1 text-xs font-semibold text-primary shadow-sm">
                       <span className="h-2 w-2 rounded-full bg-green-700 shadow-[0_0_8px_rgba(76,49,201,0.6)]" />
-                      Response within 24h
+                      {footer.contactForm.responseTime}
                     </div>
                   </div>
                 </div>
 
                 <form
                   className="relative mt-6 grid gap-4 md:gap-5"
-                  aria-label="Get in touch form"
+                  aria-label={footer.contactForm.formAriaLabel}
                 >
                   <div className="grid gap-4 md:grid-cols-2">
                     <EmailInput
-                      label="Your Email"
-                      placeholder="Enter your email here"
+                      label={footer.contactForm.emailLabel}
+                      placeholder={footer.contactForm.emailPlaceholder}
                       className="w-full"
                     />
                     <TextInput
-                      label="Subject"
-                      placeholder="What can we help with?"
+                      label={footer.contactForm.subjectLabel}
+                      placeholder={footer.contactForm.subjectPlaceholder}
                       className="w-full"
                     />
                   </div>
                   <TextArea
-                    label="Message"
+                    label={footer.contactForm.messageLabel}
                     height="160px"
-                    placeholder="Describe your project, timeline, and success metrics."
+                    placeholder={footer.contactForm.messagePlaceholder}
                     className="w-full"
                   />
                   <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                     <p className="text-xs text-slate-500">
-                      Prefer email? Send details to info@carriastic.com.
+                      {preferEmailText}
                     </p>
                     <Button
                       className="w-full"
@@ -114,7 +127,7 @@ const Footer = () => {
                       theme="gradient"
                       type="submit"
                     >
-                      <span>Send Message</span>
+                      <span>{footer.contactForm.submit}</span>
                     </Button>
                   </div>
                 </form>
@@ -147,15 +160,15 @@ const Footer = () => {
 
               <div className="w-full md:w-[360px] rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
                 <p className="text-sm text-slate-300">
-                  Stay in the loop with new services and insights.
+                  {footer.newsletter.description}
                 </p>
                 <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <div className="relative flex-1">
                     <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                     <input
                       type="email"
-                      aria-label="Email address"
-                      placeholder="you@company.com"
+                      aria-label={footer.newsletter.inputAriaLabel}
+                      placeholder={footer.newsletter.placeholder}
                       className="w-full rounded-xl border border-white/10 bg-[#0b1220] py-2.5 pl-10 pr-3 text-sm text-white placeholder:text-slate-500 focus:border-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/30"
                     />
                   </div>
@@ -163,7 +176,7 @@ const Footer = () => {
                     href="/contact"
                     className="cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)]"
                   >
-                    Contact
+                    {footer.newsletter.cta}
                   </Link>
                 </div>
               </div>
@@ -172,27 +185,27 @@ const Footer = () => {
             <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
               <div className="flex flex-col gap-4 text-slate-300">
                 <span className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-                  Office
+                  {footer.sections.office}
                 </span>
                 <p className="text-base text-white">
-                  House 19/1, GP Cha, Mohakhali, Dhaka-1212, Bangladesh
+                  {contactAddress}
                 </p>
                 <div className="flex flex-col gap-1 text-sm">
-                  <span>info@carriastic.com</span>
-                  <span>+8801884517187</span>
+                  <span>{contactEmail}</span>
+                  <span>{contactPhone}</span>
                 </div>
               </div>
 
               <div className="flex flex-col gap-4">
                 <span className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-                  Explore
+                  {footer.sections.explore}
                 </span>
                 <nav className="flex flex-col gap-3 text-sm text-slate-300">
                   {[
-                    { href: "/", label: "Home" },
-                    { href: "/about", label: "About" },
-                    { href: "/services", label: "Services" },
-                    { href: "/team", label: "Team" },
+                    { href: "/", label: footer.links.home },
+                    { href: "/about", label: footer.links.about },
+                    { href: "/services", label: footer.links.services },
+                    { href: "/team", label: footer.links.team },
                   ].map((navItem) => (
                     <Link
                       key={navItem.href}
@@ -207,13 +220,13 @@ const Footer = () => {
 
               <div className="flex flex-col gap-4">
                 <span className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-                  Company
+                  {footer.sections.company}
                 </span>
                 <nav className="flex flex-col gap-3 text-sm text-slate-300">
                   {[
-                    { href: "/blogs", label: "Blogs" },
-                    { href: "/career", label: "Career" },
-                    { href: "/contact", label: "Contact" },
+                    { href: "/blogs", label: footer.links.blogs },
+                    { href: "/career", label: footer.links.career },
+                    { href: "/contact", label: footer.links.contact },
                   ].map((navItem) => (
                     <Link
                       key={navItem.href}
@@ -228,11 +241,10 @@ const Footer = () => {
 
               <div className="flex flex-col gap-4">
                 <span className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-                  Connect
+                  {footer.sections.connect}
                 </span>
                 <p className="text-sm text-slate-300">
-                  Follow the signal. We share leadership insights and
-                  partnerships weekly.
+                  {footer.connect.description}
                 </p>
                 <div className="flex gap-4">
                   <a
@@ -271,8 +283,8 @@ const Footer = () => {
 
         <div className="border-t border-white/10">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-center text-xs text-slate-400 md:flex-row md:items-center md:justify-between md:text-left">
-            <span>© Copyright - Carriastic - 2026. All Rights Reserved.</span>
-            <span>Dhaka, Bangladesh | Built for forward momentum</span>
+            <span>{footer.bottom.copyright}</span>
+            <span>{footer.bottom.tagline}</span>
           </div>
         </div>
       </div>

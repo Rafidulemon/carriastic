@@ -5,21 +5,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
+import LanguageToggle from "../language/LanguageToggle";
+import { useLanguage } from "../../i18n/LanguageProvider";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   const navItems = [
-    { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
-    { href: "/ai", label: "AI" },
-    { href: "/team", label: "Team" },
-    { href: "/how-it-works", label: "How it Works" },
-    { href: "/blogs", label: "Blog" },
-    { href: "/career", label: "Career" },
+    { href: "/about", label: t.nav.about },
+    { href: "/services", label: t.nav.services },
+    { href: "/ai", label: t.nav.ai },
+    { href: "/team", label: t.nav.team },
+    { href: "/how-it-works", label: t.nav.howItWorks },
+    { href: "/blogs", label: t.nav.blog },
+    { href: "/career", label: t.nav.career },
   ];
 
   return (
@@ -62,12 +65,13 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden items-center md:flex">
+        <div className="hidden items-center gap-3 md:flex">
+          <LanguageToggle />
           <Link
             href="/contact"
             className="cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)]"
           >
-            Contact us
+            {t.nav.contact}
           </Link>
         </div>
       </div>
@@ -123,13 +127,17 @@ const Header = () => {
             ))}
           </nav>
 
+          <div className="px-6 pb-4">
+            <LanguageToggle />
+          </div>
+
           <div className="px-6 pb-8">
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
               className="flex w-full items-center justify-center rounded-[10px] bg-gradient-to-r from-[#5b2ae6] via-[#6d36dc] to-[#4b50e6] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)]"
             >
-              Contact us
+              {t.nav.contact}
             </Link>
           </div>
         </div>
