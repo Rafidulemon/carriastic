@@ -37,7 +37,7 @@ const ContactPage = () => {
       <section className="relative overflow-hidden bg-[radial-gradient(80%_60%_at_50%_0%,#f3e8ff_0%,#f8f7ff_45%,#ffffff_100%)]">
         <div className="pointer-events-none absolute -left-20 top-8 h-64 w-64 rounded-full bg-primary/15 blur-3xl" />
         <div className="pointer-events-none absolute right-0 top-10 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 py-14 md:px-10 md:py-20 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 py-6 md:py-12 md:px-10 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="flex flex-col gap-6 text-center lg:text-left">
             <span className="inline-flex w-fit self-center rounded-full border border-primary/20 bg-white/80 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-primary lg:self-start">
               {contact.hero.label}

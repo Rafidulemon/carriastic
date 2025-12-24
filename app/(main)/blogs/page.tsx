@@ -1,101 +1,107 @@
 "use client";
-import React from "react";
-import BlogCard from "../../components/cards/BlogCard";
-import Image from "next/image";
 
-const blogs = [
-  {
-    title: "Understanding the Basics of AI and Machine Learning",
-    date: "January 15, 2024",
-    description: "Explore the foundational concepts behind AI and machine learning and how they’re shaping the future of technology.",
-    imageUrl: "/blog/ai-ml-basics.jpg",
-    link: "/blog/ai-machine-learning-basics"
-  },
-  {
-    title: "Top 10 Data Science Tools in 2024",
-    date: "February 20, 2024",
-    description: "A comprehensive guide to the most popular tools used by data scientists today, from data wrangling to visualization.",
-    imageUrl: "/blog/data-science-tools.jpg",
-    link: "/blog/data-science-tools-2024"
-  },
-  {
-    title: "The Impact of AI on Digital Marketing",
-    date: "March 5, 2024",
-    description: "How AI is revolutionizing digital marketing strategies, from customer targeting to content personalization.",
-    imageUrl: "/blog/ai-marketing.png",
-    link: "/blog/impact-of-ai-on-marketing"
-  },
-  {
-    title: "How Machine Learning is Transforming E-commerce",
-    date: "March 25, 2024",
-    description: "Learn how machine learning is being used to improve the customer experience, from personalized recommendations to predictive analytics.",
-    imageUrl: "/blog/machine-learning-ecommerce.png",
-    link: "/blog/machine-learning-ecommerce"
-  },
-  {
-    title: "Data Science: The Future of Business Analytics",
-    date: "April 10, 2024",
-    description: "Discover how data science is driving business decisions and providing deep insights into consumer behavior and operations.",
-    imageUrl: "/blog/data-science-future.png",
-    link: "/blog/data-science-business-analytics"
-  },
-  {
-    title: "Introduction to Neural Networks for Beginners",
-    date: "April 30, 2024",
-    description: "A beginner’s guide to understanding neural networks, how they work, and their applications in real-world problems.",
-    imageUrl: "/blog/neural-networks.jpg",
-    link: "/blog/intro-to-neural-networks"
-  },
-  {
-    title: "The Role of AI in Healthcare: Current and Future Trends",
-    date: "May 15, 2024",
-    description: "Exploring how AI is transforming healthcare, from diagnosis to patient care and administrative processes.",
-    imageUrl: "/blog/ai-healthcare.jpg",
-    link: "/blog/ai-in-healthcare"
-  },
-  {
-    title: "Understanding the Importance of Data Privacy in AI",
-    date: "June 1, 2024",
-    description: "An exploration of the importance of data privacy, ethics, and security in the development of AI technologies.",
-    imageUrl: "/blog/data-privacy-ai.png",
-    link: "/blog/data-privacy-ai"
-  },
-  {
-    title: "Digital Marketing Trends for 2024",
-    date: "June 20, 2024",
-    description: "Stay ahead of the curve with the latest trends in digital marketing, including AI tools, social media strategies, and more.",
-    imageUrl: "/blog/digital-marketing-trends.jpg",
-    link: "/blog/digital-marketing-trends-2024"
-  },
-  {
-    title: "The Role of Data Science in Predictive Analytics",
-    date: "July 5, 2024",
-    description: "How data science is being used in predictive analytics to forecast trends and make data-driven decisions.",
-    imageUrl: "/blog/predictive-analytics.jpg",
-    link: "/blog/data-science-predictive-analytics"
-  }
-];
+import Image from "next/image";
+import Link from "next/link";
+import BlogCard from "../../components/cards/BlogCard";
+import Button from "../../components/button/Button";
+import { useLanguage } from "../../i18n/LanguageProvider";
 
 const BlogsPage = () => {
+  const { t } = useLanguage();
+  const blogsPage = t.blogsPage;
+
+  const blogAccents = [
+    "from-[#ede9fe]/70 via-white to-[#dbeafe]/70",
+    "from-[#dcfce7]/70 via-white to-[#ccfbf1]/70",
+    "from-[#fef3c7]/70 via-white to-[#ffe4e6]/70",
+  ];
+
   return (
     <div className="w-full">
-        <div className="relative w-full h-[220px] md:h-[600px]">
+      <section className="relative isolate overflow-hidden">
         <Image
           src="/banners/blog.jpg"
-          alt="Our Services"
-          layout="fill"
-          className="absolute inset-0 w-full h-full"
+          alt={blogsPage.hero.imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <h1 className="text-white text-[24px] md:text-[48px] font-bold">Blogs</h1>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/70 to-primary/60" />
+        <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-primaryLight/40 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-[-140px] right-[-80px] h-[340px] w-[340px] rounded-full bg-sky-400/30 blur-3xl" />
+        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-8 px-6 py-8 text-white md:py-14 md:px-10">
+          <span className="inline-flex w-fit self-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-white/80 md:self-start">
+            {blogsPage.hero.label}
+          </span>
+          <div className="flex flex-col gap-5 text-center md:text-left">
+            <h1 className="text-[32px] font-semibold leading-[1.05] md:text-[56px] font-spaceGrotesk">
+              {blogsPage.hero.headline}
+            </h1>
+            <p className="max-w-[680px] text-[16px] text-white/80 md:text-[18px]">
+              {blogsPage.hero.description}
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+              {blogsPage.hero.badges.map((badge) => (
+                <span
+                  key={badge}
+                  className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-white/80"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 md:justify-start">
+              <Button href="/contact" theme="gradient">
+                {blogsPage.hero.primaryCta}
+              </Button>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-[15px] font-semibold text-white backdrop-blur transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-white/20"
+              >
+                {blogsPage.hero.secondaryCta}
+              </Link>
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {blogsPage.hero.stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-white/15 bg-white/10 p-4 text-center backdrop-blur"
+              >
+                <p className="text-[22px] font-semibold">{stat.value}</p>
+                <p className="mt-2 text-[11px] uppercase tracking-[0.3em] text-white/70">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <h1 className="text-2xl font-bold text-center my-8">Our Latest Blogs</h1>
-      <div className="mx-10 mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogs.map((blog, index) => (
-          <BlogCard key={index} {...blog} />
-        ))}
-      </div>
+      </section>
+
+      <section className="relative mx-auto w-full max-w-[1200px] px-6 py-14 md:px-10">
+        <div className="flex flex-col items-center gap-4 text-center">
+          <span className="text-[11px] uppercase tracking-[0.35em] text-primary">
+            {blogsPage.list.label}
+          </span>
+          <h2 className="text-[30px] font-semibold text-slate-900 md:text-[40px] font-spaceGrotesk">
+            {blogsPage.list.headline}
+          </h2>
+          <p className="max-w-[760px] text-[16px] text-slate-600 md:text-[18px]">
+            {blogsPage.list.description}
+          </p>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {blogsPage.blogs.map((blog, index) => (
+            <BlogCard
+              key={`${blog.title}-${index}`}
+              {...blog}
+              ctaLabel={blogsPage.list.cardCta}
+              accent={blogAccents[index % blogAccents.length]}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

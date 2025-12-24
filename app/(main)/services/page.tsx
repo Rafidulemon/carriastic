@@ -49,7 +49,7 @@ const ServicesPage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-slate-900/70" />
         <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-primaryLight/40 blur-3xl" />
         <div className="pointer-events-none absolute bottom-[-60px] right-[-40px] h-72 w-72 rounded-full bg-sky-400/30 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col items-center gap-6 px-6 py-16 text-center text-white md:items-start md:py-24 md:px-10 md:text-left">
+        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col items-center gap-6 px-6 py-6 md:py-12 md:px-10 text-center text-white md:items-start md:text-left">
           <span className="inline-flex w-fit self-center rounded-full border border-white/30 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.3em] md:self-start">
             {servicesPage.hero.label}
           </span>

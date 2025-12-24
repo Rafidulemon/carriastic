@@ -139,7 +139,7 @@ const Footer = () => {
       <div className="relative w-full overflow-hidden bg-[#130c21] text-white">
         <div className="absolute inset-0">
           <div className="absolute -right-24 -top-32 h-72 w-72 rounded-full bg-primary blur-3xl motion-safe:animate-pulse" />
-          <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-primary blur-3xl motion-safe:animate-pulse" />
+          <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full md:bg-primary blur-3xl motion-safe:animate-pulse" />
           <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,0.06)_1px,_transparent_1px),linear-gradient(90deg,_rgba(255,255,255,0.06)_1px,_transparent_1px)] bg-[size:28px_28px]" />
         </div>
 
@@ -246,7 +246,7 @@ const Footer = () => {
                 <p className="text-sm text-slate-300">
                   {footer.connect.description}
                 </p>
-                <div className="flex gap-4">
+                <div className="hidden md:flex gap-4">
                   <a
                     href="https://www.facebook.com/profile.php?id=100088397602087"
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cyan-200 transition hover:border-cyan-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/50"
@@ -277,14 +277,43 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
+              <div className="flex gap-2 md:hidden">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100088397602087"
+                    className="flex h-10 w-10 px-3 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cyan-200 transition hover:border-cyan-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/50"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebookF size={18} />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex h-10 w-10 px-3 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sky-200 transition hover:border-sky-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/50"
+                    aria-label="Twitter"
+                  >
+                    <FaTwitter size={18} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/90535817"
+                    className="flex h-10 w-10 px-3 items-center justify-center rounded-full border border-white/10 bg-white/5 text-blue-200 transition hover:border-blue-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/50"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedinIn size={18} />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex h-10 w-10 px-3 items-center justify-center rounded-full border border-white/10 bg-white/5 text-rose-200 transition hover:border-rose-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/50"
+                    aria-label="YouTube"
+                  >
+                    <FaYoutube size={18} />
+                  </a>
+                </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-white/10">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-center text-xs text-slate-400 md:flex-row md:items-center md:justify-between md:text-left">
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-center text-xs text-slate-400">
             <span>{footer.bottom.copyright}</span>
-            <span>{footer.bottom.tagline}</span>
           </div>
         </div>
       </div>

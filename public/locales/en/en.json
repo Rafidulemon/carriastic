@@ -646,6 +646,814 @@
       "submit": "Send Message"
     }
   },
+  "aiPage": {
+    "hero": {
+      "label": "AI Studio",
+      "headline": "Design, deploy, and scale AI systems that move real metrics.",
+      "description": "From copilots to autonomous workflows, we turn your data and domain expertise into production-ready AI products with governance baked in.",
+      "primaryCta": "Book an AI workshop",
+      "secondaryCta": "See AI services",
+      "badges": ["LLM strategy", "RAG + agents", "MLOps readiness"],
+      "stats": [
+        {
+          "value": "4-8 weeks",
+          "label": "Prototype to pilot"
+        },
+        {
+          "value": "24/7",
+          "label": "Monitoring coverage"
+        },
+        {
+          "value": "ISO-ready",
+          "label": "Security posture"
+        }
+      ],
+      "highlight": {
+        "label": "Featured build",
+        "title": "AI Operations Command Center",
+        "description": "Unifies forecasting, anomaly detection, and automated actions across teams."
+      }
+    },
+    "solutions": {
+      "label": "What we build",
+      "headline": "AI solutions mapped to your workflows",
+      "description": "We design intelligent products that sit inside the tools your teams already use, fast to adopt and hard to replace.",
+      "cards": [
+        {
+          "tag": "Copilots",
+          "title": "Workflow copilots",
+          "description": "Role-specific assistants that draft, review, and automate daily tasks."
+        },
+        {
+          "tag": "Knowledge",
+          "title": "RAG knowledge hubs",
+          "description": "Secure retrieval over internal docs, policies, and SOPs."
+        },
+        {
+          "tag": "Automation",
+          "title": "Agentic ops",
+          "description": "Autonomous agents that trigger actions across CRMs, ERPs, and support tools."
+        },
+        {
+          "tag": "Decisioning",
+          "title": "Predictive intelligence",
+          "description": "Forecasts, anomaly detection, and risk scoring for faster decisions."
+        },
+        {
+          "tag": "Experience",
+          "title": "Conversational experiences",
+          "description": "Multichannel chatbots and voice experiences aligned to your brand."
+        },
+        {
+          "tag": "Data",
+          "title": "AI-ready data layers",
+          "description": "Pipelines, vector stores, and governance that power reliable models."
+        }
+      ]
+    },
+    "useCases": {
+      "label": "Use cases",
+      "headline": "Industry-ready AI plays",
+      "description": "Launch targeted AI initiatives without disrupting core systems.",
+      "cases": [
+        {
+          "title": "Customer intelligence",
+          "description": "Personalized outreach, sentiment analysis, and next-best action recommendations.",
+          "tags": ["Growth", "Marketing", "Support"]
+        },
+        {
+          "title": "Operations automation",
+          "description": "Process routing, ticket triage, and smart approvals that cut cycle time.",
+          "tags": ["Ops", "Back office", "IT"]
+        },
+        {
+          "title": "Revenue acceleration",
+          "description": "Sales copilots, pipeline forecasting, and account intelligence dashboards.",
+          "tags": ["Sales", "RevOps", "Finance"]
+        },
+        {
+          "title": "Risk & compliance",
+          "description": "Policy checks, audit readiness, and detection across regulated workflows.",
+          "tags": ["Compliance", "Security", "Audit"]
+        }
+      ]
+    },
+    "workflow": {
+      "label": "Delivery playbook",
+      "headline": "A structured path to reliable AI",
+      "description": "We align stakeholders, validate data, and ship production-grade systems with measurable ROI.",
+      "steps": [
+        {
+          "title": "Discovery & KPI mapping",
+          "description": "Define the business objective, success metrics, and stakeholder workflows."
+        },
+        {
+          "title": "Data readiness & architecture",
+          "description": "Audit data sources, privacy constraints, and system integrations."
+        },
+        {
+          "title": "Prototype & user validation",
+          "description": "Build rapid pilots, capture feedback, and prove value fast."
+        },
+        {
+          "title": "Production engineering",
+          "description": "Harden pipelines, deploy guardrails, and scale infrastructure."
+        },
+        {
+          "title": "Optimize & expand",
+          "description": "Monitor outcomes, reduce drift, and scale to new teams."
+        }
+      ],
+      "highlight": {
+        "label": "AI control plane",
+        "title": "Real-time monitoring and guardrails",
+        "description": "Observability dashboards, drift alerts, and human-in-the-loop routing built in from day one."
+      }
+    },
+    "trust": {
+      "label": "Safety & governance",
+      "headline": "Built for security, compliance, and trust",
+      "description": "We embed policy, privacy, and reliability into every layer of the AI stack.",
+      "items": [
+        {
+          "title": "Data stewardship",
+          "description": "PII handling, access controls, and retention policies aligned with your compliance needs."
+        },
+        {
+          "title": "Model governance",
+          "description": "Prompt testing, evaluation harnesses, and approval workflows for regulated teams."
+        },
+        {
+          "title": "Operational resilience",
+          "description": "Monitoring, fallback flows, and SLAs that keep AI dependable."
+        },
+        {
+          "title": "Responsible AI",
+          "description": "Bias reviews, explainability, and human oversight built into delivery."
+        }
+      ]
+    },
+    "cta": {
+      "label": "Ready to go",
+      "headline": "Let's launch your AI initiative.",
+      "description": "Tell us your use case and we will deliver a roadmap, pilot plan, and success benchmarks.",
+      "primaryCta": "Start a project",
+      "secondaryCta": "Explore services"
+    }
+  },
+  "blogsPage": {
+    "hero": {
+      "label": "Insights",
+      "headline": "Ideas and lessons from building AI-first products.",
+      "description": "Explore practical guidance on AI, data, and digital delivery from the Carriastic team.",
+      "primaryCta": "Start a project",
+      "secondaryCta": "View our services",
+      "badges": ["AI strategy", "Data & analytics", "Product delivery"],
+      "stats": [
+        {
+          "value": "10",
+          "label": "Fresh articles"
+        },
+        {
+          "value": "6",
+          "label": "Focus themes"
+        },
+        {
+          "value": "2024",
+          "label": "Latest updates"
+        }
+      ],
+      "imageAlt": "Carriastic blog banner"
+    },
+    "list": {
+      "label": "Latest insights",
+      "headline": "Read our newest thinking",
+      "description": "Curated articles on AI, data science, and digital growth from the Carriastic team.",
+      "cardCta": "Read article"
+    },
+    "blogs": [
+      {
+        "title": "Understanding the Basics of AI and Machine Learning",
+        "date": "January 15, 2024",
+        "description": "Explore the foundational concepts behind AI and machine learning and how they are shaping the future of technology.",
+        "imageUrl": "/blog/ai-ml-basics.jpg",
+        "link": "/blog/ai-machine-learning-basics"
+      },
+      {
+        "title": "Top 10 Data Science Tools in 2024",
+        "date": "February 20, 2024",
+        "description": "A comprehensive guide to the most popular tools used by data scientists today, from data wrangling to visualization.",
+        "imageUrl": "/blog/data-science-tools.jpg",
+        "link": "/blog/data-science-tools-2024"
+      },
+      {
+        "title": "The Impact of AI on Digital Marketing",
+        "date": "March 5, 2024",
+        "description": "How AI is revolutionizing digital marketing strategies, from customer targeting to content personalization.",
+        "imageUrl": "/blog/ai-marketing.png",
+        "link": "/blog/impact-of-ai-on-marketing"
+      },
+      {
+        "title": "How Machine Learning is Transforming E-commerce",
+        "date": "March 25, 2024",
+        "description": "Learn how machine learning is being used to improve the customer experience, from personalized recommendations to predictive analytics.",
+        "imageUrl": "/blog/machine-learning-ecommerce.png",
+        "link": "/blog/machine-learning-ecommerce"
+      },
+      {
+        "title": "Data Science: The Future of Business Analytics",
+        "date": "April 10, 2024",
+        "description": "Discover how data science is driving business decisions and providing deep insights into consumer behavior and operations.",
+        "imageUrl": "/blog/data-science-future.png",
+        "link": "/blog/data-science-business-analytics"
+      },
+      {
+        "title": "Introduction to Neural Networks for Beginners",
+        "date": "April 30, 2024",
+        "description": "A beginner's guide to understanding neural networks, how they work, and their applications in real-world problems.",
+        "imageUrl": "/blog/neural-networks.jpg",
+        "link": "/blog/intro-to-neural-networks"
+      },
+      {
+        "title": "The Role of AI in Healthcare: Current and Future Trends",
+        "date": "May 15, 2024",
+        "description": "Exploring how AI is transforming healthcare, from diagnosis to patient care and administrative processes.",
+        "imageUrl": "/blog/ai-healthcare.jpg",
+        "link": "/blog/ai-in-healthcare"
+      },
+      {
+        "title": "Understanding the Importance of Data Privacy in AI",
+        "date": "June 1, 2024",
+        "description": "An exploration of the importance of data privacy, ethics, and security in the development of AI technologies.",
+        "imageUrl": "/blog/data-privacy-ai.png",
+        "link": "/blog/data-privacy-ai"
+      },
+      {
+        "title": "Digital Marketing Trends for 2024",
+        "date": "June 20, 2024",
+        "description": "Stay ahead of the curve with the latest trends in digital marketing, including AI tools, social media strategies, and more.",
+        "imageUrl": "/blog/digital-marketing-trends.jpg",
+        "link": "/blog/digital-marketing-trends-2024"
+      },
+      {
+        "title": "The Role of Data Science in Predictive Analytics",
+        "date": "July 5, 2024",
+        "description": "How data science is being used in predictive analytics to forecast trends and make data-driven decisions.",
+        "imageUrl": "/blog/predictive-analytics.jpg",
+        "link": "/blog/data-science-predictive-analytics"
+      }
+    ]
+  },
+  "productsPage": {
+    "hero": {
+      "label": "Products",
+      "headline": "Deploy AI-first products that ship value from day one.",
+      "description": "Our ready-to-deploy platforms combine automation, analytics, and secure workflows so your teams can launch faster and scale with confidence.",
+      "primaryCta": "Explore the product suite",
+      "secondaryCta": "Talk to product team",
+      "badges": ["Ready-to-deploy", "Customizable", "Enterprise support"],
+      "stats": [
+        {
+          "value": "9",
+          "label": "Product accelerators"
+        },
+        {
+          "value": "2-6 weeks",
+          "label": "Average launch window"
+        },
+        {
+          "value": "24/7",
+          "label": "Monitoring coverage"
+        }
+      ],
+      "highlight": {
+        "label": "Flagship platform",
+        "title": "Talent Intelligence Hub",
+        "description": "Automates screening, shortlisting, and interview workflows with explainable AI."
+      },
+      "image": "/gifs/enterprise2.gif",
+      "imageAlt": "AI product platform visualization"
+    },
+    "catalog": {
+      "label": "Product suite",
+      "headline": "Ready-to-deploy platforms tailored to real operations",
+      "description": "Each product ships with integrations, dashboards, and configurable workflows so teams can move fast without sacrificing governance.",
+      "cardCta": "View details",
+      "items": [
+        {
+          "slug": "portfolio-website",
+          "title": "Portfolio Website",
+          "tag": "Web",
+          "description": "A high-performance site that communicates services, trust, and differentiation.",
+          "highlights": ["Custom design", "SEO-ready", "Fast launch"],
+          "image": "/gifs/portfolio.gif",
+          "imageAlt": "Portfolio website showcase"
+        },
+        {
+          "slug": "hr-management-software",
+          "title": "HR Management Software",
+          "tag": "HR Ops",
+          "description": "Centralize onboarding, attendance, payroll, and policy workflows.",
+          "highlights": ["Employee hub", "Automated approvals", "Analytics"],
+          "image": "/gifs/hrm.gif",
+          "imageAlt": "HR management dashboard"
+        },
+        {
+          "slug": "hospital-management-software",
+          "title": "Hospital Management Software",
+          "tag": "Healthcare",
+          "description": "Coordinate patient intake, billing, scheduling, and clinical operations.",
+          "highlights": ["Patient journey", "Billing automation", "Audit trails"],
+          "image": "/gifs/hospital.gif",
+          "imageAlt": "Hospital management interface"
+        },
+        {
+          "slug": "cv-sorting-ai",
+          "title": "CV Sorting AI",
+          "tag": "Talent",
+          "description": "Rank candidates, extract insights, and reduce screening time with smart scoring.",
+          "highlights": ["Resume parsing", "Bias checks", "Shortlist automation"],
+          "image": "/gifs/cv_sort.gif",
+          "imageAlt": "CV sorting AI interface"
+        },
+        {
+          "slug": "ai-chatbot-implementation",
+          "title": "AI Chatbot Implementation",
+          "tag": "Support",
+          "description": "Launch branded assistants that resolve queries and route complex issues.",
+          "highlights": ["Multichannel", "Context memory", "Escalation rules"],
+          "image": "/gifs/chatbot.gif",
+          "imageAlt": "AI chatbot conversation flow"
+        },
+        {
+          "slug": "e-commerce-website",
+          "title": "E-Commerce Website",
+          "tag": "Commerce",
+          "description": "Conversion-focused storefronts with payments, inventory, and marketing.",
+          "highlights": ["Personalization", "Smart inventory", "Conversion lifts"],
+          "image": "/gifs/e_com.gif",
+          "imageAlt": "E-commerce experience"
+        },
+        {
+          "slug": "restaurant-management-software",
+          "title": "Restaurant Management Software",
+          "tag": "Restaurant",
+          "description": "Unify POS, kitchen display, and delivery integrations in one system.",
+          "highlights": ["Order routing", "Real-time dashboards", "Delivery sync"],
+          "image": "/gifs/restaurent.gif",
+          "imageAlt": "Restaurant management operations"
+        },
+        {
+          "slug": "cloud-kitchen-app",
+          "title": "Cloud Kitchen App",
+          "tag": "Food Ops",
+          "description": "Manage menus, orders, and dispatch from a single operations hub.",
+          "highlights": ["Order routing", "Prep timelines", "Delivery tracking"],
+          "image": "/gifs/cloud_kitchen.gif",
+          "imageAlt": "Cloud kitchen operations screen"
+        },
+        {
+          "slug": "custom-software-development",
+          "title": "Custom Software Development",
+          "tag": "Platform",
+          "description": "Tailored systems built for your workflows, integrations, and scale.",
+          "highlights": ["Custom workflows", "Scalable architecture", "Dedicated team"],
+          "image": "/gifs/custom.gif",
+          "imageAlt": "Custom software development preview"
+        }
+      ]
+    },
+    "platform": {
+      "label": "Platform layer",
+      "headline": "One architecture across every product",
+      "description": "Shared infrastructure keeps rollouts fast while protecting data and compliance requirements.",
+      "cards": [
+        {
+          "title": "Secure data layer",
+          "description": "PII handling, access control, and audit trails built in."
+        },
+        {
+          "title": "Integration toolkit",
+          "description": "APIs, webhooks, and connectors for your existing stack."
+        },
+        {
+          "title": "Governance controls",
+          "description": "Human approvals, policy rules, and risk monitoring."
+        },
+        {
+          "title": "Configurable workflows",
+          "description": "Low-code routing to match your team structure."
+        },
+        {
+          "title": "AI optimization",
+          "description": "Prompt testing, evals, and model tuning loops."
+        },
+        {
+          "title": "Operational insights",
+          "description": "Dashboards, alerts, and outcome tracking."
+        }
+      ]
+    },
+    "delivery": {
+      "label": "Implementation",
+      "headline": "From kickoff to launch in weeks",
+      "description": "We run a structured delivery sprint so adoption, training, and data readiness stay aligned.",
+      "steps": [
+        {
+          "title": "Kickoff and workflow mapping",
+          "description": "Confirm business goals, owners, and current tools."
+        },
+        {
+          "title": "Data connection and configuration",
+          "description": "Connect sources, configure rules, and set permissions."
+        },
+        {
+          "title": "Pilot and feedback loop",
+          "description": "Ship a pilot to core users and iterate quickly."
+        },
+        {
+          "title": "Launch and scale",
+          "description": "Enable teams, monitor outcomes, and expand usage."
+        }
+      ],
+      "highlight": {
+        "label": "Enablement kit",
+        "title": "Training, playbooks, and change management",
+        "description": "We onboard users and provide documentation so adoption stays high."
+      }
+    },
+    "outcomes": {
+      "label": "Outcomes",
+      "headline": "Operational gains you can measure",
+      "description": "Teams see measurable lifts in speed, accuracy, and decision quality.",
+      "metrics": [
+        {
+          "value": "45%",
+          "label": "Faster response time"
+        },
+        {
+          "value": "30%",
+          "label": "Higher productivity"
+        },
+        {
+          "value": "20%",
+          "label": "Lower cost per task"
+        },
+        {
+          "value": "99.9%",
+          "label": "System uptime"
+        }
+      ]
+    },
+    "cta": {
+      "label": "Launch now",
+      "headline": "Bring a product to your team this quarter.",
+      "description": "Share your workflows and we will recommend the fastest path to deployment.",
+      "primaryCta": "Schedule a product demo",
+      "secondaryCta": "Explore services"
+    },
+    "details": {
+      "label": "Product details",
+      "backLabel": "Back to products",
+      "primaryCta": "Request a demo",
+      "secondaryCta": "Talk to our team",
+      "demoForm": {
+        "title": "Request a demo",
+        "description": "Share a few details and we will set up the right product walkthrough.",
+        "fullNameLabel": "Full Name",
+        "fullNamePlaceholder": "Jane Cooper",
+        "emailLabel": "Email",
+        "emailPlaceholder": "you@company.com",
+        "phoneLabel": "Phone Number",
+        "phonePlaceholder": "+1 555 000 0000",
+        "companyLabel": "Company Name",
+        "companyPlaceholder": "Company Inc.",
+        "serviceLabel": "Select Service",
+        "websiteLabel": "Company Website",
+        "websitePlaceholder": "https://company.com",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Share your goals, timeline, and success metrics.",
+        "submitLabel": "Send request",
+        "cancelLabel": "Cancel",
+        "closeLabel": "Close"
+      },
+      "sections": {
+        "highlightsLabel": "Highlights",
+        "featuresLabel": "Core features",
+        "benefitsLabel": "Expected outcomes",
+        "stackLabel": "Technology stack"
+      },
+      "notFound": {
+        "title": "Product not found",
+        "description": "We couldn't find the product you're looking for.",
+        "cta": "Go to products"
+      },
+      "items": [
+        {
+          "slug": "portfolio-website",
+          "title": "Portfolio Website",
+          "tag": "Web",
+          "summary": "Showcase your brand, services, and credibility with a high-performance website.",
+          "description": "Includes responsive pages, CMS editing, SEO foundations, and analytics-ready tracking.",
+          "image": "/gifs/portfolio.gif",
+          "imageAlt": "Portfolio website showcase",
+          "highlights": ["Custom design", "SEO-ready", "Fast launch"],
+          "features": [
+            "Custom landing pages and sections",
+            "CMS-powered content updates",
+            "Performance and accessibility optimization",
+            "Lead capture and inquiry forms"
+          ],
+          "benefits": [
+            "Higher conversion from qualified leads",
+            "Faster updates for marketing teams",
+            "Stronger brand credibility"
+          ]
+        },
+        {
+          "slug": "hr-management-software",
+          "title": "HR Management Software",
+          "tag": "HR Ops",
+          "summary": "Centralize employee lifecycle operations with automation and visibility.",
+          "description": "Manage onboarding, attendance, leave, payroll, and compliance in a single hub.",
+          "image": "/gifs/hrm.gif",
+          "imageAlt": "HR management dashboard",
+          "highlights": ["Employee hub", "Automated approvals", "Analytics"],
+          "features": [
+            "Onboarding and documentation workflows",
+            "Attendance, leave, and shift tracking",
+            "Payroll integrations and approvals",
+            "Policy compliance and audit logs"
+          ],
+          "benefits": [
+            "Less manual admin work",
+            "Clear audit trails",
+            "Improved employee experience"
+          ]
+        },
+        {
+          "slug": "hospital-management-software",
+          "title": "Hospital Management Software",
+          "tag": "Healthcare",
+          "summary": "Coordinate patient operations and clinical workflows securely.",
+          "description": "Support OPD/IPD, scheduling, billing, inventory, and reporting from one platform.",
+          "image": "/gifs/hospital.gif",
+          "imageAlt": "Hospital management interface",
+          "highlights": ["Patient journey", "Billing automation", "Audit trails"],
+          "features": [
+            "Patient intake and records management",
+            "Doctor scheduling and queueing",
+            "Billing, insurance, and claims workflows",
+            "Inventory and pharmacy controls"
+          ],
+          "benefits": [
+            "Fewer operational errors",
+            "Faster patient service",
+            "Regulatory readiness"
+          ]
+        },
+        {
+          "slug": "cv-sorting-ai",
+          "title": "CV Sorting AI",
+          "tag": "Talent",
+          "summary": "AI screening that accelerates hiring with consistent, explainable scoring.",
+          "description": "Extracts skills, ranks candidates, and reduces bias while keeping recruiters in control.",
+          "image": "/gifs/cv_sort.gif",
+          "imageAlt": "CV sorting AI interface",
+          "highlights": ["Resume parsing", "Bias checks", "Shortlist automation"],
+          "features": [
+            "Skill extraction and entity mapping",
+            "Custom scoring and ranking models",
+            "Shortlist dashboards and exports",
+            "Audit logs for transparency"
+          ],
+          "benefits": [
+            "Shorter time-to-hire",
+            "Consistent evaluations",
+            "Recruiter focus on top talent"
+          ]
+        },
+        {
+          "slug": "ai-chatbot-implementation",
+          "title": "AI Chatbot Implementation",
+          "tag": "Support",
+          "summary": "Branded AI assistants across web, mobile, and messaging channels.",
+          "description": "Automate FAQs, route tickets, and keep humans in the loop for complex issues.",
+          "image": "/gifs/chatbot.gif",
+          "imageAlt": "AI chatbot conversation flow",
+          "highlights": ["Multichannel", "Context memory", "Escalation rules"],
+          "features": [
+            "Knowledge base synchronization",
+            "Human escalation and handoff flows",
+            "Analytics, QA, and training loops",
+            "Multilingual response support"
+          ],
+          "benefits": [
+            "Lower support load",
+            "Faster response times",
+            "Always-on customer service"
+          ]
+        },
+        {
+          "slug": "e-commerce-website",
+          "title": "E-Commerce Website",
+          "tag": "Commerce",
+          "summary": "Conversion-focused storefronts with modern shopping experiences.",
+          "description": "Launch product catalogs, payments, fulfillment, and marketing workflows quickly.",
+          "image": "/gifs/e_com.gif",
+          "imageAlt": "E-commerce experience",
+          "highlights": ["Personalization", "Smart inventory", "Conversion lifts"],
+          "features": [
+            "Catalog, pricing, and inventory management",
+            "Secure payments and optimized checkout",
+            "Promotions, bundles, and recommendations",
+            "Order tracking and customer notifications"
+          ],
+          "benefits": [
+            "Higher sales velocity",
+            "Better customer retention",
+            "Operational clarity"
+          ]
+        },
+        {
+          "slug": "restaurant-management-software",
+          "title": "Restaurant Management Software",
+          "tag": "Restaurant",
+          "summary": "Unify POS, order, and kitchen operations with real-time control.",
+          "description": "Manage tables, kitchen display, delivery integrations, and reporting from one system.",
+          "image": "/gifs/restaurent.gif",
+          "imageAlt": "Restaurant management operations",
+          "highlights": ["Order routing", "Real-time dashboards", "Delivery sync"],
+          "features": [
+            "POS, table management, and billing",
+            "Kitchen display system and prep queues",
+            "Inventory and recipe tracking",
+            "Delivery partner integrations"
+          ],
+          "benefits": [
+            "Reduced wait times",
+            "Accurate order fulfillment",
+            "Visibility into profitability"
+          ]
+        },
+        {
+          "slug": "cloud-kitchen-app",
+          "title": "Cloud Kitchen App",
+          "tag": "Food Ops",
+          "summary": "Operate multi-brand kitchens with centralized control and analytics.",
+          "description": "Coordinate order intake, prep timelines, and courier dispatch at scale.",
+          "image": "/gifs/cloud_kitchen.gif",
+          "imageAlt": "Cloud kitchen operations screen",
+          "highlights": ["Order routing", "Prep timelines", "Delivery tracking"],
+          "features": [
+            "Multi-brand menu management",
+            "Batch cooking and prep views",
+            "Courier dispatch automation",
+            "Performance analytics by outlet"
+          ],
+          "benefits": [
+            "Higher throughput",
+            "Lower wastage",
+            "Faster delivery times"
+          ]
+        },
+        {
+          "slug": "custom-software-development",
+          "title": "Custom Software Development",
+          "tag": "Platform",
+          "summary": "Build tailored systems for unique workflows and business models.",
+          "description": "From CRM to internal tools, we deliver AI-ready, scalable software.",
+          "image": "/gifs/custom.gif",
+          "imageAlt": "Custom software development preview",
+          "highlights": ["Custom workflows", "Scalable architecture", "Dedicated team"],
+          "features": [
+            "Discovery, scoping, and planning",
+            "UX/UI design and prototyping",
+            "Engineering, QA, and launch",
+            "Ongoing support and optimization"
+          ],
+          "benefits": [
+            "Exact fit for your operations",
+            "Future-ready tech stack",
+            "IP ownership and control"
+          ]
+        }
+      ]
+    }
+  },
+  "careerPage": {
+    "hero": {
+      "label": "Careers",
+      "headline": "Build your next chapter with Carriastic.",
+      "description": "Join a team delivering AI-first products with real ownership, clear growth paths, and measurable impact.",
+      "primaryCta": "Explore open roles",
+      "secondaryCta": "Why work with us",
+      "badges": ["People-first", "Growth paths", "Hybrid friendly"],
+      "stats": [
+        {
+          "value": "45+",
+          "label": "Team members"
+        },
+        {
+          "value": "25+",
+          "label": "Products shipped"
+        },
+        {
+          "value": "800k+",
+          "label": "Users reached"
+        }
+      ],
+      "imageAlt": "Carriastic careers banner"
+    },
+    "culture": {
+      "label": "Life at Carriastic",
+      "headline": "A culture built for growth and momentum",
+      "description": "We invest in people, clear goals, and the kind of environment where great work compounds.",
+      "items": [
+        {
+          "id": "office",
+          "title": "Large, beautiful office",
+          "description": "Focus-ready workspaces in Dhaka with room to collaborate."
+        },
+        {
+          "id": "team",
+          "title": "Great co-workers",
+          "description": "Cross-functional teams that share context and move fast."
+        },
+        {
+          "id": "location",
+          "title": "Easy location",
+          "description": "Convenient commute near key transit and cafes."
+        },
+        {
+          "id": "learning",
+          "title": "Learning opportunities",
+          "description": "Workshops, courses, and mentorship to keep growing."
+        },
+        {
+          "id": "meals",
+          "title": "Lunch & snacks",
+          "description": "Daily meals, coffee, and recharge breaks included."
+        },
+        {
+          "id": "recognition",
+          "title": "Performance awards",
+          "description": "Clear recognition for standout impact and initiative."
+        }
+      ]
+    },
+    "openings": {
+      "label": "Open roles",
+      "headline": "Find a role that matches your strengths",
+      "description": "We are always looking for builders, designers, and operators who care about outcomes.",
+      "cta": "Apply now",
+      "roles": [
+        {
+          "title": "Data Scientist",
+          "type": "Full-time",
+          "location": "Dhaka · Hybrid",
+          "link": "/contact"
+        },
+        {
+          "title": "Product Designer",
+          "type": "Full-time",
+          "location": "Dhaka · Hybrid",
+          "link": "/contact"
+        },
+        {
+          "title": "WordPress Developer",
+          "type": "Intern",
+          "location": "On-site",
+          "link": "/contact"
+        },
+        {
+          "title": "Technical Support Engineer",
+          "type": "Contract",
+          "location": "Remote",
+          "link": "/contact"
+        },
+        {
+          "title": "Junior Graphic Designer",
+          "type": "Full-time",
+          "location": "Dhaka · On-site",
+          "link": "/contact"
+        },
+        {
+          "title": "Digital Marketer",
+          "type": "SEO Specialist",
+          "location": "Remote",
+          "link": "/contact"
+        }
+      ]
+    },
+    "cta": {
+      "label": "Next step",
+      "headline": "Tell us where you want to grow next",
+      "description": "Share your interests and we will match you with the right team and projects.",
+      "primaryCta": "Apply now",
+      "secondaryCta": "Explore services"
+    }
+  },
   "teamPage": {
     "hero": {
       "label": "Team",
@@ -783,6 +1591,33 @@
       "tagline": "Dhaka, Bangladesh | Built for forward momentum"
     }
   },
+  "chatbot": {
+    "statusLabel": "Neural Link",
+    "title": "Carriastic AI",
+    "subtitle": "Precision guidance for careers and growth.",
+    "closeLabel": "Close chatbot",
+    "conversationPreview": "Conversation Preview",
+    "versionLabel": "v2.4",
+    "previewUser": "I want to build a product page that converts.",
+    "previewBot": "I can draft a launch kit, ad copy, and a site map in minutes.",
+    "quickPromptsLabel": "Quick Prompts",
+    "quickPromptsHint": "Tap to send",
+    "prompts": {
+      "website": "I want to create a website",
+      "websiteTag": "Blueprint",
+      "marketing": "I want to promote my company",
+      "marketingTag": "Signal",
+      "fresher": "I am a fresher searching for job",
+      "fresherTag": "Orbit"
+    },
+    "messageLabel": "Your Message",
+    "messageHint": "Secure channel",
+    "messagePlaceholder": "Describe your goal or ask anything...",
+    "sendLabel": "Send to AI Core",
+    "sendAlert": "Sending message...",
+    "footerModel": "Model: Carriastic Neural - Low latency",
+    "footerSecurity": "Encrypted"
+  },
   "nav": {
     "about": "About",
     "services": "Services",
@@ -790,7 +1625,7 @@
     "products": "Our Products",
     "team": "Team",
     "howItWorks": "How it Works",
-    "blog": "Blog",
+    "blog": "Blogs",
     "career": "Career",
     "contact": "Contact us"
   }

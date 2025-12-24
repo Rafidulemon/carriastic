@@ -27,6 +27,7 @@ const techGroupConfigs: TechGroupConfig[] = [
       { src: "/technologies/vue.png", name: "Vue" },
       { src: "/technologies/angular.png", name: "Angular" },
       { src: "/technologies/css.png", name: "CSS" },
+      { src: "/technologies/tailwind.png", name: "Tailwind CSS" },
       { src: "/technologies/html.png", name: "HTML" },
       { src: "/technologies/rn.png", name: "React Native" },
       { src: "/technologies/flutter.png", name: "Flutter" },
@@ -46,6 +47,9 @@ const techGroupConfigs: TechGroupConfig[] = [
       { src: "/technologies/spring.png", name: "Spring" },
       { src: "/technologies/trpc.png", name: "tRPC" },
       { src: "/technologies/jwt.png", name: "JWT" },
+      { src: "/technologies/stripe.png", name: "Stripe" },
+      { src: "/technologies/langChain.png", name: "LangChain" },
+      { src: "/technologies/openAI.png", name: "OpenAI" },
     ],
   },
   {
@@ -56,6 +60,8 @@ const techGroupConfigs: TechGroupConfig[] = [
       { src: "/technologies/pg.png", name: "PostgreSQL" },
       { src: "/technologies/sql.png", name: "SQL" },
       { src: "/technologies/prisma.png", name: "Prisma" },
+      { src: "/technologies/redis.png", name: "Redis" },
+      { src: "/technologies/vector_db.svg", name: "Vector DB" },
     ],
   },
   {
@@ -79,8 +85,11 @@ const techGroupConfigs: TechGroupConfig[] = [
     labelKey: "devops",
     logos: [
       { src: "/technologies/aws.png", name: "AWS" },
+      { src: "/technologies/Docker.png", name: "Docker" },
       { src: "/technologies/firebase.png", name: "Firebase" },
+      { src: "/technologies/vercel.png", name: "Vercel" },
       { src: "/technologies/hn.png", name: "Honeycomb" },
+      { src: "/technologies/google_analytics.png", name: "Google Analytics" },
     ],
   },
 ];

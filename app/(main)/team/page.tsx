@@ -21,14 +21,16 @@ const OurTeamPage = () => {
         <Image
           src="/banners/team.jpg"
           alt={team.hero.imageAlt}
-          layout="fill"
+          fill
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-slate-900/70" />
-        <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-primaryLight/40 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-[-60px] right-[-40px] h-72 w-72 rounded-full bg-sky-400/30 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col items-center gap-6 px-6 py-16 text-center text-white md:px-10 md:py-24">
-          <span className="inline-flex w-fit rounded-full border border-white/30 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.3em]">
+        <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-primaryLight/40 blur-3xl" />
+        <div className="pointer-events-none absolute right-0 top-10 h-72 w-72 rounded-full bg-sky-400/30 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-[-120px] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl" />
+        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-6 px-6 py-10 text-center text-white md:px-10 md:py-16 md:text-left">
+          <span className="inline-flex w-fit self-center rounded-full border border-white/30 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.35em] md:self-start">
             {team.hero.label}
           </span>
           <h1 className="text-[32px] font-semibold leading-[1.05] md:text-[56px] font-spaceGrotesk">
@@ -41,7 +43,7 @@ const OurTeamPage = () => {
             {team.hero.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-2xl border border-white/20 bg-white/10 p-4 text-center backdrop-blur"
+                className="rounded-2xl border border-white/20 bg-white/10 p-4 text-center backdrop-blur md:text-left"
               >
                 <p className="text-[22px] font-semibold">{stat.value}</p>
                 <p className="mt-2 text-[11px] uppercase tracking-[0.3em] text-white/70">

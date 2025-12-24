@@ -1,0 +1,197 @@
+1) Global Website Chatbot (Main Layout)
+
+Objective
+Deploy a persistent chatbot accessible from the global website layout, capable of answering questions related to Carriastic’s company profile, offerings, process, and policies using the website content plus an approved company profile PDF as the primary knowledge source.
+
+Scope & Capabilities
+
+Respond to all queries about:
+
+Company overview, mission, positioning, services, engagement model
+
+Core AI capabilities (GenAI, RAG, agentic AI, automation)
+
+FAQs, policies, general customer queries
+
+Ground responses using:
+
+Website pages (structured content)
+
+A designated company profile PDF as a controlled knowledge source
+
+Provide citations (“Sources”) linking to:
+
+Relevant website pages
+
+PDF section references (page/section identifiers)
+
+Recommended Approach
+
+Implement a Retrieval-Augmented Generation (RAG) pipeline:
+
+Content ingestion: site content + approved PDF
+
+Chunking + embedding + vector index
+
+Answer generation constrained to retrieved sources (“grounded responses”)
+
+Add system-level controls:
+
+Refuse unsupported requests (“I don’t have enough info from official sources”)
+
+Avoid fabricating claims, policies, numbers, or clients
+
+2) Career Page Chatbot (Hiring & Job Openings)
+
+Objective
+Provide a dedicated chatbot on the Careers page to answer questions about hiring, open roles, job responsibilities, requirements, benefits (if published), and the hiring process.
+
+Scope & Capabilities
+
+Respond only to career-related queries:
+
+Current job openings and role details
+
+Hiring stages, interview format, expected timelines
+
+Application instructions, eligibility, and FAQs
+
+Data sources (authoritative):
+
+The live job openings dataset (CMS/DB/API)
+
+Hiring process documentation published on the site
+
+Must reflect real-time accuracy:
+
+When a job is closed/updated, responses reflect the current state
+
+Recommended Approach
+
+RAG + structured data hybrid:
+
+Retrieve from “Open roles” structured source first (single source of truth)
+
+Use RAG to answer policy/process questions from career documentation
+
+Include “Apply Now” / “Human support” routing:
+
+Link to application page/form
+
+“Talk to HR” escalation path if questions fall outside published info
+
+3) Projects Page Chatbot (Project-Specific Assistant)
+
+Objective
+Enable a chatbot within Projects pages that answers questions about a specific project, including features, outcomes, stack, responsibilities, timeline (only if public), and relevant links.
+
+Scope & Capabilities
+
+Contextual awareness:
+
+The chatbot must be scoped to the currently viewed project
+
+Sources:
+
+The project’s own page content and metadata
+
+Approved project documentation (if published)
+
+Related case study pages
+
+Safeguards:
+
+Must not disclose confidential client or internal information
+
+Must not invent technical claims not present in sources
+
+Recommended Approach
+
+Context-bound RAG:
+
+When user is on a specific project page, retrieval is restricted to that project’s knowledge base
+
+Offer “View sources” links to project sections/case studies used
+
+4) Central “Client Needs” Chatbot (Solution Recommendation & Qualification)
+
+Objective
+Deploy a central chatbot focused on determining what type of software or solution a prospective client may need, and guiding them toward the correct engagement path.
+
+Scope & Capabilities
+
+Conduct interactive discovery:
+
+Industry, goals, current pain points
+
+Existing tools and systems
+
+Expected users, workflows, integrations
+
+Timeline and budget range (high-level only)
+
+Output:
+
+A recommended solution direction (e.g., automation, custom platform, AI enablement, RAG assistant, internal systems)
+
+A high-level roadmap and next steps
+
+Option to generate a “Project Brief” summary for submission
+
+Routing:
+
+Direct the lead to the correct service category and contact path
+
+Escalate to human consultation when complexity is high
+
+Recommended Approach
+
+Guided agentic flow (structured interview + LLM reasoning)
+
+Guardrails to avoid “fake certainty”:
+
+Provide ranges and assumptions
+
+Clearly separate “recommendation” vs “confirmed scope”
+
+Safety, Quality, and Trust Requirements (Mandatory)
+A) Source-Grounded Answers
+
+Every factual answer must include Sources:
+
+Website links for public content
+
+PDF citation (page/section reference)
+
+If no source supports a claim, the assistant must:
+
+Say it does not have sufficient information
+
+Offer a human handoff or suggest where the user can find the information
+
+B) Clear Disclaimer
+
+A consistent disclaimer must be visible (or shown on first interaction), such as:
+“Responses may be inaccurate—please confirm with our team for final decisions or estimates.”
+
+C) Human Handoff
+
+Provide a persistent action:
+“Talk to a specialist”
+This should route to:
+
+Contact form
+
+Sales/support email
+
+Meeting scheduling link (if available)
+
+D) Pricing Controls
+
+The assistant must not provide definitive pricing.
+
+Allowed behavior:
+
+Use ranges only (if officially published)
+
+Otherwise: “Pricing depends on scope—talk to our team for a quote.”

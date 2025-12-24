@@ -2,7 +2,7 @@
 import ".././globals.css";
 import Header from "../components/navigations/Header";
 import Footer from "../components/navigations/Footer";
-import { FaRocketchat } from "react-icons/fa";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import ChatbotModal from "../components/modals/ChatBotModal";
 import LanguageProvider from "../i18n/LanguageProvider";
@@ -51,14 +51,25 @@ export default function MainLayout({
               {children}
             </div>
             <Footer />
-            <div className="fixed bottom-2 right-2 md:bottom-10 md:right-10">
-              <button
+            {!isModalOpen && (
+              <div
+                className="cursor-pointer fixed bottom-0 right-0 md:bottom-6 md:right-6 flex flex-row items-center"
                 onClick={toggleModal}
-                className="p-4 rounded-full shadow-xl shadow-lg bg-neutral-100 md:bg-white focus:outline-none text-primary text-[25px] md:text-[40px]"
               >
-                <FaRocketchat />
-              </button>
-            </div>
+                <Image
+                  src="/gifs/chatbot.gif"
+                  alt="Chatbot"
+                  width={48}
+                  height={48}
+                  className="h-20 w-20 md:h-28 md:w-28"
+                  unoptimized
+                />
+                <div className="hidden md:block h-9 rounded-xl -ml-2 -mt-4 px-3 py-1 bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] text-white font-space-grotesk">
+                  Meet Carriastic AI
+                </div>
+              </div>
+            )}
+
             <ChatbotModal isOpen={isModalOpen} onClose={toggleModal} />
           </LanguageProvider>
         </body>

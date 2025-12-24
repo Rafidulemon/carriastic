@@ -32,7 +32,6 @@ const Header = () => {
     { href: "/ai", label: t.nav.ai },
     { href: "/products", label: t.nav.products },
     { href: "/team", label: t.nav.team },
-    { href: "/how-it-works", label: t.nav.howItWorks },
     { href: "/blogs", label: t.nav.blog },
     { href: "/career", label: t.nav.career },
   ];
