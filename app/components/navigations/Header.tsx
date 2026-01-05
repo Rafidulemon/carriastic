@@ -42,14 +42,14 @@ const Header = () => {
         <div className="relative mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
           <div className="flex items-center gap-3">
             <button
-              className="text-primary lg:hidden"
+              className="text-primary md:hidden"
               onClick={toggleMenu}
               aria-label="Toggle Menu"
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <FaTimes size={22} /> : <FaBars size={20} />}
             </button>
-            <Link href="/" className="hidden items-center lg:flex">
+            <Link href="/" className="hidden items-center md:flex">
               <Image
                 src="/images/logo_main_slogan.png"
                 alt="Carriastic logo"
@@ -62,7 +62,7 @@ const Header = () => {
           </div>
           <Link
             href="/"
-            className="absolute left-1/2 flex -translate-x-1/2 items-center lg:hidden"
+            className="absolute left-1/2 flex -translate-x-1/2 items-center md:hidden"
           >
             <Image
               src="/images/logo_main_slogan.png"
@@ -74,7 +74,7 @@ const Header = () => {
             />
           </Link>
 
-          <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 lg:flex lg:gap-6">
+          <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-slate-600 md:flex md:gap-6">
             {navItems.map((navItem) => (
               <Link
                 key={navItem.href}
@@ -90,7 +90,7 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 md:flex">
             <LanguageToggle />
             <Link
               href="/contact"
@@ -103,7 +103,7 @@ const Header = () => {
       </header>
 
       <div
-        className={`fixed inset-0 z-[110] transition lg:hidden ${
+        className={`fixed inset-0 z-[110] transition md:hidden ${
           isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
