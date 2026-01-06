@@ -1,19 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import LanguageToggle from "../language/LanguageToggle";
 import { useLanguage } from "../../i18n/LanguageProvider";
 import MobileSideBar from "./MobileSideBar";
 
-
-const Header = () => {
+const DarkHeader = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isHeroActive, setIsHeroActive] = useState(pathname === "/");
   const { t } = useLanguage();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -29,29 +27,6 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  useEffect(() => {
-    if (pathname !== "/") {
-      setIsHeroActive(false);
-      return;
-    }
-
-    const heroSection = document.getElementById("home-hero");
-    if (!heroSection) {
-      setIsHeroActive(false);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsHeroActive(entry.isIntersecting);
-      },
-      { threshold: 0.2, rootMargin: "-80px 0px 0px 0px" }
-    );
-
-    observer.observe(heroSection);
-    return () => observer.disconnect();
-  }, [pathname]);
-
   const navItems = [
     { href: "/about", label: t.nav.about },
     { href: "/services", label: t.nav.services },
@@ -62,34 +37,17 @@ const Header = () => {
     { href: "/career", label: t.nav.career },
   ];
 
-  const heroLogoSrc = isHeroActive
-    ? "/images/white_logo_slogan.png"
-    : "/images/logo_main_slogan.png";
-
-  const navActiveClass = isHeroActive
-    ? "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-white/80"
-    : "text-primary after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary after:via-[#6d36dc] after:to-[#4b50e6]";
-  const navInactiveClass = isHeroActive
-    ? "text-white/70 hover:text-white"
-    : "text-slate-600 hover:text-slate-900";
-
-  if (pathname === "/" && isHeroActive) {
-    return null;
-  }
+  const navActiveClass =
+    "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-white/80";
+  const navInactiveClass = "text-white/70 hover:text-white";
 
   return (
     <>
-      <header
-        className={`header-reveal fixed top-0 z-[100] w-full transition-colors duration-300 ${
-          isHeroActive
-            ? "home-hero-header"
-            : "bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
-        }`}
-      >
-        <div className="relative mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
+      <header className="header-reveal relative">
+        <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
           <div className="flex items-center gap-3">
             <button
-              className={`md:hidden ${isHeroActive ? "text-white" : "text-primary"}`}
+              className="text-white md:hidden"
               onClick={toggleMenu}
               aria-label="Toggle Menu"
               aria-expanded={isMenuOpen}
@@ -98,7 +56,7 @@ const Header = () => {
             </button>
             <Link href="/" className="hidden items-center md:flex">
               <Image
-                src={heroLogoSrc}
+                src="/images/white_logo_slogan.png"
                 alt="Carriastic logo"
                 width={120}
                 height={40}
@@ -112,7 +70,7 @@ const Header = () => {
             className="absolute left-1/2 flex -translate-x-1/2 items-center md:hidden"
           >
             <Image
-              src={heroLogoSrc}
+              src="/images/white_logo_slogan.png"
               alt="Carriastic logo"
               width={110}
               height={36}
@@ -121,13 +79,9 @@ const Header = () => {
             />
           </Link>
           <div className="md:hidden">
-            <LanguageToggle />
+            <LanguageToggle theme="dark" />
           </div>
-          <nav
-            className={`hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium md:flex md:gap-6 ${
-              isHeroActive ? "text-white/80" : "text-slate-600"
-            }`}
-          >
+          <nav className="hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium text-white/80 md:flex md:gap-6">
             {navItems.map((navItem) => (
               <Link
                 key={navItem.href}
@@ -142,7 +96,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <LanguageToggle />
+            <LanguageToggle theme="dark" />
             <Link
               href="/contact"
               className="cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)]"
@@ -163,4 +117,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default DarkHeader;

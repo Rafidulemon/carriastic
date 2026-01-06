@@ -1,7 +1,12 @@
 {
   "hero": {
     "label": "AI-first technology company",
-    "headline": "Build intelligent digital platforms that scale with your business.",
+    "headline": "Build AI-powered platforms for",
+    "headline_sub1": "Web & SaaS Apps",
+    "headline_sub2": "Mobile-First Experience",
+    "headline_sub3": "Intelligent Automation",
+    "headline_sub4": "Cloud-Native Systems",
+    "subtext": "AI-first software solutions designed to streamline operations, enhance decision-making, and drive sustainable growth.",
     "descriptionOne": "Carriastic delivers scalable, business-ready software products and customized platforms for organizations operating in a rapidly evolving AI landscape.",
     "descriptionTwo": "We embed AI across the entire delivery lifecycle to move faster, improve accuracy, and maintain enterprise-grade quality.",
     "primaryCta": "Schedule a strategy call",
@@ -31,38 +36,39 @@
     "headline": "Services we offer",
     "description": "Strategy-first services delivered through long-term partnership, AI-driven solutions, and scalable platform execution.",
     "cta": "Explore all services",
+    "learnMore": "Learn more",
     "services": [
       {
-        "title": "Long-Term Technology Partnership",
-        "description": "Continuous evolution, AI scaling, and leadership across performance, security, and reliability."
-      },
-      {
-        "title": "AI-Powered Business Solutions",
-        "description": "Generative AI, RAG with enterprise data, agentic workflows, and AI copilots."
-      },
-      {
         "title": "Custom Software & Platform Development",
-        "description": "Internal systems, enterprise platforms, customer apps, and API-driven architectures."
+        "description": "Bespoke web, mobile, and cloud platforms tailored to your workflows and scale."
       },
       {
-        "title": "AI Enablement & System Integration",
-        "description": "AI strategy, integration into existing systems, data pipelines, and compliance."
+        "title": "AI-Powered Software Solutions",
+        "description": "AI copilots, intelligent automation, and data-driven products built for real impact."
       },
       {
-        "title": "Business Process Automation & Optimization",
-        "description": "Workflow analysis, intelligent automation, AI routing, and monitoring systems."
+        "title": "Healthcare & Medical Management Solutions",
+        "description": "Patient workflows, clinical data systems, and compliant digital health platforms."
       },
       {
-        "title": "Internal AI Adoption & AI-First Transformation",
-        "description": "Internal AI tools, AI-assisted development, QA workflows, and enablement."
+        "title": "Enterprise & Institutional Solutions",
+        "description": "Secure, multi-department systems for governance, operations, and reporting."
       },
       {
-        "title": "Ready-to-Deploy Products",
-        "description": "Pre-built AI tools, configurable platforms, and industry-specific solutions."
+        "title": "Ready-to-Deploy Software Products",
+        "description": "Pre-built modules and configurable products to launch faster."
       },
       {
-        "title": "Product Design, Quality & Growth Services",
-        "description": "UI/UX design, QA & testing, plus Digital Growth & Product Marketing."
+        "title": "AI Strategy & Technology Consulting",
+        "description": "Roadmaps, architecture, and feasibility to align AI with business goals."
+      },
+      {
+        "title": "System Optimization, Scaling & AI Enablement",
+        "description": "Performance tuning, cloud scaling, and AI integration across stacks."
+      },
+      {
+        "title": "Maintenance, Support & Technology Lifecycle Management",
+        "description": "Ongoing monitoring, updates, and reliability improvements across releases."
       }
     ]
   },
@@ -549,33 +555,33 @@
     "steps": [
       {
         "step": "01",
-        "title": "Discovery & outcome alignment",
-        "description": "We define the business goals, user journeys, and success metrics that guide every decision."
+        "title": "Plan",
+        "description": "Align goals, scope, timelines, and success metrics before kickoff."
       },
       {
         "step": "02",
-        "title": "AI-first team setup",
-        "description": "A cross-functional squad is assembled with product, design, and AI engineering leads."
+        "title": "Design",
+        "description": "Translate requirements into UX flows, UI systems, and prototypes."
       },
       {
         "step": "03",
-        "title": "Architecture & data readiness",
-        "description": "We design secure, scalable systems and prepare the data foundation for AI workflows."
+        "title": "Develop",
+        "description": "Build core functionality on a scalable, maintainable architecture."
       },
       {
         "step": "04",
-        "title": "Sprint planning & demos",
-        "description": "Weekly planning and demos keep priorities clear, feedback tight, and delivery predictable."
+        "title": "Deploy",
+        "description": "Release confidently with CI/CD, checks, and production monitoring."
       },
       {
         "step": "05",
-        "title": "Code review & QA gates",
-        "description": "Peer reviews, automated checks, and QA gates keep quality high before release."
+        "title": "Support",
+        "description": "Provide QA coverage, fixes, and ongoing maintenance after launch."
       },
       {
         "step": "06",
-        "title": "Iterative delivery & optimization",
-        "description": "We ship in milestones, monitor results, and continuously improve performance and UX."
+        "title": "Evolve",
+        "description": "Iterate based on feedback, analytics, and new growth goals."
       }
     ]
   },
@@ -963,7 +969,11 @@
           "title": "Hospital Management Software",
           "tag": "Healthcare",
           "description": "Coordinate patient intake, billing, scheduling, and clinical operations.",
-          "highlights": ["Patient journey", "Billing automation", "Audit trails"],
+          "highlights": [
+            "Patient journey",
+            "Billing automation",
+            "Audit trails"
+          ],
           "image": "/gifs/hospital.gif",
           "imageAlt": "Hospital management interface"
         },
@@ -972,7 +982,11 @@
           "title": "CV Sorting AI",
           "tag": "Talent",
           "description": "Rank candidates, extract insights, and reduce screening time with smart scoring.",
-          "highlights": ["Resume parsing", "Bias checks", "Shortlist automation"],
+          "highlights": [
+            "Resume parsing",
+            "Bias checks",
+            "Shortlist automation"
+          ],
           "image": "/gifs/cv_sort.gif",
           "imageAlt": "CV sorting AI interface"
         },
@@ -990,7 +1004,11 @@
           "title": "E-Commerce Website",
           "tag": "Commerce",
           "description": "Conversion-focused storefronts with payments, inventory, and marketing.",
-          "highlights": ["Personalization", "Smart inventory", "Conversion lifts"],
+          "highlights": [
+            "Personalization",
+            "Smart inventory",
+            "Conversion lifts"
+          ],
           "image": "/gifs/e_com.gif",
           "imageAlt": "E-commerce experience"
         },
@@ -999,7 +1017,11 @@
           "title": "Restaurant Management Software",
           "tag": "Restaurant",
           "description": "Unify POS, kitchen display, and delivery integrations in one system.",
-          "highlights": ["Order routing", "Real-time dashboards", "Delivery sync"],
+          "highlights": [
+            "Order routing",
+            "Real-time dashboards",
+            "Delivery sync"
+          ],
           "image": "/gifs/restaurent.gif",
           "imageAlt": "Restaurant management operations"
         },
@@ -1008,7 +1030,11 @@
           "title": "Cloud Kitchen App",
           "tag": "Food Ops",
           "description": "Manage menus, orders, and dispatch from a single operations hub.",
-          "highlights": ["Order routing", "Prep timelines", "Delivery tracking"],
+          "highlights": [
+            "Order routing",
+            "Prep timelines",
+            "Delivery tracking"
+          ],
           "image": "/gifs/cloud_kitchen.gif",
           "imageAlt": "Cloud kitchen operations screen"
         },
@@ -1017,7 +1043,11 @@
           "title": "Custom Software Development",
           "tag": "Platform",
           "description": "Tailored systems built for your workflows, integrations, and scale.",
-          "highlights": ["Custom workflows", "Scalable architecture", "Dedicated team"],
+          "highlights": [
+            "Custom workflows",
+            "Scalable architecture",
+            "Dedicated team"
+          ],
           "image": "/gifs/custom.gif",
           "imageAlt": "Custom software development preview"
         }
@@ -1199,7 +1229,11 @@
           "description": "Support OPD/IPD, scheduling, billing, inventory, and reporting from one platform.",
           "image": "/gifs/hospital.gif",
           "imageAlt": "Hospital management interface",
-          "highlights": ["Patient journey", "Billing automation", "Audit trails"],
+          "highlights": [
+            "Patient journey",
+            "Billing automation",
+            "Audit trails"
+          ],
           "features": [
             "Patient intake and records management",
             "Doctor scheduling and queueing",
@@ -1220,7 +1254,11 @@
           "description": "Extracts skills, ranks candidates, and reduces bias while keeping recruiters in control.",
           "image": "/gifs/cv_sort.gif",
           "imageAlt": "CV sorting AI interface",
-          "highlights": ["Resume parsing", "Bias checks", "Shortlist automation"],
+          "highlights": [
+            "Resume parsing",
+            "Bias checks",
+            "Shortlist automation"
+          ],
           "features": [
             "Skill extraction and entity mapping",
             "Custom scoring and ranking models",
@@ -1262,7 +1300,11 @@
           "description": "Launch product catalogs, payments, fulfillment, and marketing workflows quickly.",
           "image": "/gifs/e_com.gif",
           "imageAlt": "E-commerce experience",
-          "highlights": ["Personalization", "Smart inventory", "Conversion lifts"],
+          "highlights": [
+            "Personalization",
+            "Smart inventory",
+            "Conversion lifts"
+          ],
           "features": [
             "Catalog, pricing, and inventory management",
             "Secure payments and optimized checkout",
@@ -1283,7 +1325,11 @@
           "description": "Manage tables, kitchen display, delivery integrations, and reporting from one system.",
           "image": "/gifs/restaurent.gif",
           "imageAlt": "Restaurant management operations",
-          "highlights": ["Order routing", "Real-time dashboards", "Delivery sync"],
+          "highlights": [
+            "Order routing",
+            "Real-time dashboards",
+            "Delivery sync"
+          ],
           "features": [
             "POS, table management, and billing",
             "Kitchen display system and prep queues",
@@ -1304,7 +1350,11 @@
           "description": "Coordinate order intake, prep timelines, and courier dispatch at scale.",
           "image": "/gifs/cloud_kitchen.gif",
           "imageAlt": "Cloud kitchen operations screen",
-          "highlights": ["Order routing", "Prep timelines", "Delivery tracking"],
+          "highlights": [
+            "Order routing",
+            "Prep timelines",
+            "Delivery tracking"
+          ],
           "features": [
             "Multi-brand menu management",
             "Batch cooking and prep views",
@@ -1325,7 +1375,11 @@
           "description": "From CRM to internal tools, we deliver AI-ready, scalable software.",
           "image": "/gifs/custom.gif",
           "imageAlt": "Custom software development preview",
-          "highlights": ["Custom workflows", "Scalable architecture", "Dedicated team"],
+          "highlights": [
+            "Custom workflows",
+            "Scalable architecture",
+            "Dedicated team"
+          ],
           "features": [
             "Discovery, scoping, and planning",
             "UX/UI design and prototyping",

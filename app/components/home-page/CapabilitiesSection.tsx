@@ -27,7 +27,7 @@ const CapabilitiesSection = () => {
             {t.capabilities.products.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col gap-2 rounded-[20px] border border-[#0f172a14] bg-[#ffffffd9] p-5 shadow-[0_20px_55px_#0f172a1f] backdrop-blur-[14px]"
+                className="flex flex-col gap-2 rounded-[20px] border border-[#0f172a14] bg-[#ffffffd9] p-5 shadow-[0_20px_55px_#0f172a1f] backdrop-blur-[14px] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-primary hover:shadow-[0_10px_20px_#370054] hover:bg-white"
               >
                 <span className="text-[17px] font-semibold text-[#0b1220] font-spaceGrotesk">
                   {item.title}
@@ -47,15 +47,6 @@ const CapabilitiesSection = () => {
             className="h-full w-full"
             aria-label={t.capabilities.animationAlt}
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#0b122080] via-[#00000000] to-[#0ea5e940]" />
-          <div className="absolute bottom-6 left-6 rounded-2xl border border-[#ffffff99] bg-[#ffffffcc] px-5 py-4 shadow-[0_18px_40px_#0f172a29]">
-            <span className="text-[16px] font-semibold text-[#0b1220] font-spaceGrotesk">
-              {t.capabilities.highlightTitle}
-            </span>
-            <p className="mt-2 text-[13px] text-[#334155]">
-              {t.capabilities.highlightDescription}
-            </p>
-          </div>
         </div>
       </div>
       <div className="mt-10 flex justify-center">

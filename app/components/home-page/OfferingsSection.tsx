@@ -1,136 +1,186 @@
 "use client";
 
 import type { ElementType } from "react";
+import Lottie from "lottie-react";
 import {
+  FiBriefcase,
   FiBox,
   FiCompass,
   FiCpu,
+  FiHeart,
   FiLayers,
-  FiLink,
-  FiPenTool,
-  FiRefreshCw,
-  FiUserCheck,
+  FiTool,
+  FiTrendingUp,
 } from "react-icons/fi";
+import servicesAnimation from "@/public/gifs/jsons/services.json";
 import Button from "../button/Button";
+import ServiceCard from "./ServiceCard";
 import { useLanguage } from "../../i18n/LanguageProvider";
 
-type ServiceCard = {
+type ServiceCardData = {
   title: string;
   description: string;
   icon: ElementType;
-  accentClass: string;
-  hoverGradient: string;
-  badge?: string;
+  cardClass: string;
+  glowClass: string;
+  isDark?: boolean;
 };
 
-type ServiceStyle = Omit<ServiceCard, "title" | "description">;
+type ServiceStyle = Omit<ServiceCardData, "title" | "description">;
 
 const serviceStyles: ServiceStyle[] = [
   {
-    icon: FiCompass,
-    accentClass: "text-[#8b1c2a]",
-    hoverGradient: "from-[#b12a3f] via-[#5f4fb2] to-[#1c7f9a]",
+    icon: FiLayers,
+    cardClass:
+      "bg-gradient-to-br from-[#1b0a2a] via-[#4c1d95] to-[#2e1065] shadow-[0_18px_40px_rgba(88,28,135,0.4)]",
+    glowClass: "bg-[#a855f7]",
   },
   {
     icon: FiCpu,
-    accentClass: "text-[#a2431c]",
-    hoverGradient: "from-[#7a2e14] via-[#a13f17] to-[#c9722c]",
+    cardClass:
+      "bg-gradient-to-br from-[#071a2f] via-[#1d4ed8] to-[#1e3a8a] shadow-[0_18px_40px_rgba(29,78,216,0.36)]",
+    glowClass: "bg-[#38bdf8]",
   },
   {
-    icon: FiLayers,
-    accentClass: "text-[#a21f4f]",
-    hoverGradient: "from-[#155e75] via-[#4338ca] to-[#7c3aed]",
+    icon: FiHeart,
+
+    cardClass:
+      "bg-gradient-to-br from-[#052e2b] via-[#0f766e] to-[#134e4a] shadow-[0_18px_40px_rgba(20,184,166,0.36)]",
+    glowClass: "bg-[#2dd4bf]",
   },
   {
-    icon: FiLink,
-    accentClass: "text-[#0f5c52]",
-    hoverGradient: "from-[#0f766e] via-[#2563eb] to-[#c2410c]",
+    icon: FiBriefcase,
+    cardClass:
+      "bg-gradient-to-br from-[#2a0a12] via-[#9f1239] to-[#4c0519] shadow-[0_18px_40px_rgba(190,24,93,0.36)]",
+    glowClass: "bg-[#fb7185]",
   },
   {
-    icon: FiRefreshCw,
-    accentClass: "text-[#b5482a]",
-    hoverGradient: "from-[#b45309] via-[#be185d] to-[#1d4ed8]",
-  },
-  {
-    icon: FiUserCheck,
-    accentClass: "text-[#2f6b3c]",
-    hoverGradient: "from-[#15803d] via-[#0ea5e9] to-[#6d28d9]",
+    icon: FiCompass,
+    cardClass:
+      "bg-gradient-to-br from-[#2a1607] via-[#b45309] to-[#7c2d12] shadow-[0_18px_40px_rgba(234,88,12,0.36)]",
+    glowClass: "bg-[#fbbf24]",
   },
   {
     icon: FiBox,
-    accentClass: "text-[#b45309]",
-    hoverGradient: "from-[#92400e] via-[#be185d] to-[#1e3a8a]",
+    cardClass:
+      "bg-gradient-to-br from-[#0b2e1a] via-[#15803d] to-[#14532d] shadow-[0_18px_40px_rgba(34,197,94,0.36)]",
+    glowClass: "bg-[#4ade80]",
   },
   {
-    icon: FiPenTool,
-    accentClass: "text-[#9f1239]",
-    hoverGradient: "from-[#1e40af] via-[#9d174d] to-[#047857]",
+    icon: FiTrendingUp,
+    cardClass:
+      "bg-gradient-to-br from-[#062533] via-[#0e7490] to-[#083344] shadow-[0_18px_40px_rgba(14,116,144,0.36)]",
+    glowClass: "bg-[#22d3ee]",
+  },
+  {
+    icon: FiTool,
+    cardClass:
+      "bg-gradient-to-br from-[#0b0f1f] via-[#1f2937] to-[#111827] shadow-[0_18px_40px_rgba(148,163,184,0.32)]",
+    glowClass: "bg-[#a3e635]",
   },
 ];
 
 const OfferingsSection = () => {
   const { t } = useLanguage();
-  const services: ServiceCard[] = t.offerings.services.map((service, index) => {
-    const style = serviceStyles[index]!;
-    return {
-      title: service.title,
-      description: service.description,
-      icon: style.icon,
-      accentClass: style.accentClass,
-      hoverGradient: style.hoverGradient,
-    };
-  });
-  const marqueeServices = [...services, ...services];
+  const services: ServiceCardData[] = t.offerings.services
+    .slice(0, 5)
+    .map((service, index) => {
+      const style = serviceStyles[index]!;
+      return {
+        title: service.title,
+        description: service.description,
+        icon: style.icon,
+        cardClass: style.cardClass,
+        glowClass: style.glowClass,
+        isDark: style.isDark,
+      };
+    });
+  const mobileCycleMs = 4000;
+  const mobileTotalMs = mobileCycleMs * services.length;
 
   return (
-    <section className="relative w-full bg-[#f8f7fb]">
-      <div className="relative mx-auto w-full max-w-[1200px] px-6 py-6 md:px-10">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <span className="mx-auto inline-flex w-fit uppercase tracking-[0.2em] text-[12px] text-[#0ea5e9]">
-            {t.offerings.label}
-          </span>
-          <h2 className="relative inline-block bg-[linear-gradient(120deg,#7a2fb5_0%,#370054_60%,#5b21b6_100%)] bg-clip-text text-[28px] font-semibold text-transparent drop-shadow-[0_10px_22px_#3700542e] after:absolute after:left-1/2 after:bottom-[-10px] after:h-[4px] after:w-[52%] after:-translate-x-1/2 after:rounded-full after:bg-[linear-gradient(90deg,#0ea5e9,#22c55e)] after:opacity-75 after:content-[''] md:text-[36px] font-spaceGrotesk">
-            {t.offerings.headline}
-          </h2>
-          <p className="mx-auto max-w-[760px] text-[16px] text-[#334155] md:text-[18px]">
-            {t.offerings.description}
-          </p>
-        </div>
-        <div className="mt-12 overflow-hidden [mask-image:linear-gradient(to_right,#00000000_0%,#000000_8%,#000000_92%,#00000000_100%)] [-webkit-mask-image:linear-gradient(to_right,#00000000_0%,#000000_8%,#000000_92%,#00000000_100%)]">
-          <div className="flex w-max gap-6 will-change-transform motion-safe:animate-home-services-scroll motion-reduce:animate-none hover:[animation-play-state:paused]">
-            {marqueeServices.map((service, index) => {
-              const Icon = service.icon;
-              const isDuplicate = index >= services.length;
-              return (
+    <section className="relative w-full overflow-hidden pb-6">
+      <div className="relative mx-auto w-full max-w-[1200px] px-6 pt-12 md:px-10">
+        <div className="flex flex-col md:gap-10 md:flex-row md:items-start">
+          <div className="offerings-reveal flex flex-col gap-4 md:w-[30%] md:pt-6">
+            <span className="inline-flex w-fit uppercase tracking-[0.24em] text-[12px] text-[#0ea5e9]">
+              {t.offerings.label}
+            </span>
+            <h2 className="text-[28px] font-semibold leading-tight text-[#0f172a] md:text-[36px] font-spaceGrotesk">
+              {t.offerings.headline}
+            </h2>
+            <p className="max-w-[420px] text-[16px] text-[#475569]">
+              {t.offerings.description}
+            </p>
+            <div className="-mt-10 md:mt-6 h-[200px] md:h-[300px] w-full md:max-w-[320px]">
+              <Lottie
+                animationData={servicesAnimation}
+                loop
+                autoplay
+                className="h-full w-full"
+                aria-label={t.offerings.headline}
+              />
+            </div>
+          </div>
+          <div
+            className="offerings-reveal w-full md:w-[70%]"
+            style={{ animationDelay: "120ms" }}
+          >
+            <div className="home-mobile-peel-stack relative min-h-[220px] -mt-6 w-full md:hidden">
+              {services.map((service, index) => (
                 <div
-                  key={`${service.title}-${index}`}
-                  aria-hidden={isDuplicate}
-                  className={`group w-[260px] shrink-0 rounded-3xl border border-[#e2e8f0cc] bg-[#ffffff] p-7 text-left text-[#0f172a] transition duration-300 ease-out hover:-translate-y-1 hover:border-[#ffffff26] hover:bg-gradient-to-br hover:text-[#ffffff] md:w-[320px] ${service.hoverGradient}`}
+                  key={`${service.title}-mobile`}
+                  className="home-mobile-peel-card absolute inset-0"
+                  style={{
+                    animationDuration: `${mobileTotalMs}ms`,
+                    animationDelay: `${index * mobileCycleMs}ms`,
+                    zIndex: services.length - index,
+                  }}
                 >
-                  <div className="flex items-center justify-center">
-                    <Icon
-                      className={`text-[30px] transition-colors duration-300 group-hover:text-[#ffffff] ${service.accentClass}`}
+                  <ServiceCard
+                    title={service.title}
+                    description={service.description}
+                    icon={service.icon}
+                    cardClass={service.cardClass}
+                    glowClass={service.glowClass}
+                    learnMoreLabel={t.offerings.learnMore}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="hidden grid-cols-6 gap-6 md:grid">
+              {services.map((service, index) => {
+                const cardWidthClass = index < 2 ? "col-span-3" : "col-span-2";
+
+                return (
+                  <div
+                    key={`${service.title}-desktop`}
+                    className={`${cardWidthClass} h-full`}
+                  >
+                    <ServiceCard
+                      title={service.title}
+                      description={service.description}
+                      icon={service.icon}
+                      cardClass={service.cardClass}
+                      glowClass={service.glowClass}
+                      learnMoreLabel={t.offerings.learnMore}
+                      animationDelayMs={index * 90}
+                      className="motion-safe:animate-home-fade-up"
                     />
                   </div>
-                  <h3 className="mt-5 text-[18px] font-semibold font-spaceGrotesk transition-colors duration-300 group-hover:text-[#ffffff] md:text-[20px]">
-                    {service.title}
-                  </h3>
-                  <p
-                    className="mt-3 text-[14px] leading-relaxed text-[#475569] transition-colors duration-300 group-hover:text-[#ffffffd9] md:text-[15px]"
-                  >
-                    {service.description}
-                  </p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-
-        <div className="mt-10 flex justify-center">
-          <Button href="/services" theme="gradient">
-            {t.offerings.cta}
-          </Button>
-        </div>
+      </div>
+      <div
+        className="offerings-reveal flex w-full items-center mt-6 justify-center"
+        style={{ animationDelay: "220ms" }}
+      >
+        <Button href="/services" theme="gradient">
+          {t.offerings.cta}
+        </Button>
       </div>
     </section>
   );

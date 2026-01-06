@@ -1,91 +1,106 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import { FiCloud, FiCpu, FiGlobe, FiSmartphone } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Lottie from "lottie-react";
 import Button from "../button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
-
-const heroGifs = [
-  "/gifs/ai_first.gif",
-  "/gifs/enterprise.gif",
-  "/gifs/lifecycle.gif",
-];
+import codingAnimation from "@/public/gifs/jsons/coding.json";
+import DarkHeader from "../navigations/DarkHeader";
 
 const HeroSection = () => {
-  const [activeGif, setActiveGif] = useState(0);
   const { t } = useLanguage();
   const hero = t.hero;
+  const [activeSub, setActiveSub] = useState(0);
+
+  const headlineSubs = [
+    { icon: FiGlobe, label: hero.headline_sub1 },
+    { icon: FiSmartphone, label: hero.headline_sub2 },
+    { icon: FiCpu, label: hero.headline_sub3 },
+    { icon: FiCloud, label: hero.headline_sub4 },
+  ];
+
+  useEffect(() => {
+    setActiveSub(0);
+  }, [
+    hero.headline_sub1,
+    hero.headline_sub2,
+    hero.headline_sub3,
+    hero.headline_sub4,
+  ]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveGif((prev) => (prev + 1) % heroGifs.length);
-    }, 4200);
+      setActiveSub((prev) => (prev + 1) % headlineSubs.length);
+    }, 2400);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [headlineSubs.length]);
+
+  const activeItem = headlineSubs[activeSub];
+  const ActiveIcon = activeItem?.icon;
 
   return (
-    <section className="relative">
-      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-6 py-6 md:py-12 md:px-10">
-        <div className="grid items-center gap-12 md:grid-cols-[1.05fr_0.95fr]">
-          <div className="flex flex-col gap-6 md:mb-10">
-            <span className="inline-flex w-fit uppercase tracking-[0.2em] text-[12px] text-[#0ea5e9]">
-              {hero.label}
-            </span>
-            <h1 className="relative inline-block bg-[linear-gradient(120deg,#7a2fb5_0%,#370054_60%,#5b21b6_100%)] bg-clip-text text-[36px] font-semibold leading-[1.06] text-transparent drop-shadow-[0_10px_22px_#3700542e] md:mb-4 md:text-[60px] font-spaceGrotesk">
-              {hero.headline}
-            </h1>
-            <p className="text-[16px] text-[#334155] md:text-[18px] motion-safe:animate-home-fade-up motion-safe:[animation-delay:0.1s]">
-              {hero.descriptionOne}
-            </p>
-            <p className="text-[16px] text-[#334155] md:text-[18px] motion-safe:animate-home-fade-up motion-safe:[animation-delay:0.2s]">
-              {hero.descriptionTwo}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/contact" theme="gradient">
-                {hero.primaryCta}
-              </Button>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-[#0f172a2e] bg-[#ffffffd9] px-[22px] py-[12px] text-[14px] font-semibold text-[#0b1220] transition duration-200 ease-out hover:-translate-y-[2px] hover:shadow-[0_18px_36px_#0f172a26]"
+    <section
+      id="home-hero"
+      className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden -mt-12 sm:-mt-16 md:-mt-20 md:min-h-screen"
+    >
+      <div className="pointer-events-none absolute inset-0 opacity-10">
+        <Lottie
+          animationData={codingAnimation}
+          loop
+          autoplay
+          className="h-full w-full scale-[1.15]"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="pointer-events-none absolute inset-0 home-grid" />
+      <div className="home-orb home-orb-two" />
+      <div className="home-orb home-orb-three" />
+      <DarkHeader />
+      <div className="hero-smooth-reveal mx-auto flex w-full flex-1 flex-col justify-center gap-8 px-5 pb-8 pt-6 sm:gap-10 sm:px-6 sm:pb-10 sm:pt-8 md:gap-12 md:pb-16 md:pt-10 md:px-10">
+        <div className="flex h-full flex-col items-center justify-center gap-5 text-center md:mb-10">
+          <span className="inline-flex w-fit uppercase tracking-[0.2em] text-white text-[12px]">
+            {hero.label}
+          </span>
+          <h1 className="relative inline-block whitespace-pre-line break-words font-semibold leading-[1.08] text-white drop-shadow-[0_14px_30px_rgba(9,0,16,0.45)] text-[30px] md:text-[60px] font-spaceGrotesk">
+            {hero.headline}
+          </h1>
+          {activeItem && ActiveIcon && (
+            <div className="flex items-center justify-center">
+              <div
+                key={`${activeSub}-${activeItem.label}`}
+                className="hero-sub-rotator relative inline-flex flex-col items-center gap-2 whitespace-pre-line break-words text-center font-semibold leading-[1.1] text-white drop-shadow-[0_14px_30px_rgba(9,0,16,0.45)] sm:flex-row sm:gap-3 text-[24px] md:mb-4 md:text-[60px] font-spaceGrotesk"
               >
-                {hero.secondaryCta}
-              </Link>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="relative w-full overflow-hidden rounded-[24px] aspect-[15/11]">
-              {heroGifs.map((gif, index) => (
-                <Image
-                  key={gif}
-                  src={gif}
-                  alt={hero.gifAlts[index]}
-                  fill
-                  unoptimized
-                  sizes="(min-width: 768px) 45vw, 100vw"
-                  priority={index === 0}
-                  className={`object-cover transition-opacity duration-1000 ease-in-out ${
-                    index === activeGif ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              ))}
-            </div>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {hero.highlights.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-[20px] border border-[#0f172a14] p-4 shadow-[0_20px_55px_#0f172a1f] backdrop-blur-[14px]"
-                >
-                  <span className="text-[15px] font-semibold text-[#0b1220] font-spaceGrotesk">
-                    {item.title}
-                  </span>
-                  <p className="mt-2 text-[13px] text-[#334155]">
-                    {item.description}
-                  </p>
+                <div className="rounded-[8px] md:rounded-[12px] bg-white/70 p-1 md:p-3">
+                  <ActiveIcon
+                    className="text-primary text-[24px] md:text-[60px]"
+                    aria-hidden="true"
+                  />{" "}
                 </div>
-              ))}
+                <span>{activeItem.label}</span>
+              </div>
             </div>
+          )}
+          <p className="max-w-[560px] text-center text-[14px] leading-[1.7] text-white/70 sm:text-[15px] md:text-[17px]">
+            {hero.subtext}
+          </p>
+          <div className="flex w-full flex-col items-stretch justify-center gap-3 md:flex-row md:w-auto">
+            <Button
+              href="/contact"
+              theme="gradient"
+              isWidthFull
+              className="w-full md:w-auto"
+            >
+              {hero.primaryCta}
+            </Button>
+            <Link
+              href="/services"
+              className="inline-flex w-full items-center justify-center rounded-full border border-white/30 bg-white/10 px-[22px] py-[12px] text-[14px] font-semibold text-white transition duration-200 ease-out hover:-translate-y-[2px] hover:bg-white/20 hover:shadow-[0_18px_36px_rgba(5,0,12,0.4)] sm:w-auto"
+            >
+              {hero.secondaryCta}
+            </Link>
           </div>
         </div>
       </div>

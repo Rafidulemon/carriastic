@@ -15,19 +15,38 @@
     animation: marquee 25s linear infinite;
   }
 
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  body.scrollbar-active {
+    scrollbar-color: #830dd2 transparent;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
-    background-color: #ffffff00;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: #830dd2;
+    background-color: transparent;
     border-radius: 10px;
-    border: 1px solid #830dd2;
+    border: 1px solid transparent;
+  }
+
+  body.scrollbar-active::-webkit-scrollbar-thumb {
+    background-color: #830dd2;
+    border-color: #830dd2;
   }
   
-  ::-webkit-scrollbar-thumb:hover {
+  body.scrollbar-active::-webkit-scrollbar-thumb:hover {
     background-color: #370054;
+    border-color: #370054;
   }
 
   .scrollbar-hidden {
@@ -222,13 +241,23 @@
 }
 
 .home-hero {
-  background: transparent;
+  background: #130c21;
+}
+
+.hero-smooth-reveal {
+  animation: hero-smooth-reveal 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
+}
+
+.offerings-reveal {
+  animation: offerings-reveal 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
 }
 
 .home-grid {
   background-image:
-    linear-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 52px 52px;
   mask-image: radial-gradient(circle at 50% 30%, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
   opacity: 0.5;
@@ -246,7 +275,7 @@
   left: -90px;
   width: 260px;
   height: 260px;
-  background: rgba(14, 165, 233, 0.35);
+  background: rgba(122, 47, 181, 0.35);
   animation: home-float 12s ease-in-out infinite;
 }
 
@@ -255,7 +284,7 @@
   right: -70px;
   width: 320px;
   height: 320px;
-  background: rgba(249, 115, 22, 0.35);
+  background: rgba(55, 0, 84, 0.35);
   animation: home-float 16s ease-in-out infinite;
 }
 
@@ -264,8 +293,144 @@
   right: 18%;
   width: 140px;
   height: 140px;
-  background: rgba(34, 197, 94, 0.25);
+  background: rgba(91, 33, 182, 0.28);
   animation: home-drift 14s ease-in-out infinite;
+}
+
+.home-hero-header {
+  background: #130c21;
+  box-shadow: none;
+}
+
+.hero-sub-rotator {
+  animation: hero-sub-rotate 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
+}
+
+.home-mobile-peel-stack {
+  perspective: 1400px;
+}
+
+.home-mobile-peel-card {
+  animation-name: home-page-peel;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+  transform-origin: top right;
+  transform-style: preserve-3d;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-smooth-reveal {
+    animation: none;
+  }
+
+  .offerings-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-sub-rotator {
+    animation: none;
+  }
+
+  .home-mobile-peel-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    position: static;
+  }
+
+  .home-mobile-peel-stack {
+    display: grid;
+    gap: 16px;
+  }
+}
+
+@keyframes hero-sub-rotate {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  25%,
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes hero-smooth-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes offerings-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes home-page-peel {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) rotateY(-14deg);
+  }
+  3% {
+    opacity: 1;
+    transform: translateY(0) rotateY(0deg);
+  }
+  18% {
+    opacity: 1;
+    transform: translateY(0) rotateY(0deg);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(-6px) rotateY(12deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px) rotateY(18deg);
+  }
+}
+
+.header-reveal {
+  animation: header-fade-down 0.6s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-reveal {
+    animation: none;
+  }
+}
+
+@keyframes header-fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes home-float {
@@ -331,4 +496,3 @@
     transform: translateY(0);
   }
 }
-

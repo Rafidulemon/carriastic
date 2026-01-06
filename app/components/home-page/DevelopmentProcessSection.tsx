@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
 import { FiAward } from "react-icons/fi";
 import { useLanguage } from "../../i18n/LanguageProvider";
 
@@ -49,12 +51,36 @@ const processLayouts: ProcessLayout[] = [
 
 const DevelopmentProcessSection = () => {
   const { t } = useLanguage();
+  const [webDevProcessAnimation, setWebDevProcessAnimation] = useState<
+    Record<string, unknown> | null
+  >(null);
   const processSteps: ProcessStep[] = t.developmentProcess.steps.map(
     (step, index) => ({
       ...step,
       ...processLayouts[index],
     })
   );
+
+  useEffect(() => {
+    let isMounted = true;
+
+    fetch("/gifs/jsons/develop_step.json")
+      .then((response) => response.json())
+      .then((data) => {
+        if (isMounted) {
+          setWebDevProcessAnimation(data);
+        }
+      })
+      .catch(() => {
+        if (isMounted) {
+          setWebDevProcessAnimation(null);
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <section className="relative w-full bg-[#ffffff]">
@@ -71,7 +97,19 @@ const DevelopmentProcessSection = () => {
           </p>
         </div>
 
-        <div className="relative mt-12">
+        {webDevProcessAnimation && (
+          <div className="relative h-[260px] overflow-hidden md:h-[420px]">
+            <Lottie
+              animationData={webDevProcessAnimation}
+              loop
+              autoplay
+              className="h-full w-full"
+              aria-label={t.developmentProcess.headline}
+            />
+          </div>
+        )}
+
+        <div className="relative">
           <div className="pointer-events-none absolute left-0 right-10 top-1/2 hidden h-[2px] -translate-y-1/2 bg-gradient-to-r from-[#ec4899] via-[#f97316] to-[#0ea5e9] md:block" />
           <div className="pointer-events-none absolute right-0 top-1/2 hidden -translate-y-1/2 md:flex">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f8f7fb] shadow-[0_10px_20px_#0f172a1f]">

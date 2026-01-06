@@ -100,7 +100,7 @@ function Button(props: Props) {
 
       {theme === "gradient" && (
         <div
-          className={`${baseClassName} inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primaryLight to-primary px-6 py-3 text-[15px] font-semibold text-white shadow-[0_16px_32px_rgba(55,0,84,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(55,0,84,0.34)] md:px-7 md:text-[16px]`}
+          className={`${baseClassName} inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primaryLight to-primary px-6 py-3 text-[15px] font-semibold text-white shadow-[0_6px_12px_rgba(55,0,84,0.24)] transition hover:-translate-y-0.5 hover:shadow-[0_8px_16px_rgba(55,0,84,0.3)] md:px-7 md:text-[16px]`}
         >
           <span className="flex flex-col justify-center">{children}</span>
         </div>
