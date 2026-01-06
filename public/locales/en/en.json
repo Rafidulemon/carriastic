@@ -542,11 +542,85 @@
     }
   },
   "cta": {
-    "label": "Ready to build",
-    "headline": "Partner with Carriastic for AI-powered growth",
-    "description": "We design intelligent platforms that evolve with your business and deliver measurable value over the long term.",
-    "primaryCta": "Contact us",
-    "secondaryCta": "Learn about our team"
+    "headlinePrefix": "Connect With",
+    "headlineHighlight": "Carriastic",
+    "description": "Let's discuss how we can help you build and grow with reliable technology solutions.",
+    "primaryCta": "Book a meeting",
+    "callLabel": "or call us at",
+    "phoneNumbers": ["+8801817020000", "+8801817030000"]
+  },
+  "faq": {
+    "label": "FAQ",
+    "headline": "Frequently asked questions",
+    "description": "Quick answers to the questions teams ask before partnering with Carriastic.",
+    "viewAllCta": "View all FAQs",
+    "strategyCallCta": "Schedule a strategy call",
+    "aiCta": "Meet Carriastic AI",
+    "pageLabel": "FAQ",
+    "pageHeadline": "FAQs: Carriastic in 60 seconds",
+    "pageDescription": "Everything you need to know about our platforms, AI solutions, and delivery approach.",
+    "items": [
+      {
+        "question": "What is Carriastic?",
+        "answer": "Carriastic is an AI-first software company that designs, builds, and scales custom digital platforms, automation, and enterprise systems."
+      },
+      {
+        "question": "What types of software solutions does Carriastic offer?",
+        "answer": "We deliver custom web, mobile, and cloud platforms, AI-powered products, enterprise systems, and ready-to-deploy solutions tailored to business goals."
+      },
+      {
+        "question": "Are Carriastic solutions customizable?",
+        "answer": "Yes. Every engagement is scoped to your workflows, data, and brand, with modular components that can evolve as you grow."
+      },
+      {
+        "question": "What industries does Carriastic serve?",
+        "answer": "We work with startups, SMEs, and enterprises across sectors including healthcare, retail, logistics, education, and services."
+      },
+      {
+        "question": "What makes Carriastic different from other software providers?",
+        "answer": "We combine long-term partnership, AI-enabled delivery, and product-grade engineering with a focus on measurable business impact."
+      },
+      {
+        "question": "Are Carriastic platforms cloud-based?",
+        "answer": "Most solutions are cloud-native or cloud-ready, with deployment options across AWS, GCP, Azure, or private infrastructure."
+      },
+      {
+        "question": "Does Carriastic provide AI-powered solutions?",
+        "answer": "Yes. We build AI copilots, automation, analytics, and RAG-driven systems that integrate with your data and workflows."
+      },
+      {
+        "question": "Can Carriastic integrate with existing systems?",
+        "answer": "Absolutely. We build APIs, data pipelines, and integrations that connect with legacy tools and modern stacks."
+      },
+      {
+        "question": "Is data security and privacy ensured?",
+        "answer": "Security is built-in with access controls, encryption, compliance-ready architecture, and ongoing monitoring practices."
+      },
+      {
+        "question": "Does Carriastic provide ongoing support and maintenance?",
+        "answer": "Yes. We offer post-launch support, monitoring, enhancements, and continuous optimization packages."
+      },
+      {
+        "question": "How long does it take to develop and deploy a solution?",
+        "answer": "Timelines vary by scope; most MVPs ship in 6 to 12 weeks, with phased releases for larger platforms."
+      },
+      {
+        "question": "Does Carriastic offer scalable solutions?",
+        "answer": "Yes. We design for scalability from day one with modular architecture and performance-focused infrastructure."
+      },
+      {
+        "question": "Can startups and small businesses use Carriastic solutions?",
+        "answer": "Definitely. We offer lean engagement models and phased delivery to fit early-stage budgets and timelines."
+      },
+      {
+        "question": "How can I request a demo or consultation?",
+        "answer": "Use the contact form or book a call, and our team will reach out to align on goals and next steps."
+      },
+      {
+        "question": "Does Carriastic provide custom software development?",
+        "answer": "Yes. Custom software and platform development is a core service, from discovery to deployment."
+      }
+    ]
   },
   "developmentProcess": {
     "label": "Our Development Approach",

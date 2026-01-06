@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import type { CSSProperties, ElementType } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -11,6 +14,7 @@ type ServiceCardProps = {
   animationDelayMs?: number;
   className?: string;
   style?: CSSProperties;
+  path?: string;
 };
 
 const ServiceCard = ({
@@ -23,8 +27,10 @@ const ServiceCard = ({
   animationDelayMs,
   className,
   style,
+  path = "/"
 }: ServiceCardProps) => {
   const Icon = icon;
+  const router = useRouter();
   const combinedStyle = animationDelayMs
     ? { ...style, animationDelay: `${animationDelayMs}ms` }
     : style;
@@ -59,7 +65,8 @@ const ServiceCard = ({
         </p>
         <div className="mt-auto flex items-center gap-3 pt-4">
           <span
-            className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-[10px] uppercase tracking-[0.28em] backdrop-blur bg-white/10 text-white/80`}
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-[10px] uppercase tracking-[0.28em] backdrop-blur bg-white/10 text-white/80 cursor-pointer hover:scale-105`}
+            onClick={ ()=> router.push(path)}
           >
             <FiArrowUpRight className="text-[12px]" />
           <span>{learnMoreLabel}</span>

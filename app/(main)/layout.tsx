@@ -55,6 +55,17 @@ export default function MainLayout({
     };
   }, []);
 
+  useEffect(() => {
+    const handleOpenChatbot = () => {
+      setIsModalOpen(true);
+    };
+
+    window.addEventListener("carriastic:open-chatbot", handleOpenChatbot);
+    return () => {
+      window.removeEventListener("carriastic:open-chatbot", handleOpenChatbot);
+    };
+  }, []);
+
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };

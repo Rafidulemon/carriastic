@@ -6,6 +6,7 @@ import TrustedPartnershipsSection from "../components/home-page/TrustedPartnersh
 import LeadershipSection from "../components/home-page/LeadershipSection";
 import TechStackSection from "../components/home-page/TechStackSection";
 import CtaSection from "../components/home-page/CtaSection";
+import FaqSection from "../components/home-page/FaqSection";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <TrustedPartnershipsSection />
       <LeadershipSection />
       <CtaSection />
+      <FaqSection />
     </div>
   );
 };

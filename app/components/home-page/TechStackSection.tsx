@@ -108,7 +108,7 @@ const TechStackSection = () => {
     techGroups.find((group) => group.id === activeGroupId) ?? techGroups[0];
 
   return (
-    <section className="relative mx-auto w-full max-w-[1200px] px-6 pb-14 md:px-10">
+    <section className="relative mx-auto w-full max-w-[1200px] px-6 pb-6 md:px-10">
       <div className="flex flex-col items-center gap-4 text-center">
         <span className="mx-auto inline-flex w-fit uppercase tracking-[0.2em] text-[12px] text-[#0ea5e9]">
           {t.techStack.label}

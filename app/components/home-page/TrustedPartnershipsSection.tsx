@@ -17,7 +17,7 @@ const TrustedPartnershipsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative mx-auto w-full max-w-[1200px] px-6 py-12 md:px-10">
+    <section className="relative mx-auto w-full max-w-[1200px] px-6 py-6 md:px-10">
       <div className="flex flex-col items-center gap-4 text-center">
         <span className="mx-auto inline-flex w-fit uppercase tracking-[0.2em] text-[12px] text-[#0ea5e9]">
           {t.trustedPartnerships.label}
