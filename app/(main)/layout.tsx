@@ -3,6 +3,7 @@ import Header from "../components/navigations/Header";
 import Footer from "../components/navigations/Footer";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import ChatbotModal from "../components/modals/ChatBotModal";
 import LanguageProvider from "../i18n/LanguageProvider";
 import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
@@ -24,8 +25,16 @@ export default function MainLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [client, setClient] = useState(false);
+  const isServiceRoute =
+    pathname === "/services" || pathname.startsWith("/services/");
+  const isContactRoute = pathname === "/contact";
+  const isAboutRoute = pathname === "/about" || pathname.startsWith("/about/");
+  const isHeroRoute =
+    pathname === "/" || isServiceRoute || isContactRoute || isAboutRoute;
+  const contentOffsetClass = isHeroRoute ? "mt-0" : "mt-16 md:mt-20";
 
   useEffect(() => {
     setClient(true);
@@ -76,7 +85,7 @@ export default function MainLayout({
       >
         <LanguageProvider>
           <Header />
-          <div className="mt-16 md:mt-20 min-h-[calc(80vh-10px)]">
+          <div className={`${contentOffsetClass} min-h-[calc(80vh-10px)]`}>
             {children}
           </div>
           <Footer />

@@ -454,9 +454,9 @@
     "hero": {
       "label": "Who we are",
       "headline": "About Carriastic",
-      "descriptionOne": "Carriastic is a modern software and technology company focused on building scalable, intelligent, and business-ready digital systems for organizations operating in an increasingly AI-driven world.",
-      "descriptionTwo": "We design, develop, and evolve custom software platforms, AI-powered solutions, and enterprise systems that help businesses streamline operations, improve decision-making, and achieve sustainable growth. Our work goes beyond delivering software. We partner closely with organizations to ensure technology becomes a long-term strategic advantage, not just a tool.",
-      "descriptionThree": "At Carriastic, Artificial Intelligence is not an add-on. It is foundational to how we think, build, and operate.",
+      "descriptionOne": "Carriastic builds scalable, intelligent software systems for organizations navigating an AI-driven world.",
+      "descriptionTwo": "We design and evolve custom platforms and AI solutions that streamline operations, sharpen decisions, and drive sustainable growth.",
+      "descriptionThree": "AI is foundational to how we think, build, and deliver—never an add-on.",
       "primaryCta": "Start a conversation",
       "secondaryCta": "Explore services",
       "animationAlt": "About Carriastic animation"
@@ -482,11 +482,11 @@
       "items": [
         {
           "title": "Our Mission",
-          "description": "To empower organizations and communities through AI-driven software solutions that are intelligent, scalable, and easy to use. We aim to simplify complex technology, enhance decision-making, and deliver measurable business value—helping our clients achieve higher ROI while creating systems that genuinely serve people."
+          "description": "To empower organizations and communities through AI-driven software solutions that are intelligent, scalable, and easy to use. We simplify complex technology, enhance decision-making, and deliver measurable business value while helping our clients achieve higher ROI and build systems that genuinely serve people."
         },
         {
           "title": "Our Vision",
-          "description": "To become a globally trusted AI technology partner that shapes the future of how businesses and societies operate. We envision a world where advanced Artificial Intelligence is accessible, ethical, and seamlessly integrated into everyday systems—driving sustainable growth, innovation, and positive societal impact."
+          "description": "To become a globally trusted AI technology partner that shapes the future of how businesses and societies operate. We envision a world where advanced Artificial Intelligence is accessible, ethical, and seamlessly integrated into everyday systems, driving sustainable growth, innovation, and positive societal impact."
         }
       ]
     },
@@ -758,8 +758,8 @@
       "headline": "Connect with the Carriastic team",
       "description": "Choose the channel that fits your workflow. We can align over email, jump on a call, or host an on-site session."
     },
-    "contactEmail": "info@carriastic.com",
-    "contactPhone": "+8801884517187",
+    "contactEmail": "carriastic@gmail.com, carriastic.hr@gmail.com",
+    "contactPhone": "+880 1749-981265, +880 1737-910734",
     "contactAddress": "House 19/1, GP Cha, Mohakhali, Dhaka-1212, Bangladesh",
     "hoursLabel": "Working hours",
     "hoursValue": "Sunday-Thursday, 10:00 AM - 7:00 PM (GMT+6)",
@@ -769,13 +769,13 @@
         "id": "email",
         "title": "Email us",
         "description": "Share your requirements and we will route them to the right team.",
-        "detail": "info@carriastic.com"
+        "detail": "carriastic@gmail.com, carriastic.hr@gmail.com"
       },
       {
         "id": "phone",
         "title": "Call the team",
         "description": "Talk to us about scope, budgets, and timelines.",
-        "detail": "+8801884517187"
+        "detail": "+880 1749-981265, +880 1737-910734"
       },
       {
         "id": "office",
@@ -797,7 +797,7 @@
       "companyLabel": "Company",
       "companyPlaceholder": "Company or organization",
       "phoneLabel": "Phone",
-      "phonePlaceholder": "+1 (555) 000-0000",
+      "phonePlaceholder": "+8801XXXXXXXXX",
       "serviceLabel": "Service focus",
       "servicePlaceholder": "Select a service",
       "serviceOptions": [
@@ -833,7 +833,10 @@
       "fileLabel": "Attach files",
       "fileHelper": "Optional: briefs, specs, or screenshots (PDF, DOCX, PNG).",
       "preferEmail": "Prefer email? Send details to {email}.",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successMessage": "Thanks! We have received your inquiry and will contact you as soon as possible.",
+      "errorMessage": "Sorry, something went wrong. Please try again."
     }
   },
   "aiPage": {
@@ -1857,6 +1860,7 @@
     "footerSecurity": "Encrypted"
   },
   "nav": {
+    "home": "Home",
     "about": "About",
     "services": "Services",
     "ai": "AI",

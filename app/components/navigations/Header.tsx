@@ -20,8 +20,9 @@ const Header = ({ isDark = false }: HeaderProps) => {
   const isServiceRoute =
     pathname === "/services" || pathname.startsWith("/services/");
   const isContactRoute = pathname === "/contact";
+  const isAboutRoute = pathname === "/about" || pathname.startsWith("/about/");
   const [isHeroActive, setIsHeroActive] = useState(
-    pathname === "/" || isServiceRoute || isContactRoute
+    pathname === "/" || isServiceRoute || isContactRoute || isAboutRoute
   );
   const { t } = useLanguage();
   const isDarkHeader = isDark || isHeroActive;
@@ -48,7 +49,9 @@ const Header = ({ isDark = false }: HeaderProps) => {
           ? "service-hero"
           : isContactRoute
             ? "contact-hero"
-            : null;
+            : isAboutRoute
+              ? "about-hero"
+              : null;
     if (!heroId) {
       setIsHeroActive(false);
       return;
@@ -69,7 +72,7 @@ const Header = ({ isDark = false }: HeaderProps) => {
 
     observer.observe(heroSection);
     return () => observer.disconnect();
-  }, [isDark, isServiceRoute, pathname]);
+  }, [isAboutRoute, isContactRoute, isDark, isServiceRoute, pathname]);
 
   const navItems = getNavItems(t);
 
@@ -92,7 +95,7 @@ const Header = ({ isDark = false }: HeaderProps) => {
 
   if (
     !isDark &&
-    (pathname === "/" || isServiceRoute || isContactRoute) &&
+    (pathname === "/" || isServiceRoute || isContactRoute || isAboutRoute) &&
     isHeroActive
   ) {
     return null;

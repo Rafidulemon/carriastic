@@ -19,8 +19,8 @@ const Footer = () => {
   const pathname = usePathname();
   const { t } = useLanguage();
   const footer = t.footer;
-  const contactEmail = "info@carriastic.com";
-  const contactPhone = "+8801884517187";
+  const contactEmail = "carriastic@gmail.com, carriastic.hr@gmail.com";
+  const contactPhone = "+880 1749-981265, +880 1737-910734";
   const contactAddress = footer.contactInfo.address;
   const preferEmailText = footer.contactForm.preferEmail.replace(
     "{email}",

@@ -1,16 +1,14 @@
 "use client";
 
-import Lottie from "lottie-react";
-import aboutAnimation from "@/public/gifs/about.json";
-import Button from "../../components/button/Button";
+import AboutHeroSection from "@/app/components/about-page/HeroSection";
+import TeamSection from "@/app/components/about-page/TeamSection";
 import CtaSection from "@/app/components/home-page/CtaSection";
-import Link from "next/link";
 import { useLanguage } from "../../i18n/LanguageProvider";
+import DesignApproachSection from "@/app/components/home-page/DesignApproachSection";
 
 function AboutPage() {
   const { t } = useLanguage();
   const about = t.about;
-  const designApproach = t.designApproach;
 
   const missionVisionAccents = [
     "from-[#22d3ee]/40 to-[#0ea5e9]/10",
@@ -26,61 +24,13 @@ function AboutPage() {
 
   const aiCulture = about.aiCulture.items;
   const aiSystems = about.aiCulture.systems;
-  const workProcess = designApproach.cards;
   const differentiators = about.differentiators.items;
   const clientFocus = about.clients.items;
   const commitments = about.commitment.items;
 
   return (
-    <div className="about-page relative overflow-hidden text-slate-900">
-      <section className="relative">
-        <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-6 py-6 md:py-12 md:px-10">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="flex flex-col gap-6">
-              <span className="inline-flex w-fit rounded-full border border-slate-200/80 bg-white/80 px-4 py-2 text-[11px] uppercase tracking-[0.3em] text-sky-600">
-                {about.hero.label}
-              </span>
-              <h1 className="text-[38px] font-semibold leading-[1.05] bg-[linear-gradient(120deg,#7a2fb5_0%,#370054_60%,#5b21b6_100%)] bg-clip-text text-transparent drop-shadow-[0_10px_22px_#3700542e] md:text-[64px] font-spaceGrotesk">
-                {about.hero.headline}
-              </h1>
-              <p className="text-[16px] text-justify text-slate-600 md:text-[18px]">
-                {about.hero.descriptionOne}
-              </p>
-              <p className="text-[16px] text-justify text-slate-600 md:text-[18px]">
-                {about.hero.descriptionTwo}
-              </p>
-              <p className="text-[16px] text-justify text-slate-600 md:text-[18px]">
-                {about.hero.descriptionThree}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/contact" theme="gradient">
-                  {about.hero.primaryCta}
-                </Button>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center rounded-full border border-[#0f172a2e] bg-[#ffffffd9] px-[22px] py-[12px] text-[14px] font-semibold text-[#0b1220] transition duration-200 ease-out hover:-translate-y-[2px] hover:shadow-[0_18px_36px_#0f172a26]"
-                >
-                  {about.hero.secondaryCta}
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div />
-              <div>
-                <div className="rounded-[28px] bg-transparent p-4">
-                  <Lottie
-                    animationData={aboutAnimation}
-                    loop
-                    autoplay
-                    className="h-[320px] w-full bg-transparent md:h-[440px]"
-                    aria-label={about.hero.animationAlt}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="about-page relative overflow-x-hidden text-slate-900">
+      <AboutHeroSection />
 
       <section className="relative py-14 md:py-20">
         <div className="mx-auto w-full max-w-[1200px] px-6 md:px-10">
@@ -169,38 +119,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="relative py-14 md:py-20">
-        <div className="mx-auto w-full max-w-[1200px] px-6 md:px-10">
-          <div className="flex flex-col gap-4">
-            <span className="text-[11px] uppercase tracking-[0.35em] text-emerald-600">
-              {designApproach.label}
-            </span>
-            <h2 className="text-[30px] font-semibold text-slate-900 md:text-[40px] font-spaceGrotesk">
-              {designApproach.headline}
-            </h2>
-          </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {workProcess.map((step, index) => (
-              <div
-                key={step.title}
-                className="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_18px_36px_rgba(15,23,42,0.08)]"
-              >
-                <div className="flex h-12 w-12 px-4 items-center justify-center rounded-full bg-gradient-to-br from-[#22d3ee]/25 to-[#34d399]/25 text-[13px] font-semibold text-slate-900">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-[17px] font-semibold text-slate-900 font-spaceGrotesk">
-                    {step.title}
-                  </span>
-                  <p className="text-[14px] text-justify text-slate-600">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DesignApproachSection/>
 
       <section className="relative py-14 md:py-20">
         <div className="mx-auto w-full max-w-[1200px] px-6 md:px-10">
@@ -260,6 +179,8 @@ function AboutPage() {
           </div>
         </div>
       </section>
+
+      <TeamSection />
 
       <section className="relative py-14 md:py-20">
         <div className="mx-auto w-full max-w-[1200px] px-6 md:px-10">

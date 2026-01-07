@@ -44,7 +44,7 @@ const HeroSection = () => {
   return (
     <section
       id="home-hero"
-      className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden -mt-16 md:-mt-20 md:min-h-screen"
+      className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden md:min-h-screen"
     >
       <div className="pointer-events-none absolute inset-0 opacity-10">
         <Lottie

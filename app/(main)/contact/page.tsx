@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Lottie from "lottie-react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import TextInput from "../../components/inputs/TextInput";
 import EmailInput from "../../components/inputs/EmailInput";
 import TextArea from "../../components/inputs/TextArea";
@@ -16,6 +19,10 @@ import contactAnimation from "@/public/gifs/jsons/contact.json";
 import mapAnimation from "@/public/gifs/jsons/map.json";
 import FaqSection from "@/app/components/home-page/FaqSection";
 import HeroBreadcrumb from "../../components/navigations/HeroBreadcrumb";
+import {
+  contactFormSchema,
+  type ContactFormValues,
+} from "@/app/lib/contact-form-schema";
 
 const ContactPage = () => {
   const { t } = useLanguage();
@@ -62,11 +69,56 @@ const ContactPage = () => {
     },
   } as const;
 
+  const [submissionMessage, setSubmissionMessage] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+  });
+
+  const onSubmit = async (values: ContactFormValues) => {
+    setSubmissionMessage(null);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        const message = data?.error ?? contact.form.errorMessage;
+        throw new Error(message);
+      }
+
+      setSubmissionMessage({
+        type: "success",
+        message: contact.form.successMessage,
+      });
+      reset();
+    } catch (error) {
+      setSubmissionMessage({
+        type: "error",
+        message:
+          error instanceof Error ? error.message : contact.form.errorMessage,
+      });
+    }
+  };
+
   return (
     <div className="w-full bg-white flex flex-col gap-6 md:gap-10">
       <section
         id="contact-hero"
-        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden -mt-16 pb-10 md:-mt-20 md:min-h-screen"
+        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden pb-10 md:min-h-screen"
       >
         <div className="pointer-events-none absolute inset-0 home-grid" />
         <div className="home-orb home-orb-two" />
@@ -244,6 +296,8 @@ const ContactPage = () => {
             <form
               className="relative mt-6 grid gap-4 md:gap-5"
               aria-label={contact.form.formAriaLabel}
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
             >
               <div className="grid gap-4 md:grid-cols-2">
                 <TextInput
@@ -251,12 +305,18 @@ const ContactPage = () => {
                   placeholder={contact.form.namePlaceholder}
                   className="w-full"
                   isRequired
+                  name="name"
+                  register={register}
+                  error={errors.name}
                 />
                 <EmailInput
                   label={contact.form.emailLabel}
                   placeholder={contact.form.emailPlaceholder}
                   className="w-full"
                   isRequired
+                  name="email"
+                  register={register}
+                  error={errors.email}
                 />
               </div>
               <div className="grid gap-4 md:grid-cols-2">
@@ -264,12 +324,18 @@ const ContactPage = () => {
                   label={contact.form.companyLabel}
                   placeholder={contact.form.companyPlaceholder}
                   className="w-full"
+                  name="company"
+                  register={register}
+                  error={errors.company}
                 />
                 <TextInput
                   label={contact.form.phoneLabel}
                   placeholder={contact.form.phonePlaceholder}
                   className="w-full"
                   isRequired
+                  name="phone"
+                  register={register}
+                  error={errors.phone}
                 />
               </div>
               <div className="grid gap-4 md:grid-cols-2">
@@ -278,12 +344,18 @@ const ContactPage = () => {
                   placeholder={contact.form.servicePlaceholder}
                   options={contact.form.serviceOptions}
                   className="w-full"
+                  name="service"
+                  register={register}
+                  error={errors.service}
                 />
                 <SelectInput
                   label={contact.form.budgetLabel}
                   placeholder={contact.form.budgetPlaceholder}
                   options={contact.form.budgetOptions}
                   className="w-full"
+                  name="budget"
+                  register={register}
+                  error={errors.budget}
                 />
               </div>
               <div className="grid gap-4 md:grid-cols-2">
@@ -292,11 +364,17 @@ const ContactPage = () => {
                   placeholder={contact.form.timelinePlaceholder}
                   options={contact.form.timelineOptions}
                   className="w-full"
+                  name="timeline"
+                  register={register}
+                  error={errors.timeline}
                 />
                 <TextInput
                   label={contact.form.subjectLabel}
                   placeholder={contact.form.subjectPlaceholder}
                   className="w-full"
+                  name="subject"
+                  register={register}
+                  error={errors.subject}
                 />
               </div>
               <TextArea
@@ -305,6 +383,9 @@ const ContactPage = () => {
                 placeholder={contact.form.messagePlaceholder}
                 className="w-full"
                 isRequired
+                name="message"
+                register={register}
+                error={errors.message}
               />
               <div className="grid gap-2">
                 <FileInput label={contact.form.fileLabel} className="w-full" />
@@ -320,9 +401,24 @@ const ContactPage = () => {
                   theme="gradient"
                   type="submit"
                 >
-                  <span>{contact.form.submit}</span>
+                  <span>
+                    {isSubmitting ? contact.form.sending : contact.form.submit}
+                  </span>
                 </Button>
               </div>
+              {submissionMessage && (
+                <div
+                  className={`rounded-2xl border px-4 py-3 text-[13px] ${
+                    submissionMessage.type === "success"
+                      ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                      : "border-rose-200 bg-rose-50 text-rose-700"
+                  }`}
+                  role="status"
+                  aria-live="polite"
+                >
+                  {submissionMessage.message}
+                </div>
+              )}
             </form>
           </div>
         </div>
