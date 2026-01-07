@@ -1,40 +1,78 @@
-import React from "react";
+"use client";
+
+import { useRouter } from "next/navigation";
+import type { CSSProperties, ElementType } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 
 type ServiceCardProps = {
-  name: string;
-  details: string;
-  icon: React.ReactNode;
-  color: string;
-  background: string;
+  title: string;
+  description: string;
+  icon: ElementType;
+  cardClass: string;
+  glowClass: string;
+  learnMoreLabel: string;
+  animationDelayMs?: number;
+  className?: string;
+  style?: CSSProperties;
+  path?: string;
 };
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
-  name,
-  details,
+const ServiceCard = ({
+  title,
+  description,
   icon,
-  color,
-  background,
-}) => {
+  cardClass,
+  glowClass,
+  learnMoreLabel,
+  animationDelayMs,
+  className,
+  style,
+  path = "/"
+}: ServiceCardProps) => {
+  const Icon = icon;
+  const router = useRouter();
+  const combinedStyle = animationDelayMs
+    ? { ...style, animationDelay: `${animationDelayMs}ms` }
+    : style;
+
   return (
     <div
-      className={`group w-[150px] h-[150px] md:h-[300px] md:w-[300px] xl:w-[350px] flex flex-col items-center justify-center p-6 rounded-md shadow-md bg-white ${background} 
-      hover:shadow-lg hover:scale-105 transform transition-all duration-300 cursor-pointer`}
+      className={`group relative h-full min-h-[190px] overflow-hidden rounded-[26px] p-4 text-left transition duration-300 ease-out text-white md:min-h-[220px] md:p-6 ${cardClass} ${className ?? ""}`}
+      style={combinedStyle}
     >
-      <div
-        className={`text-5xl mb-4 ${color} group-hover:text-white transition-colors duration-300`}
+      <span
+        className={`pointer-events-none absolute -right-10 -top-12 h-28 w-28 rounded-full opacity-40 blur-3xl ${glowClass}`}
+        aria-hidden="true"
+      />
+      <span
+        className={`pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_60%)]`}
+        aria-hidden="true"
+      />
+      <span
+        className={`pointer-events-none absolute -right-6 -bottom-10 opacity-20 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-105 text-white`}
+        aria-hidden="true"
       >
-        {icon}
+        <Icon className="h-[130px] w-[130px] md:h-[170px] md:w-[170px]" />
+      </span>
+      <div className="relative z-10 flex h-full flex-col gap-3 pr-6">
+        <h3 className="mt-2 text-[18px] font-semibold leading-snug font-spaceGrotesk">
+          {title}
+        </h3>
+        <p
+          className={`text-[14px] leading-relaxed text-white/75`}
+        >
+          {description}
+        </p>
+        <div className="mt-auto flex items-center gap-3 pt-4">
+          <span
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-[10px] uppercase tracking-[0.28em] backdrop-blur bg-white/10 text-white/80 cursor-pointer hover:scale-105`}
+            onClick={ ()=> router.push(path)}
+          >
+            <FiArrowUpRight className="text-[12px]" />
+          <span>{learnMoreLabel}</span>
+          </span>
+        </div>
       </div>
-      <h3
-        className="text-lg font-semibold text-gray-800 group-hover:text-white transition-colors duration-300"
-      >
-        {name}
-      </h3>
-      <p
-        className="hidden md:flex text-justify text-gray-600 text-center mt-2 group-hover:text-white transition-colors duration-300"
-      >
-        {details}
-      </p>
     </div>
   );
 };

@@ -1,13 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { FiClock, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import Lottie from "lottie-react";
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import TextInput from "../../components/inputs/TextInput";
 import EmailInput from "../../components/inputs/EmailInput";
 import TextArea from "../../components/inputs/TextArea";
+import SelectInput from "../../components/inputs/SelectInput";
+import FileInput from "../../components/inputs/FileInput";
 import Button from "../../components/button/Button";
+import Header from "../../components/navigations/Header";
 import { useLanguage } from "../../i18n/LanguageProvider";
+import contactAnimation from "@/public/gifs/jsons/contact.json";
+import mapAnimation from "@/public/gifs/jsons/map.json";
+import FaqSection from "@/app/components/home-page/FaqSection";
+import HeroBreadcrumb from "../../components/navigations/HeroBreadcrumb";
 
 const ContactPage = () => {
   const { t } = useLanguage();
@@ -16,6 +24,28 @@ const ContactPage = () => {
     "{email}",
     contact.contactEmail
   );
+  const officeMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    contact.contactAddress
+  )}`;
+
+  const socialIconMap = {
+    facebook: {
+      icon: <FaFacebookF />,
+      className: "text-cyan-200",
+    },
+    twitter: {
+      icon: <FaTwitter />,
+      className: "text-sky-200",
+    },
+    linkedin: {
+      icon: <FaLinkedinIn />,
+      className: "text-blue-200",
+    },
+    youtube: {
+      icon: <FaYoutube />,
+      className: "text-rose-200",
+    },
+  } as const;
 
   const cardStyles = {
     email: {
@@ -33,69 +63,81 @@ const ContactPage = () => {
   } as const;
 
   return (
-    <div className="relative w-full overflow-hidden bg-white">
-      <section className="relative overflow-hidden bg-[radial-gradient(80%_60%_at_50%_0%,#f3e8ff_0%,#f8f7ff_45%,#ffffff_100%)]">
-        <div className="pointer-events-none absolute -left-20 top-8 h-64 w-64 rounded-full bg-primary/15 blur-3xl" />
-        <div className="pointer-events-none absolute right-0 top-10 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 py-6 md:py-12 md:px-10 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="flex flex-col gap-6 text-center lg:text-left">
-            <span className="inline-flex w-fit self-center rounded-full border border-primary/20 bg-white/80 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-primary lg:self-start">
-              {contact.hero.label}
-            </span>
-            <h1 className="text-[32px] font-semibold leading-[1.05] text-slate-900 md:text-[52px] font-spaceGrotesk">
+    <div className="w-full bg-white flex flex-col gap-6 md:gap-10">
+      <section
+        id="contact-hero"
+        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden -mt-16 pb-10 md:-mt-20 md:min-h-screen"
+      >
+        <div className="pointer-events-none absolute inset-0 home-grid" />
+        <div className="home-orb home-orb-two" />
+        <div className="home-orb home-orb-three" />
+        <Header isDark />
+
+        <div className="hero-smooth-reveal mx-auto flex w-full max-w-[1200px] flex-1 flex-col justify-center gap-10 px-4 pt-6 sm:gap-12 sm:px-6 sm:pt-8 md:gap-14 md:px-8 lg:flex-row lg:items-center">
+          <div className="flex flex-1 flex-col items-center gap-5 text-center lg:items-start lg:text-left">
+            <HeroBreadcrumb
+              items={[
+                { label: contact.hero.home, href: "/" },
+                { label: contact.hero.label },
+              ]}
+            />
+            <h1 className="text-[30px] font-semibold leading-[1.1] text-white drop-shadow-[0_14px_30px_rgba(9,0,16,0.45)] md:text-[60px] font-spaceGrotesk">
               {contact.hero.headline}
             </h1>
-            <p className="text-[16px] text-slate-600 md:text-[18px]">
+            <p className="max-w-[560px] text-[16px] leading-[1.7] text-white/70">
               {contact.hero.description}
             </p>
-            <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-              {contact.badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full border border-primary/20 bg-white px-4 py-2 text-[12px] uppercase tracking-[0.2em] text-primary shadow-sm"
-                >
-                  {badge}
-                </span>
-              ))}
+            <div className="flex flex-wrap items-center justify-center gap-3 text-white/70 lg:justify-start">
+              {contact.socials.map((social) => {
+                const socialIcon =
+                  socialIconMap[social.id as keyof typeof socialIconMap];
+
+                if (!socialIcon) {
+                  return null;
+                }
+
+                return (
+                  <a
+                    key={social.id}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-[18px] transition duration-200 hover:-translate-y-[2px] hover:border-white/60 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60 ${socialIcon.className}`}
+                  >
+                    {socialIcon.icon}
+                  </a>
+                );
+              })}
             </div>
-            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
-              <Button href="#contact-form" theme="gradient">
+            <div className="flex w-full flex-col items-stretch justify-center gap-3 pt-2 sm:flex-row sm:w-auto">
+              <Button
+                href="#contact-form"
+                theme="gradient"
+                isWidthFull
+                className="w-full sm:w-auto"
+              >
                 {contact.hero.primaryCta}
               </Button>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-primary/25 bg-white px-6 py-3 text-[15px] font-semibold text-primary shadow-[0_12px_24px_rgba(55,0,84,0.12)] transition duration-200 ease-out hover:-translate-y-0.5"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/30 bg-white/10 px-[22px] py-[12px] text-[14px] font-semibold text-white transition duration-200 ease-out hover:-translate-y-[2px] hover:bg-white/20 hover:shadow-[0_18px_36px_rgba(5,0,12,0.4)] sm:w-auto"
               >
                 {contact.hero.secondaryCta}
               </Link>
             </div>
           </div>
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[420px] rounded-[32px] border border-white/80 bg-white/90 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.18)] backdrop-blur">
-              <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-primary/15 blur-3xl" />
-              <div className="absolute -bottom-16 -left-12 h-36 w-36 rounded-full bg-sky-400/20 blur-3xl" />
-              <Image
-                src="/gifs/contact_gif.gif"
-                alt={contact.hero.imageAlt}
-                width={520}
-                height={420}
-                className="h-auto w-full"
-                priority
-              />
-              <div className="mt-5 rounded-2xl border border-primary/15 bg-white/80 p-4 text-left">
-                <div className="flex items-center gap-3 text-primary">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                    <FiClock />
-                  </span>
-                  <div>
-                    <p className="text-[12px] uppercase tracking-[0.28em] text-slate-500">
-                      {contact.hoursLabel}
-                    </p>
-                    <p className="text-[14px] font-semibold text-slate-900">
-                      {contact.hoursValue}
-                    </p>
-                  </div>
-                </div>
+
+          <div className="relative flex-1">
+            <div className="relative mx-auto w-full max-w-[480px]">
+              <div>
+                <Lottie
+                  animationData={contactAnimation}
+                  loop
+                  autoplay
+                  className="h-[200px] md:h-[460px] w-full"
+                  aria-label={contact.hero.imageAlt}
+                />      
               </div>
             </div>
           </div>
@@ -105,9 +147,22 @@ const ContactPage = () => {
       <section className="relative mx-auto w-full max-w-[1200px] px-6 py-14 md:px-10">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
+              <span className="text-[11px] uppercase tracking-[0.4em] text-primary/80">
+                {contact.details.label}
+              </span>
+              <h2 className="text-[26px] font-semibold text-slate-900 md:text-[32px] font-spaceGrotesk">
+                {contact.details.headline}
+              </h2>
+              <p className="text-[14px] text-slate-600 md:text-[15px]">
+                {contact.details.description}
+              </p>
+            </div>
+
             <div className="grid gap-4">
               {contact.cards.map((card) => {
                 const styles = cardStyles[card.id as keyof typeof cardStyles];
+                const isOfficeCard = card.id === "office";
 
                 return (
                   <div
@@ -131,19 +186,31 @@ const ContactPage = () => {
                       <p className="text-[14px] text-slate-600">
                         {card.description}
                       </p>
+                      {isOfficeCard && (
+                        <a
+                          href={officeMapUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={contact.addressLabel}
+                          className="group relative mt-3 overflow-hidden rounded-2xl border border-primary/10 bg-slate-50"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/15 opacity-70 transition-opacity duration-200 group-hover:opacity-100" />
+                          <Lottie
+                            animationData={mapAnimation}
+                            loop
+                            autoplay
+                            className="h-[220px] w-full"
+                            aria-label={contact.addressLabel}
+                          />
+                          <div className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary shadow-md">
+                            {contact.addressLabel}
+                          </div>
+                        </a>
+                      )}
                     </div>
                   </div>
                 );
               })}
-            </div>
-
-            <div className="rounded-2xl border border-primary/10 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
-              <p className="text-[12px] uppercase tracking-[0.3em] text-slate-500">
-                {contact.addressLabel}
-              </p>
-              <p className="mt-2 text-[15px] font-semibold text-slate-900">
-                {contact.contactAddress}
-              </p>
             </div>
           </div>
 
@@ -179,9 +246,51 @@ const ContactPage = () => {
               aria-label={contact.form.formAriaLabel}
             >
               <div className="grid gap-4 md:grid-cols-2">
+                <TextInput
+                  label={contact.form.nameLabel}
+                  placeholder={contact.form.namePlaceholder}
+                  className="w-full"
+                  isRequired
+                />
                 <EmailInput
                   label={contact.form.emailLabel}
                   placeholder={contact.form.emailPlaceholder}
+                  className="w-full"
+                  isRequired
+                />
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                <TextInput
+                  label={contact.form.companyLabel}
+                  placeholder={contact.form.companyPlaceholder}
+                  className="w-full"
+                />
+                <TextInput
+                  label={contact.form.phoneLabel}
+                  placeholder={contact.form.phonePlaceholder}
+                  className="w-full"
+                  isRequired
+                />
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                <SelectInput
+                  label={contact.form.serviceLabel}
+                  placeholder={contact.form.servicePlaceholder}
+                  options={contact.form.serviceOptions}
+                  className="w-full"
+                />
+                <SelectInput
+                  label={contact.form.budgetLabel}
+                  placeholder={contact.form.budgetPlaceholder}
+                  options={contact.form.budgetOptions}
+                  className="w-full"
+                />
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                <SelectInput
+                  label={contact.form.timelineLabel}
+                  placeholder={contact.form.timelinePlaceholder}
+                  options={contact.form.timelineOptions}
                   className="w-full"
                 />
                 <TextInput
@@ -195,7 +304,14 @@ const ContactPage = () => {
                 height="180px"
                 placeholder={contact.form.messagePlaceholder}
                 className="w-full"
+                isRequired
               />
+              <div className="grid gap-2">
+                <FileInput label={contact.form.fileLabel} className="w-full" />
+                <p className="text-[12px] text-slate-500">
+                  {contact.form.fileHelper}
+                </p>
+              </div>
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <p className="text-[12px] text-slate-500">{preferEmailText}</p>
                 <Button
@@ -209,6 +325,9 @@ const ContactPage = () => {
               </div>
             </form>
           </div>
+        </div>
+        <div className="mt-6 md:mt-10">
+          <FaqSection />
         </div>
       </section>
     </div>

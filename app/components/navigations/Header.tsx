@@ -8,13 +8,23 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import LanguageToggle from "../language/LanguageToggle";
 import { useLanguage } from "../../i18n/LanguageProvider";
 import MobileSideBar from "./MobileSideBar";
+import { getNavItems } from "@/app/constants/navItems";
 
+type HeaderProps = {
+  isDark?: boolean;
+};
 
-const Header = () => {
+const Header = ({ isDark = false }: HeaderProps) => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isHeroActive, setIsHeroActive] = useState(pathname === "/");
+  const isServiceRoute =
+    pathname === "/services" || pathname.startsWith("/services/");
+  const isContactRoute = pathname === "/contact";
+  const [isHeroActive, setIsHeroActive] = useState(
+    pathname === "/" || isServiceRoute || isContactRoute
+  );
   const { t } = useLanguage();
+  const isDarkHeader = isDark || isHeroActive;
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
@@ -30,12 +40,21 @@ const Header = () => {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    if (pathname !== "/") {
+    if (isDark) return;
+    const heroId =
+      pathname === "/"
+        ? "home-hero"
+        : isServiceRoute
+          ? "service-hero"
+          : isContactRoute
+            ? "contact-hero"
+            : null;
+    if (!heroId) {
       setIsHeroActive(false);
       return;
     }
 
-    const heroSection = document.getElementById("home-hero");
+    const heroSection = document.getElementById(heroId);
     if (!heroSection) {
       setIsHeroActive(false);
       return;
@@ -50,46 +69,44 @@ const Header = () => {
 
     observer.observe(heroSection);
     return () => observer.disconnect();
-  }, [pathname]);
+  }, [isDark, isServiceRoute, pathname]);
 
-  const navItems = [
-    { href: "/about", label: t.nav.about },
-    { href: "/services", label: t.nav.services },
-    { href: "/ai", label: t.nav.ai },
-    { href: "/products", label: t.nav.products },
-    { href: "/team", label: t.nav.team },
-    { href: "/blogs", label: t.nav.blog },
-    { href: "/career", label: t.nav.career },
-  ];
+  const navItems = getNavItems(t);
 
-  const heroLogoSrc = isHeroActive
+  const heroLogoSrc = isDarkHeader
     ? "/images/white_logo_slogan.png"
     : "/images/logo_main_slogan.png";
 
-  const navActiveClass = isHeroActive
+  const headerPositionClass = isDark ? "relative" : "fixed top-0";
+  const headerThemeClass = isDark
+    ? ""
+    : isHeroActive
+      ? "home-hero-header"
+      : "bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]";
+  const navActiveClass = isDarkHeader
     ? "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-white/80"
     : "text-primary after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary after:via-[#6d36dc] after:to-[#4b50e6]";
-  const navInactiveClass = isHeroActive
+  const navInactiveClass = isDarkHeader
     ? "text-white/70 hover:text-white"
     : "text-slate-600 hover:text-slate-900";
 
-  if (pathname === "/" && isHeroActive) {
+  if (
+    !isDark &&
+    (pathname === "/" || isServiceRoute || isContactRoute) &&
+    isHeroActive
+  ) {
     return null;
   }
 
   return (
     <>
       <header
-        className={`header-reveal fixed top-0 z-[100] w-full transition-colors duration-300 ${
-          isHeroActive
-            ? "home-hero-header"
-            : "bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
-        }`}
+        className={`header-reveal ${headerPositionClass} z-[100] w-full transition-colors duration-300 ${headerThemeClass}`}
       >
         <div className="relative mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:h-20 md:px-8">
           <div className="flex items-center gap-3">
             <button
-              className={`md:hidden ${isHeroActive ? "text-white" : "text-primary"}`}
+              className={`md:hidden ${isDarkHeader ? "text-white" : "text-primary"}`}
               onClick={toggleMenu}
               aria-label="Toggle Menu"
               aria-expanded={isMenuOpen}
@@ -121,28 +138,34 @@ const Header = () => {
             />
           </Link>
           <div className="md:hidden">
-            <LanguageToggle />
+            <LanguageToggle theme={isDarkHeader ? "dark" : "light"} />
           </div>
           <nav
             className={`hidden flex-1 items-center justify-center gap-6 text-[15px] font-medium md:flex md:gap-6 ${
-              isHeroActive ? "text-white/80" : "text-slate-600"
+              isDarkHeader ? "text-white/80" : "text-slate-600"
             }`}
           >
-            {navItems.map((navItem) => (
-              <Link
-                key={navItem.href}
-                href={navItem.href}
-                className={`relative inline-flex items-center transition-colors ${
-                  pathname === navItem.href ? navActiveClass : navInactiveClass
-                }`}
-              >
-                {navItem.label}
-              </Link>
-            ))}
+            {navItems.map((navItem) => {
+              const isActive =
+                pathname === navItem.href ||
+                (navItem.href === "/services" &&
+                  pathname.startsWith("/services/"));
+              return (
+                <Link
+                  key={navItem.href}
+                  href={navItem.href}
+                  className={`relative inline-flex items-center transition-colors ${
+                    isActive ? navActiveClass : navInactiveClass
+                  }`}
+                >
+                  {navItem.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <LanguageToggle />
+            <LanguageToggle theme={isDarkHeader ? "dark" : "light"} />
             <Link
               href="/contact"
               className="cursor-pointer rounded-[10px] bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(76,49,201,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_30px_rgba(76,49,201,0.32)]"

@@ -1,0 +1,184 @@
+{
+  "items": [
+    {
+      "slug": "custom-software-platform-development",
+      "title": "Custom Software & Platform Development",
+      "tag": "Platforms",
+      "summary": "Bespoke web, mobile, and cloud platforms tailored to your workflows and scale.",
+      "description": "We design, build, and launch secure systems that unify teams, data, and operations.",
+      "highlights": ["Product-grade UX", "API-first architecture", "Scalable delivery"],
+      "outcomes": ["Faster launches", "Unified operations", "Future-ready architecture"],
+      "capabilities": [
+        "Discovery & product roadmap",
+        "UX/UI and design systems",
+        "Full-stack engineering",
+        "Cloud-native deployment"
+      ],
+      "deliverables": [
+        "Technical architecture & backlog",
+        "MVP or full platform build",
+        "CI/CD & monitoring setup",
+        "Documentation & handover"
+      ],
+      "stack": ["Next.js", "React", "Node.js", "PostgreSQL", "AWS"]
+    },
+    {
+      "slug": "ai-powered-software-solutions",
+      "title": "AI-Powered Software Solutions",
+      "tag": "AI Solutions",
+      "summary": "AI copilots, automation, and data-driven products built for real impact.",
+      "description": "We embed AI into workflows to reduce manual work and unlock smarter decisions.",
+      "highlights": ["Intelligent automation", "Human-in-the-loop", "Measurable ROI"],
+      "outcomes": ["Reduced manual workload", "Smarter decisioning", "Faster cycle times"],
+      "capabilities": [
+        "AI workflow design",
+        "Model selection & evaluation",
+        "RAG & knowledge systems",
+        "AI ops & monitoring"
+      ],
+      "deliverables": [
+        "AI prototypes & pilots",
+        "Production-ready AI features",
+        "Governance & safety checks",
+        "Training & rollout playbook"
+      ],
+      "stack": ["Python", "FastAPI", "Vector DB", "OpenAI", "LangChain"]
+    },
+    {
+      "slug": "healthcare-medical-management-solutions",
+      "title": "Healthcare & Medical Management Solutions",
+      "tag": "Healthcare",
+      "summary": "Patient workflows, clinical data systems, and compliant digital health platforms.",
+      "description": "Secure, clinician-ready experiences with governance built in from day one.",
+      "highlights": [
+        "Clinical workflows",
+        "Compliance-ready",
+        "Data interoperability"
+      ],
+      "outcomes": [
+        "Improved patient flow",
+        "Operational visibility",
+        "Regulatory readiness"
+      ],
+      "capabilities": [
+        "Patient intake & records",
+        "Scheduling & queue management",
+        "Billing & claims automation",
+        "Interoperability integrations"
+      ],
+      "deliverables": [
+        "Role-based access control",
+        "Audit trails & reporting",
+        "Data migration support",
+        "Deployment & training"
+      ],
+      "stack": ["React", "Node.js", "PostgreSQL", "HL7/FHIR", "AWS"]
+    },
+    {
+      "slug": "enterprise-institutional-solutions",
+      "title": "Enterprise & Institutional Solutions",
+      "tag": "Enterprise",
+      "summary": "Secure, multi-department systems for governance, operations, and reporting.",
+      "description": "Enterprise-grade platforms that modernize workflows while meeting audit requirements.",
+      "highlights": ["Role-based access", "Audit-ready", "Scalable architecture"],
+      "outcomes": ["Unified governance", "Cross-team visibility", "Reduced risk"],
+      "capabilities": [
+        "Enterprise architecture design",
+        "Workflow automation",
+        "Data governance & reporting",
+        "Integration with legacy systems"
+      ],
+      "deliverables": [
+        "Security & compliance baseline",
+        "Data dashboards",
+        "Integration layer",
+        "Operations playbook"
+      ],
+      "stack": ["React", "Node.js", "PostgreSQL", "SSO/SAML", "Azure/AWS"]
+    },
+    {
+      "slug": "ready-to-deploy-software-products",
+      "title": "Ready-to-Deploy Software Products",
+      "tag": "Accelerators",
+      "summary": "Pre-built modules and configurable products to launch faster.",
+      "description": "Launch proven platforms quickly, then customize for your brand and workflows.",
+      "highlights": [
+        "Faster time-to-value",
+        "Configurable modules",
+        "Enterprise support"
+      ],
+      "outcomes": ["Launch in weeks", "Lower build cost", "Faster adoption"],
+      "capabilities": [
+        "Module configuration",
+        "Brand & UX customization",
+        "Data migration & onboarding",
+        "Training & rollout"
+      ],
+      "deliverables": [
+        "Deployment-ready instance",
+        "Configuration guide",
+        "Admin training",
+        "Support & SLAs"
+      ],
+      "stack": ["Next.js", "React", "Node.js", "PostgreSQL", "Docker"]
+    },
+    {
+      "slug": "ai-strategy-technology-consulting",
+      "title": "AI Strategy & Technology Consulting",
+      "tag": "Strategy",
+      "summary": "Roadmaps, architecture, and feasibility to align AI with business goals.",
+      "description": "Clarity on where AI creates value and how to execute with confidence.",
+      "highlights": ["AI roadmap", "Feasibility analysis", "Risk management"],
+      "outcomes": [
+        "Clear investment roadmap",
+        "Aligned KPIs",
+        "Execution-ready plan"
+      ],
+      "capabilities": [
+        "Opportunity mapping",
+        "Data readiness assessment",
+        "Architecture & model selection",
+        "Pilot scope & ROI"
+      ],
+      "deliverables": [
+        "AI strategy blueprint",
+        "Pilot plan & timeline",
+        "Governance framework",
+        "Leadership workshops"
+      ],
+      "stack": [
+        "Workshops",
+        "Stakeholder interviews",
+        "Data audits",
+        "Model evaluation",
+        "Execution plan"
+      ]
+    },
+    {
+      "slug": "maintenance-support-technology-lifecycle",
+      "title": "Maintenance, Support & Technology Lifecycle Management",
+      "tag": "Lifecycle",
+      "summary": "Ongoing monitoring, updates, and reliability improvements across releases.",
+      "description": "We keep your systems secure, optimized, and evolving long after launch.",
+      "highlights": [
+        "Proactive monitoring",
+        "Reliability upgrades",
+        "Continuous improvement"
+      ],
+      "outcomes": ["Higher uptime", "Lower incident risk", "Long-term stability"],
+      "capabilities": [
+        "Monitoring & alerts",
+        "Patch & dependency management",
+        "Performance optimization",
+        "Feature roadmap support"
+      ],
+      "deliverables": [
+        "SLA-backed support",
+        "Release management",
+        "Security updates",
+        "Monthly performance reports"
+      ],
+      "stack": ["Datadog", "Sentry", "AWS", "CI/CD", "Security scans"]
+    }
+  ]
+}

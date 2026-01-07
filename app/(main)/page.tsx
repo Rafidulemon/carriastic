@@ -10,12 +10,11 @@ import FaqSection from "../components/home-page/FaqSection";
 
 const HomePage = () => {
   return (
-    <div className="home-page w-full flex flex-col">
+    <div className="home-page w-full flex flex-col gap-6 md:gap-10">
       <HeroSection />
       <OfferingsSection />
       <DevelopmentProcessSection />
       <CapabilitiesSection />
-      {/* <DesignApproachSection /> */}
       <TechStackSection />
       <TrustedPartnershipsSection />
       <LeadershipSection />

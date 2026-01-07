@@ -4,22 +4,17 @@ import Lottie from "lottie-react";
 import aiAnimation from "@/public/gifs/ai.json";
 import Button from "../button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
+import TitleText from "../typography/TitleText";
 
 const CapabilitiesSection = () => {
   const { t } = useLanguage();
   return (
-    <section className="relative mx-auto w-full max-w-[1200px] px-6 pb-12 md:px-10">
-      <div className="flex flex-col items-center gap-4 text-center">
-        <span className="mx-auto inline-flex w-fit uppercase tracking-[0.2em] text-[12px] text-[#0ea5e9]">
-          {t.capabilities.label}
-        </span>
-        <h2 className="relative inline-block bg-[linear-gradient(120deg,#7a2fb5_0%,#370054_60%,#5b21b6_100%)] bg-clip-text text-[28px] font-semibold text-transparent drop-shadow-[0_10px_22px_#3700542e] after:absolute after:left-1/2 after:bottom-[-10px] after:h-[4px] after:w-[52%] after:-translate-x-1/2 after:rounded-full after:bg-[linear-gradient(90deg,#0ea5e9,#22c55e)] after:opacity-75 after:content-[''] md:text-[36px] font-spaceGrotesk">
-          {t.capabilities.headline}
-        </h2>
-        <p className="mx-auto max-w-[760px] text-[16px] text-[#334155] md:text-[18px]">
-          {t.capabilities.description}
-        </p>
-      </div>
+    <section className="relative mx-auto w-full max-w-[1200px] px-6 md:px-10">
+      <TitleText
+        label={t.capabilities.label}
+        headline={t.capabilities.headline}
+        description={t.capabilities.description}
+      />
 
       <div className="mt-10 grid items-center gap-10 md:grid-cols-[0.9fr_1.1fr]">
         <div className="flex flex-col gap-5">
@@ -29,12 +24,10 @@ const CapabilitiesSection = () => {
                 key={item.title}
                 className="flex flex-col gap-2 rounded-[20px] border border-[#0f172a14] bg-[#ffffffd9] p-5 shadow-[0_20px_55px_#0f172a1f] backdrop-blur-[14px] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-primary hover:shadow-[0_10px_20px_#370054] hover:bg-white"
               >
-                <span className="text-[17px] font-semibold text-[#0b1220] font-spaceGrotesk">
+                <span className="text-[16px] font-semibold text-[#0b1220] font-spaceGrotesk">
                   {item.title}
                 </span>
-                <p className="text-[15px] text-[#334155]">
-                  {item.description}
-                </p>
+                <p className="text-[14px] text-[#334155]">{item.description}</p>
               </div>
             ))}
           </div>

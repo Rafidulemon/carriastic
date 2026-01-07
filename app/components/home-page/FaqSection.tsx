@@ -15,10 +15,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="relative mx-auto w-full max-w-[1200px] px-6 pb-6 md:px-10">
-      <div className="pointer-events-none absolute -right-16 top-6 h-40 w-40 rounded-full bg-sky-200/40 blur-3xl" />
-      <div className="pointer-events-none absolute -left-20 bottom-6 h-40 w-40 rounded-full bg-purple-200/40 blur-3xl" />
-
+    <section className="relative mx-auto w-full max-w-[1200px] px-6 md:px-10">
       <div className="relative grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col items-center gap-4 text-center md:hidden">

@@ -320,6 +320,7 @@
   transform-origin: top right;
   transform-style: preserve-3d;
   opacity: 0;
+  visibility: hidden;
   will-change: transform, opacity;
 }
 
@@ -343,6 +344,7 @@
     opacity: 1;
     transform: none;
     position: static;
+    visibility: visible;
   }
 
   .home-mobile-peel-stack {
@@ -393,22 +395,27 @@
   0% {
     opacity: 0;
     transform: translateY(14px) rotateY(-14deg);
+    visibility: hidden;
   }
   3% {
     opacity: 1;
     transform: translateY(0) rotateY(0deg);
+    visibility: visible;
   }
   18% {
     opacity: 1;
     transform: translateY(0) rotateY(0deg);
+    visibility: visible;
   }
   20% {
     opacity: 0;
     transform: translateY(-6px) rotateY(12deg);
+    visibility: hidden;
   }
   100% {
     opacity: 0;
     transform: translateY(-12px) rotateY(18deg);
+    visibility: hidden;
   }
 }
 

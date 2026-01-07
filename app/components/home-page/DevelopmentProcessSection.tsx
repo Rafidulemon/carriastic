@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import { FiAward } from "react-icons/fi";
 import { useLanguage } from "../../i18n/LanguageProvider";
+import TitleText from "../typography/TitleText";
 
 type ProcessStep = {
   step: string;
@@ -51,9 +52,10 @@ const processLayouts: ProcessLayout[] = [
 
 const DevelopmentProcessSection = () => {
   const { t } = useLanguage();
-  const [webDevProcessAnimation, setWebDevProcessAnimation] = useState<
-    Record<string, unknown> | null
-  >(null);
+  const [webDevProcessAnimation, setWebDevProcessAnimation] = useState<Record<
+    string,
+    unknown
+  > | null>(null);
   const processSteps: ProcessStep[] = t.developmentProcess.steps.map(
     (step, index) => ({
       ...step,
@@ -83,19 +85,13 @@ const DevelopmentProcessSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#ffffff]">
-      <div className="mx-auto w-full max-w-[1200px] px-6 py-14 md:px-10">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <span className="mx-auto inline-flex w-fit uppercase tracking-[0.2em] text-[12px] text-[#0ea5e9]">
-            {t.developmentProcess.label}
-          </span>
-          <h2 className="relative inline-block bg-[linear-gradient(120deg,#7a2fb5_0%,#370054_60%,#5b21b6_100%)] bg-clip-text text-[28px] font-semibold text-transparent drop-shadow-[0_10px_22px_#3700542e] after:absolute after:left-1/2 after:bottom-[-10px] after:h-[4px] after:w-[52%] after:-translate-x-1/2 after:rounded-full after:bg-[linear-gradient(90deg,#0ea5e9,#22c55e)] after:opacity-75 after:content-[''] md:text-[36px] font-spaceGrotesk">
-            {t.developmentProcess.headline}
-          </h2>
-          <p className="mx-auto max-w-[760px] text-[16px] text-[#334155] md:text-[18px]">
-            {t.developmentProcess.description}
-          </p>
-        </div>
+    <section className="relative w-full">
+      <div className="mx-auto w-full max-w-[1200px] px-6 md:px-10">
+        <TitleText
+          label={t.developmentProcess.label}
+          headline={t.developmentProcess.headline}
+          description={t.developmentProcess.description}
+        />
 
         {webDevProcessAnimation && (
           <div className="relative h-[260px] overflow-hidden md:h-[420px]">
@@ -117,7 +113,7 @@ const DevelopmentProcessSection = () => {
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3 md:grid-rows-2 md:gap-y-16">
+          <div className="grid gap-2 md:gap-6 md:grid-cols-3 md:grid-rows-2 md:gap-y-16">
             {processSteps.map((step) => (
               <div
                 key={step.step}
@@ -125,14 +121,14 @@ const DevelopmentProcessSection = () => {
                   step.position === "top" ? "md:pb-10" : "md:pt-10"
                 }`}
               >
-                <div className="rounded-[18px] border border-[#e2e8f0cc] bg-[#ffffff] p-6 text-left shadow-[0_18px_45px_#0f172a0f]">
+                <div className="rounded-[18px] border border-[#e2e8f0cc] bg-[#ffffff] p-4 md:p-6 text-left shadow-[0_18px_45px_#0f172a0f]">
                   <span className="text-[13px] font-semibold text-[#0ea5e9]">
                     #{step.step}
                   </span>
-                  <h3 className="mt-3 text-[16px] font-semibold text-[#0b1220] font-spaceGrotesk md:text-[18px]">
+                  <h3 className="md:mt-3 text-[16px] font-semibold text-[#0b1220] font-spaceGrotesk md:text-[18px]">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-[14px] text-[#334155] md:text-[15px]">
+                  <p className="md:mt-2 text-[14px] text-[#334155] md:text-[15px]">
                     {step.description}
                   </p>
                 </div>

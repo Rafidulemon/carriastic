@@ -48,6 +48,7 @@ function TextInput(props: Props) {
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        required={isRequired}
         {...register?.(name)}
       />
       {error && <div className="text-[14px] text-red-500">{error.message}</div>}

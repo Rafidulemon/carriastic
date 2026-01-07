@@ -62,20 +62,26 @@ const MobileSideBar = ({
         </div>
 
         <nav className="flex flex-col gap-6 px-6 py-6 text-[15px] font-medium text-slate-700">
-          {navItems.map((navItem) => (
-            <Link
-              key={navItem.href}
-              href={navItem.href}
-              onClick={closeMenu}
-              className={`relative inline-flex items-center transition-colors ${
-                pathname === navItem.href
-                  ? "text-primary after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary after:via-[#6d36dc] after:to-[#4b50e6]"
-                  : "text-slate-700 hover:text-slate-900"
-              }`}
-            >
-              {navItem.label}
-            </Link>
-          ))}
+          {navItems.map((navItem) => {
+            const isActive =
+              pathname === navItem.href ||
+              (navItem.href === "/services" &&
+                pathname.startsWith("/services/"));
+            return (
+              <Link
+                key={navItem.href}
+                href={navItem.href}
+                onClick={closeMenu}
+                className={`relative inline-flex items-center transition-colors ${
+                  isActive
+                    ? "text-primary after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-gradient-to-r after:from-primary after:via-[#6d36dc] after:to-[#4b50e6]"
+                    : "text-slate-700 hover:text-slate-900"
+                }`}
+              >
+                {navItem.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="px-6 pb-8">

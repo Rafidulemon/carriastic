@@ -7,7 +7,7 @@ import Lottie from "lottie-react";
 import Button from "../button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
 import codingAnimation from "@/public/gifs/jsons/coding.json";
-import DarkHeader from "../navigations/DarkHeader";
+import Header from "../navigations/Header";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -44,7 +44,7 @@ const HeroSection = () => {
   return (
     <section
       id="home-hero"
-      className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden -mt-12 sm:-mt-16 md:-mt-20 md:min-h-screen"
+      className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden -mt-16 md:-mt-20 md:min-h-screen"
     >
       <div className="pointer-events-none absolute inset-0 opacity-10">
         <Lottie
@@ -58,9 +58,9 @@ const HeroSection = () => {
       <div className="pointer-events-none absolute inset-0 home-grid" />
       <div className="home-orb home-orb-two" />
       <div className="home-orb home-orb-three" />
-      <DarkHeader />
-      <div className="hero-smooth-reveal mx-auto flex w-full flex-1 flex-col justify-center gap-8 px-5 pb-8 pt-6 sm:gap-10 sm:px-6 sm:pb-10 sm:pt-8 md:gap-12 md:pb-16 md:pt-10 md:px-10">
-        <div className="flex h-full flex-col items-center justify-center gap-5 text-center md:mb-10">
+      <Header isDark />
+      <div className="hero-smooth-reveal mx-auto flex w-full flex-1 flex-col justify-center gap-8 px-5 pt-6 sm:gap-10 sm:px-6 sm:pt-8 md:gap-12 md:pt-10 md:px-10">
+        <div className="flex h-full flex-col items-center justify-center gap-5 text-center">
           <span className="inline-flex w-fit uppercase tracking-[0.2em] text-white text-[12px]">
             {hero.label}
           </span>
@@ -83,7 +83,7 @@ const HeroSection = () => {
               </div>
             </div>
           )}
-          <p className="max-w-[560px] text-center text-[14px] leading-[1.7] text-white/70 sm:text-[15px] md:text-[17px]">
+          <p className="max-w-[560px] text-justify md:text-center text-[16px] leading-[1.7] text-white/70">
             {hero.subtext}
           </p>
           <div className="flex w-full flex-col items-stretch justify-center gap-3 md:flex-row md:w-auto">

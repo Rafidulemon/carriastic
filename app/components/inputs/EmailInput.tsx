@@ -45,6 +45,7 @@ function EmailInput(props: Props) {
         defaultValue={defaultValue}
         value={value}
         placeholder={placeholder}
+        required={isRequired}
         {...register?.(name)}
       />
       {error && <div className="text-[14px] text-red-500">{error.message}</div>}

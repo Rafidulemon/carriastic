@@ -37,6 +37,7 @@
     "description": "Strategy-first services delivered through long-term partnership, AI-driven solutions, and scalable platform execution.",
     "cta": "Explore all services",
     "learnMore": "Learn more",
+    "seeProducts": "See products",
     "services": [
       {
         "title": "Custom Software & Platform Development",
@@ -63,10 +64,6 @@
         "description": "Roadmaps, architecture, and feasibility to align AI with business goals."
       },
       {
-        "title": "System Optimization, Scaling & AI Enablement",
-        "description": "Performance tuning, cloud scaling, and AI integration across stacks."
-      },
-      {
         "title": "Maintenance, Support & Technology Lifecycle Management",
         "description": "Ongoing monitoring, updates, and reliability improvements across releases."
       }
@@ -74,9 +71,13 @@
   },
   "servicesPage": {
     "hero": {
+      "home": "Home",
       "label": "Services",
-      "headline": "AI-first services that move from strategy to scalable delivery.",
-      "description": "Partner with Carriastic for long-term technology leadership, intelligent automation, and product-grade platforms designed to grow with your business.",
+      "headline": "Technology for Intelligent Growth",
+      "description": "We design AI-driven, scalable digital platforms that help organizations operate smarter, move faster, and grow sustainably in an increasingly digital world.",
+      "bullet1": "AI-First Solutions",
+      "bullet2": "Scalable Digital Platforms",
+      "bullet3": "Industry-Ready Expertise",
       "primaryCta": "See products",
       "secondaryCta": "Contact our team",
       "stats": [
@@ -85,7 +86,7 @@
           "label": "Strategic tiers"
         },
         {
-          "value": "8",
+          "value": "7",
           "label": "Service focus areas"
         },
         {
@@ -95,27 +96,73 @@
       ]
     },
     "highlights": {
-      "label": "Why it works",
-      "headline": "Service blocks built for modern delivery",
-      "description": "We combine strategic partnership with execution discipline and AI-accelerated workflows to reduce risk and increase speed.",
-      "badges": ["Strategy led", "AI integrated", "Product grade"],
+      "label": "WHY IT WORKS",
+      "headline": "Built for Intelligent, Reliable Delivery",
+      "description": "We partner closely with our clients to turn business goals into AI-powered digital platforms—delivered with speed, precision, and long-term reliability.",
+      "badges": ["AI-first", "Enterprise-grade", "Outcome-driven"],
       "cards": [
         {
-          "tag": "Alignment",
+          "tag": "ALIGNMENT",
           "title": "Business-led roadmaps",
-          "description": "We translate goals into delivery plans, KPIs, and measurable milestones."
+          "description": "We translate strategic goals into clear delivery plans, milestones, and KPIs—ensuring every build is aligned with measurable business outcomes."
         },
         {
-          "tag": "Velocity",
+          "tag": "VELOCITY",
           "title": "AI-accelerated execution",
-          "description": "Automation, copilots, and tested pipelines keep quality high and timelines predictable."
+          "description": "Automation, AI copilots, and proven delivery pipelines help us move faster without compromising quality, security, or stability."
         },
         {
-          "tag": "Reliability",
-          "title": "Built-in governance",
-          "description": "Security, compliance, and performance are embedded from day one."
+          "tag": "RELIABILITY",
+          "title": "Governance by design",
+          "description": "Security, compliance, performance, and scalability are embedded from day one—especially for enterprise and healthcare systems."
         }
-      ]
+      ],
+      "trustSignal": "Web • Mobile • AI • Cloud • Healthcare & Enterprise Systems",
+      "cta": {
+        "primary": "Explore Our Services",
+        "secondary": "Talk to a Technology Expert"
+      }
+    },
+    "details": {
+      "home": "Home",
+      "services": "Services",
+      "label": "Service details",
+      "backLabel": "Back to services",
+      "primaryCta": "Schedule a discovery call",
+      "secondaryCta": "Explore all services",
+      "sections": {
+        "outcomesLabel": "Outcomes",
+        "capabilitiesLabel": "Capabilities",
+        "deliverablesLabel": "Deliverables",
+        "processLabel": "Delivery approach",
+        "stackLabel": "Tooling & stack"
+      },
+      "processSteps": [
+        {
+          "title": "Discovery & alignment",
+          "description": "We clarify goals, constraints, and success metrics before we build."
+        },
+        {
+          "title": "Build & validate",
+          "description": "We ship in focused sprints with demos, feedback, and measurable progress."
+        },
+        {
+          "title": "Launch & optimize",
+          "description": "We harden, monitor, and iterate so the solution keeps improving."
+        }
+      ],
+      "cta": {
+        "label": "Ready to build?",
+        "headline": "Let’s design the right delivery plan for your team.",
+        "description": "Share your goals and we’ll map a roadmap, timeline, and team structure tailored to your service needs.",
+        "primary": "Talk to a technology expert",
+        "secondary": "See all services"
+      },
+      "notFound": {
+        "title": "Service not found",
+        "description": "We couldn't find the service you're looking for. Explore all services to see how we can help.",
+        "cta": "Explore services"
+      }
     },
     "serviceOverview": {
       "label": "Service Structure for Carriastic",
@@ -676,6 +723,7 @@
   },
   "contactPage": {
     "hero": {
+      "home": "Home",
       "label": "Contact",
       "headline": "Start a project conversation with Carriastic.",
       "description": "Share goals, timelines, and constraints. We respond with a clear next step and a tailored plan.",
@@ -683,7 +731,33 @@
       "secondaryCta": "See services",
       "imageAlt": "Contact Carriastic animation"
     },
-    "badges": ["Response in 24h", "AI-first delivery", "Global collaboration"],
+    "socials": [
+      {
+        "id": "facebook",
+        "label": "Facebook",
+        "href": "https://www.facebook.com/profile.php?id=100088397602087"
+      },
+      {
+        "id": "twitter",
+        "label": "Twitter",
+        "href": "#"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/90535817"
+      },
+      {
+        "id": "youtube",
+        "label": "YouTube",
+        "href": "#"
+      }
+    ],
+    "details": {
+      "label": "Contact options",
+      "headline": "Connect with the Carriastic team",
+      "description": "Choose the channel that fits your workflow. We can align over email, jump on a call, or host an on-site session."
+    },
     "contactEmail": "info@carriastic.com",
     "contactPhone": "+8801884517187",
     "contactAddress": "House 19/1, GP Cha, Mohakhali, Dhaka-1212, Bangladesh",
@@ -711,17 +785,53 @@
       }
     ],
     "form": {
-      "kicker": "Project inquiry",
+      "kicker": "Inquiry",
       "headline": "Tell us what you are building",
       "description": "We help with AI platforms, automation, and product delivery.",
       "responseTime": "Response within 24h",
       "formAriaLabel": "Contact form",
-      "emailLabel": "Your Email",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Work email",
       "emailPlaceholder": "you@company.com",
-      "subjectLabel": "Subject",
-      "subjectPlaceholder": "What can we help with?",
-      "messageLabel": "Message",
+      "companyLabel": "Company",
+      "companyPlaceholder": "Company or organization",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "+1 (555) 000-0000",
+      "serviceLabel": "Service focus",
+      "servicePlaceholder": "Select a service",
+      "serviceOptions": [
+        "AI strategy",
+        "Custom software",
+        "Web & mobile apps",
+        "Automation",
+        "Data engineering",
+        "Support & maintenance",
+        "Others"
+      ],
+      "budgetLabel": "Estimated budget",
+      "budgetPlaceholder": "Choose a range",
+      "budgetOptions": [
+        "< $10k",
+        "$10k-$25k",
+        "$25k-$50k",
+        "$50k-$100k",
+        "$100k+"
+      ],
+      "timelineLabel": "Timeline",
+      "timelinePlaceholder": "When do you want to start?",
+      "timelineOptions": [
+        "ASAP",
+        "Next 1-2 months",
+        "This quarter",
+        "Later this year"
+      ],
+      "subjectLabel": "Project summary",
+      "subjectPlaceholder": "Briefly describe the scope",
+      "messageLabel": "Your Message",
       "messagePlaceholder": "Describe your goals, timelines, and success metrics.",
+      "fileLabel": "Attach files",
+      "fileHelper": "Optional: briefs, specs, or screenshots (PDF, DOCX, PNG).",
       "preferEmail": "Prefer email? Send details to {email}.",
       "submit": "Send Message"
     }

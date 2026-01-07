@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "../../i18n/LanguageProvider";
+import TitleText from "../typography/TitleText";
 
 const leaderImages = ["/team/rafid.png", "/team/hasan.png", "/team/ethic.png"];
 
@@ -16,18 +17,12 @@ const LeadershipSection = () => {
   const quoteCycleSeconds = leadershipQuotes.length * quoteIntervalSeconds;
 
   return (
-    <section className="relative mx-auto w-full max-w-[1200px] px-6 pb-6 md:px-10">
-      <div className="flex flex-col items-center gap-4 text-center">
-        <span className="mx-auto inline-flex w-fit uppercase tracking-[0.2em] text-[12px] text-[#0ea5e9]">
-          {t.leadership.label}
-        </span>
-        <h2 className="relative inline-block bg-[linear-gradient(120deg,#7a2fb5_0%,#370054_60%,#5b21b6_100%)] bg-clip-text text-[28px] font-semibold text-transparent drop-shadow-[0_10px_22px_#3700542e] after:absolute after:left-1/2 after:bottom-[-10px] after:h-[4px] after:w-[52%] after:-translate-x-1/2 after:rounded-full after:bg-[linear-gradient(90deg,#0ea5e9,#22c55e)] after:opacity-75 after:content-[''] md:text-[36px] font-spaceGrotesk">
-          {t.leadership.headline}
-        </h2>
-        <p className="mx-auto max-w-[720px] text-[16px] text-[#334155] md:text-[18px]">
-          {t.leadership.description}
-        </p>
-      </div>
+    <section className="relative mx-auto w-full max-w-[1200px] px-6 md:px-10">
+      <TitleText
+        label={t.leadership.label}
+        headline={t.leadership.headline}
+        description={t.leadership.description}
+      />
       <div className="mt-8 grid min-h-[280px] place-items-center">
         {leadershipQuotes.map((leader, index) => (
           <div
@@ -40,7 +35,7 @@ const LeadershipSection = () => {
             }}
           >
             <div className="absolute left-0 top-0 h-[3px] w-full bg-gradient-to-r from-[#0ea5e9] via-[#22c55e] to-[#f97316]" />
-            <p className="text-[17px] text-[#334155] md:text-[18px]">
+            <p className="text-[16px] text-[#334155] md:text-[18px]">
               &quot;{leader.quote}&quot;
             </p>
             <div className="flex items-center gap-4">
