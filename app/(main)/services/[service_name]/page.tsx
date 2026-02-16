@@ -14,6 +14,9 @@ import servicesBn from "@/public/locales/bn/services.json";
 import { serviceSlugs, serviceStyles } from "@/app/constants/services";
 import HeroBreadcrumb from "@/app/components/navigations/HeroBreadcrumb";
 
+const blurDataUrl =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKZQAAAABJRU5ErkJggg==";
+
 type ServiceItem = {
   slug: string;
   title: string;
@@ -306,7 +309,8 @@ const ServiceDetails = () => {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 460px"
-                priority
+                placeholder="blur"
+                blurDataURL={blurDataUrl}
               />
             </div>
           </div>

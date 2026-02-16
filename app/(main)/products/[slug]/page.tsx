@@ -13,6 +13,9 @@ import TextArea from "../../../components/inputs/TextArea";
 import TextInput from "../../../components/inputs/TextInput";
 import { useLanguage } from "../../../i18n/LanguageProvider";
 
+const blurDataUrl =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKZQAAAABJRU5ErkJggg==";
+
 type ProductItem = {
   slug: string;
   title: string;
@@ -89,20 +92,20 @@ const ProductDetailsPage = () => {
   }
 
   return (
-    <div className="w-full">
-      <section className="relative overflow-hidden bg-[radial-gradient(70%_60%_at_50%_0%,#efe7ff_0%,#f8f7ff_45%,#ffffff_100%)]">
-        <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
-        <div className="pointer-events-none absolute right-0 top-12 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-6 py-6 md:py-12 md:px-10">
+    <div className="product-details-page relative overflow-x-hidden text-slate-900">
+      <section className="relative overflow-hidden bg-[radial-gradient(70%_60%_at_50%_0%,#f5f7ff_0%,#ffffff_45%,#ffffff_100%)]">
+        <div className="pointer-events-none absolute -left-28 top-8 h-80 w-80 rounded-full bg-primary/15 blur-3xl" />
+        <div className="pointer-events-none absolute right-[-60px] top-16 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
+        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-6 py-10 md:px-10 md:py-14">
           <Link
             href="/products"
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-white/80 px-4 py-2 text-[12px] font-semibold text-primary shadow-sm"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-200/70 bg-white/80 px-4 py-2 text-[12px] font-semibold text-amber-700 shadow-sm"
           >
             <FiArrowLeft />
             {details.backLabel}
           </Link>
 
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="flex flex-col gap-5 text-center lg:text-left">
               <span className="inline-flex w-fit self-center rounded-full border border-primary/20 bg-white px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-primary lg:self-start">
                 {details.label}
@@ -113,19 +116,21 @@ const ProductDetailsPage = () => {
                 </span>
               </div>
               <h1 className="text-[32px] font-semibold leading-[1.05] text-slate-900 md:text-[52px] font-spaceGrotesk">
-                {product.title}
+                <span className="bg-gradient-to-r from-slate-900 via-primary to-sky-500 bg-clip-text text-transparent">
+                  {product.title}
+                </span>
               </h1>
-              <p className="text-[16px] text-slate-600 md:text-[18px]">
+              <p className="text-[16px] text-justify text-slate-600 md:text-[18px]">
                 {product.summary}
               </p>
-              <p className="text-[15px] text-slate-600 md:text-[17px]">
+              <p className="text-[15px] text-justify text-slate-600 md:text-[17px]">
                 {product.description}
               </p>
               <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
                 {product.highlights.map((highlight) => (
                   <span
                     key={highlight}
-                    className="rounded-full border border-primary/15 bg-white px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-primary shadow-sm"
+                    className="rounded-full border border-primary/15 bg-white px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-primary shadow-[0_10px_22px_rgba(15,23,42,0.08)]"
                   >
                     {highlight}
                   </span>
@@ -145,15 +150,17 @@ const ProductDetailsPage = () => {
             </div>
 
             <div className="relative">
-               <div className="rounded-[32px] bg-gradient-to-br from-primary/15 via-white to-sky-200/40 p-[1px] shadow-[0_28px_70px_rgba(15,23,42,0.2)]">
-                <div className="rounded-[32px] border border-white/70 bg-white/90 p-5 backdrop-blur">
-                  <div className="relative aspect-[6/5] w-full overflow-hidden rounded-[26px]">
+               <div className="rounded-[34px] bg-gradient-to-br from-primary/15 via-white to-sky-200/40 p-[1px] shadow-[0_28px_70px_rgba(15,23,42,0.2)]">
+                <div className="rounded-[34px] border border-white/70 bg-white/95 p-5 backdrop-blur">
+                  <div className="relative aspect-[6/5] w-full overflow-hidden rounded-[28px]">
                     <Image
                       src={product.image}
                       alt={product.imageAlt}
                       fill
                       sizes="(min-width: 1024px) 420px, 90vw"
                       className="object-cover"
+                      placeholder="blur"
+                      blurDataURL={blurDataUrl}
                       priority
                     />
                   </div>
@@ -200,7 +207,7 @@ const ProductDetailsPage = () => {
               {product.features.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-start gap-3 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-[14px] text-slate-600 shadow-[0_12px_30px_rgba(15,23,42,0.08)]"
+                  className="flex items-start gap-3 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-[14px] text-slate-600 text-justify shadow-[0_12px_30px_rgba(15,23,42,0.08)]"
                 >
                   <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary" />
                   <span>{feature}</span>
@@ -217,7 +224,7 @@ const ProductDetailsPage = () => {
               {product.benefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="rounded-2xl border border-slate-200/80 bg-white p-5 text-[14px] text-slate-600 shadow-[0_18px_36px_rgba(15,23,42,0.08)]"
+                  className="rounded-2xl border border-slate-200/80 bg-white p-5 text-[14px] text-slate-600 text-justify shadow-[0_18px_36px_rgba(15,23,42,0.08)]"
                 >
                   <span className="font-semibold text-slate-900">
                     {benefit}
@@ -234,27 +241,29 @@ const ProductDetailsPage = () => {
           <span className="text-[11px] uppercase tracking-[0.35em] text-primary">
             {details.sections.stackLabel}
           </span>
-          <div className="flex flex-wrap items-center gap-6">
-            {product.technologyStack.map((stack) => {
-              const logoSrc = techStackLogos[stack];
+          <div className="rounded-[28px] bg-gradient-to-br from-primary/10 via-white to-sky-100/70 p-[1px]">
+            <div className="flex flex-wrap items-center justify-center gap-6 rounded-[28px] border border-slate-200/80 bg-white p-6 shadow-[0_18px_36px_rgba(15,23,42,0.1)]">
+              {product.technologyStack.map((stack) => {
+                const logoSrc = techStackLogos[stack];
 
-              return (
-                <div key={stack} className="flex flex-col items-center gap-2">
-                  {logoSrc ? (
-                    <Image
-                      src={logoSrc}
-                      alt={`${stack} logo`}
-                      width={84}
-                      height={48}
-                      className="h-10 w-auto object-contain"
-                    />
-                  ) : null}
-                  <span className="text-[11px] font-semibold text-slate-500">
-                    {stack}
-                  </span>
-                </div>
-              );
-            })}
+                return (
+                  <div key={stack} className="flex flex-col items-center gap-2">
+                    {logoSrc ? (
+                      <Image
+                        src={logoSrc}
+                        alt={`${stack} logo`}
+                        width={84}
+                        height={48}
+                        className="h-10 w-auto object-contain"
+                      />
+                    ) : null}
+                    <span className="text-[11px] font-semibold text-slate-500">
+                      {stack}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

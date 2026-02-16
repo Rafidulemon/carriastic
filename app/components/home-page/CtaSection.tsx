@@ -24,7 +24,7 @@ const CtaSection = () => {
               width={120}
               height={40}
               className="h-auto w-[110px] md:w-[180px]"
-              priority
+              sizes="(min-width: 768px) 180px, 120px"
             />
           </h2>
           <p className="max-w-[520px] text-[15px] text-slate-200 md:text-[18px]">

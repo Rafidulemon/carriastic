@@ -123,7 +123,7 @@ const Header = ({ isDark = false }: HeaderProps) => {
                 width={120}
                 height={40}
                 className="h-auto w-[110px] md:w-[130px]"
-                priority
+                sizes="(min-width: 768px) 130px, 110px"
               />
             </Link>
           </div>
@@ -131,15 +131,15 @@ const Header = ({ isDark = false }: HeaderProps) => {
             href="/"
             className="absolute left-1/2 flex -translate-x-1/2 items-center md:hidden"
           >
-            <Image
-              src={heroLogoSrc}
-              alt="Carriastic logo"
-              width={110}
-              height={36}
-              className="h-auto w-[110px]"
-              priority
-            />
-          </Link>
+              <Image
+                src={heroLogoSrc}
+                alt="Carriastic logo"
+                width={110}
+                height={36}
+                className="h-auto w-[110px]"
+                sizes="110px"
+              />
+            </Link>
           <div className="md:hidden">
             <LanguageToggle theme={isDarkHeader ? "dark" : "light"} />
           </div>

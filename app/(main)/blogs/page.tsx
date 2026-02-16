@@ -6,6 +6,9 @@ import BlogCard from "../../components/cards/BlogCard";
 import Button from "../../components/button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
 
+const blurDataUrl =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKZQAAAABJRU5ErkJggg==";
+
 const BlogsPage = () => {
   const { t } = useLanguage();
   const blogsPage = t.blogsPage;
@@ -23,8 +26,9 @@ const BlogsPage = () => {
           src="/banners/blog.jpg"
           alt={blogsPage.hero.imageAlt}
           fill
-          priority
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL={blurDataUrl}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/70 to-primary/60" />

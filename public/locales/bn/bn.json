@@ -1814,7 +1814,6 @@
     "previewUser": "আমি এমন একটি প্রোডাক্ট পেজ বানাতে চাই যা কনভার্ট করে।",
     "previewBot": "আমি কয়েক মিনিটে লঞ্চ কিট, বিজ্ঞাপন কপি এবং সাইটম্যাপ তৈরি করতে পারি।",
     "quickPromptsLabel": "দ্রুত প্রম্পট",
-    "quickPromptsHint": "পাঠাতে ট্যাপ করুন",
     "prompts": {
       "website": "আমি একটি ওয়েবসাইট তৈরি করতে চাই",
       "websiteTag": "ব্লুপ্রিন্ট",
@@ -1826,10 +1825,11 @@
     "messageLabel": "আপনার বার্তা",
     "messageHint": "নিরাপদ চ্যানেল",
     "messagePlaceholder": "আপনার লক্ষ্য লিখুন বা যেকোনো প্রশ্ন করুন...",
-    "sendLabel": "এআই কোরে পাঠান",
+    "sendLabel": "পাঠান",
     "sendAlert": "বার্তা পাঠানো হচ্ছে...",
     "footerModel": "মডেল: Carriastic Neural - কম ল্যাটেন্সি",
-    "footerSecurity": "এনক্রিপ্টেড"
+    "footerSecurity": "এনক্রিপ্টেড",
+    "footerWarning": "এআই উত্তর ভুল হতে পারে। Carriastic আপনার ওয়ার্কস্পেসের চ্যাট ডেটা মডেল প্রশিক্ষণে ব্যবহার করে না।"
   },
   "nav": {
     "home": "হোম",

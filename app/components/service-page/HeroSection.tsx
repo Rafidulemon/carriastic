@@ -8,6 +8,9 @@ import Header from "../navigations/Header";
 import { useLanguage } from "../../i18n/LanguageProvider";
 import HeroBreadcrumb from "../navigations/HeroBreadcrumb";
 
+const blurDataUrl =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKZQAAAABJRU5ErkJggg==";
+
 const ServiceHeroSection = () => {
   const { t } = useLanguage();
   const { hero, highlights } = t.servicesPage;
@@ -96,7 +99,9 @@ const ServiceHeroSection = () => {
                 width={960}
                 height={500}
                 className="mx-auto h-auto w-[70%] max-w-[560px] object-contain"
-                priority
+                placeholder="blur"
+                blurDataURL={blurDataUrl}
+                sizes="(min-width: 1024px) 560px, 70vw"
               />
             </div>
           </div>

@@ -1,0 +1,787 @@
+{
+  "company": {
+    "name": "Carriastic",
+    "tagline": "AI-first technology company",
+    "summary": "Carriastic builds scalable, AI-powered platforms and custom software that streamline operations, enhance decision-making, and drive sustainable growth.",
+    "positioning": "AI is embedded across design, engineering, QA, and operations—never added as a cosmetic layer.",
+    "headquarters": "House 19/1, GP Cha, Mohakhali, Dhaka-1212, Bangladesh",
+    "emails": ["carriastic@gmail.com", "carriastic.hr@gmail.com"],
+    "phones": ["+8801817020000", "+8801817030000", "+880 1749-981265", "+880 1737-910734"],
+    "workingHours": "Sunday-Thursday, 10:00 AM - 7:00 PM (GMT+6)",
+    "socials": {
+      "facebook": "https://www.facebook.com/profile.php?id=100088397602087",
+      "twitter": "#",
+      "linkedin": "https://www.linkedin.com/company/90535817",
+      "youtube": "#"
+    },
+    "leadership": [
+      {
+        "name": "Md. Rafidul Islam",
+        "title": "Chief Executive Officer",
+        "quote": "We are engineering the next operating layer for enterprises: AI-native platforms that sense, learn, and optimize in real time, so every decision is faster, smarter, and measurable."
+      },
+      {
+        "name": "Syed Hasan Ahmed Anik",
+        "title": "Chief Operating Officer",
+        "quote": "Our delivery model treats AI as infrastructure, not a feature - we orchestrate data, workflows, and agents into a resilient pipeline that scales from pilot to enterprise-grade automation."
+      },
+      {
+        "name": "Ahsan Habib Ethic",
+        "title": "Chief Marketing Officer",
+        "quote": "We help brands move from digital presence to digital intelligence, where customer interactions are predictive, personalized, and continuously evolving through generative and agentic systems."
+      }
+    ],
+    "clients": [
+      "Growing startups building scalable platforms",
+      "Mid-sized companies adopting AI and automation",
+      "Enterprises modernizing systems and workflows"
+    ],
+    "differentiators": [
+      "AI is core, not cosmetic",
+      "Business-driven, not tech-driven",
+      "Built for scale and longevity",
+      "Partnership over projects"
+    ]
+  },
+  "home": {
+    "hero": {
+      "label": "AI-first technology company",
+      "headline": "Build AI-powered platforms for",
+      "headlineSub": ["Web & SaaS Apps", "Mobile-First Experience", "Intelligent Automation", "Cloud-Native Systems"],
+      "subtext": "AI-first software solutions designed to streamline operations, enhance decision-making, and drive sustainable growth.",
+      "descriptions": [
+        "Carriastic delivers scalable, business-ready software products and customized platforms for organizations operating in a rapidly evolving AI landscape.",
+        "We embed AI across the entire delivery lifecycle to move faster, improve accuracy, and maintain enterprise-grade quality."
+      ],
+      "primaryCta": "Schedule a strategy call",
+      "secondaryCta": "Explore solutions",
+      "highlights": [
+        {
+          "title": "AI-first delivery",
+          "description": "AI is integrated across design, engineering, and QA."
+        },
+        {
+          "title": "Enterprise quality",
+          "description": "Reliable platforms built for governance and scale."
+        },
+        {
+          "title": "Lifecycle ownership",
+          "description": "From strategy to optimization, we stay accountable."
+        }
+      ],
+      "mediaAlt": [
+        "AI-first delivery workflow",
+        "Enterprise-ready platforms",
+        "Lifecycle ownership visuals"
+      ]
+    },
+    "offerings": {
+      "label": "What we deliver",
+      "headline": "Services we offer",
+      "description": "Strategy-first services delivered through long-term partnership, AI-driven solutions, and scalable platform execution.",
+      "cta": "Explore all services",
+      "services": [
+        {
+          "title": "Custom Software & Platform Development",
+          "description": "Bespoke web, mobile, and cloud platforms tailored to your workflows and scale."
+        },
+        {
+          "title": "AI-Powered Software Solutions",
+          "description": "AI copilots, intelligent automation, and data-driven products built for real impact."
+        },
+        {
+          "title": "Healthcare & Medical Management Solutions",
+          "description": "Patient workflows, clinical data systems, and compliant digital health platforms."
+        },
+        {
+          "title": "Enterprise & Institutional Solutions",
+          "description": "Secure, multi-department systems for governance, operations, and reporting."
+        },
+        {
+          "title": "Ready-to-Deploy Software Products",
+          "description": "Pre-built modules and configurable products to launch faster."
+        },
+        {
+          "title": "AI Strategy & Technology Consulting",
+          "description": "Roadmaps, architecture, and feasibility to align AI with business goals."
+        },
+        {
+          "title": "Maintenance, Support & Technology Lifecycle Management",
+          "description": "Ongoing monitoring, updates, and reliability improvements across releases."
+        }
+      ]
+    },
+    "developmentProcess": {
+      "label": "Our Development Approach",
+      "headline": "How development through Carriastic works",
+      "steps": [
+        { "step": "01", "title": "Plan", "description": "Align goals, scope, timelines, and success metrics before kickoff." },
+        { "step": "02", "title": "Design", "description": "Translate requirements into UX flows, UI systems, and prototypes." },
+        { "step": "03", "title": "Develop", "description": "Build core functionality on a scalable, maintainable architecture." },
+        { "step": "04", "title": "Deploy", "description": "Release confidently with CI/CD, checks, and production monitoring." },
+        { "step": "05", "title": "Support", "description": "Provide QA coverage, fixes, and ongoing maintenance after launch." },
+        { "step": "06", "title": "Evolve", "description": "Iterate based on feedback, analytics, and new growth goals." }
+      ]
+    },
+    "capabilities": {
+      "label": "AI products",
+      "headline": "Advanced AI systems designed for impact",
+      "description": "We build three core AI products that combine automation, contextual knowledge, and governance to support critical decisions.",
+      "products": [
+        {
+          "title": "Generative AI applications",
+          "description": "A productized suite of assistants for content creation, automation, and experience design."
+        },
+        {
+          "title": "RAG and knowledge systems",
+          "description": "A secure knowledge product that grounds models in your enterprise data."
+        },
+        {
+          "title": "Agentic AI workflows",
+          "description": "An orchestration product for autonomous tasks with human-in-the-loop control."
+        }
+      ]
+    },
+    "designApproach": {
+      "label": "How we work",
+      "headline": "Our design and development approach",
+      "cards": [
+        { "title": "UX Driven Engineering", "description": "Design leads delivery, ensuring UX research and UI systems translate directly into build decisions." },
+        { "title": "Developing Shared Understanding", "description": "We align stakeholders early with clear scope, workflows, and success metrics for confident execution." },
+        { "title": "Proven Experience and Expertise", "description": "Seasoned product, design, and engineering leaders guide each phase with predictable quality." },
+        { "title": "Security & Intellectual Property (IP)", "description": "Secure-by-default architecture, NDA/IP protection, and compliance practices are embedded from day one." },
+        { "title": "Code Reviews", "description": "Peer reviews, standards, and automated checks keep code consistent, safe, and maintainable." },
+        { "title": "Quality Assurance & Testing", "description": "Manual and automated testing cover regression, performance, and launch readiness." }
+      ]
+    },
+    "trustedPartnerships": {
+      "label": "Trusted partnerships",
+      "headline": "Trusted by forward-looking teams"
+    },
+    "leadership": {
+      "label": "Leadership voices",
+      "headline": "Quotes from our leadership",
+      "description": "Our leadership team stays close to delivery, ensuring every client engagement remains focused on measurable business outcomes.",
+      "quotes": [
+        {
+          "name": "Md. Rafidul Islam",
+          "title": "Chief Executive Officer",
+          "quote": "We are engineering the next operating layer for enterprises: AI-native platforms that sense, learn, and optimize in real time, so every decision is faster, smarter, and measurable."
+        },
+        {
+          "name": "Syed Hasan Ahmed Anik",
+          "title": "Chief Operating Officer",
+          "quote": "Our delivery model treats AI as infrastructure, not a feature - we orchestrate data, workflows, and agents into a resilient pipeline that scales from pilot to enterprise-grade automation."
+        },
+        {
+          "name": "Ahsan Habib Ethic",
+          "title": "Chief Marketing Officer",
+          "quote": "We help brands move from digital presence to digital intelligence, where customer interactions are predictive, personalized, and continuously evolving through generative and agentic systems."
+        }
+      ]
+    },
+    "cta": {
+      "headlinePrefix": "Connect With",
+      "headlineHighlight": "Carriastic",
+      "description": "Let's discuss how we can help you build and grow with reliable technology solutions.",
+      "primaryCta": "Book a meeting",
+      "phoneNumbers": ["+8801817020000", "+8801817030000"]
+    }
+  },
+  "about": {
+    "hero": {
+      "label": "Who we are",
+      "headline": "About Carriastic",
+      "descriptions": [
+        "Carriastic builds scalable, intelligent software systems for organizations navigating an AI-driven world.",
+        "We design and evolve custom platforms and AI solutions that streamline operations, sharpen decisions, and drive sustainable growth.",
+        "AI is foundational to how we think, build, and deliver—never an add-on."
+      ],
+      "primaryCta": "Start a conversation",
+      "secondaryCta": "Explore services"
+    },
+    "highlights": [
+      { "title": "AI-first delivery", "description": "A development culture where AI is embedded across product, engineering, QA, and operations." },
+      { "title": "Business-ready systems", "description": "Platforms designed for measurable impact, reliability, and long-term adoption." },
+      { "title": "Long-term partnership", "description": "We stay engaged beyond launch to optimize, scale, and evolve your systems." }
+    ],
+    "missionVision": {
+      "label": "Purpose",
+      "headline": "Mission and vision",
+      "items": [
+        {
+          "title": "Our Mission",
+          "description": "To empower organizations and communities through AI-driven software solutions that are intelligent, scalable, and easy to use. We simplify complex technology, enhance decision-making, and deliver measurable business value while helping our clients achieve higher ROI and build systems that genuinely serve people."
+        },
+        {
+          "title": "Our Vision",
+          "description": "To become a globally trusted AI technology partner that shapes the future of how businesses and societies operate. We envision a world where advanced Artificial Intelligence is accessible, ethical, and seamlessly integrated into everyday systems, driving sustainable growth, innovation, and positive societal impact."
+        }
+      ]
+    },
+    "aiCulture": {
+      "label": "AI-first philosophy",
+      "headline": "We practice what we deliver",
+      "description": "Our internal adoption of AI improves speed, accuracy, and enterprise-level quality across the full delivery lifecycle.",
+      "useCases": [
+        "Product design and ideation",
+        "Software engineering",
+        "Quality assurance and testing",
+        "Documentation and knowledge management",
+        "Operational workflows"
+      ],
+      "highlight": {
+        "label": "Beyond internal use",
+        "description": "We design and deploy advanced AI systems that enable automation, clarity, and better decision-making in production environments."
+      },
+      "systems": [
+        { "title": "Generative AI applications", "description": "Automation and intelligent interactions that reduce manual effort while improving customer experience." },
+        { "title": "Retrieval-Augmented Generation systems", "description": "Grounded AI that blends large language models with proprietary or enterprise data." },
+        { "title": "Agentic AI solutions", "description": "Autonomous task execution, workflow orchestration, and decision support for complex operations." }
+      ]
+    },
+    "workProcess": {
+      "label": "How we work",
+      "headline": "Structured, collaborative delivery",
+      "steps": [
+        { "title": "Understand the business", "description": "We immerse in your processes, challenges, and long-term goals to align technology with outcomes." },
+        { "title": "Design the right architecture", "description": "We craft scalable architectures and AI-enabled solutions built for real business needs." },
+        { "title": "Build and deploy reliably", "description": "We deliver secure, production-ready systems with rigorous QA and rollout planning." },
+        { "title": "Optimize and evolve", "description": "We continuously tune performance and evolve platforms as your business grows." }
+      ],
+      "closing": "We do not deliver one-time solutions and walk away. Carriastic works as a long-term technology partner, ensuring systems remain relevant, efficient, and adaptable as business and technology landscapes change."
+    },
+    "differentiators": [
+      "AI is core, not cosmetic",
+      "Business-driven, not tech-driven",
+      "Built for scale and longevity",
+      "Partnership over projects"
+    ],
+    "clients": [
+      "Growing startups building scalable platforms",
+      "Mid-sized companies adopting AI and automation",
+      "Enterprises modernizing systems and workflows"
+    ],
+    "commitment": {
+      "label": "Commitment",
+      "headline": "The standards we uphold",
+      "description": "We prioritize sustained impact over quick wins, ensuring systems remain relevant, efficient, and adaptable as business and technology landscapes change.",
+      "items": [
+        "Reliability and performance",
+        "Security and scalability",
+        "Transparency and collaboration",
+        "Sustained impact over quick wins"
+      ]
+    }
+  },
+  "services": {
+    "hero": {
+      "label": "Services",
+      "headline": "Technology for Intelligent Growth",
+      "description": "We design AI-driven, scalable digital platforms that help organizations operate smarter, move faster, and grow sustainably in an increasingly digital world.",
+      "bullets": ["AI-First Solutions", "Scalable Digital Platforms", "Industry-Ready Expertise"],
+      "primaryCta": "See products",
+      "secondaryCta": "Contact our team",
+      "stats": [
+        { "value": "3", "label": "Strategic tiers" },
+        { "value": "7", "label": "Service focus areas" },
+        { "value": "AI-first", "label": "Delivery mindset" }
+      ]
+    },
+    "highlights": {
+      "label": "WHY IT WORKS",
+      "headline": "Built for Intelligent, Reliable Delivery",
+      "description": "We partner closely with our clients to turn business goals into AI-powered digital platforms—delivered with speed, precision, and long-term reliability.",
+      "badges": ["AI-first", "Enterprise-grade", "Outcome-driven"],
+      "cards": [
+        { "tag": "ALIGNMENT", "title": "Business-led roadmaps", "description": "We translate strategic goals into clear delivery plans, milestones, and KPIs—ensuring every build is aligned with measurable business outcomes." },
+        { "tag": "VELOCITY", "title": "AI-accelerated execution", "description": "Automation, AI copilots, and proven delivery pipelines help us move faster without compromising quality, security, or stability." },
+        { "tag": "RELIABILITY", "title": "Governance by design", "description": "Security, compliance, performance, and scalability are embedded from day one—especially for enterprise and healthcare systems." }
+      ],
+      "trustSignal": "Web • Mobile • AI • Cloud • Healthcare & Enterprise Systems"
+    },
+    "serviceOverview": {
+      "label": "Service Structure for Carriastic",
+      "headline": "Strategy-first services organized by tier",
+      "description": "We lead with long-term partnership, AI-driven solutions, and scalable platforms, then reinforce delivery with operational and specialized services."
+    },
+    "tiers": [
+      {
+        "id": "tier-1",
+        "label": "Tier 1",
+        "title": "Core Strategic Services",
+        "subtitle": "Front & Center",
+        "description": "These define who we are and how we lead engagements.",
+        "items": [
+          {
+            "id": "long-term-partnership",
+            "title": "Long-Term Technology Partnership",
+            "badge": "Primary Differentiator",
+            "description": "We operate as an extension of your technology team, not a one-time vendor.",
+            "points": [
+              "Continuous system evolution",
+              "AI optimization & scaling",
+              "Technical leadership & architecture",
+              "Performance, security & reliability",
+              "Strategic technology guidance"
+            ]
+          },
+          {
+            "id": "ai-business-solutions",
+            "title": "AI-Powered Business Solutions",
+            "badge": "Flagship Offering",
+            "points": [
+              "Generative AI applications",
+              "RAG systems with enterprise data",
+              "Agentic AI & autonomous workflows",
+              "AI copilots & assistants"
+            ],
+            "highlight": { "label": "Outcome", "text": "Smarter operations, better decisions, faster execution." }
+          },
+          {
+            "id": "custom-software-platforms",
+            "title": "Custom Software & Platform Development",
+            "points": [
+              "Internal management systems",
+              "Enterprise platforms",
+              "Customer-facing applications",
+              "Scalable, API-driven architectures"
+            ],
+            "highlight": { "label": "Key message", "text": "Built to scale, adapt, and evolve with your business." }
+          },
+          {
+            "id": "ai-enablement-integration",
+            "title": "AI Enablement & System Integration",
+            "points": [
+              "AI strategy & architecture",
+              "AI integration into existing systems",
+              "Data pipelines & infrastructure",
+              "Governance, security & compliance"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tier-2",
+        "label": "Tier 2",
+        "title": "Operational & Optimization Services",
+        "subtitle": "Support the Core",
+        "description": "These strengthen delivery and keep momentum compounding.",
+        "items": [
+          {
+            "id": "business-process-automation",
+            "title": "Business Process Automation & Optimization",
+            "points": [
+              "Workflow analysis",
+              "Intelligent automation",
+              "AI-driven approvals & routing",
+              "Reporting & monitoring systems"
+            ]
+          },
+          {
+            "id": "internal-ai-adoption",
+            "title": "Internal AI Adoption & AI-First Transformation",
+            "points": [
+              "Internal AI tools & copilots",
+              "AI-assisted development workflows",
+              "AI in QA, documentation & ops",
+              "Change enablement & training support"
+            ]
+          },
+          {
+            "id": "ready-to-deploy-products",
+            "title": "Ready-to-Deploy Products",
+            "badge": "Products",
+            "points": ["Pre-built AI tools", "Configurable platforms", "Industry-specific solutions"],
+            "highlight": { "label": "Positioning", "text": "Optional and secondary to our core service delivery." }
+          }
+        ]
+      },
+      {
+        "id": "tier-3",
+        "label": "Tier 3",
+        "title": "Specialized Delivery Services",
+        "subtitle": "Grouped, Not Isolated",
+        "description": "One integrated category for product craft and growth.",
+        "items": [
+          {
+            "id": "product-design-growth",
+            "title": "Product Design, Quality & Growth Services",
+            "sections": [
+              {
+                "title": "UI/UX Design",
+                "points": [
+                  "User research & flows",
+                  "Interface design for web & mobile",
+                  "Design systems",
+                  "UX optimization for AI products"
+                ]
+              },
+              {
+                "title": "Quality Assurance & Testing",
+                "points": [
+                  "Manual & automated testing",
+                  "AI-assisted QA",
+                  "Performance & security testing",
+                  "Reliability & regression testing"
+                ]
+              },
+              {
+                "title": "Digital Growth & Product Marketing",
+                "points": [
+                  "Product positioning & messaging",
+                  "Landing pages for AI products",
+                  "Conversion optimization",
+                  "Analytics & performance tracking"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "process": [
+      { "title": "Discovery & alignment", "description": "We clarify goals, constraints, and success metrics before we build." },
+      { "title": "Build & validate", "description": "We ship in focused sprints with demos, feedback, and measurable progress." },
+      { "title": "Launch & optimize", "description": "We harden, monitor, and iterate so the solution keeps improving." }
+    ],
+    "cta": {
+      "label": "Next step",
+      "headline": "Ready to build your AI-first roadmap?",
+      "description": "Let's align on priorities, define outcomes, and design a delivery plan that scales.",
+      "primaryCta": "Contact us",
+      "secondaryCta": "See products"
+    },
+    "reviews": [
+      { "name": "Alice Waters", "date": "3 weeks ago", "review": "Their AI roadmap workshop clarified our priorities in a week.", "rating": 5 },
+      { "name": "John Doe", "date": "1 month ago", "review": "From discovery to delivery, they shipped a scalable platform fast.", "rating": 5 },
+      { "name": "Linda Brown", "date": "2 weeks ago", "review": "Automation cut our ops time by 40 percent without quality drops.", "rating": 5 },
+      { "name": "Michael Scott", "date": "6 weeks ago", "review": "Strong architecture guidance and AI integration with clear updates.", "rating": 4.5 },
+      { "name": "Jessica Taylor", "date": "5 days ago", "review": "Design and engineering felt seamless, and launch hit schedule.", "rating": 5 }
+    ]
+  },
+  "products": {
+    "hero": {
+      "label": "Products",
+      "headline": "Deploy AI-first products that ship value from day one.",
+      "description": "Our ready-to-deploy platforms combine automation, analytics, and secure workflows so your teams can launch faster and scale with confidence.",
+      "primaryCta": "Explore the product suite",
+      "secondaryCta": "Talk to product team",
+      "badges": ["Ready-to-deploy", "Customizable", "Enterprise support"],
+      "stats": [
+        { "value": "9", "label": "Product accelerators" },
+        { "value": "2-6 weeks", "label": "Average launch window" },
+        { "value": "24/7", "label": "Monitoring coverage" }
+      ],
+      "highlight": {
+        "label": "Flagship platform",
+        "title": "Talent Intelligence Hub",
+        "description": "Automates screening, shortlisting, and interview workflows with explainable AI."
+      }
+    },
+    "catalog": {
+      "label": "Product suite",
+      "headline": "Ready-to-deploy platforms tailored to real operations",
+      "description": "Each product ships with integrations, dashboards, and configurable workflows so teams can move fast without sacrificing governance.",
+      "items": [
+        { "slug": "portfolio-website", "title": "Portfolio Website", "tag": "Web", "description": "A high-performance site that communicates services, trust, and differentiation.", "highlights": ["Custom design", "SEO-ready", "Fast launch"] },
+        { "slug": "hr-management-software", "title": "HR Management Software", "tag": "HR Ops", "description": "Centralize onboarding, attendance, payroll, and policy workflows.", "highlights": ["Employee hub", "Automated approvals", "Analytics"] },
+        { "slug": "hospital-management-software", "title": "Hospital Management Software", "tag": "Healthcare", "description": "Coordinate patient intake, billing, scheduling, and clinical operations.", "highlights": ["Patient journey", "Billing automation", "Audit trails"] },
+        { "slug": "cv-sorting-ai", "title": "CV Sorting AI", "tag": "Talent", "description": "Rank candidates, extract insights, and reduce screening time with smart scoring.", "highlights": ["Resume parsing", "Bias checks", "Shortlist automation"] },
+        { "slug": "ai-chatbot-implementation", "title": "AI Chatbot Implementation", "tag": "Support", "description": "Launch branded assistants that resolve queries and route complex issues.", "highlights": ["Multichannel", "Context memory", "Escalation rules"] },
+        { "slug": "e-commerce-website", "title": "E-Commerce Website", "tag": "Commerce", "description": "Conversion-focused storefronts with payments, inventory, and marketing.", "highlights": ["Personalization", "Smart inventory", "Conversion lifts"] },
+        { "slug": "restaurant-management-software", "title": "Restaurant Management Software", "tag": "Restaurant", "description": "Unify POS, kitchen display, and delivery integrations in one system.", "highlights": ["Order routing", "Real-time dashboards", "Delivery sync"] },
+        { "slug": "cloud-kitchen-app", "title": "Cloud Kitchen App", "tag": "Food Ops", "description": "Manage menus, orders, and dispatch from a single operations hub.", "highlights": ["Order routing", "Prep timelines", "Delivery tracking"] },
+        { "slug": "custom-software-development", "title": "Custom Software Development", "tag": "Platform", "description": "Tailored systems built for your workflows, integrations, and scale.", "highlights": ["Custom workflows", "Scalable architecture", "Dedicated team"] }
+      ]
+    },
+    "platform": {
+      "label": "Platform layer",
+      "headline": "One architecture across every product",
+      "description": "Shared infrastructure keeps rollouts fast while protecting data and compliance requirements.",
+      "cards": [
+        { "title": "Secure data layer", "description": "PII handling, access control, and audit trails built in." },
+        { "title": "Integration toolkit", "description": "APIs, webhooks, and connectors for your existing stack." },
+        { "title": "Governance controls", "description": "Human approvals, policy rules, and risk monitoring." },
+        { "title": "Configurable workflows", "description": "Low-code routing to match your team structure." },
+        { "title": "AI optimization", "description": "Prompt testing, evals, and model tuning loops." },
+        { "title": "Operational insights", "description": "Dashboards, alerts, and outcome tracking." }
+      ]
+    },
+    "delivery": {
+      "label": "Implementation",
+      "headline": "From kickoff to launch in weeks",
+      "description": "We run a structured delivery sprint so adoption, training, and data readiness stay aligned.",
+      "steps": [
+        { "title": "Kickoff and workflow mapping", "description": "Confirm business goals, owners, and current tools." },
+        { "title": "Data connection and configuration", "description": "Connect sources, configure rules, and set permissions." },
+        { "title": "Pilot and feedback loop", "description": "Ship a pilot to core users and iterate quickly." },
+        { "title": "Launch and scale", "description": "Enable teams, monitor outcomes, and expand usage." }
+      ],
+      "highlight": {
+        "label": "Enablement kit",
+        "title": "Training, playbooks, and change management",
+        "description": "We onboard users and provide documentation so adoption stays high."
+      }
+    },
+    "outcomes": {
+      "label": "Outcomes",
+      "headline": "Operational gains you can measure",
+      "description": "Teams see measurable lifts in speed, accuracy, and decision quality.",
+      "metrics": [
+        { "value": "45%", "label": "Faster response time" },
+        { "value": "30%", "label": "Higher productivity" },
+        { "value": "20%", "label": "Lower cost per task" },
+        { "value": "99.9%", "label": "System uptime" }
+      ]
+    },
+    "cta": {
+      "label": "Launch now",
+      "headline": "Bring a product to your team this quarter.",
+      "description": "Share your workflows and we will recommend the fastest path to deployment.",
+      "primaryCta": "Schedule a product demo",
+      "secondaryCta": "Explore services"
+    },
+    "details": {
+      "label": "Product details",
+      "primaryCta": "Request a demo",
+      "secondaryCta": "Talk to our team",
+      "items": [
+        {
+          "slug": "portfolio-website",
+          "title": "Portfolio Website",
+          "tag": "Web",
+          "summary": "Showcase your brand, services, and credibility with a high-performance website.",
+          "description": "Includes responsive pages, CMS editing, SEO foundations, and analytics-ready tracking.",
+          "highlights": ["Custom design", "SEO-ready", "Fast launch"],
+          "features": [
+            "Custom landing pages and sections",
+            "CMS-powered content updates",
+            "Performance and accessibility optimization",
+            "Lead capture and inquiry forms"
+          ],
+          "benefits": [
+            "Higher conversion from qualified leads",
+            "Faster updates for marketing teams",
+            "Stronger brand credibility"
+          ]
+        },
+        {
+          "slug": "hr-management-software",
+          "title": "HR Management Software",
+          "tag": "HR Ops",
+          "summary": "Centralize employee lifecycle operations with automation and visibility.",
+          "description": "Manage onboarding, attendance, leave, payroll, and compliance in a single hub.",
+          "highlights": ["Employee hub", "Automated approvals", "Analytics"],
+          "features": [
+            "Onboarding and documentation workflows",
+            "Attendance, leave, and shift tracking",
+            "Payroll integrations and approvals",
+            "Policy compliance and audit logs"
+          ],
+          "benefits": [
+            "Less manual admin work",
+            "Clear audit trails",
+            "Improved employee experience"
+          ]
+        },
+        {
+          "slug": "hospital-management-software",
+          "title": "Hospital Management Software",
+          "tag": "Healthcare",
+          "summary": "Coordinate patient operations and clinical workflows securely.",
+          "description": "Support OPD/IPD, scheduling, billing, inventory, and reporting from one platform.",
+          "highlights": ["Patient journey", "Billing automation", "Audit trails"],
+          "features": [
+            "Patient intake and records management",
+            "Doctor scheduling and queueing",
+            "Billing, insurance, and claims workflows",
+            "Inventory and pharmacy controls"
+          ],
+          "benefits": [
+            "Fewer operational errors",
+            "Faster patient service",
+            "Regulatory readiness"
+          ]
+        },
+        {
+          "slug": "cv-sorting-ai",
+          "title": "CV Sorting AI",
+          "tag": "Talent",
+          "summary": "AI screening that accelerates hiring with consistent, explainable scoring.",
+          "description": "Extracts skills, ranks candidates, and reduces bias while keeping recruiters in control.",
+          "highlights": ["Resume parsing", "Bias checks", "Shortlist automation"],
+          "features": [
+            "Skill extraction and entity mapping",
+            "Custom scoring and ranking models",
+            "Shortlist dashboards and exports",
+            "Audit logs for transparency"
+          ],
+          "benefits": [
+            "Shorter time-to-hire",
+            "Consistent evaluations",
+            "Recruiter focus on top talent"
+          ]
+        },
+        {
+          "slug": "ai-chatbot-implementation",
+          "title": "AI Chatbot Implementation",
+          "tag": "Support",
+          "summary": "Branded AI assistants across web, mobile, and messaging channels.",
+          "description": "Automate FAQs, route tickets, and keep humans in the loop for complex issues.",
+          "highlights": ["Multichannel", "Context memory", "Escalation rules"],
+          "features": [
+            "Knowledge base synchronization",
+            "Human escalation and handoff flows",
+            "Analytics, QA, and training loops",
+            "Multilingual response support"
+          ],
+          "benefits": [
+            "Lower support load",
+            "Faster response times",
+            "Always-on customer service"
+          ]
+        },
+        {
+          "slug": "e-commerce-website",
+          "title": "E-Commerce Website",
+          "tag": "Commerce",
+          "summary": "Conversion-focused storefronts with modern shopping experiences.",
+          "description": "Launch product catalogs, payments, fulfillment, and marketing workflows quickly.",
+          "highlights": ["Personalization", "Smart inventory", "Conversion lifts"],
+          "features": [
+            "Catalog, pricing, and inventory management",
+            "Secure payments and optimized checkout",
+            "Promotions, bundles, and recommendations",
+            "Order tracking and customer notifications"
+          ],
+          "benefits": [
+            "Higher sales velocity",
+            "Better customer retention",
+            "Operational clarity"
+          ]
+        },
+        {
+          "slug": "restaurant-management-software",
+          "title": "Restaurant Management Software",
+          "tag": "Restaurant",
+          "summary": "Unify POS, order, and kitchen operations with real-time control.",
+          "description": "Manage tables, kitchen display, delivery integrations, and reporting from one system.",
+          "highlights": ["Order routing", "Real-time dashboards", "Delivery sync"],
+          "features": [
+            "POS, table management, and billing",
+            "Kitchen display system and prep queues",
+            "Inventory and recipe tracking",
+            "Delivery partner integrations"
+          ],
+          "benefits": [
+            "Reduced wait times",
+            "Accurate order fulfillment",
+            "Visibility into profitability"
+          ]
+        },
+        {
+          "slug": "cloud-kitchen-app",
+          "title": "Cloud Kitchen App",
+          "tag": "Food Ops",
+          "summary": "Operate multi-brand kitchens with centralized control and analytics.",
+          "description": "Coordinate order intake, prep timelines, and courier dispatch at scale.",
+          "highlights": ["Order routing", "Prep timelines", "Delivery tracking"],
+          "features": [
+            "Multi-brand menu management",
+            "Batch cooking and prep views",
+            "Courier dispatch automation",
+            "Performance analytics by outlet"
+          ],
+          "benefits": [
+            "Higher throughput",
+            "Lower wastage",
+            "Faster delivery times"
+          ]
+        },
+        {
+          "slug": "custom-software-development",
+          "title": "Custom Software Development",
+          "tag": "Platform",
+          "summary": "Build tailored systems for unique workflows and business models.",
+          "description": "From CRM to internal tools, we deliver AI-ready, scalable software.",
+          "highlights": ["Custom workflows", "Scalable architecture", "Dedicated team"],
+          "features": [
+            "Discovery, scoping, and planning",
+            "UX/UI design and prototyping",
+            "Engineering, QA, and launch",
+            "Ongoing support and optimization"
+          ],
+          "benefits": [
+            "Exact fit for your operations",
+            "Future-ready tech stack",
+            "IP ownership and control"
+          ]
+        }
+      ]
+    }
+  },
+  "contact": {
+    "hero": {
+      "label": "Contact",
+      "headline": "Start a project conversation with Carriastic.",
+      "description": "Share goals, timelines, and constraints. We respond with a clear next step and a tailored plan.",
+      "primaryCta": "Send a message",
+      "secondaryCta": "See services"
+    },
+    "contactInfo": {
+      "email": "carriastic@gmail.com, carriastic.hr@gmail.com",
+      "phone": "+880 1749-981265, +880 1737-910734",
+      "address": "House 19/1, GP Cha, Mohakhali, Dhaka-1212, Bangladesh",
+      "hours": "Sunday-Thursday, 10:00 AM - 7:00 PM (GMT+6)"
+    },
+    "cards": [
+      {
+        "id": "email",
+        "title": "Email us",
+        "description": "Share your requirements and we will route them to the right team.",
+        "detail": "carriastic@gmail.com, carriastic.hr@gmail.com"
+      },
+      {
+        "id": "phone",
+        "title": "Call the team",
+        "description": "Talk to us about scope, budgets, and timelines.",
+        "detail": "+880 1749-981265, +880 1737-910734"
+      },
+      {
+        "id": "office",
+        "title": "Visit our office",
+        "description": "Dhaka, Bangladesh (GMT+6)",
+        "detail": "House 19/1, GP Cha, Mohakhali, Dhaka-1212"
+      }
+    ],
+    "socials": {
+      "facebook": "https://www.facebook.com/profile.php?id=100088397602087",
+      "twitter": "#",
+      "linkedin": "https://www.linkedin.com/company/90535817",
+      "youtube": "#"
+    }
+  },
+  "faq": {
+    "label": "FAQ",
+    "headline": "Frequently asked questions",
+    "description": "Quick answers to the questions teams ask before partnering with Carriastic.",
+    "items": [
+      { "question": "What is Carriastic?", "answer": "Carriastic is an AI-first software company that designs, builds, and scales custom digital platforms, automation, and enterprise systems." },
+      { "question": "What types of software solutions does Carriastic offer?", "answer": "We deliver custom web, mobile, and cloud platforms, AI-powered products, enterprise systems, and ready-to-deploy solutions tailored to business goals." },
+      { "question": "Are Carriastic solutions customizable?", "answer": "Yes. Every engagement is scoped to your workflows, data, and brand, with modular components that can evolve as you grow." },
+      { "question": "What industries does Carriastic serve?", "answer": "We work with startups, SMEs, and enterprises across sectors including healthcare, retail, logistics, education, and services." },
+      { "question": "What makes Carriastic different from other software providers?", "answer": "We combine long-term partnership, AI-enabled delivery, and product-grade engineering with a focus on measurable business impact." },
+      { "question": "Are Carriastic platforms cloud-based?", "answer": "Most solutions are cloud-native or cloud-ready, with deployment options across AWS, GCP, Azure, or private infrastructure." },
+      { "question": "Does Carriastic provide AI-powered solutions?", "answer": "Yes. We build AI copilots, automation, analytics, and RAG-driven systems that integrate with your data and workflows." },
+      { "question": "Can Carriastic integrate with existing systems?", "answer": "Absolutely. We build APIs, data pipelines, and integrations that connect with legacy tools and modern stacks." },
+      { "question": "Is data security and privacy ensured?", "answer": "Security is built-in with access controls, encryption, compliance-ready architecture, and ongoing monitoring practices." },
+      { "question": "Does Carriastic provide ongoing support and maintenance?", "answer": "Yes. We offer post-launch support, monitoring, enhancements, and continuous optimization packages." },
+      { "question": "How long does it take to develop and deploy a solution?", "answer": "Timelines vary by scope; most MVPs ship in 6 to 12 weeks, with phased releases for larger platforms." },
+      { "question": "Does Carriastic offer scalable solutions?", "answer": "Yes. We design for scalability from day one with modular architecture and performance-focused infrastructure." },
+      { "question": "Can startups and small businesses use Carriastic solutions?", "answer": "Definitely. We offer lean engagement models and phased delivery to fit early-stage budgets and timelines." },
+      { "question": "How can I request a demo or consultation?", "answer": "Use the contact form or book a call, and our team will reach out to align on goals and next steps." },
+      { "question": "Does Carriastic provide custom software development?", "answer": "Yes. Custom software and platform development is a core service, from discovery to deployment." }
+    ]
+  }
+}

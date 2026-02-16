@@ -66,17 +66,14 @@ const DevelopmentProcessSection = () => {
   useEffect(() => {
     let isMounted = true;
 
-    fetch("/gifs/jsons/develop_step.json")
-      .then((response) => response.json())
-      .then((data) => {
-        if (isMounted) {
-          setWebDevProcessAnimation(data);
-        }
+    import("@/public/gifs/jsons/develop_step.json")
+      .then((module) => {
+        if (!isMounted) return;
+        setWebDevProcessAnimation(module.default as Record<string, unknown>);
       })
       .catch(() => {
-        if (isMounted) {
-          setWebDevProcessAnimation(null);
-        }
+        if (!isMounted) return;
+        setWebDevProcessAnimation(null);
       });
 
     return () => {

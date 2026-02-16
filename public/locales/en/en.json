@@ -1842,7 +1842,6 @@
     "previewUser": "I want to build a product page that converts.",
     "previewBot": "I can draft a launch kit, ad copy, and a site map in minutes.",
     "quickPromptsLabel": "Quick Prompts",
-    "quickPromptsHint": "Tap to send",
     "prompts": {
       "website": "I want to create a website",
       "websiteTag": "Blueprint",
@@ -1854,10 +1853,11 @@
     "messageLabel": "Your Message",
     "messageHint": "Secure channel",
     "messagePlaceholder": "Describe your goal or ask anything...",
-    "sendLabel": "Send to AI Core",
+    "sendLabel": "Send",
     "sendAlert": "Sending message...",
     "footerModel": "Model: Carriastic Neural - Low latency",
-    "footerSecurity": "Encrypted"
+    "footerSecurity": "Encrypted",
+    "footerWarning": "AI can be wrong. Carriastic doesn't use your workspace chat data to train its models."
   },
   "nav": {
     "home": "Home",

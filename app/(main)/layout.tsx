@@ -100,7 +100,7 @@ export default function MainLayout({
                 width={48}
                 height={48}
                 className="h-20 w-20 md:h-28 md:w-28"
-                unoptimized
+                sizes="112px"
               />
               <div className="hidden md:block h-9 rounded-xl -ml-2 -mt-4 px-3 py-1 bg-gradient-to-r from-primary via-[#6d36dc] to-[#4b50e6] text-white font-space-grotesk">
                 Meet Carriastic AI

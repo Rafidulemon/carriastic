@@ -13,6 +13,9 @@ import {
 import Button from "../../components/button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
 
+const blurDataUrl =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKZQAAAABJRU5ErkJggg==";
+
 const CareersPage = () => {
   const { t } = useLanguage();
   const career = t.careerPage;
@@ -68,8 +71,9 @@ const CareersPage = () => {
           src="/banners/career.jpg"
           alt={career.hero.imageAlt}
           fill
-          priority
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL={blurDataUrl}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-primary/65 to-emerald-500/50" />
