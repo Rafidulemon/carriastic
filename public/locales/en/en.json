@@ -1358,7 +1358,15 @@
         "highlightsLabel": "Highlights",
         "featuresLabel": "Core features",
         "benefitsLabel": "Expected outcomes",
-        "stackLabel": "Technology stack"
+        "stackLabel": "Technology stack",
+        "stackBadgeLabel": "Max stack for this product",
+        "modulesLabel": "What’s inside",
+        "useCasesLabel": "Where it fits",
+        "integrationsLabel": "Integrations",
+        "metricsLabel": "Impact metrics",
+        "deliveryLabel": "Implementation plan",
+        "supportLabel": "Post-launch support",
+        "moreProductsLabel": "More products"
       },
       "notFound": {
         "title": "Product not found",

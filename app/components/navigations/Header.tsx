@@ -21,8 +21,14 @@ const Header = ({ isDark = false }: HeaderProps) => {
     pathname === "/services" || pathname.startsWith("/services/");
   const isContactRoute = pathname === "/contact";
   const isAboutRoute = pathname === "/about" || pathname.startsWith("/about/");
+  const isProductRoute =
+    pathname.startsWith("/products/") && pathname !== "/products";
   const [isHeroActive, setIsHeroActive] = useState(
-    pathname === "/" || isServiceRoute || isContactRoute || isAboutRoute
+    pathname === "/" ||
+      isServiceRoute ||
+      isContactRoute ||
+      isAboutRoute ||
+      isProductRoute
   );
   const { t } = useLanguage();
   const isDarkHeader = isDark || isHeroActive;
@@ -51,7 +57,9 @@ const Header = ({ isDark = false }: HeaderProps) => {
             ? "contact-hero"
             : isAboutRoute
               ? "about-hero"
-              : null;
+              : isProductRoute
+                ? "product-hero"
+                : null;
     if (!heroId) {
       setIsHeroActive(false);
       return;
@@ -72,7 +80,7 @@ const Header = ({ isDark = false }: HeaderProps) => {
 
     observer.observe(heroSection);
     return () => observer.disconnect();
-  }, [isAboutRoute, isContactRoute, isDark, isServiceRoute, pathname]);
+  }, [isAboutRoute, isContactRoute, isDark, isProductRoute, isServiceRoute, pathname]);
 
   const navItems = getNavItems(t);
 
@@ -82,7 +90,7 @@ const Header = ({ isDark = false }: HeaderProps) => {
 
   const headerPositionClass = isDark ? "relative" : "fixed top-0";
   const headerThemeClass = isDark
-    ? ""
+    ? "home-hero-header"
     : isHeroActive
       ? "home-hero-header"
       : "bg-white/95 backdrop-blur-xl shadow-[0_14px_30px_rgba(15,23,42,0.08)]";

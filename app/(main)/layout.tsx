@@ -33,7 +33,11 @@ export default function MainLayout({
   const isContactRoute = pathname === "/contact";
   const isAboutRoute = pathname === "/about" || pathname.startsWith("/about/");
   const isHeroRoute =
-    pathname === "/" || isServiceRoute || isContactRoute || isAboutRoute;
+    pathname === "/" ||
+    isServiceRoute ||
+    isContactRoute ||
+    isAboutRoute ||
+    (pathname.startsWith("/products/") && pathname !== "/products");
   const contentOffsetClass = isHeroRoute ? "mt-0" : "mt-16 md:mt-20";
 
   useEffect(() => {

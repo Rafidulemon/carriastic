@@ -1358,7 +1358,15 @@
         "highlightsLabel": "হাইলাইটস",
         "featuresLabel": "কোর ফিচার",
         "benefitsLabel": "প্রত্যাশিত আউটকাম",
-        "stackLabel": "টেকনোলজি স্ট্যাক"
+        "stackLabel": "টেকনোলজি স্ট্যাক",
+        "stackBadgeLabel": "এই প্রোডাক্টের ম্যাক্স স্ট্যাক",
+        "modulesLabel": "কি কি পাবেন",
+        "useCasesLabel": "যেসব ক্ষেত্রে মানানসই",
+        "integrationsLabel": "ইন্টিগ্রেশন",
+        "metricsLabel": "ইমপ্যাক্ট মেট্রিক",
+        "deliveryLabel": "ইমপ্লিমেন্টেশন পরিকল্পনা",
+        "supportLabel": "লঞ্চ পরবর্তী সাপোর্ট",
+        "moreProductsLabel": "আরও প্রোডাক্ট"
       },
       "notFound": {
         "title": "প্রোডাক্ট পাওয়া যায়নি",

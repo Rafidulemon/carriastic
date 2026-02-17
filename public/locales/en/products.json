@@ -6,9 +6,12 @@
       "tag": "Web",
       "summary": "Showcase your brand, services, and credibility with a high-performance website.",
       "description": "Includes responsive pages, CMS editing, SEO foundations, and analytics-ready tracking.",
-      "image": "/gifs/portfolio.gif",
       "imageAlt": "Portfolio website showcase",
-      "highlights": ["Custom design", "SEO-ready", "Fast launch"],
+      "highlights": [
+        "Custom design",
+        "SEO-ready",
+        "Fast launch"
+      ],
       "features": [
         "Custom landing pages and sections",
         "CMS-powered content updates",
@@ -26,7 +29,9 @@
         "Tailwind CSS",
         "Vercel",
         "Google Analytics"
-      ]
+      ],
+      "gif": "/gifs/portfolio.gif",
+      "banner": "/products/portfolio/banner.png"
     },
     {
       "slug": "hr-management-software",
@@ -34,9 +39,12 @@
       "tag": "HR Ops",
       "summary": "Centralize employee lifecycle operations with automation and visibility.",
       "description": "Manage onboarding, attendance, leave, payroll, and compliance in a single hub.",
-      "image": "/gifs/hrm.gif",
       "imageAlt": "HR management dashboard",
-      "highlights": ["Employee hub", "Automated approvals", "Analytics"],
+      "highlights": [
+        "Employee hub",
+        "Automated approvals",
+        "Analytics"
+      ],
       "features": [
         "Onboarding and documentation workflows",
         "Attendance, leave, and shift tracking",
@@ -54,7 +62,9 @@
         "PostgreSQL",
         "JWT",
         "AWS"
-      ]
+      ],
+      "gif": "/gifs/hrm.gif",
+      "banner": "/products/hrm/banner.png"
     },
     {
       "slug": "hospital-management-software",
@@ -62,9 +72,12 @@
       "tag": "Healthcare",
       "summary": "Coordinate patient operations and clinical workflows securely.",
       "description": "Support OPD/IPD, scheduling, billing, inventory, and reporting from one platform.",
-      "image": "/gifs/hospital.gif",
       "imageAlt": "Hospital management interface",
-      "highlights": ["Patient journey", "Billing automation", "Audit trails"],
+      "highlights": [
+        "Patient journey",
+        "Billing automation",
+        "Audit trails"
+      ],
       "features": [
         "Patient intake and records management",
         "Doctor scheduling and queueing",
@@ -82,7 +95,9 @@
         "PostgreSQL",
         "Redis",
         "Docker"
-      ]
+      ],
+      "gif": "/gifs/hospital.gif",
+      "banner": "/products/hospital/banner.png"
     },
     {
       "slug": "cv-sorting-ai",
@@ -90,9 +105,12 @@
       "tag": "Talent",
       "summary": "AI screening that accelerates hiring with consistent, explainable scoring.",
       "description": "Extracts skills, ranks candidates, and reduces bias while keeping recruiters in control.",
-      "image": "/gifs/cv_sort.gif",
       "imageAlt": "CV sorting AI interface",
-      "highlights": ["Resume parsing", "Bias checks", "Shortlist automation"],
+      "highlights": [
+        "Resume parsing",
+        "Bias checks",
+        "Shortlist automation"
+      ],
       "features": [
         "Skill extraction and entity mapping",
         "Custom scoring and ranking models",
@@ -110,7 +128,9 @@
         "PostgreSQL",
         "Vector DB",
         "OpenAI"
-      ]
+      ],
+      "gif": "/gifs/cv_sort.gif",
+      "banner": "/products/cvSort/banner.png"
     },
     {
       "slug": "ai-chatbot-implementation",
@@ -118,9 +138,12 @@
       "tag": "Support",
       "summary": "Branded AI assistants across web, mobile, and messaging channels.",
       "description": "Automate FAQs, route tickets, and keep humans in the loop for complex issues.",
-      "image": "/gifs/chatbot.gif",
       "imageAlt": "AI chatbot conversation flow",
-      "highlights": ["Multichannel", "Context memory", "Escalation rules"],
+      "highlights": [
+        "Multichannel",
+        "Context memory",
+        "Escalation rules"
+      ],
       "features": [
         "Knowledge base synchronization",
         "Human escalation and handoff flows",
@@ -138,7 +161,9 @@
         "LangChain",
         "Vector DB",
         "OpenAI"
-      ]
+      ],
+      "gif": "/gifs/chatbot.gif",
+      "banner": "/products/chatBot/banner.png"
     },
     {
       "slug": "e-commerce-website",
@@ -146,9 +171,12 @@
       "tag": "Commerce",
       "summary": "Conversion-focused storefronts with modern shopping experiences.",
       "description": "Launch product catalogs, payments, fulfillment, and marketing workflows quickly.",
-      "image": "/gifs/e_com.gif",
       "imageAlt": "E-commerce experience",
-      "highlights": ["Personalization", "Smart inventory", "Conversion lifts"],
+      "highlights": [
+        "Personalization",
+        "Smart inventory",
+        "Conversion lifts"
+      ],
       "features": [
         "Catalog, pricing, and inventory management",
         "Secure payments and optimized checkout",
@@ -165,7 +193,9 @@
         "React",
         "Stripe",
         "PostgreSQL"
-      ]
+      ],
+      "gif": "/gifs/e_com.gif",
+      "banner": "/products/eCom/banner.png"
     },
     {
       "slug": "restaurant-management-software",
@@ -173,9 +203,12 @@
       "tag": "Restaurant",
       "summary": "Unify POS, order, and kitchen operations with real-time control.",
       "description": "Manage tables, kitchen display, delivery integrations, and reporting from one system.",
-      "image": "/gifs/restaurent.gif",
       "imageAlt": "Restaurant management operations",
-      "highlights": ["Order routing", "Real-time dashboards", "Delivery sync"],
+      "highlights": [
+        "Order routing",
+        "Real-time dashboards",
+        "Delivery sync"
+      ],
       "features": [
         "POS, table management, and billing",
         "Kitchen display system and prep queues",
@@ -192,7 +225,9 @@
         "Node.js",
         "PostgreSQL",
         "Redis"
-      ]
+      ],
+      "gif": "/gifs/restaurent.gif",
+      "banner": "/products/restaurent/banner.png"
     },
     {
       "slug": "cloud-kitchen-app",
@@ -200,9 +235,12 @@
       "tag": "Food Ops",
       "summary": "Operate multi-brand kitchens with centralized control and analytics.",
       "description": "Coordinate order intake, prep timelines, and courier dispatch at scale.",
-      "image": "/gifs/cloud_kitchen.gif",
       "imageAlt": "Cloud kitchen operations screen",
-      "highlights": ["Order routing", "Prep timelines", "Delivery tracking"],
+      "highlights": [
+        "Order routing",
+        "Prep timelines",
+        "Delivery tracking"
+      ],
       "features": [
         "Multi-brand menu management",
         "Batch cooking and prep views",
@@ -219,7 +257,9 @@
         "Node.js",
         "PostgreSQL",
         "Firebase"
-      ]
+      ],
+      "gif": "/gifs/cloud_kitchen.gif",
+      "banner": "/products/cloudKitchen/banner.png"
     },
     {
       "slug": "custom-software-development",
@@ -227,9 +267,12 @@
       "tag": "Platform",
       "summary": "Build tailored systems for unique workflows and business models.",
       "description": "From CRM to internal tools, we deliver AI-ready, scalable software.",
-      "image": "/gifs/custom.gif",
       "imageAlt": "Custom software development preview",
-      "highlights": ["Custom workflows", "Scalable architecture", "Dedicated team"],
+      "highlights": [
+        "Custom workflows",
+        "Scalable architecture",
+        "Dedicated team"
+      ],
       "features": [
         "Discovery, scoping, and planning",
         "UX/UI design and prototyping",
@@ -247,7 +290,9 @@
         "Node.js",
         "Python",
         "AWS"
-      ]
+      ],
+      "gif": "/gifs/custom.gif",
+      "banner": "/products/custom/banner.png"
     }
   ]
 }

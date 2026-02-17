@@ -27,7 +27,8 @@ type ProductItem = {
   title: string;
   tag: string;
   description: string;
-  image: string;
+  banner: string;
+  gif: string;
   imageAlt: string;
   highlights: string[];
 };
@@ -35,7 +36,7 @@ type ProductItem = {
 const ProductsPage = () => {
   const { t, locale } = useLanguage();
   const productsPage = t.productsPage;
-    const productsData = locale === "bn" ? productsBn : productsEn;
+  const productsData = locale === "bn" ? productsBn : productsEn;
 
   const productAccents = [
     "from-[#ede9fe]/70 via-white to-[#dbeafe]/70",
@@ -43,7 +44,7 @@ const ProductsPage = () => {
     "from-[#fef3c7]/70 via-white to-[#ffe4e6]/70",
   ];
 
-   const productCards = (productsData.items as ProductItem[]).map(
+  const productCards = (productsData.items as ProductItem[]).map(
     (item, index) => ({
       ...item,
       accent: productAccents[index % productAccents.length],
@@ -191,37 +192,44 @@ const ProductsPage = () => {
             <Link
               key={item.title}
               href={`/products/${item.slug}`}
-              className={`group rounded-[28px] bg-gradient-to-br ${item.accent} p-[1px] transition duration-300 ease-out hover:-translate-y-1`}
+              className={`group rounded-[30px] bg-gradient-to-br ${item.accent} p-[1px] transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(15,23,42,0.18)]`}
               aria-label={`${productsPage.catalog.cardCta}: ${item.title}`}
             >
-              <div className="flex h-full flex-col overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-[0_18px_36px_rgba(15,23,42,0.12)]">
-                <div className="relative h-44 w-full">
+              <div className="flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200/80 bg-white shadow-[0_18px_38px_rgba(15,23,42,0.12)]">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
-                    src={item.image}
+                    src={item.banner}
                     alt={item.imageAlt}
                     fill
-                    sizes="(min-width: 1024px) 350px, 90vw"
-                    className="object-cover"
+                    sizes="(min-width: 1024px) 360px, 90vw"
+                    className="object-cover transition duration-500 ease-out group-hover:scale-[1.05]"
                     placeholder="blur"
                     blurDataURL={blurDataUrl}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/0 to-transparent" />
-                  <span className="absolute left-4 top-4 rounded-full border border-white/40 bg-white/20 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white backdrop-blur">
-                    {item.tag}
-                  </span>
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/45 via-slate-900/10 to-transparent opacity-80 transition duration-500 group-hover:opacity-95" />
+                  <div className="absolute left-4 bottom-4 flex items-center gap-2">
+                    <span className="rounded-full border border-white/30 bg-white/20 px-3 py-1 text-[11px] uppercase tracking-[0.26em] text-white backdrop-blur">
+                      {item.tag}
+                    </span>
+                  </div>
                 </div>
                 <div className="flex h-full flex-col gap-3 p-6">
-                  <h3 className="text-[18px] font-semibold text-slate-900 font-spaceGrotesk">
-                    {item.title}
-                  </h3>
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-[18px] font-semibold text-slate-900 font-spaceGrotesk leading-tight">
+                      {item.title}
+                    </h3>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary transition duration-200 group-hover:-translate-y-0.5">
+                      <FiArrowUpRight />
+                    </span>
+                  </div>
                   <p className="text-[14px] text-slate-600 text-justify">
                     {item.description}
                   </p>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    {item.highlights.map((highlight) => (
+                    {item.highlights.slice(0, 3).map((highlight) => (
                       <span
                         key={highlight}
-                        className="rounded-full border border-primary/15 bg-primary/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-primary"
+                        className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-slate-600 shadow-[0_6px_14px_rgba(15,23,42,0.06)]"
                       >
                         {highlight}
                       </span>
