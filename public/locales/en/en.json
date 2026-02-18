@@ -841,8 +841,10 @@
   },
   "aiPage": {
     "hero": {
+      "home": "Home",
+      "ai": "AI",
       "label": "AI Studio",
-      "headline": "Design, deploy, and scale AI systems that move real metrics.",
+      "headline": "Design, deploy, and scale AI systems.",
       "description": "From copilots to autonomous workflows, we turn your data and domain expertise into production-ready AI products with governance baked in.",
       "primaryCta": "Book an AI workshop",
       "secondaryCta": "See AI services",
@@ -996,6 +998,8 @@
   },
   "blogsPage": {
     "hero": {
+      "home": "Home",
+      "blog": "Blogs",
       "label": "Insights",
       "headline": "Ideas and lessons from building AI-first products.",
       "description": "Explore practical guidance on AI, data, and digital delivery from the Carriastic team.",

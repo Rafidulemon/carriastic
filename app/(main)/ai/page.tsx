@@ -19,6 +19,8 @@ import {
 import aiAnimation from "@/public/gifs/ai.json";
 import Button from "../../components/button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
+import Header from "../../components/navigations/Header";
+import HeroBreadcrumb from "@/app/components/navigations/HeroBreadcrumb";
 
 const AiPage = () => {
   const { t } = useLanguage();
@@ -61,87 +63,76 @@ const AiPage = () => {
     icon: trustIcons[index] ?? FiShield,
     accent: trustAccents[index % trustAccents.length],
   }));
+  const heroIcons = [FiLayers, FiCpu, FiZap];
 
   return (
     <div className="w-full">
-      <section className="relative overflow-hidden bg-[#0b1220] text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#180b2a] via-[#0b1220] to-[#05060d]" />
-        <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-primaryLight/30 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-[-160px] right-[-120px] h-[360px] w-[360px] rounded-full bg-sky-400/30 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-6 py-6 md:py-12 md:px-10">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="flex flex-col gap-6">
-              <span className="inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-white/80">
-                {ai.hero.label}
-              </span>
-              <h1 className="text-[34px] font-semibold leading-[1.05] md:text-[58px] font-spaceGrotesk">
-                {ai.hero.headline}
-              </h1>
-              <p className="max-w-[620px] text-[16px] text-white/80 md:text-[18px] motion-safe:animate-home-fade-up">
-                {ai.hero.description}
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {ai.hero.badges.map((badge) => (
-                  <span
+      <section
+        id="ai-hero"
+        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden pb-10 md:min-h-screen bg-[#0b1220] text-white"
+      >
+        <div className="pointer-events-none absolute inset-0 home-grid" />
+        <div className="home-orb home-orb-two" />
+        <div className="home-orb home-orb-three" />
+        <Header isDark />
+
+        <div className="hero-smooth-reveal relative mx-auto flex w-full max-w-[1200px] flex-1 flex-col justify-center gap-10 px-6 pt-6 sm:gap-12 sm:pt-10 md:gap-14 md:px-10 lg:flex-row lg:items-center">
+          <div className="flex flex-1 flex-col gap-6 text-center lg:items-start lg:text-left">
+            <HeroBreadcrumb
+              items={[
+                { label: ai.hero.home, href: "/" },
+                { label: ai.hero.ai },
+              ]}
+            />
+            <h1 className="text-[34px] font-semibold leading-[1.05] md:text-[58px] font-spaceGrotesk drop-shadow-[0_14px_30px_rgba(9,0,16,0.35)]">
+              {ai.hero.headline}
+            </h1>
+            <p className=" text-[16px] text-white/80 md:text-[18px] lg:text-justify">
+              {ai.hero.description}
+            </p>
+            <ul className="flex flex-col gap-1 text-[14px] text-white/80 lg:text-left">
+              {ai.hero.badges.map((badge, index) => {
+                const Icon = heroIcons[index % heroIcons.length];
+                return (
+                  <li
                     key={badge}
-                    className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-white/70"
+                    className="flex items-center justify-center gap-3 lg:justify-start"
                   >
-                    {badge}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/contact" theme="gradient">
-                  {ai.hero.primaryCta}
-                </Button>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-[15px] font-semibold text-white backdrop-blur transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-white/20"
-                >
-                  {ai.hero.secondaryCta}
-                </Link>
-              </div>
-            </div>
-            <div className="relative pb-6 md:pb-0">
-              <div className="rounded-[28px] bg-gradient-to-br from-white/20 via-white/5 to-transparent p-[1px] shadow-[0_24px_60px_rgba(15,23,42,0.35)]">
-                <div className="rounded-[28px] bg-[#0f172a] p-4 md:p-6">
-                  <div className="relative h-[280px] md:h-[360px]">
-                    <Lottie
-                      animationData={aiAnimation}
-                      loop
-                      autoplay
-                      className="h-full w-full"
-                      aria-label={ai.hero.label}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 rounded-2xl border border-white/15 bg-white/10 p-4 text-white shadow-[0_18px_40px_rgba(15,23,42,0.35)] backdrop-blur md:absolute md:-bottom-8 md:left-6 md:right-6">
-                <span className="text-[11px] uppercase tracking-[0.3em] text-white/70">
-                  {ai.hero.highlight.label}
-                </span>
-                <h3 className="mt-2 text-[16px] font-semibold font-spaceGrotesk">
-                  {ai.hero.highlight.title}
-                </h3>
-                <p className="mt-1 text-[13px] text-white/70">
-                  {ai.hero.highlight.description}
-                </p>
-              </div>
+                    <span className="flex h-9 w-9 items-center justify-center text-primaryLight">
+                      <Icon className="text-[18px] text-white" />
+                    </span>
+                    <span>{badge}</span>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+              <Button
+                href="/contact"
+                theme="gradient"
+                className="w-full sm:w-auto"
+              >
+                {ai.hero.primaryCta}
+              </Button>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-[15px] font-semibold text-white backdrop-blur transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-white/20"
+              >
+                {ai.hero.secondaryCta}
+              </Link>
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {ai.hero.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur"
-              >
-                <p className="text-[22px] font-semibold">{stat.value}</p>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.3em] text-white/70">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+          <div className="relative flex-1 pb-6 md:pb-0">
+            <div className="relative overflow-hidden">
+                <Lottie
+                  animationData={aiAnimation}
+                  loop
+                  autoplay
+                  className="h-full w-full"
+                  aria-label={ai.hero.label}
+                />
+            </div>
           </div>
         </div>
       </section>
@@ -317,9 +308,7 @@ const AiPage = () => {
                 <h3 className="text-[17px] font-semibold text-slate-900 font-spaceGrotesk">
                   {item.title}
                 </h3>
-                <p className="text-[14px] text-slate-600">
-                  {item.description}
-                </p>
+                <p className="text-[14px] text-slate-600">{item.description}</p>
               </div>
             );
           })}

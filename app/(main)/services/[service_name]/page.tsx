@@ -141,7 +141,7 @@ const ServiceDetails = () => {
     <div className="w-full bg-white">
       <section
         id="service-hero"
-        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden -mt-12 sm:-mt-16 md:-mt-20 md:min-h-screen"
+        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden md:min-h-screen"
       >
         <div className="absolute inset-0">
           <div className="absolute -right-24 -top-32 h-72 w-72 rounded-full bg-primary blur-3xl opacity-80" />

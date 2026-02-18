@@ -21,14 +21,22 @@ const Header = ({ isDark = false }: HeaderProps) => {
     pathname === "/services" || pathname.startsWith("/services/");
   const isContactRoute = pathname === "/contact";
   const isAboutRoute = pathname === "/about" || pathname.startsWith("/about/");
-  const isProductRoute =
+  const isProductsRoute = pathname === "/products";
+  const isProductDetailRoute =
     pathname.startsWith("/products/") && pathname !== "/products";
+  const isAiRoute = pathname === "/ai";
+  const isBlogsRoute = pathname === "/blogs";
+  const isCareerRoute = pathname === "/career";
   const [isHeroActive, setIsHeroActive] = useState(
     pathname === "/" ||
       isServiceRoute ||
       isContactRoute ||
       isAboutRoute ||
-      isProductRoute
+      isProductsRoute ||
+      isProductDetailRoute ||
+      isAiRoute ||
+      isBlogsRoute ||
+      isCareerRoute
   );
   const { t } = useLanguage();
   const isDarkHeader = isDark || isHeroActive;
@@ -57,9 +65,15 @@ const Header = ({ isDark = false }: HeaderProps) => {
             ? "contact-hero"
             : isAboutRoute
               ? "about-hero"
-              : isProductRoute
+              : isProductsRoute || isProductDetailRoute
                 ? "product-hero"
-                : null;
+              : isAiRoute
+                ? "ai-hero"
+                : isBlogsRoute
+                  ? "blogs-hero"
+                  : isCareerRoute
+                    ? "career-hero"
+                    : null;
     if (!heroId) {
       setIsHeroActive(false);
       return;
@@ -80,7 +94,18 @@ const Header = ({ isDark = false }: HeaderProps) => {
 
     observer.observe(heroSection);
     return () => observer.disconnect();
-  }, [isAboutRoute, isContactRoute, isDark, isProductRoute, isServiceRoute, pathname]);
+  }, [
+    isAboutRoute,
+    isContactRoute,
+    isDark,
+    isProductsRoute,
+    isProductDetailRoute,
+    isServiceRoute,
+    isAiRoute,
+    isBlogsRoute,
+    isCareerRoute,
+    pathname,
+  ]);
 
   const navItems = getNavItems(t);
 
@@ -103,7 +128,15 @@ const Header = ({ isDark = false }: HeaderProps) => {
 
   if (
     !isDark &&
-    (pathname === "/" || isServiceRoute || isContactRoute || isAboutRoute) &&
+    (pathname === "/" ||
+      isServiceRoute ||
+      isContactRoute ||
+      isAboutRoute ||
+      isProductsRoute ||
+      isProductDetailRoute ||
+      isAiRoute ||
+      isBlogsRoute ||
+      isCareerRoute) &&
     isHeroActive
   ) {
     return null;

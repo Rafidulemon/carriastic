@@ -16,8 +16,12 @@ import {
 } from "react-icons/fi";
 import productsEn from "@/public/locales/en/products.json";
 import productsBn from "@/public/locales/bn/products.json";
+import productAnimation from "@/public/gifs/jsons/products.json";
 import Button from "../../components/button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
+import Header from "../../components/navigations/Header";
+import HeroBreadcrumb from "../../components/navigations/HeroBreadcrumb";
+import Lottie from "lottie-react";
 
 const blurDataUrl =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKZQAAAABJRU5ErkJggg==";
@@ -37,6 +41,7 @@ const ProductsPage = () => {
   const { t, locale } = useLanguage();
   const productsPage = t.productsPage;
   const productsData = locale === "bn" ? productsBn : productsEn;
+  const homeLabel = t.nav.home;
 
   const productAccents = [
     "from-[#ede9fe]/70 via-white to-[#dbeafe]/70",
@@ -48,7 +53,7 @@ const ProductsPage = () => {
     (item, index) => ({
       ...item,
       accent: productAccents[index % productAccents.length],
-    })
+    }),
   );
 
   const platformIcons = [
@@ -82,90 +87,56 @@ const ProductsPage = () => {
 
   return (
     <div className="products-page relative overflow-x-hidden text-slate-900">
-      <section className="relative isolate overflow-hidden bg-[radial-gradient(70%_60%_at_50%_0%,#f5f7ff_0%,#ffffff_45%,#ffffff_100%)]">
-        <div className="pointer-events-none absolute -left-28 top-10 h-80 w-80 rounded-full bg-primary/15 blur-3xl" />
-        <div className="pointer-events-none absolute right-[-60px] top-16 h-72 w-72 rounded-full bg-sky-300/20 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 py-12 md:px-10">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="flex flex-col gap-5 text-center lg:text-left">
-              <span className="inline-flex w-fit self-center rounded-full border border-amber-200/70 bg-white/80 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-amber-700 shadow-sm lg:self-start">
-                {productsPage.hero.label}
-              </span>
-              <h1 className="text-[34px] font-semibold leading-[1.05] text-slate-900 md:text-[56px] font-spaceGrotesk">
-                <span className="bg-gradient-to-r from-slate-900 via-primary to-sky-500 bg-clip-text text-transparent">
-                  {productsPage.hero.headline}
-                </span>
-              </h1>
-              <p className="max-w-[680px] text-[16px] text-justify text-slate-600 md:text-[18px]">
-                {productsPage.hero.description}
-              </p>
-              <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-                {productsPage.hero.badges.map((badge) => (
-                  <span
-                    key={badge}
-                    className="rounded-full border border-primary/20 bg-white px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-primary shadow-[0_10px_20px_rgba(15,23,42,0.08)]"
-                  >
-                    {badge}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
-                <Button href="#product-suite" theme="gradient">
-                  {productsPage.hero.primaryCta}
-                </Button>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-primary/25 bg-white px-6 py-3 text-[15px] font-semibold text-primary shadow-[0_12px_24px_rgba(55,0,84,0.12)] transition duration-200 ease-out hover:-translate-y-0.5"
-                >
-                  {productsPage.hero.secondaryCta}
-                </Link>
-              </div>
-              <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                {productsPage.hero.stats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-2xl border border-slate-200/80 bg-white p-5 text-center shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
-                  >
-                    <p className="text-[20px] font-semibold text-slate-900">
-                      {stat.value}
-                    </p>
-                    <p className="mt-2 text-[11px] uppercase tracking-[0.3em] text-slate-500">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+      <section
+        id="product-hero"
+        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden bg-[#0b1220] text-white md:min-h-screen"
+      >
+        <div className="pointer-events-none absolute inset-0 home-grid" />
+        <div className="home-orb home-orb-two" />
+        <div className="home-orb home-orb-three" />
+        <Header isDark />
 
-            <div className="relative">
-              <div className="rounded-[34px] bg-gradient-to-br from-primary/15 via-white to-sky-200/40 p-[1px] shadow-[0_28px_70px_rgba(15,23,42,0.18)]">
-                <div className="rounded-[34px] border border-white/70 bg-white/95 p-5 backdrop-blur">
-                  <div className="relative aspect-[6/5] w-full overflow-hidden rounded-[28px]">
-                    <Image
-                      src={productsPage.hero.image}
-                      alt={productsPage.hero.imageAlt}
-                      fill
-                      sizes="(min-width: 1024px) 420px, 90vw"
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL={blurDataUrl}
-                      priority
-                    />
-                  </div>
-                  <div className="mt-5 grid gap-3 rounded-2xl border border-primary/15 bg-white/90 p-4 text-left shadow-[0_12px_28px_rgba(15,23,42,0.1)]">
-                    <span className="text-[11px] uppercase tracking-[0.3em] text-primary/80">
-                      {productsPage.hero.highlight.label}
-                    </span>
-                    <h3 className="text-[16px] font-semibold text-slate-900 font-spaceGrotesk">
-                      {productsPage.hero.highlight.title}
-                    </h3>
-                    <p className="text-[13px] text-slate-600">
-                      {productsPage.hero.highlight.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="pointer-events-none absolute -bottom-10 left-8 h-28 w-28 rounded-full bg-primary/10 blur-2xl" />
+        <div className="hero-smooth-reveal relative mx-auto flex w-full max-w-[1200px] flex-1 flex-col justify-center gap-10 px-6 pt-8 sm:gap-12 sm:pt-10 md:gap-14 md:px-10 lg:flex-row lg:items-center">
+          <div className="flex flex-1 flex-col gap-6 text-center lg:items-start lg:text-left">
+            <HeroBreadcrumb
+              items={[
+                { label: homeLabel, href: "/" },
+                { label: productsPage.hero.label },
+              ]}
+            />
+
+            <h1 className="text-[34px] font-semibold leading-[1.05] md:text-[58px] font-spaceGrotesk drop-shadow-[0_14px_30px_rgba(9,0,16,0.4)]">
+              {productsPage.hero.headline}
+            </h1>
+            <p className="max-w-[680px] text-[16px] text-white/80 md:text-[18px] lg:text-justify">
+              {productsPage.hero.description}
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+              <Button
+                href="#product-suite"
+                theme="gradient"
+                className="w-full sm:w-auto"
+              >
+                {productsPage.hero.primaryCta}
+              </Button>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-[15px] font-semibold text-white backdrop-blur transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-white/20"
+              >
+                {productsPage.hero.secondaryCta}
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative flex-1 pb-6 md:pb-0">
+            <div className="relative overflow-hidden">
+              <Lottie
+                animationData={productAnimation}
+                loop
+                autoplay
+                className="h-full w-full"
+                aria-label={productsPage.hero.label}
+              />
             </div>
           </div>
         </div>

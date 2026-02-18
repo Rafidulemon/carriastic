@@ -12,6 +12,8 @@ import {
 } from "react-icons/fi";
 import Button from "../../components/button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
+import Header from "../../components/navigations/Header";
+import HeroBreadcrumb from "../../components/navigations/HeroBreadcrumb";
 
 const blurDataUrl =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKZQAAAABJRU5ErkJggg==";
@@ -19,6 +21,7 @@ const blurDataUrl =
 const CareersPage = () => {
   const { t } = useLanguage();
   const career = t.careerPage;
+  const homeLabel = t.nav.home;
 
   const benefitAccents = [
     "from-cyan-400 via-blue-500 to-fuchsia-500",
@@ -67,91 +70,100 @@ const CareersPage = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-white">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.18),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(16,185,129,0.16),transparent_38%),linear-gradient(120deg,rgba(255,255,255,0.05),rgba(255,255,255,0))]" />
-        <div className="pointer-events-none absolute inset-0 mix-blend-screen opacity-60" style={{ backgroundImage: "linear-gradient(transparent 0%, rgba(255,255,255,0.03) 100%), radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08), transparent 35%), radial-gradient(circle at 80% 0%, rgba(14,165,233,0.14), transparent 45%)" }} />
+      <section
+        id="career-hero"
+        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden text-white md:min-h-screen"
+      >
+        <div className="pointer-events-none absolute inset-0 home-grid" />
+        <div className="home-orb home-orb-two" />
+        <div className="home-orb home-orb-three" />
+        <Header isDark />
 
-        <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 py-16 md:px-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="flex flex-col gap-6">
-            <span className="w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-white/70">
-              {career.hero.label}
-            </span>
-            <div className="flex flex-col gap-4">
-              <h1 className="text-[34px] leading-[1.05] md:text-[54px] font-spaceGrotesk">
-                {career.hero.headline}
-              </h1>
-              <p className="max-w-[640px] text-[16px] text-white/80 md:text-[18px]">
-                {career.hero.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {career.hero.badges.map((badge) => (
-                  <span
+        <div className="hero-smooth-reveal relative mx-auto flex w-full max-w-[1200px] flex-1 flex-col justify-center gap-10 px-6 pt-8 sm:gap-12 sm:pt-10 md:gap-14 md:px-10 lg:flex-row lg:items-center">
+          <div className="flex flex-1 flex-col gap-6 text-center lg:items-start lg:text-left">
+            <HeroBreadcrumb
+              items={[
+                { label: homeLabel, href: "/" },
+                { label: career.hero.label },
+              ]}
+            />
+
+            <h1 className="text-[34px] font-semibold leading-[1.05] md:text-[58px] font-spaceGrotesk drop-shadow-[0_14px_30px_rgba(9,0,16,0.35)]">
+              {career.hero.headline}
+            </h1>
+            <p className="max-w-[640px] text-[16px] text-white/80 md:text-[18px] lg:text-justify">
+              {career.hero.description}
+            </p>
+            <ul className="flex flex-col gap-3 text-[14px] text-white/80">
+              {career.hero.badges.map((badge, index) => {
+                const icons = [FiBriefcase, FiUsers, FiMapPin, FiBookOpen];
+                const Icon = icons[index % icons.length];
+                return (
+                  <li
                     key={badge}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] uppercase tracking-[0.28em] text-white/70"
+                    className="flex items-center justify-center gap-3 lg:justify-start"
                   >
-                    {badge}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <Button href="#openings" theme="gradient">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-primaryLight">
+                      <Icon className="text-[18px]" />
+                    </span>
+                    <span>{badge}</span>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+              <Button href="#openings" theme="gradient" className="w-full sm:w-auto">
                 {career.hero.primaryCta}
               </Button>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-[15px] font-semibold text-white transition duration-200 ease-out hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 py-3 text-[15px] font-semibold text-white backdrop-blur transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-white/20"
               >
                 {career.hero.secondaryCta}
               </Link>
-              <span className="text-sm text-white/60 md:ml-3">
-                {career.hero.stats[0]?.value} • {career.hero.stats[0]?.label}
-              </span>
             </div>
-
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {career.hero.stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-white/10 bg-white/5 bg-gradient-to-br from-white/5 via-white/5 to-white/0 p-4 backdrop-blur"
-                >
-                  <p className="text-[22px] font-semibold text-white">{stat.value}</p>
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">
-                    {stat.label}
-                  </p>
-                </div>
+            <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] uppercase tracking-[0.3em] text-white/60 lg:justify-start">
+              {career.hero.stats.map((stat, index) => (
+                <span key={stat.label} className="inline-flex items-center gap-2">
+                  <span className="text-[18px] font-semibold text-white">
+                    {stat.value}
+                  </span>
+                  <span className="text-white/70">{stat.label}</span>
+                  {index < career.hero.stats.length - 1 && (
+                    <span className="text-white/30">•</span>
+                  )}
+                </span>
               ))}
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-primary/20 via-primaryLight/15 to-sky-500/15 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 shadow-[0_28px_80px_rgba(0,0,0,0.35)] backdrop-blur">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.12),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(14,165,233,0.12),transparent_40%)]" />
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/banners/career.jpg"
-                  alt={career.hero.imageAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  placeholder="blur"
-                  blurDataURL={blurDataUrl}
-                  className="object-cover"
-                  priority
-                />
+          <div className="relative flex-1 pb-6 md:pb-0">
+            <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-white/25 via-white/10 to-transparent p-[1px] shadow-[0_24px_60px_rgba(15,23,42,0.4)]">
+              <div className="rounded-[28px] bg-[#0f172a]/90 p-4 md:p-6">
+                <div className="relative h-[280px] md:h-[360px]">
+                  <Image
+                    src="/banners/career.jpg"
+                    alt={career.hero.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 520px, 90vw"
+                    placeholder="blur"
+                    blurDataURL={blurDataUrl}
+                    className="rounded-[18px] object-cover"
+                    priority
+                  />
+                </div>
               </div>
-              <div className="relative grid grid-cols-1 gap-3 border-t border-white/5 bg-gradient-to-r from-white/0 via-white/5 to-white/0 px-6 py-5 md:grid-cols-2">
-                {career.hero.badges.slice(0, 2).map((badge) => (
-                  <div
-                    key={badge}
-                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80"
-                  >
-                    <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(16,185,129,0.15)]" />
-                    {badge}
-                  </div>
-                ))}
-              </div>
+            </div>
+            <div className="mt-4 rounded-2xl border border-white/15 bg-white/10 p-4 text-white shadow-[0_18px_40px_rgba(15,23,42,0.35)] backdrop-blur md:absolute md:-bottom-8 md:left-6 md:right-6">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-white/70">
+                {career.hero.label}
+              </span>
+              <h3 className="mt-2 text-[16px] font-semibold font-spaceGrotesk">
+                {career.hero.stats[0]?.value} • {career.hero.stats[0]?.label}
+              </h3>
+              <p className="mt-1 text-[13px] text-white/70">
+                {career.hero.description}
+              </p>
             </div>
           </div>
         </div>

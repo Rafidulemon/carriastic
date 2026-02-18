@@ -11,13 +11,22 @@ import {
   FiMapPin,
   FiServer,
 } from "react-icons/fi";
+import Header from "../navigations/Header";
+import HeroBreadcrumb from "../navigations/HeroBreadcrumb";
+import { useLanguage } from "@/app/i18n/LanguageProvider";
 import type {
   AccentKey,
   ProductDetailsProps,
 } from "@/app/(main)/products/_components/types";
 const accentMap: Record<
   AccentKey,
-  { pill: string; gradient: string; border: string; shadow: string; glow: string }
+  {
+    pill: string;
+    gradient: string;
+    border: string;
+    shadow: string;
+    glow: string;
+  }
 > = {
   plum: {
     pill: "bg-primary/15 text-white border-primary/30",
@@ -111,13 +120,14 @@ const SectionCard = ({
     </h3>
     <div
       className={
-        type === "grid"
-          ? "grid gap-2 sm:grid-cols-2"
-          : "flex flex-col gap-2"
+        type === "grid" ? "grid gap-2 sm:grid-cols-2" : "flex flex-col gap-2"
       }
     >
       {items.map((item) => (
-        <div key={item} className="flex items-start gap-2 text-[14px] text-slate-700">
+        <div
+          key={item}
+          className="flex items-start gap-2 text-[14px] text-slate-700"
+        >
           <FiCheck className="mt-0.5 text-primary" />
           <span>{item}</span>
         </div>
@@ -126,7 +136,13 @@ const SectionCard = ({
   </div>
 );
 
-const Pill = ({ children, className = "" }: { children: string; className?: string }) => (
+const Pill = ({
+  children,
+  className = "",
+}: {
+  children: string;
+  className?: string;
+}) => (
   <span
     className={`inline-flex items-center rounded-full border px-3 py-1 text-[11px] uppercase tracking-[0.24em] ${className}`}
   >
@@ -163,7 +179,7 @@ const techLogoMap: Record<string, string> = {
   jwt: "/technologies/jwt.png",
   "google analytics": "/technologies/google_analytics.png",
   "lang chain": "/technologies/langChain.png",
-  "vector": "/technologies/vector.png",
+  vector: "/technologies/vector.png",
 };
 
 const MetricCard = ({
@@ -180,7 +196,9 @@ const MetricCard = ({
     <p className="text-[12px] uppercase tracking-[0.24em] text-primary mt-1">
       {label}
     </p>
-    {description && <p className="mt-2 text-[13px] text-slate-600">{description}</p>}
+    {description && (
+      <p className="mt-2 text-[13px] text-slate-600">{description}</p>
+    )}
   </div>
 );
 
@@ -215,34 +233,42 @@ const ProductDetailsLayout = ({
   productsList,
   accent = "plum",
 }: ProductDetailsProps) => {
+  const { t } = useLanguage();
+  const homeLabel = t.nav.home;
   const accentClasses = accentMap[accent] ?? accentMap.plum;
-  const otherProducts = productsList.filter((item) => item.slug !== product.slug).slice(0, 3);
+  const otherProducts = productsList
+    .filter((item) => item.slug !== product.slug)
+    .slice(0, 3);
   const mockupSrc = mockupMap[product.slug] ?? product.gif;
 
   return (
     <div className="relative overflow-hidden bg-[#f7f8fc] text-slate-900">
-      <section className="relative overflow-hidden bg-[#130c21] text-white">
-        <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full blur-3xl" style={{ backgroundColor: accentClasses.glow }} />
-        <div className="pointer-events-none absolute right-[-120px] top-24 h-[420px] w-[420px] rounded-full blur-3xl" style={{ backgroundColor: accentClasses.glow }} />
+      <section className="relative overflow-hidden bg-[#0b1220] text-white home-hero">
+        <div className="pointer-events-none absolute inset-0 home-grid" />
+        <div className="home-orb home-orb-two" />
+        <div className="home-orb home-orb-three" />
+        <div
+          className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full blur-3xl"
+          style={{ backgroundColor: accentClasses.glow }}
+        />
+        <div
+          className="pointer-events-none absolute right-[-120px] top-24 h-[420px] w-[420px] rounded-full blur-3xl"
+          style={{ backgroundColor: accentClasses.glow }}
+        />
+        <Header isDark />
 
         <div
           id="product-hero"
-          className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 pb-16 pt-8 md:px-10 md:pb-20 md:pt-12 min-h-screen justify-center"
+          className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 pb-16 pt-8 md:px-10 md:pb-20 md:pt-12 min-h-screen justify-center hero-smooth-reveal"
         >
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-[13px] text-white/80">
-              <Link
-                href="/products"
-                className="inline-flex items-center gap-2 font-semibold text-white hover:text-primaryLight"
-              >
-                <FiArrowLeft />
-                {detailsCopy.backLabel}
-              </Link>
-              <span className="h-4 w-px bg-white/30" aria-hidden />
-              <span className="uppercase tracking-[0.3em] text-[11px] text-white/60">
-                {detailsCopy.label}
-              </span>
-            </div>
+          <div className="flex flex-row justify-between items-start">
+            <HeroBreadcrumb
+              items={[
+                { label: homeLabel, href: "/" },
+                { label: detailsCopy.label, href: "/products" },
+                { label: product.title },
+              ]}
+            />
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white/90 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20"
@@ -254,13 +280,17 @@ const ProductDetailsLayout = ({
 
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1.05fr]">
             <div className="flex flex-col gap-5">
-              <Pill className={`${accentClasses.pill} w-fit border ${accentClasses.border}`}>
+              <Pill
+                className={`${accentClasses.pill} w-fit border ${accentClasses.border}`}
+              >
                 {product.tag}
               </Pill>
               <h1 className="text-[34px] font-semibold leading-[1.05] text-white md:text-[52px] font-spaceGrotesk drop-shadow-[0_18px_36px_rgba(0,0,0,0.35)]">
                 {product.title}
               </h1>
-              <p className="text-[17px] text-white/80 md:text-[18px]">{product.summary}</p>
+              <p className="text-[17px] text-white/80 md:text-[18px]">
+                {product.summary}
+              </p>
               <p className="text-[15px] leading-[1.7] text-white/70 md:text-[16px] text-justify">
                 {product.description}
               </p>
@@ -322,11 +352,15 @@ const ProductDetailsLayout = ({
       </section>
 
       <section className="relative mx-auto w-full max-w-[1200px] px-6 pb-14 pt-12 md:px-10 md:pt-14">
-        
-
         <div className="grid gap-6 lg:grid-cols-2">
-          <SectionCard title={detailsCopy.sections.featuresLabel} items={product.features} />
-          <SectionCard title={detailsCopy.sections.benefitsLabel} items={product.benefits} />
+          <SectionCard
+            title={detailsCopy.sections.featuresLabel}
+            items={product.features}
+          />
+          <SectionCard
+            title={detailsCopy.sections.benefitsLabel}
+            items={product.benefits}
+          />
         </div>
 
         {extras?.modules && extras.modules.length > 0 && (
@@ -342,9 +376,13 @@ const ProductDetailsLayout = ({
                 >
                   <div className="flex items-center gap-2 text-primary">
                     <FiLayers />
-                    <h4 className="text-[15px] font-semibold text-slate-900">{item.title}</h4>
+                    <h4 className="text-[15px] font-semibold text-slate-900">
+                      {item.title}
+                    </h4>
                   </div>
-                  <p className="mt-2 text-[13px] text-slate-600">{item.description}</p>
+                  <p className="mt-2 text-[13px] text-slate-600">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -364,9 +402,13 @@ const ProductDetailsLayout = ({
                 >
                   <div className="flex items-center gap-2 text-primary">
                     <FiMapPin />
-                    <h4 className="text-[15px] font-semibold text-slate-900">{item.title}</h4>
+                    <h4 className="text-[15px] font-semibold text-slate-900">
+                      {item.title}
+                    </h4>
                   </div>
-                  <p className="mt-2 text-[13px] text-slate-600">{item.description}</p>
+                  <p className="mt-2 text-[13px] text-slate-600">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -380,7 +422,10 @@ const ProductDetailsLayout = ({
             </h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {extras.integrations.map((item) => (
-                <Pill key={item} className="border border-slate-200 bg-white text-slate-800 shadow-sm">
+                <Pill
+                  key={item}
+                  className="border border-slate-200 bg-white text-slate-800 shadow-sm"
+                >
                   {item}
                 </Pill>
               ))}
@@ -519,7 +564,9 @@ const ProductDetailsLayout = ({
                   <span className="text-[12px] uppercase tracking-[0.24em] text-primary/70">
                     {item.tag}
                   </span>
-                  <span className="font-semibold text-slate-900">{item.title}</span>
+                  <span className="font-semibold text-slate-900">
+                    {item.title}
+                  </span>
                 </div>
                 <FiArrowRight className="text-primary" />
               </Link>

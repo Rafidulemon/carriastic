@@ -1,17 +1,25 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import {
+  FiCpu,
+  FiLayers,
+  FiShield,
+  FiBookOpen,
+  FiPenTool,
+} from "react-icons/fi";
 import BlogCard from "../../components/cards/BlogCard";
+import blogAnimation from "@/public/gifs/jsons/blogs.json"
 import Button from "../../components/button/Button";
 import { useLanguage } from "../../i18n/LanguageProvider";
-
-const blurDataUrl =
-  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKZQAAAABJRU5ErkJggg==";
+import Header from "../../components/navigations/Header";
+import HeroBreadcrumb from "@/app/components/navigations/HeroBreadcrumb";
+import Lottie from "lottie-react";
 
 const BlogsPage = () => {
   const { t } = useLanguage();
   const blogsPage = t.blogsPage;
+  const heroIcons = [FiLayers, FiCpu, FiShield, FiBookOpen, FiPenTool];
 
   const blogAccents = [
     "from-[#ede9fe]/70 via-white to-[#dbeafe]/70",
@@ -21,42 +29,51 @@ const BlogsPage = () => {
 
   return (
     <div className="w-full">
-      <section className="relative isolate overflow-hidden">
-        <Image
-          src="/banners/blog.jpg"
-          alt={blogsPage.hero.imageAlt}
-          fill
-          sizes="100vw"
-          placeholder="blur"
-          blurDataURL={blurDataUrl}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/70 to-primary/60" />
-        <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-primaryLight/40 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-[-140px] right-[-80px] h-[340px] w-[340px] rounded-full bg-sky-400/30 blur-3xl" />
-        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-8 px-6 py-8 text-white md:py-14 md:px-10">
-          <span className="inline-flex w-fit self-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.35em] text-white/80 md:self-start">
-            {blogsPage.hero.label}
-          </span>
-          <div className="flex flex-col gap-5 text-center md:text-left">
-            <h1 className="text-[32px] font-semibold leading-[1.05] md:text-[56px] font-spaceGrotesk">
+      <section
+        id="blogs-hero"
+        className="home-hero relative flex min-h-[100svh] flex-col overflow-hidden pb-10 text-white md:min-h-screen"
+      >
+        <div className="pointer-events-none absolute inset-0 home-grid" />
+        <div className="home-orb home-orb-two" />
+        <div className="home-orb home-orb-three" />
+        <Header isDark />
+
+        <div className="hero-smooth-reveal relative mx-auto flex w-full max-w-[1200px] flex-1 flex-col justify-center gap-10 px-6 pt-8 sm:gap-12 sm:pt-10 md:gap-14 md:px-10 lg:flex-row lg:items-center">
+          <div className="flex flex-1 flex-col gap-6 text-center lg:items-start lg:text-left">
+            <HeroBreadcrumb
+              items={[
+                { label: blogsPage.hero.home, href: "/" },
+                { label: blogsPage.hero.blog },
+              ]}
+            />
+            <h1 className="text-[32px] font-semibold leading-[1.05] md:text-[56px] font-spaceGrotesk drop-shadow-[0_14px_30px_rgba(9,0,16,0.4)]">
               {blogsPage.hero.headline}
             </h1>
-            <p className="max-w-[680px] text-[16px] text-white/80 md:text-[18px]">
+            <p className="max-w-[640px] text-[16px] text-white/80 md:text-[18px] lg:text-justify">
               {blogsPage.hero.description}
             </p>
-            <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-              {blogsPage.hero.badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-white/80"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 md:justify-start">
-              <Button href="/contact" theme="gradient">
+            <ul className="flex flex-col gap-3 text-[14px] text-white/80">
+              {blogsPage.hero.badges.map((badge, index) => {
+                const Icon = heroIcons[index % heroIcons.length];
+                return (
+                  <li
+                    key={badge}
+                    className="flex items-center justify-center gap-3 lg:justify-start"
+                  >
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-primaryLight">
+                      <Icon className="text-[18px]" />
+                    </span>
+                    <span>{badge}</span>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+              <Button
+                href="/contact"
+                theme="gradient"
+                className="w-full sm:w-auto"
+              >
                 {blogsPage.hero.primaryCta}
               </Button>
               <Link
@@ -67,18 +84,17 @@ const BlogsPage = () => {
               </Link>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {blogsPage.hero.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-white/15 bg-white/10 p-4 text-center backdrop-blur"
-              >
-                <p className="text-[22px] font-semibold">{stat.value}</p>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.3em] text-white/70">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+
+          <div className="relative flex-1 pb-6 md:pb-0">
+            <div className="relative overflow-hidden">
+                <Lottie
+                  animationData={blogAnimation}
+                  loop
+                  autoplay
+                  className="h-full w-full"
+                  aria-label={blogsPage.hero.label}
+                />
+            </div>
           </div>
         </div>
       </section>

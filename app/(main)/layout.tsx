@@ -32,11 +32,19 @@ export default function MainLayout({
     pathname === "/services" || pathname.startsWith("/services/");
   const isContactRoute = pathname === "/contact";
   const isAboutRoute = pathname === "/about" || pathname.startsWith("/about/");
+  const isAiRoute = pathname === "/ai";
+  const isBlogsRoute = pathname === "/blogs";
+  const isCareerRoute = pathname === "/career";
+  const isProductsRoute = pathname === "/products";
   const isHeroRoute =
     pathname === "/" ||
     isServiceRoute ||
     isContactRoute ||
     isAboutRoute ||
+    isAiRoute ||
+    isBlogsRoute ||
+    isProductsRoute ||
+    isCareerRoute ||
     (pathname.startsWith("/products/") && pathname !== "/products");
   const contentOffsetClass = isHeroRoute ? "mt-0" : "mt-16 md:mt-20";
 
