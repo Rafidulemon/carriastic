@@ -12,6 +12,7 @@ type Props = {
   id?: string;
   name?: string;
   register?: UseFormRegister<any>;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 function EmailInput(props: Props) {
@@ -26,6 +27,7 @@ function EmailInput(props: Props) {
     placeholder,
     error,
     register,
+    onChange,
   } = props;
 
   return (
@@ -46,6 +48,7 @@ function EmailInput(props: Props) {
         value={value}
         placeholder={placeholder}
         required={isRequired}
+        onChange={onChange}
         {...register?.(name)}
       />
       {error && <div className="text-[14px] text-red-500">{error.message}</div>}

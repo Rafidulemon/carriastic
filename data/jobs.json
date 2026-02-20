@@ -1,0 +1,172 @@
+[
+  {
+    "slug": "data-scientist",
+    "title": "Data Scientist",
+    "type": "Full-time",
+    "location": "Dhaka · Hybrid",
+    "intro": "Lead experimentation, modeling, and insights for AI-first products that serve thousands of users.",
+    "mission": "Partner with product and engineering to design data products, improve model performance, and deploy experiments that directly shape customer experience.",
+    "responsibilities": [
+      "Design, validate, and ship ML models for recommendations, scoring, and anomaly detection.",
+      "Own the experimentation loop: define hypotheses, design A/B tests, analyze results, and communicate findings.",
+      "Build clean data pipelines and features in collaboration with data engineering.",
+      "Instrument products to capture the right events and ensure data quality.",
+      "Translate complex findings into concise narratives for non-technical stakeholders."
+    ],
+    "requirements": [
+      "3+ years in data science or applied ML with shipped models in production.",
+      "Strong Python and SQL; experience with Pandas, scikit-learn, and at least one deep learning framework.",
+      "Comfort with experiment design, causal inference basics, and statistical rigor.",
+      "Experience deploying models as services or batch jobs (FastAPI, Airflow, etc.)."
+    ],
+    "niceToHave": [
+      "Experience with vector databases or RAG pipelines.",
+      "MLOps tooling (MLflow, Weights & Biases) and monitoring practices."
+    ],
+    "perks": [
+      "Hybrid schedule with focus days",
+      "Learning budget & conference support",
+      "Performance bonuses"
+    ]
+  },
+  {
+    "slug": "product-designer",
+    "title": "Product Designer",
+    "type": "Full-time",
+    "location": "Dhaka · Hybrid",
+    "intro": "Design end-to-end product experiences across web and mobile with a heavy emphasis on AI-assisted workflows.",
+    "mission": "Translate strategy into clear flows, UI systems, and prototypes that engineers and stakeholders can ship with confidence.",
+    "responsibilities": [
+      "Lead discovery, user interviews, and rapid prototyping for new features.",
+      "Create design systems, components, and specs that scale across products.",
+      "Collaborate with engineers to refine interactions and ensure high-quality delivery.",
+      "Measure shipped work with analytics and iterate based on insights.",
+      "Advocate for accessibility and inclusive design practices."
+    ],
+    "requirements": [
+      "3+ years designing digital products with a shipped portfolio.",
+      "Expertise in Figma plus familiarity with prototyping tools.",
+      "Ability to write clear UX copy and rationale for design decisions.",
+      "Comfort working closely with engineers in agile, iterative cycles."
+    ],
+    "niceToHave": [
+      "Experience with AI/ML features or data-heavy interfaces.",
+      "Motion design fundamentals for micro-interactions."
+    ],
+    "perks": [
+      "Hybrid schedule & ergonomic workspace",
+      "Design hardware stipend",
+      "Regular design critiques and mentorship"
+    ]
+  },
+  {
+    "slug": "wordpress-developer",
+    "title": "WordPress Developer",
+    "type": "Intern",
+    "location": "On-site",
+    "intro": "Build and optimize WordPress sites with modern tooling, performance discipline, and clean component patterns.",
+    "mission": "Ship marketing and product sites that are fast, stable, and easy to maintain, working alongside design and content.",
+    "responsibilities": [
+      "Develop custom themes/components with modern PHP and React-based tooling (Gutenberg/ACF).",
+      "Optimize performance, accessibility, and SEO fundamentals.",
+      "Integrate third-party APIs, forms, and analytics cleanly.",
+      "Maintain reusable blocks and documentation for content teams."
+    ],
+    "requirements": [
+      "Solid understanding of WordPress, PHP, and modern frontend fundamentals.",
+      "Comfort with Git and collaborative workflows.",
+      "Basic knowledge of performance and accessibility best practices."
+    ],
+    "niceToHave": [
+      "Experience with headless WordPress setups.",
+      "Familiarity with Tailwind CSS."
+    ],
+    "perks": [
+      "Mentorship from senior engineers",
+      "Lunch & snacks on-site",
+      "Path to full-time offer"
+    ]
+  },
+  {
+    "slug": "technical-support-engineer",
+    "title": "Technical Support Engineer",
+    "type": "Contract",
+    "location": "Remote",
+    "intro": "Help customers succeed by diagnosing issues, improving support content, and keeping feedback loops tight with engineering.",
+    "mission": "Troubleshoot production issues, create clear runbooks, and surface product insights that reduce future tickets.",
+    "responsibilities": [
+      "Resolve Tier 1–2 tickets with clear, empathetic communication.",
+      "Reproduce, triage, and escalate bugs with actionable details and logs.",
+      "Write and maintain knowledge base articles and runbooks.",
+      "Collaborate with engineering on fixes and with product on UX improvements."
+    ],
+    "requirements": [
+      "2+ years in technical support or success roles for software products.",
+      "Strong debugging mindset with familiarity in browser dev tools and APIs.",
+      "Excellent written communication; comfortable with SLAs and prioritization."
+    ],
+    "niceToHave": [
+      "Basic scripting (JavaScript/Python) for quick diagnostics."
+    ],
+    "perks": [
+      "Remote-first",
+      "Flexible hours",
+      "Annual learning stipend"
+    ]
+  },
+  {
+    "slug": "junior-graphic-designer",
+    "title": "Junior Graphic Designer",
+    "type": "Full-time",
+    "location": "Dhaka · On-site",
+    "intro": "Create visuals that support product launches, marketing campaigns, and brand storytelling across channels.",
+    "mission": "Craft graphics, motion snippets, and presentation assets that keep our brand consistent and energetic.",
+    "responsibilities": [
+      "Produce social, email, and landing page assets based on briefs and brand system.",
+      "Adapt complex ideas into simple, on-brand visuals.",
+      "Collaborate with marketing on timelines and asset handoff.",
+      "Maintain organized files, exports, and templates."
+    ],
+    "requirements": [
+      "1+ years of design experience or a strong portfolio of personal projects.",
+      "Proficiency in Figma and Adobe Suite.",
+      "Understanding of typography, layout, and color for digital mediums."
+    ],
+    "niceToHave": [
+      "Basic motion/animation skills (After Effects, Lottie)."
+    ],
+    "perks": [
+      "On-site studio setup",
+      "Feedback-focused culture",
+      "Sponsored workshops"
+    ]
+  },
+  {
+    "slug": "digital-marketer",
+    "title": "Digital Marketer (SEO Specialist)",
+    "type": "Full-time",
+    "location": "Remote",
+    "intro": "Own SEO strategy, content performance, and experimentation to grow organic traffic for our products.",
+    "mission": "Plan roadmaps, optimize pages, and measure impact while partnering with content, design, and engineering.",
+    "responsibilities": [
+      "Conduct keyword research, content briefs, and on-page optimization across web properties.",
+      "Implement technical SEO fixes with developers (schema, sitemaps, performance).",
+      "Design experiments to improve CTR, engagement, and conversions.",
+      "Report on rankings, traffic, and business KPIs with clear next steps."
+    ],
+    "requirements": [
+      "3+ years in SEO or growth marketing with measurable wins.",
+      "Experience with GA, GSC, Ahrefs/SEMrush, and A/B testing tools.",
+      "Ability to brief and review content for quality and intent alignment."
+    ],
+    "niceToHave": [
+      "Understanding of CRO and landing page design.",
+      "Familiarity with headless CMS setups."
+    ],
+    "perks": [
+      "Remote-first",
+      "Performance bonuses",
+      "Budget for tools & courses"
+    ]
+  }
+]

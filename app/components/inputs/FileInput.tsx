@@ -6,6 +6,8 @@ type Props = {
   isRequired?: boolean;
   label?: string;
   id?: string;
+  name?: string;
+  accept?: string;
   error?: FieldError | undefined;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
@@ -16,6 +18,8 @@ const FileInput = (props: Props) => {
     isRequired = false,
     label,
     id,
+    name,
+    accept,
     error,
     onChange,
   } = props;
@@ -36,6 +40,9 @@ const FileInput = (props: Props) => {
         id={id}
         type="file"
         className="w-full h-[44px] focus:outline-none bg-white p-2 rounded-[5px] drop-shadow-lg"
+        name={name}
+        accept={accept}
+        required={isRequired}
         onChange={onChange}
       />
       {error && <div className="text-[14px] text-red-500">{error.message}</div>}
